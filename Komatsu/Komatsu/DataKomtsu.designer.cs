@@ -239,6 +239,27 @@ namespace Komatsu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
+		public ISingleResult<GetBatchResult> GetBatch()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishDeSo")]
+		public ISingleResult<GetBatNotFinishDeSoResult> GetBatNotFinishDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(200)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			return ((ISingleResult<GetBatNotFinishDeSoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishCheckerDeSo")]
+		public ISingleResult<GetBatNotFinishCheckerDeSoResult> GetBatNotFinishCheckerDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			return ((ISingleResult<GetBatNotFinishCheckerDeSoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
@@ -4037,6 +4058,84 @@ namespace Komatsu
 				if ((this._Column1 != value))
 				{
 					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatchResult
+	{
+		
+		private string _fBatchName;
+		
+		public GetBatchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatNotFinishDeSoResult
+	{
+		
+		private string _fbatchname;
+		
+		public GetBatNotFinishDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string fbatchname
+		{
+			get
+			{
+				return this._fbatchname;
+			}
+			set
+			{
+				if ((this._fbatchname != value))
+				{
+					this._fbatchname = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatNotFinishCheckerDeSoResult
+	{
+		
+		private string _fBatchName;
+		
+		public GetBatNotFinishCheckerDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(255)")]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
 				}
 			}
 		}

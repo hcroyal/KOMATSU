@@ -22,7 +22,7 @@ namespace Komatsu
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DatabaseDataEntryBPO")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KOMTSU")]
 	public partial class DataBPODataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace Komatsu
     #endregion
 		
 		public DataBPODataContext() : 
-				base(global::Komatsu.Properties.Settings.Default.DatabaseDataEntryBPOConnectionString, mappingSource)
+				base(global::Komatsu.Properties.Settings.Default.KOMTSUConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
