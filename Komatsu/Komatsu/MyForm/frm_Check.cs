@@ -63,14 +63,10 @@ namespace KOMTSU.MyForm
                 btn_SuaVaLuu_User1.Visible = false;
                 btn_SuaVaLuu_User2.Visible = false;
 
-                //uC_DESO1.Changededit += UC_Row_01_Changed;
-                //uC_DESO1.uC_Row_01.Changed += UC_Row_01_Changed;
-                //uC_DESO1.uC_Row_02.Changed += UC_Row_01_Changed;
+                uc_DeJP_Loai11.Changed += UC_Row_01_Changed;
 
 
-                //uC_DESO2.Changededit += UC_Row_01_Changed1;
-                //uC_DESO2.uC_Row_01.Changed += UC_Row_01_Changed1;
-                //uC_DESO2.uC_Row_02.Changed += UC_Row_01_Changed1;
+                uc_DeJP_Loai12.Changed += UC_Row_01_Changed1;
 
             }
             catch (Exception i)
