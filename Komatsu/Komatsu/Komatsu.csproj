@@ -37,8 +37,16 @@
     <Reference Include="DevExpress.Data.v16.2" />
     <Reference Include="DevExpress.Utils.v16.2" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\KOMTSU\KOMTSU\KOMTSU\KOMTSU\KOMTSU\bin\Debug\DevExpress.XtraBars.v16.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraEditors.v16.2" />
     <Reference Include="DevExpress.Printing.v16.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\KOMTSU\KOMTSU\KOMTSU\KOMTSU\KOMTSU\bin\Debug\DevExpress.XtraGrid.v16.2.dll</HintPath>
+    </Reference>
     <Reference Include="ImageGlass.ImageBox, Version=2.0.0.0, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>MyDll\ImageGlass.ImageBox.dll</HintPath>
@@ -53,6 +61,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,8 +72,119 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBPO.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBPO.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataKomtsu.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataKomtsu.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="MyForm\frm_ChangeZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ChangeZoom.designer.cs">
+      <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Check.designer.cs">
+      <DependentUpon>frm_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_CreateBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_CreateBatch.designer.cs">
+      <DependentUpon>frm_CreateBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_DataAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_DataAuto.designer.cs">
+      <DependentUpon>frm_DataAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_FreeTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_FreeTime.designer.cs">
+      <DependentUpon>frm_FreeTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Main.designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_User.designer.cs">
+      <DependentUpon>frm_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_DeJP_Loai1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_DeJP_Loai1.designer.cs">
+      <DependentUpon>uc_DeJP_Loai1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_DeJP_Loai2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_DeJP_Loai2.designer.cs">
+      <DependentUpon>uc_DeJP_Loai2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_DeJP_Row.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_DeJP_Row.designer.cs">
+      <DependentUpon>uc_DeJP_Row.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_PictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_PictureBox.designer.cs">
+      <DependentUpon>uc_PictureBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
+      <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_Check.resx">
+      <DependentUpon>frm_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_CreateBatch.resx">
+      <DependentUpon>frm_CreateBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_DataAuto.resx">
+      <DependentUpon>frm_DataAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_FreeTime.resx">
+      <DependentUpon>frm_FreeTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_User.resx">
+      <DependentUpon>frm_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_DeJP_Loai1.resx">
+      <DependentUpon>uc_DeJP_Loai1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_DeJP_Loai2.resx">
+      <DependentUpon>uc_DeJP_Loai2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_DeJP_Row.resx">
+      <DependentUpon>uc_DeJP_Row.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_PictureBox.resx">
+      <DependentUpon>uc_PictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,7 +193,25 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="DataBPO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataBPO.dbml.layout">
+      <DependentUpon>DataBPO.dbml</DependentUpon>
+    </None>
+    <None Include="DataKomtsu.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataKomtsu.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataKomtsu.dbml.layout">
+      <DependentUpon>DataKomtsu.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,10 +226,11 @@
     <Content Include="MyDll\ImageGlass.ImageBox.dll" />
     <Content Include="MyDll\LibraryLogin.dll" />
     <Content Include="MyDll\SautinSoft.PdfFocus.dll" />
+    <None Include="Resources\svn_deleted.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="MyForm\" />
-    <Folder Include="MyUserControl\" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

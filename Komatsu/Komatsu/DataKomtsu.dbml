@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KOMTSU" Class="DataKomtsuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248;Initial Catalog=KOMTSU;Persist Security Info=True;User ID=sa" SettingsObjectName="Komatsu.Properties.Settings" SettingsPropertyName="KOMTSUConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Batch" Member="tbl_Batches">
+    <Type Name="tbl_Batch">
+      <Column Name="IDBatch" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fdatecreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fusercreate" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fPathPicture" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fLocation" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fSoLuongAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TruongSo06" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TruongSo08" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LoaiBatch" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CoDeSo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_MissImage_DESO" Member="tbl_MissImage_DESOs">
+    <Type Name="tbl_MissImage_DESO">
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Submit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DataAutoComplete" Member="tbl_DataAutoCompletes">
+    <Type Name="tbl_DataAutoComplete">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataAutoComplete" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DEJP" Member="tbl_DEJPs">
+    <Type Name="tbl_DEJP">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_12" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LoaiPhieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IdPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Error" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="True" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DEJP_Backup" Member="tbl_DEJP_Backups">
+    <Type Name="tbl_DEJP_Backup">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_12" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LoaiPhieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IdPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Error" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="True" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DESO" Member="tbl_DESOs">
+    <Type Name="tbl_DESO">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_12" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LoaiPhieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IdPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Error" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="True" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DESO_Backup" Member="tbl_DESO_Backups">
+    <Type Name="tbl_DESO_Backup">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Truong_01" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_07" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_09" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_11" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_12" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LoaiPhieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IdPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Error" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="True" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Image" Member="tbl_Images">
+    <Type Name="tbl_Image">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fbatchname" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserNameDESo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ReadImageDESo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameDEJP" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ReadImageDEJP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CheckedDESo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckedDEJP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienDoDESO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TienDoDEJP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NienHieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_LogFile" Member="tbl_LogFiles">
+    <Type Name="tbl_LogFile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Info" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="DateLog" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_MissCheck_DEJP" Member="tbl_MissCheck_DEJPs">
+    <Type Name="tbl_MissCheck_DEJP">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Submit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateCheck" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_MissCheck_DESO" Member="tbl_MissCheck_DESOs">
+    <Type Name="tbl_MissCheck_DESO">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Submit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateCheck" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_MissImage_DEJP" Member="tbl_MissImage_DEJPs">
+    <Type Name="tbl_MissImage_DEJP">
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Submit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DeleteDataAutoComplete" Method="DeleteDataAutoComplete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insert_Loai1" Method="Insert_Loai1">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_04" Parameter="truong_04" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_07" Parameter="truong_07" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_09" Parameter="truong_09" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_10" Parameter="truong_10" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_11" Parameter="truong_11" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_12" Parameter="truong_12" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="LoaiPhieu" Parameter="loaiPhieu" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insert_Loai2" Method="Insert_Loai2">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_04" Parameter="truong_04" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_10" Parameter="truong_10" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_11" Parameter="truong_11" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="LoaiPhieu" Parameter="loaiPhieu" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="IdPhieu" Parameter="idPhieu" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InSertDataAutoComplete" Method="InSertDataAutoComplete">
+    <Parameter Name="data" Type="System.String" DbType="NVarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayHinhMoi_DeJP" Method="LayHinhMoi_DeJP">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="LayHinhMoi_DeJPResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateDataAutoComplete" Method="UpdateDataAutoComplete">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="data" Type="System.String" DbType="NVarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
