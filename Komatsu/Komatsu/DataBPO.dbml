@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KOMTSU" Class="DataBPODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248;Initial Catalog=KOMTSU;Persist Security Info=True;User ID=sa" SettingsObjectName="Komatsu.Properties.Settings" SettingsPropertyName="KOMTSUConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DatabaseDataEntryBPO" Class="DataBPODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.10.248\BPOSERVER;Initial Catalog=DatabaseDataEntryBPO;Persist Security Info=True;User ID=sa" SettingsObjectName="Komatsu.Properties.Settings" SettingsPropertyName="DatabaseDataEntryBPOConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_Version" Member="tbl_Versions">
     <Type Name="tbl_Version">
       <Column Name="IDProject" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
@@ -74,11 +74,6 @@
     <Parameter Name="GroupLevel" Parameter="groupLevel" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.KiemTraLogin" Method="KiemTraLogin">
-    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.ResetToken" Method="ResetToken">
     <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="idproject" Type="System.String" DbType="NVarChar(150)" />
@@ -110,6 +105,11 @@
     <Parameter Name="IDRole" Parameter="iDRole" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="IDNhanVien" Parameter="iDNhanVien" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="GroupLevel" Parameter="groupLevel" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KiemTraLogin" Method="KiemTraLogin">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

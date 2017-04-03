@@ -21,7 +21,7 @@ namespace KOMTSU.MyUserControl
             {
                 uc_DeJP_Row uc = new uc_DeJP_Row();
                 Point p = new Point();
-                uc.Changed += Uc_Changed;
+                uc.Changed_Row += Uc_Changed;
                 foreach (Control ct in Controls)
                 {
                     p = ct.Location;

@@ -41,7 +41,6 @@ namespace KOMTSU.MyForm
                 TabControl_User2.TabPages.Remove(tp_Loai2_User2);
                 cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
                 cbb_Batch_Check.DisplayMember = "fBatchName";
-                //cbb_Batch_Check.ValueMember= "fBatchName";
                 Global.StrBatch = cbb_Batch_Check.Text;
                 var soloi = (from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault();
                 lb_Loi.Text = soloi + " Lỗi";
@@ -64,17 +63,17 @@ namespace KOMTSU.MyForm
                 btn_SuaVaLuu_User2.Visible = false;
 
                 uc_DeJP_Loai11.Changed += UC_Row_01_Changed;
-
+                uc_DeJP_Loai21.Changed += UC_Row_01_Changed;
 
                 uc_DeJP_Loai12.Changed += UC_Row_01_Changed1;
-
+                uc_DeJP_Loai21.Changed += UC_Row_01_Changed1;
             }
             catch (Exception i)
             {
                 MessageBox.Show("Lỗi" + i);
             }
         }
-
+        
         private void UC_Row_01_Changed1(object sender, EventArgs e)
         {
             btn_Luu_DeSo2.Visible = false;
