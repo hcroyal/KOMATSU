@@ -31,12 +31,11 @@ namespace KOMTSU.MyForm
         private void InitializeComponent()
         {
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cbb_Batch_Check = new System.Windows.Forms.ComboBox();
             this.lb_Loi = new DevExpress.XtraEditors.LabelControl();
             this.lb_Image = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.lb_fBatchName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btn_Screen = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start = new DevExpress.XtraEditors.SimpleButton();
             this.labelc = new DevExpress.XtraEditors.LabelControl();
             this.labeld = new DevExpress.XtraEditors.LabelControl();
@@ -95,17 +94,25 @@ namespace KOMTSU.MyForm
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.cbb_Batch_Check);
             this.panelControl2.Controls.Add(this.lb_Loi);
             this.panelControl2.Controls.Add(this.lb_Image);
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Controls.Add(this.lb_fBatchName);
             this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Controls.Add(this.btn_Screen);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(823, 36);
             this.panelControl2.TabIndex = 29;
+            // 
+            // cbb_Batch_Check
+            // 
+            this.cbb_Batch_Check.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Batch_Check.FormattingEnabled = true;
+            this.cbb_Batch_Check.Location = new System.Drawing.Point(48, 8);
+            this.cbb_Batch_Check.Name = "cbb_Batch_Check";
+            this.cbb_Batch_Check.Size = new System.Drawing.Size(215, 21);
+            this.cbb_Batch_Check.TabIndex = 12;
             // 
             // lb_Loi
             // 
@@ -113,7 +120,7 @@ namespace KOMTSU.MyForm
             this.lb_Loi.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lb_Loi.Appearance.Options.UseFont = true;
             this.lb_Loi.Appearance.Options.UseForeColor = true;
-            this.lb_Loi.Location = new System.Drawing.Point(467, 12);
+            this.lb_Loi.Location = new System.Drawing.Point(493, 12);
             this.lb_Loi.Name = "lb_Loi";
             this.lb_Loi.Size = new System.Drawing.Size(75, 13);
             this.lb_Loi.TabIndex = 11;
@@ -121,7 +128,7 @@ namespace KOMTSU.MyForm
             // 
             // lb_Image
             // 
-            this.lb_Image.Location = new System.Drawing.Point(319, 12);
+            this.lb_Image.Location = new System.Drawing.Point(345, 12);
             this.lb_Image.Name = "lb_Image";
             this.lb_Image.Size = new System.Drawing.Size(63, 13);
             this.lb_Image.TabIndex = 10;
@@ -129,35 +136,19 @@ namespace KOMTSU.MyForm
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(279, 12);
+            this.labelControl2.Location = new System.Drawing.Point(305, 12);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(34, 13);
             this.labelControl2.TabIndex = 9;
             this.labelControl2.Text = "Image:";
             // 
-            // lb_fBatchName
-            // 
-            this.lb_fBatchName.Location = new System.Drawing.Point(134, 12);
-            this.lb_fBatchName.Name = "lb_fBatchName";
-            this.lb_fBatchName.Size = new System.Drawing.Size(63, 13);
-            this.lb_fBatchName.TabIndex = 8;
-            this.lb_fBatchName.Text = "labelControl2";
-            // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(97, 12);
+            this.labelControl1.Location = new System.Drawing.Point(10, 11);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(31, 13);
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "Batch:";
-            // 
-            // btn_Screen
-            // 
-            this.btn_Screen.Location = new System.Drawing.Point(7, 7);
-            this.btn_Screen.Name = "btn_Screen";
-            this.btn_Screen.Size = new System.Drawing.Size(84, 23);
-            this.btn_Screen.TabIndex = 6;
-            this.btn_Screen.Text = "Chụp màn hình";
             // 
             // btn_Start
             // 
@@ -262,7 +253,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User2.AutoScroll = true;
             this.tp_Loai1_User2.Controls.Add(this.uc_DeJP_Loai12);
             this.tp_Loai1_User2.Name = "tp_Loai1_User2";
-            this.tp_Loai1_User2.Size = new System.Drawing.Size(457, 284);
+            this.tp_Loai1_User2.Size = new System.Drawing.Size(414, 284);
             this.tp_Loai1_User2.Text = "Loại 1";
             // 
             // uc_DeJP_Loai12
@@ -272,8 +263,9 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_DeJP_Loai12.Location = new System.Drawing.Point(0, 0);
             this.uc_DeJP_Loai12.Name = "uc_DeJP_Loai12";
-            this.uc_DeJP_Loai12.Size = new System.Drawing.Size(457, 284);
+            this.uc_DeJP_Loai12.Size = new System.Drawing.Size(414, 284);
             this.uc_DeJP_Loai12.TabIndex = 0;
+            this.uc_DeJP_Loai12.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai12_Scroll);
             // 
             // tp_Loai2_User2
             // 
@@ -291,6 +283,7 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai22.Name = "uc_DeJP_Loai22";
             this.uc_DeJP_Loai22.Size = new System.Drawing.Size(414, 284);
             this.uc_DeJP_Loai22.TabIndex = 0;
+            this.uc_DeJP_Loai22.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai22_Scroll);
             // 
             // panel4
             // 
@@ -391,6 +384,7 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai11.Name = "uc_DeJP_Loai11";
             this.uc_DeJP_Loai11.Size = new System.Drawing.Size(418, 288);
             this.uc_DeJP_Loai11.TabIndex = 0;
+            this.uc_DeJP_Loai11.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai11_Scroll);
             // 
             // tp_Loai2_User1
             // 
@@ -408,6 +402,7 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai21.Name = "uc_DeJP_Loai21";
             this.uc_DeJP_Loai21.Size = new System.Drawing.Size(418, 288);
             this.uc_DeJP_Loai21.TabIndex = 0;
+            this.uc_DeJP_Loai21.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai21_Scroll);
             // 
             // panel2
             // 
@@ -525,9 +520,7 @@ namespace KOMTSU.MyForm
         private DevExpress.XtraEditors.LabelControl lb_Loi;
         private DevExpress.XtraEditors.LabelControl lb_Image;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl lb_fBatchName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton btn_Screen;
         private DevExpress.XtraEditors.SimpleButton btn_Start;
         private DevExpress.XtraEditors.LabelControl labelc;
         private DevExpress.XtraEditors.LabelControl labeld;
@@ -560,5 +553,6 @@ namespace KOMTSU.MyForm
         private uc_DeJP_Loai2 uc_DeJP_Loai22;
         private uc_DeJP_Loai1 uc_DeJP_Loai11;
         private uc_DeJP_Loai2 uc_DeJP_Loai21;
+        private System.Windows.Forms.ComboBox cbb_Batch_Check;
     }
 }

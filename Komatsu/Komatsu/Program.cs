@@ -25,8 +25,7 @@ namespace Komatsu
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            Application.Run(new frm_CreateBatch());
-
+            Application.Run(new frm_Check());
             //bool temp;
             //do
             //{
