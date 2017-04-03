@@ -119,6 +119,12 @@
     <Compile Include="MyForm\frm_Main.designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\frm_ManagerBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ManagerBatch.Designer.cs">
+      <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_ManagerBatch.resx">
+      <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_User.resx">
       <DependentUpon>frm_User.cs</DependentUpon>
