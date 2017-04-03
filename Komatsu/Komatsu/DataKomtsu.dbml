@@ -240,4 +240,8 @@
     <Parameter Name="data" Type="System.String" DbType="NVarChar(500)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.XoaBatch" Method="XoaBatch">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
