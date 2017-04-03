@@ -67,7 +67,7 @@ namespace KOMTSU.MyForm
                 uc_DeJP_Loai21.Changed += UC_Row_01_Changed;
 
                 uc_DeJP_Loai12.Changed += UC_Row_01_Changed1;
-                uc_DeJP_Loai21.Changed += UC_Row_01_Changed1;
+                uc_DeJP_Loai22.Changed += UC_Row_01_Changed1;
             }
             catch (Exception i)
             {

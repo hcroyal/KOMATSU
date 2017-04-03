@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace KOMTSU.MyUserControl
 {
@@ -62,7 +63,7 @@ namespace KOMTSU.MyUserControl
         private void Uc_Changed(object sender, EventArgs e)
         {
             UpdateStt();
-            if (sender is uc_DeJP_Row)
+            if (sender is TextEdit)
             {
                 Changed?.Invoke(sender, e);
             }
