@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
@@ -40,7 +39,7 @@
             this.btn_quanlyuser = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.btn_checkdeso = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_checkqc = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_checkDEJP = new DevExpress.XtraBars.BarButtonItem();
             this.btn_nangsuat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_tiendo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xuatexcel = new DevExpress.XtraBars.BarButtonItem();
@@ -133,7 +132,7 @@
             this.btn_xuatexcel,
             this.btn_Zoomimage,
             this.btn_checkdeso,
-            this.btn_checkqc,
+            this.btn_checkDEJP,
             this.btn_data_auto});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 19;
@@ -211,7 +210,7 @@
             this.barSubItem4.Id = 8;
             this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_checkdeso),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_checkqc)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_checkDEJP)});
             this.barSubItem4.Name = "barSubItem4";
             // 
             // btn_checkdeso
@@ -221,12 +220,12 @@
             this.btn_checkdeso.Name = "btn_checkdeso";
             this.btn_checkdeso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_checkdeso_ItemClick);
             // 
-            // btn_checkqc
+            // btn_checkDEJP
             // 
-            this.btn_checkqc.Caption = "Check QC";
-            this.btn_checkqc.Id = 16;
-            this.btn_checkqc.Name = "btn_checkqc";
-            this.btn_checkqc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_checkqc_ItemClick);
+            this.btn_checkDEJP.Caption = "Check DEJP";
+            this.btn_checkDEJP.Id = 16;
+            this.btn_checkDEJP.Name = "btn_checkDEJP";
+            this.btn_checkDEJP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_checkqc_ItemClick);
             // 
             // btn_nangsuat
             // 
@@ -781,7 +780,7 @@
         private DevExpress.XtraTab.XtraTabPage tp_Loai2_JP_Main;
         private DevExpress.XtraBars.BarButtonItem btn_Zoomimage;
         private DevExpress.XtraBars.BarButtonItem btn_checkdeso;
-        private DevExpress.XtraBars.BarButtonItem btn_checkqc;
+        private DevExpress.XtraBars.BarButtonItem btn_checkDEJP;
         private DevExpress.XtraEditors.SimpleButton btn_Pause;
         private MyUserControl.uc_DeJP_Loai2 uc_DeJP_Loai21;
         private DevExpress.XtraBars.BarButtonItem btn_data_auto;

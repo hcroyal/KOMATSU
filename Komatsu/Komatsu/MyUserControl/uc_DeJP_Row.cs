@@ -9,7 +9,7 @@ namespace KOMTSU.MyUserControl
 {
     public partial class uc_DeJP_Row : UserControl
     {
-        public event AllTextChange Changed_Row;
+        public event AllTextChange Changed;
 
         public uc_DeJP_Row()
         {
@@ -76,7 +76,7 @@ namespace KOMTSU.MyUserControl
                 txt_Truong03.ForeColor = Color.Black;
 
             }
-            Changed_Row?.Invoke(sender, e);
+            Changed?.Invoke(sender, e);
         }
 
         private void txt_Truong04_EditValueChanged(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace KOMTSU.MyUserControl
                 txt_Truong04.ForeColor = Color.Black;
 
             }
-            Changed_Row?.Invoke(sender, e);
+            Changed?.Invoke(sender, e);
         }
 
         int Hople(int ngay, int thang)
@@ -154,12 +154,12 @@ namespace KOMTSU.MyUserControl
                 txt_Truong05.BackColor = Color.White;
                 txt_Truong05.ForeColor = Color.Black;
             }
-            Changed_Row?.Invoke(sender, e);
+            Changed?.Invoke(sender, e);
         }
 
         private void txt_Truong10_EditValueChanged(object sender, EventArgs e)
         {
-            Changed_Row?.Invoke(sender, e);
+            Changed?.Invoke(sender, e);
         }
        
         private void txt_Truong11_1_EditValueChanged(object sender, EventArgs e)
@@ -189,7 +189,7 @@ namespace KOMTSU.MyUserControl
                 txt_Truong11_1.BackColor = Color.White;
                 txt_Truong11_1.ForeColor = Color.Black;
             }
-            Changed_Row?.Invoke(sender, e);
+            Changed?.Invoke(sender, e);
         }
 
         private void txt_Truong11_2_EditValueChanged(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace KOMTSU.MyUserControl
                 txt_Truong11_2.BackColor = Color.White;
                 txt_Truong11_2.ForeColor = Color.Black;
             }
-            Changed_Row?.Invoke(sender, e);
+            Changed?.Invoke(sender, e);
         }
         private void SetDataToCollection()
         {

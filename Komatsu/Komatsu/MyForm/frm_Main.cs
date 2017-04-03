@@ -323,8 +323,8 @@ namespace KOMTSU.MyForm
         }
         private void btn_checkqc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Global.StrCheck = "CHECKQC";
-            //new frm_Check_QC().ShowDialog();
+            Global.StrCheck = "CHECKDEJP";
+            new frm_Check().ShowDialog();
         }
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)

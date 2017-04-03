@@ -21,7 +21,7 @@ namespace KOMTSU.MyUserControl
             {
                 uc_DeJP_Row uc = new uc_DeJP_Row();
                 Point p = new Point();
-                uc.Changed_Row += Uc_Changed;
+                uc.Changed += Uc_Changed;
                 foreach (Control ct in Controls)
                 {
                     p = ct.Location;
@@ -62,6 +62,10 @@ namespace KOMTSU.MyUserControl
         private void Uc_Changed(object sender, EventArgs e)
         {
             UpdateStt();
+            if (sender is uc_DeJP_Row)
+            {
+                Changed?.Invoke(sender, e);
+            }
         }
 
         public void ResetData()

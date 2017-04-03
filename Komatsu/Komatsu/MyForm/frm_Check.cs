@@ -56,9 +56,10 @@ namespace KOMTSU.MyForm
                     TabControl_User1.TabPages.Add(tp_Loai2_User1);
                     TabControl_User2.TabPages.Add(tp_Loai2_User2);
                 }
-
-                btn_Luu_DeSo1.Visible = false;
-                btn_Luu_DeSo2.Visible = false;
+                TabControl_User1.TabPages.Add(tp_Loai2_User1);
+                TabControl_User2.TabPages.Add(tp_Loai2_User2);
+                btn_Luu_DeSo1.Visible = true;
+                btn_Luu_DeSo2.Visible = true;
                 btn_SuaVaLuu_User1.Visible = false;
                 btn_SuaVaLuu_User2.Visible = false;
 
