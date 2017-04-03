@@ -3,6 +3,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using Komatsu.MyForm;
 using Komatsu.Properties;
 
 
@@ -268,7 +269,7 @@ namespace KOMTSU.MyForm
 
         private void btn_qyanlybatch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //new frm_ManagerBatch().ShowDialog();
+            new frm_ManagerBatch().ShowDialog();
         }
 
         private void btn_Zoomimage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
