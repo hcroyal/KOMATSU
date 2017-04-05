@@ -29,7 +29,35 @@ namespace KOMTSU.MyUserControl
                     p.Y += ct.Size.Height;
                 }
                 uc.Location = p;
+                uc.Tag = i + 1;
                 Controls.Add(uc);
+            }
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Down && Global.Flag)
+            {
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                return true;
+            }
+            if (keyData == Keys.Up && Global.Flag)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
             }
         }
 
@@ -92,28 +120,33 @@ namespace KOMTSU.MyUserControl
             return empty;
         }
 
-        public void SaveData_Loai2(string idImage, string truong06, string truong08)
+        public void SaveData_Loai2(string idImage)
         {
             foreach (uc_DeJP_Row item in Controls)
             {
                 if (!item.IsEmpty())
                 {
-                    string truong11 ;
-                    if (!string.IsNullOrEmpty(item.txt_Truong11_2.Text))
-                    {
-                        var temp = truong06;
-                        truong06 = truong08;
-                        truong08 = temp;
-                        truong11 = item.txt_Truong11_2.Text;
-                    }
-                    else
-                    {
-                        truong11 = item.txt_Truong11_1.Text;
-                    }
-                    Global.db.Insert_Loai2(idImage, Global.StrBatch, Global.StrUsername, item.txt_Truong03.Text,
-                        item.txt_Truong04.Text, item.txt_Truong05.Text, truong06, truong08, item.txt_Truong10.Text,
-                        truong11,
-                        Global.LoaiPhieu, item.lb_stt.Text);
+                    item.Save_Data(idImage,Global.Truong06,Global.Truong08);
+                }
+            }
+        }
+
+        public void SuaVaLuu(int RowNumber,string usersaiit, string usersainhieu, string idimage )
+        {
+            string rownumber = "";
+            foreach (uc_DeJP_Row item in Controls)
+            {
+                if (string.IsNullOrEmpty(item.lb_stt.Text))
+                    break;
+                rownumber = item.lb_stt.Text;
+                item.SuaVaLuu(usersaiit,usersainhieu,idimage, Global.Truong06, Global.Truong08);
+            }
+            int irowrumber = Convert.ToInt32(rownumber);
+            if (irowrumber<RowNumber)
+            {
+                for (int i = irowrumber; i < RowNumber; i++)
+                {
+                    Global.db.DelecteRow(idimage, Global.StrBatch, i + 1);
                 }
             }
         }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using Komatsu;
-using KOMTSU;
 
 namespace KOMTSU
 {
@@ -25,5 +25,9 @@ namespace KOMTSU
         public static string LoaiPhieu = "";
         public static string StrIdProject = "KOMTSU";
         public static int FreeTime = 0;
+        public static AutoCompleteStringCollection auto1;
+        public static string Truong06 = "";
+        public static string Truong08 = "";
+        public static bool Flag=true;
     }
 }

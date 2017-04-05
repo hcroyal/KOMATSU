@@ -31,6 +31,10 @@ namespace KOMTSU.MyForm
         private void InitializeComponent()
         {
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_Truong08 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_Truong06 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.cbb_Batch_Check = new System.Windows.Forms.ComboBox();
             this.lb_Loi = new DevExpress.XtraEditors.LabelControl();
             this.lb_Image = new DevExpress.XtraEditors.LabelControl();
@@ -50,6 +54,14 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai12 = new KOMTSU.MyUserControl.uc_DeJP_Loai1();
             this.tp_Loai2_User2 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_DeJP_Loai22 = new KOMTSU.MyUserControl.uc_DeJP_Loai2();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lb_username2 = new System.Windows.Forms.Label();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +74,14 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai11 = new KOMTSU.MyUserControl.uc_DeJP_Loai1();
             this.tp_Loai2_User1 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_DeJP_Loai21 = new KOMTSU.MyUserControl.uc_DeJP_Loai2();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.lb_username1 = new System.Windows.Forms.Label();
@@ -70,6 +90,8 @@ namespace KOMTSU.MyForm
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -81,6 +103,8 @@ namespace KOMTSU.MyForm
             this.TabControl_User2.SuspendLayout();
             this.tp_Loai1_User2.SuspendLayout();
             this.tp_Loai2_User2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -89,11 +113,17 @@ namespace KOMTSU.MyForm
             this.TabControl_User1.SuspendLayout();
             this.tp_Loai1_User1.SuspendLayout();
             this.tp_Loai2_User1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
+            this.panelControl6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.txt_Truong08);
+            this.panelControl2.Controls.Add(this.txt_Truong06);
+            this.panelControl2.Controls.Add(this.labelControl17);
+            this.panelControl2.Controls.Add(this.labelControl18);
             this.panelControl2.Controls.Add(this.cbb_Batch_Check);
             this.panelControl2.Controls.Add(this.lb_Loi);
             this.panelControl2.Controls.Add(this.lb_Image);
@@ -105,14 +135,63 @@ namespace KOMTSU.MyForm
             this.panelControl2.Size = new System.Drawing.Size(823, 36);
             this.panelControl2.TabIndex = 29;
             // 
+            // txt_Truong08
+            // 
+            this.txt_Truong08.Location = new System.Drawing.Point(599, 7);
+            this.txt_Truong08.Name = "txt_Truong08";
+            this.txt_Truong08.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong08.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong08.Properties.ReadOnly = true;
+            this.txt_Truong08.Size = new System.Drawing.Size(82, 20);
+            this.txt_Truong08.TabIndex = 19;
+            this.txt_Truong08.Visible = false;
+            // 
+            // txt_Truong06
+            // 
+            this.txt_Truong06.Location = new System.Drawing.Point(504, 8);
+            this.txt_Truong06.Name = "txt_Truong06";
+            this.txt_Truong06.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong06.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong06.Properties.ReadOnly = true;
+            this.txt_Truong06.Size = new System.Drawing.Size(73, 20);
+            this.txt_Truong06.TabIndex = 18;
+            this.txt_Truong06.Visible = false;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseForeColor = true;
+            this.labelControl17.Location = new System.Drawing.Point(586, 12);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(10, 13);
+            this.labelControl17.TabIndex = 16;
+            this.labelControl17.Text = "8.";
+            this.labelControl17.Visible = false;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseForeColor = true;
+            this.labelControl18.Location = new System.Drawing.Point(491, 12);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(10, 13);
+            this.labelControl18.TabIndex = 17;
+            this.labelControl18.Text = "6.";
+            this.labelControl18.Visible = false;
+            // 
             // cbb_Batch_Check
             // 
             this.cbb_Batch_Check.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_Batch_Check.FormattingEnabled = true;
             this.cbb_Batch_Check.Location = new System.Drawing.Point(48, 8);
             this.cbb_Batch_Check.Name = "cbb_Batch_Check";
-            this.cbb_Batch_Check.Size = new System.Drawing.Size(215, 21);
+            this.cbb_Batch_Check.Size = new System.Drawing.Size(143, 21);
             this.cbb_Batch_Check.TabIndex = 12;
+            this.cbb_Batch_Check.SelectedIndexChanged += new System.EventHandler(this.cbb_Batch_Check_SelectedIndexChanged);
             // 
             // lb_Loi
             // 
@@ -120,7 +199,7 @@ namespace KOMTSU.MyForm
             this.lb_Loi.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lb_Loi.Appearance.Options.UseFont = true;
             this.lb_Loi.Appearance.Options.UseForeColor = true;
-            this.lb_Loi.Location = new System.Drawing.Point(493, 12);
+            this.lb_Loi.Location = new System.Drawing.Point(395, 12);
             this.lb_Loi.Name = "lb_Loi";
             this.lb_Loi.Size = new System.Drawing.Size(75, 13);
             this.lb_Loi.TabIndex = 11;
@@ -128,7 +207,7 @@ namespace KOMTSU.MyForm
             // 
             // lb_Image
             // 
-            this.lb_Image.Location = new System.Drawing.Point(345, 12);
+            this.lb_Image.Location = new System.Drawing.Point(240, 12);
             this.lb_Image.Name = "lb_Image";
             this.lb_Image.Size = new System.Drawing.Size(63, 13);
             this.lb_Image.TabIndex = 10;
@@ -136,7 +215,7 @@ namespace KOMTSU.MyForm
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(305, 12);
+            this.labelControl2.Location = new System.Drawing.Point(200, 12);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(34, 13);
             this.labelControl2.TabIndex = 9;
@@ -153,7 +232,7 @@ namespace KOMTSU.MyForm
             // btn_Start
             // 
             this.btn_Start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Start.Location = new System.Drawing.Point(424, 679);
+            this.btn_Start.Location = new System.Drawing.Point(703, 678);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(57, 25);
             this.btn_Start.TabIndex = 34;
@@ -270,6 +349,7 @@ namespace KOMTSU.MyForm
             // tp_Loai2_User2
             // 
             this.tp_Loai2_User2.Controls.Add(this.uc_DeJP_Loai22);
+            this.tp_Loai2_User2.Controls.Add(this.panelControl7);
             this.tp_Loai2_User2.Name = "tp_Loai2_User2";
             this.tp_Loai2_User2.Size = new System.Drawing.Size(414, 284);
             this.tp_Loai2_User2.Text = "Loại 2";
@@ -279,11 +359,110 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai22.AutoScroll = true;
             this.uc_DeJP_Loai22.AutoSize = true;
             this.uc_DeJP_Loai22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_DeJP_Loai22.Location = new System.Drawing.Point(0, 0);
+            this.uc_DeJP_Loai22.Location = new System.Drawing.Point(0, 18);
             this.uc_DeJP_Loai22.Name = "uc_DeJP_Loai22";
-            this.uc_DeJP_Loai22.Size = new System.Drawing.Size(414, 284);
-            this.uc_DeJP_Loai22.TabIndex = 0;
+            this.uc_DeJP_Loai22.Size = new System.Drawing.Size(414, 266);
+            this.uc_DeJP_Loai22.TabIndex = 4;
             this.uc_DeJP_Loai22.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai22_Scroll);
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Controls.Add(this.labelControl3);
+            this.panelControl7.Controls.Add(this.labelControl4);
+            this.panelControl7.Controls.Add(this.labelControl5);
+            this.panelControl7.Controls.Add(this.labelControl6);
+            this.panelControl7.Controls.Add(this.labelControl7);
+            this.panelControl7.Controls.Add(this.labelControl9);
+            this.panelControl7.Controls.Add(this.labelControl16);
+            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl7.Location = new System.Drawing.Point(0, 0);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(414, 18);
+            this.panelControl7.TabIndex = 3;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(346, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(24, 13);
+            this.labelControl3.TabIndex = 13;
+            this.labelControl3.Text = "11.B";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(287, 2);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(26, 13);
+            this.labelControl4.TabIndex = 13;
+            this.labelControl4.Text = "11.A";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(168, 2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(14, 13);
+            this.labelControl5.TabIndex = 13;
+            this.labelControl5.Text = "10";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(95, 2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(7, 13);
+            this.labelControl6.TabIndex = 13;
+            this.labelControl6.Text = "5";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
+            this.labelControl7.Location = new System.Drawing.Point(67, 2);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(7, 13);
+            this.labelControl7.TabIndex = 13;
+            this.labelControl7.Text = "4";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Location = new System.Drawing.Point(5, 2);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(21, 13);
+            this.labelControl9.TabIndex = 13;
+            this.labelControl9.Text = "STT";
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Appearance.Options.UseForeColor = true;
+            this.labelControl16.Location = new System.Drawing.Point(38, 2);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(7, 13);
+            this.labelControl16.TabIndex = 13;
+            this.labelControl16.Text = "3";
             // 
             // panel4
             // 
@@ -389,6 +568,7 @@ namespace KOMTSU.MyForm
             // tp_Loai2_User1
             // 
             this.tp_Loai2_User1.Controls.Add(this.uc_DeJP_Loai21);
+            this.tp_Loai2_User1.Controls.Add(this.panelControl6);
             this.tp_Loai2_User1.Name = "tp_Loai2_User1";
             this.tp_Loai2_User1.Size = new System.Drawing.Size(418, 288);
             this.tp_Loai2_User1.Text = "Loại 2";
@@ -398,11 +578,110 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai21.AutoScroll = true;
             this.uc_DeJP_Loai21.AutoSize = true;
             this.uc_DeJP_Loai21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_DeJP_Loai21.Location = new System.Drawing.Point(0, 0);
+            this.uc_DeJP_Loai21.Location = new System.Drawing.Point(0, 18);
             this.uc_DeJP_Loai21.Name = "uc_DeJP_Loai21";
-            this.uc_DeJP_Loai21.Size = new System.Drawing.Size(418, 288);
-            this.uc_DeJP_Loai21.TabIndex = 0;
+            this.uc_DeJP_Loai21.Size = new System.Drawing.Size(418, 270);
+            this.uc_DeJP_Loai21.TabIndex = 3;
             this.uc_DeJP_Loai21.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai21_Scroll);
+            // 
+            // panelControl6
+            // 
+            this.panelControl6.Controls.Add(this.labelControl14);
+            this.panelControl6.Controls.Add(this.labelControl13);
+            this.panelControl6.Controls.Add(this.labelControl12);
+            this.panelControl6.Controls.Add(this.labelControl11);
+            this.panelControl6.Controls.Add(this.labelControl10);
+            this.panelControl6.Controls.Add(this.labelControl15);
+            this.panelControl6.Controls.Add(this.labelControl8);
+            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl6.Location = new System.Drawing.Point(0, 0);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(418, 18);
+            this.panelControl6.TabIndex = 2;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseForeColor = true;
+            this.labelControl14.Location = new System.Drawing.Point(346, 2);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(24, 13);
+            this.labelControl14.TabIndex = 13;
+            this.labelControl14.Text = "11.B";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Location = new System.Drawing.Point(287, 2);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(26, 13);
+            this.labelControl13.TabIndex = 13;
+            this.labelControl13.Text = "11.A";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseForeColor = true;
+            this.labelControl12.Location = new System.Drawing.Point(168, 2);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(14, 13);
+            this.labelControl12.TabIndex = 13;
+            this.labelControl12.Text = "10";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseForeColor = true;
+            this.labelControl11.Location = new System.Drawing.Point(95, 2);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(7, 13);
+            this.labelControl11.TabIndex = 13;
+            this.labelControl11.Text = "5";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Location = new System.Drawing.Point(67, 2);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(7, 13);
+            this.labelControl10.TabIndex = 13;
+            this.labelControl10.Text = "4";
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
+            this.labelControl15.Location = new System.Drawing.Point(5, 2);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(21, 13);
+            this.labelControl15.TabIndex = 13;
+            this.labelControl15.Text = "STT";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(38, 2);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(7, 13);
+            this.labelControl8.TabIndex = 13;
+            this.labelControl8.Text = "3";
             // 
             // panel2
             // 
@@ -484,6 +763,8 @@ namespace KOMTSU.MyForm
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -497,6 +778,9 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User2.PerformLayout();
             this.tp_Loai2_User2.ResumeLayout(false);
             this.tp_Loai2_User2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            this.panelControl7.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -508,6 +792,9 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User1.PerformLayout();
             this.tp_Loai2_User1.ResumeLayout(false);
             this.tp_Loai2_User1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            this.panelControl6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -550,9 +837,29 @@ namespace KOMTSU.MyForm
         private DevExpress.XtraTab.XtraTabPage tp_Loai1_User2;
         private DevExpress.XtraTab.XtraTabPage tp_Loai2_User2;
         private uc_DeJP_Loai1 uc_DeJP_Loai12;
-        private uc_DeJP_Loai2 uc_DeJP_Loai22;
         private uc_DeJP_Loai1 uc_DeJP_Loai11;
-        private uc_DeJP_Loai2 uc_DeJP_Loai21;
         private System.Windows.Forms.ComboBox cbb_Batch_Check;
+        private uc_DeJP_Loai2 uc_DeJP_Loai22;
+        private DevExpress.XtraEditors.PanelControl panelControl7;
+        public DevExpress.XtraEditors.LabelControl labelControl3;
+        public DevExpress.XtraEditors.LabelControl labelControl4;
+        public DevExpress.XtraEditors.LabelControl labelControl5;
+        public DevExpress.XtraEditors.LabelControl labelControl6;
+        public DevExpress.XtraEditors.LabelControl labelControl7;
+        public DevExpress.XtraEditors.LabelControl labelControl9;
+        public DevExpress.XtraEditors.LabelControl labelControl16;
+        private uc_DeJP_Loai2 uc_DeJP_Loai21;
+        private DevExpress.XtraEditors.PanelControl panelControl6;
+        public DevExpress.XtraEditors.LabelControl labelControl14;
+        public DevExpress.XtraEditors.LabelControl labelControl13;
+        public DevExpress.XtraEditors.LabelControl labelControl12;
+        public DevExpress.XtraEditors.LabelControl labelControl11;
+        public DevExpress.XtraEditors.LabelControl labelControl10;
+        public DevExpress.XtraEditors.LabelControl labelControl15;
+        public DevExpress.XtraEditors.LabelControl labelControl8;
+        public DevExpress.XtraEditors.TextEdit txt_Truong08;
+        public DevExpress.XtraEditors.TextEdit txt_Truong06;
+        public DevExpress.XtraEditors.LabelControl labelControl17;
+        public DevExpress.XtraEditors.LabelControl labelControl18;
     }
 }

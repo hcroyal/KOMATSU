@@ -212,7 +212,7 @@ namespace KOMTSU.MyForm
                     fdatecreated = DateTime.Now,
                     fPathPicture = txt_ImagePath.Text,
                     fSoLuongAnh = filePaths.Length.ToString(),
-                    LoaiBatch = rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Description,
+                    LoaiBatch = rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString(),
                     TruongSo06 = txt_TruongSo06.Text,
                     TruongSo08 = txt_TruongSo08.Text,
                     CoDeSo = ck_CoDeso.Checked

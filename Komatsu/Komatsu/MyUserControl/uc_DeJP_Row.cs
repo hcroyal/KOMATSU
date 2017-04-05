@@ -29,8 +29,6 @@ namespace KOMTSU.MyUserControl
             txt_Truong03.BackColor = Color.White;
             txt_Truong04.BackColor = Color.White;
             txt_Truong05.BackColor = Color.White;
-            //txt_Truong06.BackColor = Color.White;
-            //txt_Truong08.BackColor = Color.White;
             txt_Truong10.BackColor = Color.White;
             txt_Truong11_1.BackColor = Color.White;
             txt_Truong11_2.BackColor = Color.White;
@@ -38,22 +36,15 @@ namespace KOMTSU.MyUserControl
             txt_Truong03.ForeColor = Color.Black;
             txt_Truong04.ForeColor = Color.Black;
             txt_Truong05.ForeColor = Color.Black;
-            //txt_Truong06.ForeColor = Color.Black;
-            //txt_Truong08.ForeColor = Color.Black;
             txt_Truong10.ForeColor = Color.Black;
             txt_Truong11_1.ForeColor = Color.Black;
             txt_Truong11_2.ForeColor = Color.Black;
-
-            txt_Truong03.Focus();
         }
 
         public bool IsEmpty()
         {
-            if (//string.IsNullOrEmpty(txt_Truong03.Text) &&
-                string.IsNullOrEmpty(txt_Truong04.Text) &&
+            if (string.IsNullOrEmpty(txt_Truong04.Text) &&
                 string.IsNullOrEmpty(txt_Truong05.Text) &&
-                //string.IsNullOrEmpty(txt_Truong06.Text) &&
-                //string.IsNullOrEmpty(txt_Truong08.Text) &&
                 string.IsNullOrEmpty(txt_Truong10.Text) &&
                 string.IsNullOrEmpty(txt_Truong11_1.Text) &&
                 string.IsNullOrEmpty(txt_Truong11_2.Text))
@@ -156,10 +147,20 @@ namespace KOMTSU.MyUserControl
             }
             Changed?.Invoke(sender, e);
         }
+        private void Txt_TruongSo10_Leave(object sender, EventArgs e)
+        {
+            Global.Flag = true;
+        }
+
+        private void Txt_TruongSo10_GotFocus(object sender, EventArgs e)
+        {
+            Global.Flag = false;
+        }
 
         private void txt_Truong10_EditValueChanged(object sender, EventArgs e)
         {
             Changed?.Invoke(sender, e);
+
         }
        
         private void txt_Truong11_1_EditValueChanged(object sender, EventArgs e)
@@ -222,17 +223,9 @@ namespace KOMTSU.MyUserControl
         }
         private void SetDataToCollection()
         {
-            AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
             txt_Truong10.MaskBox.AutoCompleteMode = AutoCompleteMode.Suggest;
             txt_Truong10.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            var arrayName = (from w in Global.db.tbl_DataAutoCompletes select w.DataAutoComplete).ToList();
-
-            foreach (string name in arrayName)
-            {
-                auto1.Add(name);
-            }
-            txt_Truong10.MaskBox.AutoCompleteCustomSource = auto1;
-
+            txt_Truong10.MaskBox.AutoCompleteCustomSource = Global.auto1;
         }
 
         private void uc_DeJP_Row_Load(object sender, EventArgs e)
@@ -242,16 +235,47 @@ namespace KOMTSU.MyUserControl
             txt_Truong03.GotFocus += Txt_Truong03_GotFocus;
             txt_Truong04.GotFocus += Txt_Truong03_GotFocus;
             txt_Truong05.GotFocus += Txt_Truong03_GotFocus;
-            //txt_Truong06.GotFocus += Txt_Truong03_GotFocus;
-            //txt_Truong08.GotFocus += Txt_Truong03_GotFocus;
             txt_Truong10.GotFocus += Txt_Truong03_GotFocus;
             txt_Truong11_1.GotFocus += Txt_Truong03_GotFocus;
             txt_Truong11_2.GotFocus += Txt_Truong03_GotFocus;
+            txt_Truong10.GotFocus += Txt_TruongSo10_GotFocus;
+            txt_Truong10.Leave += Txt_TruongSo10_Leave;
+
         }
 
         private void Txt_Truong03_GotFocus(object sender, EventArgs e)
         {
             ((TextEdit) sender).SelectAll();
+        }
+
+        public void Save_Data(string idimage, string truong06, string truong08)
+        {
+            if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+            {
+                var temp = truong06;
+                truong06 = truong08;
+                truong08 = temp;
+            }
+            Global.db.Insert_Loai2(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
+                        txt_Truong04.Text, txt_Truong05.Text, truong06, truong08, txt_Truong10.Text,
+                        txt_Truong11_1.Text, txt_Truong11_2.Text,
+                        Global.LoaiPhieu, lb_stt.Text);
+        }
+        public void SuaVaLuu(string usersaiit,string usersainhieu,string idimage, string truong06, string truong08)
+        {
+            if (!IsEmpty())
+            {
+                if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+                {
+                    var temp = truong06;
+                    truong06 = truong08;
+                    truong08 = temp;
+                }
+                Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+                    txt_Truong03.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, truong06, "", truong08, "", txt_Truong10.Text,
+                    txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(), "Loai2");
+            }
         }
     }
 }

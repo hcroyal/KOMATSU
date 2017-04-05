@@ -383,8 +383,8 @@
             this.rb_LoaiBatch.Name = "rb_LoaiBatch";
             this.rb_LoaiBatch.Properties.Columns = 2;
             this.rb_LoaiBatch.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Loại 1"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("2", "Loại 2")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai1", "Loại 1"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai2", "Loại 2")});
             this.rb_LoaiBatch.Size = new System.Drawing.Size(202, 28);
             this.rb_LoaiBatch.TabIndex = 48;
             // 

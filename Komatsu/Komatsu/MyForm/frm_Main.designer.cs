@@ -52,7 +52,6 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.lb_SoHinhLamDuoc = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoHinhConLai = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -307,7 +306,6 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.button1);
             this.panelControl1.Controls.Add(this.lb_SoHinhLamDuoc);
             this.panelControl1.Controls.Add(this.lb_SoHinhConLai);
             this.panelControl1.Controls.Add(this.labelControl6);
@@ -326,25 +324,15 @@
             this.panelControl1.Size = new System.Drawing.Size(1310, 33);
             this.panelControl1.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(561, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lb_SoHinhLamDuoc
             // 
             this.lb_SoHinhLamDuoc.Appearance.ForeColor = System.Drawing.Color.DarkGreen;
             this.lb_SoHinhLamDuoc.Appearance.Options.UseForeColor = true;
             this.lb_SoHinhLamDuoc.Location = new System.Drawing.Point(516, 10);
             this.lb_SoHinhLamDuoc.Name = "lb_SoHinhLamDuoc";
-            this.lb_SoHinhLamDuoc.Size = new System.Drawing.Size(24, 13);
+            this.lb_SoHinhLamDuoc.Size = new System.Drawing.Size(6, 13);
             this.lb_SoHinhLamDuoc.TabIndex = 1;
-            this.lb_SoHinhLamDuoc.Text = "1000";
+            this.lb_SoHinhLamDuoc.Text = "0";
             // 
             // lb_SoHinhConLai
             // 
@@ -352,9 +340,9 @@
             this.lb_SoHinhConLai.Appearance.Options.UseForeColor = true;
             this.lb_SoHinhConLai.Location = new System.Drawing.Point(396, 10);
             this.lb_SoHinhConLai.Name = "lb_SoHinhConLai";
-            this.lb_SoHinhConLai.Size = new System.Drawing.Size(24, 13);
+            this.lb_SoHinhConLai.Size = new System.Drawing.Size(6, 13);
             this.lb_SoHinhConLai.TabIndex = 2;
-            this.lb_SoHinhConLai.Text = "1000";
+            this.lb_SoHinhConLai.Text = "0";
             // 
             // labelControl6
             // 
@@ -370,9 +358,9 @@
             this.lb_TongSoHinh.Appearance.Options.UseForeColor = true;
             this.lb_TongSoHinh.Location = new System.Drawing.Point(276, 10);
             this.lb_TongSoHinh.Name = "lb_TongSoHinh";
-            this.lb_TongSoHinh.Size = new System.Drawing.Size(24, 13);
+            this.lb_TongSoHinh.Size = new System.Drawing.Size(6, 13);
             this.lb_TongSoHinh.TabIndex = 4;
-            this.lb_TongSoHinh.Text = "1000";
+            this.lb_TongSoHinh.Text = "0";
             // 
             // labelControl4
             // 
@@ -525,17 +513,23 @@
             // 
             // txt_Truong08
             // 
-            this.txt_Truong08.Enabled = false;
             this.txt_Truong08.Location = new System.Drawing.Point(230, 4);
             this.txt_Truong08.Name = "txt_Truong08";
+            this.txt_Truong08.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong08.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong08.Properties.ReadOnly = true;
+            this.txt_Truong08.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Truong08.Size = new System.Drawing.Size(113, 20);
             this.txt_Truong08.TabIndex = 15;
             // 
             // txt_Truong06
             // 
-            this.txt_Truong06.Enabled = false;
             this.txt_Truong06.Location = new System.Drawing.Point(104, 4);
             this.txt_Truong06.Name = "txt_Truong06";
+            this.txt_Truong06.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong06.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong06.Properties.ReadOnly = true;
+            this.txt_Truong06.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Truong06.Size = new System.Drawing.Size(104, 20);
             this.txt_Truong06.TabIndex = 14;
             // 
@@ -799,7 +793,6 @@
         public DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraTab.XtraTabPage tp_Loai1_JP_Main;
         private MyUserControl.uc_DeJP_Loai1 uc_DeJP_Loai11;
-        private System.Windows.Forms.Button button1;
     }
 }
 

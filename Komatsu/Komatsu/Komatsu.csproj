@@ -157,6 +157,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="DataKomtsu.dbml.layout">
+      <DependentUpon>DataKomtsu.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,9 +220,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataKomtsu.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="DataKomtsu.dbml.layout">
-      <DependentUpon>DataKomtsu.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

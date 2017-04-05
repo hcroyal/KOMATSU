@@ -191,11 +191,60 @@ namespace Komatsu
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CheckRowNumber")]
+		public int CheckRowNumber([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DelecteRow")]
+		public int DelecteRow([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPhieu", DbType="Int")] System.Nullable<int> idPhieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, idPhieu);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteDataAutoComplete")]
 		public int DeleteDataAutoComplete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
+		public ISingleResult<GetBatchResult> GetBatch()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishCheckerDeJP")]
+		public ISingleResult<GetBatNotFinishCheckerDeJPResult> GetBatNotFinishCheckerDeJP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			return ((ISingleResult<GetBatNotFinishCheckerDeJPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishDeJP")]
+		public ISingleResult<GetBatNotFinishDeJPResult> GetBatNotFinishDeJP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(200)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			return ((ISingleResult<GetBatNotFinishDeJPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetSoLoi_CheckDeJP")]
+		public ISingleResult<GetSoLoi_CheckDeJPResult> GetSoLoi_CheckDeJP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fBatchName);
+			return ((ISingleResult<GetSoLoi_CheckDeJPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ImageCheck_DeJP")]
+		public ISingleResult<ImageCheck_DeJPResult> ImageCheck_DeJP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(250)")] string userName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fBatchName, userName);
+			return ((ISingleResult<ImageCheck_DeJPResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_Loai1")]
@@ -206,9 +255,9 @@ namespace Komatsu
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_Loai2")]
-		public int Insert_Loai2([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_04", DbType="NVarChar(255)")] string truong_04, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_10", DbType="NVarChar(255)")] string truong_10, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_11", DbType="NVarChar(255)")] string truong_11, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiPhieu", DbType="NVarChar(255)")] string loaiPhieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPhieu", DbType="NVarChar(255)")] string idPhieu)
+		public int Insert_Loai2([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_04", DbType="NVarChar(255)")] string truong_04, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_10", DbType="NVarChar(255)")] string truong_10, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_11", DbType="NVarChar(255)")] string truong_11, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_11B", DbType="NVarChar(255)")] string truong_11B, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiPhieu", DbType="NVarChar(255)")] string loaiPhieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPhieu", DbType="NVarChar(255)")] string idPhieu)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_03, truong_04, truong_05, truong_06, truong_08, truong_10, truong_11, loaiPhieu, idPhieu);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_03, truong_04, truong_05, truong_06, truong_08, truong_10, truong_11, truong_11B, loaiPhieu, idPhieu);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -226,6 +275,38 @@ namespace Komatsu
 			return ((ISingleResult<LayHinhMoi_DeJPResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LuuDEJP")]
+		public int LuuDEJP([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameDung", DbType="NVarChar(255)")] string userNameDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameSai", DbType="NVarChar(255)")] string userNameSai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserChecker", DbType="NVarChar(255)")] string userChecker)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userNameDung, userNameSai, userChecker);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaVaLuu_DEJP")]
+		public int SuaVaLuu_DEJP(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserSaiIt", DbType="NVarChar(255)")] string userSaiIt, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserSaiNhieu", DbType="NVarChar(255)")] string userSaiNhieu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserCheck", DbType="NVarChar(255)")] string userCheck, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_04", DbType="NVarChar(255)")] string truong_04, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_07", DbType="NVarChar(255)")] string truong_07, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_09", DbType="NVarChar(255)")] string truong_09, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_10", DbType="NVarChar(255)")] string truong_10, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_11", DbType="NVarChar(255)")] string truong_11, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_11B", DbType="NVarChar(255)")] string truong_11B, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_12", DbType="NVarChar(255)")] string truong_12, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPhieu", DbType="NVarChar(255)")] string idPhieu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiPhieu", DbType="NVarChar(255)")] string loaiPhieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_11B, truong_12, idPhieu, loaiPhieu);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateDataAutoComplete")]
 		public int UpdateDataAutoComplete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(500)")] string data)
 		{
@@ -238,34 +319,6 @@ namespace Komatsu
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
-		public ISingleResult<GetBatchResult> GetBatch()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishDeSo")]
-		public ISingleResult<GetBatNotFinishDeSoResult> GetBatNotFinishDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(200)")] string username)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
-			return ((ISingleResult<GetBatNotFinishDeSoResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishCheckerDeSo")]
-		public ISingleResult<GetBatNotFinishCheckerDeSoResult> GetBatNotFinishCheckerDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
-			return ((ISingleResult<GetBatNotFinishCheckerDeSoResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetSoLoi_CheckDeSo")]
-		public ISingleResult<GetSoLoi_CheckDeSoResult> GetSoLoi_CheckDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fBatchName);
-			return ((ISingleResult<GetSoLoi_CheckDeSoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -810,11 +863,13 @@ namespace Komatsu
 		
 		private string _Truong_11;
 		
+		private string _Truong_11B;
+		
 		private string _Truong_12;
 		
 		private string _LoaiPhieu;
 		
-		private System.Nullable<int> _IdPhieu;
+		private int _IdPhieu;
 		
 		private System.Nullable<int> _Dem;
 		
@@ -858,11 +913,13 @@ namespace Komatsu
     partial void OnTruong_10Changed();
     partial void OnTruong_11Changing(string value);
     partial void OnTruong_11Changed();
+    partial void OnTruong_11BChanging(string value);
+    partial void OnTruong_11BChanged();
     partial void OnTruong_12Changing(string value);
     partial void OnTruong_12Changed();
     partial void OnLoaiPhieuChanging(string value);
     partial void OnLoaiPhieuChanged();
-    partial void OnIdPhieuChanging(System.Nullable<int> value);
+    partial void OnIdPhieuChanging(int value);
     partial void OnIdPhieuChanged();
     partial void OnDemChanging(System.Nullable<int> value);
     partial void OnDemChanged();
@@ -899,7 +956,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string IdImage
 		{
 			get
@@ -919,7 +976,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -939,7 +996,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string UserName
 		{
 			get
@@ -1179,6 +1236,26 @@ namespace Komatsu
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Truong_11B", DbType="NVarChar(255)")]
+		public string Truong_11B
+		{
+			get
+			{
+				return this._Truong_11B;
+			}
+			set
+			{
+				if ((this._Truong_11B != value))
+				{
+					this.OnTruong_11BChanging(value);
+					this.SendPropertyChanging();
+					this._Truong_11B = value;
+					this.SendPropertyChanged("Truong_11B");
+					this.OnTruong_11BChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Truong_12", DbType="NVarChar(255)")]
 		public string Truong_12
 		{
@@ -1219,8 +1296,8 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int")]
-		public System.Nullable<int> IdPhieu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdPhieu
 		{
 			get
 			{
@@ -1376,11 +1453,13 @@ namespace Komatsu
 		
 		private string _Truong_11;
 		
+		private string _Truong_11B;
+		
 		private string _Truong_12;
 		
 		private string _LoaiPhieu;
 		
-		private System.Nullable<int> _IdPhieu;
+		private int _IdPhieu;
 		
 		private System.Nullable<int> _Dem;
 		
@@ -1424,11 +1503,13 @@ namespace Komatsu
     partial void OnTruong_10Changed();
     partial void OnTruong_11Changing(string value);
     partial void OnTruong_11Changed();
+    partial void OnTruong_11BChanging(string value);
+    partial void OnTruong_11BChanged();
     partial void OnTruong_12Changing(string value);
     partial void OnTruong_12Changed();
     partial void OnLoaiPhieuChanging(string value);
     partial void OnLoaiPhieuChanged();
-    partial void OnIdPhieuChanging(System.Nullable<int> value);
+    partial void OnIdPhieuChanging(int value);
     partial void OnIdPhieuChanged();
     partial void OnDemChanging(System.Nullable<int> value);
     partial void OnDemChanged();
@@ -1465,7 +1546,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string IdImage
 		{
 			get
@@ -1485,7 +1566,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -1505,7 +1586,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string UserName
 		{
 			get
@@ -1745,6 +1826,26 @@ namespace Komatsu
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Truong_11B", DbType="NVarChar(255)")]
+		public string Truong_11B
+		{
+			get
+			{
+				return this._Truong_11B;
+			}
+			set
+			{
+				if ((this._Truong_11B != value))
+				{
+					this.OnTruong_11BChanging(value);
+					this.SendPropertyChanging();
+					this._Truong_11B = value;
+					this.SendPropertyChanged("Truong_11B");
+					this.OnTruong_11BChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Truong_12", DbType="NVarChar(255)")]
 		public string Truong_12
 		{
@@ -1785,8 +1886,8 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int")]
-		public System.Nullable<int> IdPhieu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdPhieu
 		{
 			get
 			{
@@ -1946,7 +2047,7 @@ namespace Komatsu
 		
 		private string _LoaiPhieu;
 		
-		private System.Nullable<int> _IdPhieu;
+		private int _IdPhieu;
 		
 		private System.Nullable<int> _Dem;
 		
@@ -1994,7 +2095,7 @@ namespace Komatsu
     partial void OnTruong_12Changed();
     partial void OnLoaiPhieuChanging(string value);
     partial void OnLoaiPhieuChanged();
-    partial void OnIdPhieuChanging(System.Nullable<int> value);
+    partial void OnIdPhieuChanging(int value);
     partial void OnIdPhieuChanged();
     partial void OnDemChanging(System.Nullable<int> value);
     partial void OnDemChanged();
@@ -2031,7 +2132,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string IdImage
 		{
 			get
@@ -2051,7 +2152,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -2071,7 +2172,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string UserName
 		{
 			get
@@ -2351,8 +2452,8 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int")]
-		public System.Nullable<int> IdPhieu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdPhieu
 		{
 			get
 			{
@@ -2512,7 +2613,7 @@ namespace Komatsu
 		
 		private string _LoaiPhieu;
 		
-		private System.Nullable<int> _IdPhieu;
+		private int _IdPhieu;
 		
 		private System.Nullable<int> _Dem;
 		
@@ -2560,7 +2661,7 @@ namespace Komatsu
     partial void OnTruong_12Changed();
     partial void OnLoaiPhieuChanging(string value);
     partial void OnLoaiPhieuChanged();
-    partial void OnIdPhieuChanging(System.Nullable<int> value);
+    partial void OnIdPhieuChanging(int value);
     partial void OnIdPhieuChanged();
     partial void OnDemChanging(System.Nullable<int> value);
     partial void OnDemChanged();
@@ -2597,7 +2698,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string IdImage
 		{
 			get
@@ -2617,7 +2718,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string fBatchName
 		{
 			get
@@ -2637,7 +2738,7 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string UserName
 		{
 			get
@@ -2917,8 +3018,8 @@ namespace Komatsu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int")]
-		public System.Nullable<int> IdPhieu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPhieu", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdPhieu
 		{
 			get
 			{
@@ -4044,32 +4145,6 @@ namespace Komatsu
 		}
 	}
 	
-	public partial class LayHinhMoi_DeJPResult
-	{
-		
-		private string _Column1;
-		
-		public LayHinhMoi_DeJPResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
-		public string Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
 	public partial class GetBatchResult
 	{
 		
@@ -4096,38 +4171,12 @@ namespace Komatsu
 		}
 	}
 	
-	public partial class GetBatNotFinishDeSoResult
-	{
-		
-		private string _fbatchname;
-		
-		public GetBatNotFinishDeSoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string fbatchname
-		{
-			get
-			{
-				return this._fbatchname;
-			}
-			set
-			{
-				if ((this._fbatchname != value))
-				{
-					this._fbatchname = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetBatNotFinishCheckerDeSoResult
+	public partial class GetBatNotFinishCheckerDeJPResult
 	{
 		
 		private string _fBatchName;
 		
-		public GetBatNotFinishCheckerDeSoResult()
+		public GetBatNotFinishCheckerDeJPResult()
 		{
 		}
 		
@@ -4148,17 +4197,95 @@ namespace Komatsu
 		}
 	}
 	
-	public partial class GetSoLoi_CheckDeSoResult
+	public partial class GetBatNotFinishDeJPResult
+	{
+		
+		private string _fbatchname;
+		
+		public GetBatNotFinishDeJPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string fbatchname
+		{
+			get
+			{
+				return this._fbatchname;
+			}
+			set
+			{
+				if ((this._fbatchname != value))
+				{
+					this._fbatchname = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetSoLoi_CheckDeJPResult
 	{
 		
 		private System.Nullable<int> _Column1;
 		
-		public GetSoLoi_CheckDeSoResult()
+		public GetSoLoi_CheckDeJPResult()
 		{
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
 		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ImageCheck_DeJPResult
+	{
+		
+		private string _Column1;
+		
+		public ImageCheck_DeJPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayHinhMoi_DeJPResult
+	{
+		
+		private string _Column1;
+		
+		public LayHinhMoi_DeJPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
+		public string Column1
 		{
 			get
 			{

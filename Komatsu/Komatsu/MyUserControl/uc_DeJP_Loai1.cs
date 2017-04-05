@@ -23,6 +23,7 @@ namespace KOMTSU.MyUserControl
             txt_Truong05.Text = "";
             txt_Truong07.Text = "";
             txt_Truong09.Text = "";
+            txt_Truong10.Text = "";
             txt_Truong11.Text = "";
             txt_Truong12.Text = "";
 
@@ -33,6 +34,7 @@ namespace KOMTSU.MyUserControl
             txt_Truong07.BackColor = Color.White;
             txt_Truong08.BackColor = Color.White;
             txt_Truong09.BackColor = Color.White;
+            txt_Truong10.BackColor = Color.White;
             txt_Truong11.BackColor = Color.White;
             txt_Truong12.BackColor = Color.White;
 
@@ -43,6 +45,7 @@ namespace KOMTSU.MyUserControl
             txt_Truong07.ForeColor = Color.Black;
             txt_Truong08.ForeColor = Color.Black;
             txt_Truong09.ForeColor = Color.Black;
+            txt_Truong10.ForeColor = Color.Black;
             txt_Truong11.ForeColor = Color.Black;
             txt_Truong12.ForeColor = Color.Black;
             
@@ -56,6 +59,7 @@ namespace KOMTSU.MyUserControl
             string.IsNullOrEmpty(txt_Truong05.Text) &&
             string.IsNullOrEmpty(txt_Truong07.Text) &&
             string.IsNullOrEmpty(txt_Truong09.Text) &&
+            string.IsNullOrEmpty(txt_Truong10.Text) &&
             string.IsNullOrEmpty(txt_Truong11.Text) &&
             string.IsNullOrEmpty(txt_Truong12.Text))
                 return true;
@@ -166,6 +170,8 @@ namespace KOMTSU.MyUserControl
         {
             if (txt_Truong07.Text.IndexOf('?') >= 0)
                 txt_Truong07.Text = @"?";
+            txt_Truong07.BackColor = Color.White;
+            txt_Truong07.ForeColor = Color.Black;
             Changed?.Invoke(sender, e);
         }
 
@@ -175,11 +181,15 @@ namespace KOMTSU.MyUserControl
         }
         private void txt_Truong09_EditValueChanged(object sender, EventArgs e)
         {
+            txt_Truong09.BackColor = Color.White;
+            txt_Truong09.ForeColor = Color.Black;
             Changed?.Invoke(sender, e);
         }
 
         private void txt_Truong10_EditValueChanged(object sender, EventArgs e)
         {
+            txt_Truong10.BackColor = Color.White;
+            txt_Truong10.ForeColor = Color.Black;
             Changed?.Invoke(sender, e);
         }
         
@@ -211,7 +221,8 @@ namespace KOMTSU.MyUserControl
         {
             if (txt_Truong12.Text.IndexOf('?') >= 0)
                 txt_Truong12.Text = @"?";
-
+            txt_Truong12.BackColor = Color.White;
+            txt_Truong12.ForeColor = Color.Black;
             Changed?.Invoke(sender, e);
         }
         private void SetDataToCollection()
@@ -251,5 +262,11 @@ namespace KOMTSU.MyUserControl
             Global.db.Insert_Loai1(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text,Global.LoaiPhieu);
         }
 
+        public void SuaVaLuu(string usersaiit, string usersainhieu, string idimage)
+        {
+            Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+                txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
+                txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1","Loai1");
+        }
     }
 }

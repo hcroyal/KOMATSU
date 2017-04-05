@@ -23,6 +23,7 @@ namespace Komatsu.MyForm
         private void btn_TaoBatch_Click(object sender, EventArgs e)
         {
             new frm_CreateBatch().ShowDialog();
+            RefreshBatch();
         }
         private void RefreshBatch()
         {
