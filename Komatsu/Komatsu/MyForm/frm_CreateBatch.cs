@@ -39,13 +39,13 @@ namespace KOMTSU.MyForm
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[1].Value != null)//Nếu ô thứ i của cột thứ 1 (cột sau cột STT ấy) mà có dữ liệu thì gán giá trị cho cột STT, nếu không thì cột STT cũng không có dữ liệu lun
-                {
-                    dataGridView1.Rows[i].Cells[0].Value = i + 1;
-                }
-            }
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    if (dataGridView1.Rows[i].Cells[1].Value != null)//Nếu ô thứ i của cột thứ 1 (cột sau cột STT ấy) mà có dữ liệu thì gán giá trị cho cột STT, nếu không thì cột STT cũng không có dữ liệu lun
+            //    {
+            //        dataGridView1.Rows[i].Cells[0].Value = i + 1;
+            //    }
+            //}
         }
 
         private void txt_BatchName_EditValueChanged(object sender, EventArgs e)
@@ -91,21 +91,14 @@ namespace KOMTSU.MyForm
             UploadImage();
         }
 
-        class dataPage
-        {
-            public string TruongSo06;
-            public string TruongSo08;
-            public int SoTrang;
-        }
-
-        private List<dataPage> dtPages;
+        private string[] _truongSo06, _truongSo08;
         private void ExtractImage()
         {
             int h = 1;
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                string[] TruongSo06 = new string[TongSoTrang + 1];
-                dtPages = new List<dataPage>();
+                _truongSo06 = new string[TongSoTrang + 1];
+                _truongSo08 = new string[TongSoTrang + 1];
 
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -126,18 +119,14 @@ namespace KOMTSU.MyForm
                                     string[] temp2 = temp1[i].Split('-');
                                     for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
                                     {
-                                        TruongSo06[j] = dr.Cells[0].Value.ToString();
-                                        dtPages[j].TruongSo06 = dr.Cells[0].Value.ToString();
-                                        dtPages[j].TruongSo08 = dr.Cells[1].Value.ToString();
-                                        dtPages[j].SoTrang = j;
+                                        _truongSo06[j] = dr.Cells[0].Value.ToString();
+                                        _truongSo08[j] = dr.Cells[1].Value.ToString();
                                     }
                                 }
                                 else
                                 {
-                                    TruongSo06[int.Parse(temp1[i])] = dr.Cells[0].Value.ToString();
-                                    dtPages[int.Parse(temp1[i])].TruongSo06 = dr.Cells[0].Value.ToString();
-                                    dtPages[int.Parse(temp1[i])].TruongSo08 = dr.Cells[1].Value.ToString();
-                                    dtPages[int.Parse(temp1[i])].SoTrang = int.Parse(temp1[i]);
+                                    _truongSo06[int.Parse(temp1[i])] = dr.Cells[0].Value.ToString();
+                                    _truongSo08[int.Parse(temp1[i])] = dr.Cells[1].Value.ToString();
                                 }
 
                             }
@@ -149,18 +138,14 @@ namespace KOMTSU.MyForm
                                 string[] temp2 = temp.Split('-');
                                 for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
                                 {
-                                    TruongSo06[j] = dr.Cells[0].Value.ToString();
-                                    dtPages[j].TruongSo06 = dr.Cells[0].Value.ToString();
-                                    dtPages[j].TruongSo08 = dr.Cells[1].Value.ToString();
-                                    dtPages[j].SoTrang = j;
+                                    _truongSo06[j] = dr.Cells[0].Value.ToString();
+                                    _truongSo08[j] = dr.Cells[1].Value.ToString();
                                 }
                             }
                             else
                             {
-                                TruongSo06[int.Parse(temp)] = dr.Cells[0].Value.ToString();
-                                dtPages[int.Parse(temp)].TruongSo06 = dr.Cells[0].Value.ToString();
-                                dtPages[int.Parse(temp)].TruongSo08 = dr.Cells[1].Value.ToString();
-                                dtPages[int.Parse(temp)].SoTrang = int.Parse(temp);
+                                _truongSo06[int.Parse(temp)] = dr.Cells[0].Value.ToString();
+                                _truongSo08[int.Parse(temp)] = dr.Cells[1].Value.ToString();
                             }
                         }
 
@@ -199,17 +184,29 @@ namespace KOMTSU.MyForm
 
         private void btn_BrowserFolder_Click(object sender, EventArgs e)
         {
-            string dummyFileName = "Save Here";
-
-            SaveFileDialog sf = new SaveFileDialog();
-            // Feed the dummy name to the save dialog
-            sf.FileName = dummyFileName;
-
-            if (sf.ShowDialog() == DialogResult.OK)
+            while (true)
             {
-                // Now here's our save folder
-                string savePath = Path.GetDirectoryName(sf.FileName);
-                txt_FolderSaveImage.Text = savePath;
+                string dummyFileName = "Save Here";
+
+                SaveFileDialog sf = new SaveFileDialog();
+                // Feed the dummy name to the save dialog
+                sf.FileName = dummyFileName;
+
+                if (sf.ShowDialog() == DialogResult.OK)
+                {
+                    // Now here's our save folder
+                    string savePath = Path.GetDirectoryName(sf.FileName);
+                    txt_FolderSaveImage.Text = savePath;
+                }
+                string[] filePaths = Directory.GetFiles(txt_FolderSaveImage.Text, "*.jpg");
+                if (filePaths.Length > 0)
+                {
+                    MessageBox.Show("Folder đã có File ảnh, hãy chọn folder khác!");
+                    sender = null;
+                    e = null;
+                    continue;
+                }
+                break;
             }
         }
 
@@ -280,8 +277,8 @@ namespace KOMTSU.MyForm
                         TienDoDESO = "Hình chưa nhập",
                         TienDoDEJP = "Hình chưa nhập",
                         Page = k,
-                        TruongSo06 = dtPages[k].TruongSo06,
-                        TruongSo08 = dtPages[k].TruongSo08
+                        TruongSo06 = _truongSo06[k],
+                        TruongSo08 = _truongSo08[k]
                     };
                     Global.db.tbl_Images.InsertOnSubmit(tempImage);
                     Global.db.SubmitChanges();
@@ -332,22 +329,40 @@ namespace KOMTSU.MyForm
             txt_TruongSo06.Text = "";
             txt_TruongSo08.Text = "";
 ;           lbl_Page.Text = "";
-
+            dataGridView1.Rows.Clear();
         }
 
         private void rb_LoaiBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
+                txt_TruongSo06.Text = "";
+                txt_TruongSo08.Text = "";
                 txt_TruongSo06.Enabled = false;
                 txt_TruongSo08.Enabled = false;
+
                 dataGridView1.Enabled = true;
+                dataGridView1.Visible = true;
+
+                labelControl3.Visible = false;
+                labelControl4.Visible = false;
+                txt_TruongSo06.Visible = false;
+                txt_TruongSo08.Visible = false;
             }
             else
             {
                 txt_TruongSo06.Enabled = true;
                 txt_TruongSo08.Enabled = true;
+
+                labelControl3.Visible = true;
+                labelControl4.Visible = true;
+                txt_TruongSo06.Visible = true;
+                txt_TruongSo08.Visible = true;
+
+                dataGridView1.Rows.Clear();
                 dataGridView1.Enabled = false;
+                dataGridView1.Visible = false;
+
             }
         }
     }
