@@ -274,5 +274,13 @@ namespace KOMTSU.MyForm
 ;           lbl_Page.Text = "";
 
         }
+
+        private void rb_LoaiBatch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rb_LoaiBatch.SelectedIndex == 0)
+            {
+                
+            }
+        }
     }
 }

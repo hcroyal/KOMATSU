@@ -387,6 +387,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai2", "Loại 2")});
             this.rb_LoaiBatch.Size = new System.Drawing.Size(202, 28);
             this.rb_LoaiBatch.TabIndex = 48;
+            this.rb_LoaiBatch.SelectedIndexChanged += new System.EventHandler(this.rb_LoaiBatch_SelectedIndexChanged);
             // 
             // txt_TruongSo06
             // 

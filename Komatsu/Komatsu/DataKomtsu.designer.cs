@@ -493,10 +493,6 @@ namespace Komatsu
 		
 		private string _fSoLuongAnh;
 		
-		private string _TruongSo06;
-		
-		private string _TruongSo08;
-		
 		private string _LoaiBatch;
 		
 		private System.Nullable<bool> _CoDeSo;
@@ -519,10 +515,6 @@ namespace Komatsu
     partial void OnfLocationChanged();
     partial void OnfSoLuongAnhChanging(string value);
     partial void OnfSoLuongAnhChanged();
-    partial void OnTruongSo06Changing(string value);
-    partial void OnTruongSo06Changed();
-    partial void OnTruongSo08Changing(string value);
-    partial void OnTruongSo08Changed();
     partial void OnLoaiBatchChanging(string value);
     partial void OnLoaiBatchChanged();
     partial void OnCoDeSoChanging(System.Nullable<bool> value);
@@ -670,46 +662,6 @@ namespace Komatsu
 					this._fSoLuongAnh = value;
 					this.SendPropertyChanged("fSoLuongAnh");
 					this.OnfSoLuongAnhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo06", DbType="NVarChar(200)")]
-		public string TruongSo06
-		{
-			get
-			{
-				return this._TruongSo06;
-			}
-			set
-			{
-				if ((this._TruongSo06 != value))
-				{
-					this.OnTruongSo06Changing(value);
-					this.SendPropertyChanging();
-					this._TruongSo06 = value;
-					this.SendPropertyChanged("TruongSo06");
-					this.OnTruongSo06Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo08", DbType="NVarChar(200)")]
-		public string TruongSo08
-		{
-			get
-			{
-				return this._TruongSo08;
-			}
-			set
-			{
-				if ((this._TruongSo08 != value))
-				{
-					this.OnTruongSo08Changing(value);
-					this.SendPropertyChanging();
-					this._TruongSo08 = value;
-					this.SendPropertyChanged("TruongSo08");
-					this.OnTruongSo08Changed();
 				}
 			}
 		}
@@ -3370,6 +3322,10 @@ namespace Komatsu
 		
 		private System.Nullable<int> _Page;
 		
+		private string _TruongSo06;
+		
+		private string _TruongSo08;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3400,6 +3356,10 @@ namespace Komatsu
     partial void OnNienHieuChanged();
     partial void OnPageChanging(System.Nullable<int> value);
     partial void OnPageChanged();
+    partial void OnTruongSo06Changing(string value);
+    partial void OnTruongSo06Changed();
+    partial void OnTruongSo08Changing(string value);
+    partial void OnTruongSo08Changed();
     #endregion
 		
 		public tbl_Image()
@@ -3663,6 +3623,46 @@ namespace Komatsu
 					this._Page = value;
 					this.SendPropertyChanged("Page");
 					this.OnPageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo06", DbType="NVarChar(255)")]
+		public string TruongSo06
+		{
+			get
+			{
+				return this._TruongSo06;
+			}
+			set
+			{
+				if ((this._TruongSo06 != value))
+				{
+					this.OnTruongSo06Changing(value);
+					this.SendPropertyChanging();
+					this._TruongSo06 = value;
+					this.SendPropertyChanged("TruongSo06");
+					this.OnTruongSo06Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo08", DbType="NVarChar(255)")]
+		public string TruongSo08
+		{
+			get
+			{
+				return this._TruongSo08;
+			}
+			set
+			{
+				if ((this._TruongSo08 != value))
+				{
+					this.OnTruongSo08Changing(value);
+					this.SendPropertyChanging();
+					this._TruongSo08 = value;
+					this.SendPropertyChanged("TruongSo08");
+					this.OnTruongSo08Changed();
 				}
 			}
 		}
