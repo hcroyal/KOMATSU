@@ -65,14 +65,14 @@
             this.txt_TruongSo08 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txt_FolderSaveImage = new DevExpress.XtraEditors.TextEdit();
             this.btn_BrowserFolder = new DevExpress.XtraEditors.SimpleButton();
             this.lbl_Page = new DevExpress.XtraEditors.LabelControl();
             this.ck_CoDeso = new DevExpress.XtraEditors.CheckEdit();
+            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -270,7 +270,7 @@
             this.progressBarControl1.Location = new System.Drawing.Point(0, 523);
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Properties.Step = 1;
-            this.progressBarControl1.Size = new System.Drawing.Size(748, 40);
+            this.progressBarControl1.Size = new System.Drawing.Size(835, 40);
             this.progressBarControl1.TabIndex = 36;
             // 
             // btn_CreateBatch
@@ -284,7 +284,7 @@
             // 
             // btn_BrowserPDF
             // 
-            this.btn_BrowserPDF.Location = new System.Drawing.Point(651, 85);
+            this.btn_BrowserPDF.Location = new System.Drawing.Point(747, 87);
             this.btn_BrowserPDF.Name = "btn_BrowserPDF";
             this.btn_BrowserPDF.Size = new System.Drawing.Size(85, 23);
             this.btn_BrowserPDF.TabIndex = 33;
@@ -296,7 +296,7 @@
             this.txt_ImagePath.Location = new System.Drawing.Point(137, 89);
             this.txt_ImagePath.Name = "txt_ImagePath";
             this.txt_ImagePath.Properties.ReadOnly = true;
-            this.txt_ImagePath.Size = new System.Drawing.Size(508, 20);
+            this.txt_ImagePath.Size = new System.Drawing.Size(605, 20);
             this.txt_ImagePath.TabIndex = 31;
             this.txt_ImagePath.EditValueChanged += new System.EventHandler(this.txt_ImagePath_EditValueChanged);
             // 
@@ -320,7 +320,7 @@
             // 
             this.txt_BatchName.Location = new System.Drawing.Point(137, 59);
             this.txt_BatchName.Name = "txt_BatchName";
-            this.txt_BatchName.Size = new System.Drawing.Size(508, 20);
+            this.txt_BatchName.Size = new System.Drawing.Size(605, 20);
             this.txt_BatchName.TabIndex = 0;
             this.txt_BatchName.EditValueChanged += new System.EventHandler(this.txt_BatchName_EditValueChanged);
             // 
@@ -425,36 +425,14 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.Data,
+            this.TruongSo06,
+            this.TruongSo08,
             this.Page});
             this.dataGridView1.Location = new System.Drawing.Point(345, 149);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(391, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(487, 295);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 30;
-            // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Dữ liệu";
-            this.Data.Name = "Data";
-            this.Data.Width = 165;
-            // 
-            // Page
-            // 
-            this.Page.DataPropertyName = "Page";
-            this.Page.HeaderText = "Trang";
-            this.Page.Name = "Page";
-            this.Page.Width = 150;
             // 
             // labelControl16
             // 
@@ -469,12 +447,12 @@
             this.txt_FolderSaveImage.Location = new System.Drawing.Point(137, 118);
             this.txt_FolderSaveImage.Name = "txt_FolderSaveImage";
             this.txt_FolderSaveImage.Properties.ReadOnly = true;
-            this.txt_FolderSaveImage.Size = new System.Drawing.Size(508, 20);
+            this.txt_FolderSaveImage.Size = new System.Drawing.Size(605, 20);
             this.txt_FolderSaveImage.TabIndex = 31;
             // 
             // btn_BrowserFolder
             // 
-            this.btn_BrowserFolder.Location = new System.Drawing.Point(651, 114);
+            this.btn_BrowserFolder.Location = new System.Drawing.Point(747, 116);
             this.btn_BrowserFolder.Name = "btn_BrowserFolder";
             this.btn_BrowserFolder.Size = new System.Drawing.Size(85, 23);
             this.btn_BrowserFolder.TabIndex = 33;
@@ -494,17 +472,38 @@
             // 
             // ck_CoDeso
             // 
-            this.ck_CoDeso.Location = new System.Drawing.Point(652, 60);
+            this.ck_CoDeso.Location = new System.Drawing.Point(748, 62);
             this.ck_CoDeso.Name = "ck_CoDeso";
             this.ck_CoDeso.Properties.Caption = "Có DESo";
             this.ck_CoDeso.Size = new System.Drawing.Size(75, 19);
             this.ck_CoDeso.TabIndex = 52;
             // 
+            // TruongSo06
+            // 
+            this.TruongSo06.DataPropertyName = "TruongSo06";
+            this.TruongSo06.HeaderText = "Trường số 6";
+            this.TruongSo06.Name = "TruongSo06";
+            this.TruongSo06.ReadOnly = true;
+            this.TruongSo06.Width = 170;
+            // 
+            // TruongSo08
+            // 
+            this.TruongSo08.DataPropertyName = "TruongSo08";
+            this.TruongSo08.HeaderText = "Trường số 8";
+            this.TruongSo08.Name = "TruongSo08";
+            this.TruongSo08.Width = 170;
+            // 
+            // Page
+            // 
+            this.Page.DataPropertyName = "Page";
+            this.Page.HeaderText = "Trang";
+            this.Page.Name = "Page";
+            // 
             // frm_CreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 563);
+            this.ClientSize = new System.Drawing.Size(835, 563);
             this.Controls.Add(this.ck_CoDeso);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_TruongSo08);
@@ -616,10 +615,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.TextEdit txt_FolderSaveImage;
         private DevExpress.XtraEditors.SimpleButton btn_BrowserFolder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Page;
         private DevExpress.XtraEditors.LabelControl lbl_Page;
         private DevExpress.XtraEditors.CheckEdit ck_CoDeso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TruongSo06;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TruongSo08;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Page;
     }
 }
