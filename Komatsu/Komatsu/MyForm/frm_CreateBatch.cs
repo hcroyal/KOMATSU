@@ -45,7 +45,8 @@ namespace KOMTSU.MyForm
                 {
                     dataGridView1.Rows[i].Cells[0].Value = i + 1;
                 }
-            }}
+            }
+        }
 
         private void txt_BatchName_EditValueChanged(object sender, EventArgs e)
         {
@@ -89,58 +90,83 @@ namespace KOMTSU.MyForm
             //backgroundWorker1.RunWorkerAsync();
             UploadImage();
         }
-        
+
+        class dataPage
+        {
+            public string TruongSo06;
+            public string TruongSo08;
+            public int SoTrang;
+        }
+
+        private List<dataPage> dtPages;
         private void ExtractImage()
         {
             int h = 1;
-            string[] ImageName = new string[TongSoTrang+1];
-            foreach (DataGridViewRow dr in dataGridView1.Rows)
+            if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                string temp = "";
-                string[] temp1 = null;
-                
-                
-                if (h<dataGridView1.RowCount)
+                string[] TruongSo06 = new string[TongSoTrang + 1];
+                dtPages = new List<dataPage>();
+
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    temp = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";
-                    if (temp.IndexOf(";", StringComparison.Ordinal)>0)
+                    string temp = "";
+                    string[] temp1 = null;
+
+
+                    if (h < dataGridView1.RowCount)
                     {
-                        temp1 = temp.Split(';');
-                        for (int i = 0; i < temp1.Length; i++)
+                        temp = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";
+                        if (temp.IndexOf(";", StringComparison.Ordinal) > 0)
                         {
-                            if (temp1[i].IndexOf("-", StringComparison.Ordinal)>0)
+                            temp1 = temp.Split(';');
+                            for (int i = 0; i < temp1.Length; i++)
                             {
-                                string[] temp2 = temp1[i].Split('-');
-                                for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
+                                if (temp1[i].IndexOf("-", StringComparison.Ordinal) > 0)
                                 {
-                                    ImageName[j] = dr.Cells[1].Value.ToString();
+                                    string[] temp2 = temp1[i].Split('-');
+                                    for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
+                                    {
+                                        TruongSo06[j] = dr.Cells[0].Value.ToString();
+                                        dtPages[j].TruongSo06 = dr.Cells[0].Value.ToString();
+                                        dtPages[j].TruongSo08 = dr.Cells[1].Value.ToString();
+                                        dtPages[j].SoTrang = j;
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                ImageName[int.Parse(temp1[i])] = dr.Cells[1].Value.ToString();
-                            }
-                           
-                        }
-                    }
-                    else
-                    {
-                        if (temp.IndexOf("-", StringComparison.Ordinal) > 0)
-                        {
-                            string[] temp2 = temp.Split('-');
-                            for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
-                            {
-                                ImageName[j] = dr.Cells[1].Value.ToString();
+                                else
+                                {
+                                    TruongSo06[int.Parse(temp1[i])] = dr.Cells[0].Value.ToString();
+                                    dtPages[int.Parse(temp1[i])].TruongSo06 = dr.Cells[0].Value.ToString();
+                                    dtPages[int.Parse(temp1[i])].TruongSo08 = dr.Cells[1].Value.ToString();
+                                    dtPages[int.Parse(temp1[i])].SoTrang = int.Parse(temp1[i]);
+                                }
+
                             }
                         }
                         else
                         {
-                            ImageName[int.Parse(temp)] = dr.Cells[1].Value.ToString();
+                            if (temp.IndexOf("-", StringComparison.Ordinal) > 0)
+                            {
+                                string[] temp2 = temp.Split('-');
+                                for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
+                                {
+                                    TruongSo06[j] = dr.Cells[0].Value.ToString();
+                                    dtPages[j].TruongSo06 = dr.Cells[0].Value.ToString();
+                                    dtPages[j].TruongSo08 = dr.Cells[1].Value.ToString();
+                                    dtPages[j].SoTrang = j;
+                                }
+                            }
+                            else
+                            {
+                                TruongSo06[int.Parse(temp)] = dr.Cells[0].Value.ToString();
+                                dtPages[int.Parse(temp)].TruongSo06 = dr.Cells[0].Value.ToString();
+                                dtPages[int.Parse(temp)].TruongSo08 = dr.Cells[1].Value.ToString();
+                                dtPages[int.Parse(temp)].SoTrang = int.Parse(temp);
+                            }
                         }
+
                     }
-                    
+                    h++;
                 }
-                h++;
             }
 
             var f = new PdfFocus {Serial = "1234567890"};
@@ -158,7 +184,7 @@ namespace KOMTSU.MyForm
 
                     for (int i = 0; i < pdfImages.Count; i++)
                     {
-                        string imageFile = Path.Combine(txt_FolderSaveImage.Text+"\\", ImageName[i+1]+"_Page"+(i+1)+".jpg");
+                        string imageFile = Path.Combine(txt_FolderSaveImage.Text+"\\", "Page"+(i+1)+".jpg");
                         pdfImages[i].Picture.Save(imageFile);
                         
                     }
@@ -213,8 +239,6 @@ namespace KOMTSU.MyForm
                     fPathPicture = txt_ImagePath.Text,
                     fSoLuongAnh = filePaths.Length.ToString(),
                     LoaiBatch = rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString(),
-                    TruongSo06 = txt_TruongSo06.Text,
-                    TruongSo08 = txt_TruongSo08.Text,
                     CoDeSo = ck_CoDeso.Checked
 
                 };
@@ -239,31 +263,67 @@ namespace KOMTSU.MyForm
                 return;
             }
             int k = 1;
-            foreach (string i in filePaths)
+            if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                FileInfo fi = new FileInfo(i);
-
-                tbl_Image tempImage = new tbl_Image
+                foreach (string i in filePaths)
                 {
-                    fbatchname = txt_BatchName.Text,
-                    idimage = Path.GetFileName(fi.ToString()),
-                    ReadImageDESo = 0,
-                    CheckedDESo = 0,
-                    ReadImageDEJP = 0,
-                    CheckedDEJP = 0,
-                    TienDoDESO = "Hình chưa nhập",
-                    TienDoDEJP = "Hình chưa nhập",
-                    Page = k
-                };
-                Global.db.tbl_Images.InsertOnSubmit(tempImage);
-                Global.db.SubmitChanges();
+                    FileInfo fi = new FileInfo(i);
 
-                k++;
-                string des = temp + @"\" + Path.GetFileName(fi.ToString());
-                fi.CopyTo(des);
-                progressBarControl1.PerformStep();
-                progressBarControl1.Update();
+                    tbl_Image tempImage = new tbl_Image
+                    {
+                        fbatchname = txt_BatchName.Text,
+                        idimage = Path.GetFileName(fi.ToString()),
+                        ReadImageDESo = 0,
+                        CheckedDESo = 0,
+                        ReadImageDEJP = 0,
+                        CheckedDEJP = 0,
+                        TienDoDESO = "Hình chưa nhập",
+                        TienDoDEJP = "Hình chưa nhập",
+                        Page = k,
+                        TruongSo06 = dtPages[k].TruongSo06,
+                        TruongSo08 = dtPages[k].TruongSo08
+                    };
+                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                    Global.db.SubmitChanges();
+
+                    k++;
+                    string des = temp + @"\" + Path.GetFileName(fi.ToString());
+                    fi.CopyTo(des);
+                    progressBarControl1.PerformStep();
+                    progressBarControl1.Update();
+                }
             }
+            else
+            {
+                foreach (string i in filePaths)
+                {
+                    FileInfo fi = new FileInfo(i);
+
+                    tbl_Image tempImage = new tbl_Image
+                    {
+                        fbatchname = txt_BatchName.Text,
+                        idimage = Path.GetFileName(fi.ToString()),
+                        ReadImageDESo = 0,
+                        CheckedDESo = 0,
+                        ReadImageDEJP = 0,
+                        CheckedDEJP = 0,
+                        TienDoDESO = "Hình chưa nhập",
+                        TienDoDEJP = "Hình chưa nhập",
+                        Page = k,
+                        TruongSo06 = txt_TruongSo06.Text,
+                        TruongSo08 = txt_TruongSo08.Text
+                    };
+                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                    Global.db.SubmitChanges();
+
+                    k++;
+                    string des = temp + @"\" + Path.GetFileName(fi.ToString());
+                    fi.CopyTo(des);
+                    progressBarControl1.PerformStep();
+                    progressBarControl1.Update();
+                }
+            }
+                
             MessageBox.Show("Tạo batch mới thành công!");
             progressBarControl1.EditValue = 0;
             txt_BatchName.Text = "";
@@ -277,9 +337,17 @@ namespace KOMTSU.MyForm
 
         private void rb_LoaiBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rb_LoaiBatch.SelectedIndex == 0)
+            if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                
+                txt_TruongSo06.Enabled = false;
+                txt_TruongSo08.Enabled = false;
+                dataGridView1.Enabled = true;
+            }
+            else
+            {
+                txt_TruongSo06.Enabled = true;
+                txt_TruongSo08.Enabled = true;
+                dataGridView1.Enabled = false;
             }
         }
     }
