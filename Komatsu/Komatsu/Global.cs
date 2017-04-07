@@ -29,5 +29,6 @@ namespace KOMTSU
         public static string Truong06 = "";
         public static string Truong08 = "";
         public static bool Flag=true;
+        public static bool BatCoDeSo = false;
     }
 }

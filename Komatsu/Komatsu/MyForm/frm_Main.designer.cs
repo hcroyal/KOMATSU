@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btn_logout = new DevExpress.XtraBars.BarButtonItem();

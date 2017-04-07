@@ -55,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>MyDll\LibraryLogin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>MyDll\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="SautinSoft.PdfFocus, Version=5.5.12.17, Culture=neutral, PublicKeyToken=0b79b934109b3e9e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>MyDll\SautinSoft.PdfFocus.dll</HintPath>
@@ -89,11 +93,17 @@
     <Compile Include="MyForm\frm_ChangeZoom.designer.cs">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm\frm_Check.cs">
+    <Compile Include="MyForm\frm_Check_DeJP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForm\frm_Check.designer.cs">
-      <DependentUpon>frm_Check.cs</DependentUpon>
+    <Compile Include="MyForm\frm_Check_DeJP.designer.cs">
+      <DependentUpon>frm_Check_DeJP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_Check_DeSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Check_DeSo.designer.cs">
+      <DependentUpon>frm_Check_DeSo.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_CreateBatch.cs">
       <SubType>Form</SubType>
@@ -106,6 +116,12 @@
     </Compile>
     <Compile Include="MyForm\frm_DataAuto.designer.cs">
       <DependentUpon>frm_DataAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_ExportExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ExportExcel.designer.cs">
+      <DependentUpon>frm_ExportExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_FreeTime.cs">
       <SubType>Form</SubType>
@@ -163,14 +179,20 @@
     <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm\frm_Check.resx">
-      <DependentUpon>frm_Check.cs</DependentUpon>
+    <EmbeddedResource Include="MyForm\frm_Check_DeJP.resx">
+      <DependentUpon>frm_Check_DeJP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_Check_DeSo.resx">
+      <DependentUpon>frm_Check_DeSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_CreateBatch.resx">
       <DependentUpon>frm_CreateBatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_DataAuto.resx">
       <DependentUpon>frm_DataAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_ExportExcel.resx">
+      <DependentUpon>frm_ExportExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_FreeTime.resx">
       <DependentUpon>frm_FreeTime.cs</DependentUpon>
@@ -235,6 +257,8 @@
     <Content Include="MyDll\ImageGlass.ImageBox.dll" />
     <Content Include="MyDll\LibraryLogin.dll" />
     <Content Include="MyDll\SautinSoft.PdfFocus.dll" />
+    <None Include="Resources\ExportExcel_Loai1.xlsx" />
+    <None Include="Resources\ExportExcel_Loai2.xlsx" />
     <None Include="Resources\svn_deleted.png" />
   </ItemGroup>
   <ItemGroup />

@@ -31,8 +31,7 @@ namespace KOMTSU.MyUserControl
                 uc.Location = p;
                 uc.Tag = i + 1;
                 Controls.Add(uc);
-            }
-        }
+            }}
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Down && Global.Flag)
@@ -65,7 +64,14 @@ namespace KOMTSU.MyUserControl
         {
             foreach (uc_DeJP_Row item in Controls)
             {
-                item.txt_Truong03.Focus();
+                if (Global.BatCoDeSo && Global.StrRole == "DEJP")
+                {
+                    item.txt_Truong10.Focus();
+                }
+                else
+                {
+                    item.txt_Truong03.Focus();
+                }
                 return;
             }
         }
@@ -120,7 +126,42 @@ namespace KOMTSU.MyUserControl
             return empty;
         }
 
-        public void SaveData_Loai2(string idImage)
+        public void CheckBatch_CoDeSo()
+        {
+            foreach (uc_DeJP_Row item in Controls)
+            {
+                if ((Global.StrRole == "DEJP" && Global.BatCoDeSo) || (Global.StrCheck == "CHECKDEJP" && Global.BatCoDeSo))
+                {
+                    item.txt_Truong03.Enabled = false;
+                    item.txt_Truong04.Enabled = false;
+                    item.txt_Truong05.Enabled = false;
+                    item.txt_Truong11_1.Enabled = false;
+                    item.txt_Truong11_2.Enabled = false;
+                    
+                    item.txt_Truong10.Enabled = true;
+                }
+                else if ((Global.StrRole == "DESO" && Global.BatCoDeSo) || (Global.StrCheck == "CHECKDESO" && Global.BatCoDeSo))
+                {
+                    item.txt_Truong03.Enabled = true;
+                    item.txt_Truong04.Enabled = true;
+                    item.txt_Truong05.Enabled = true;
+                    item.txt_Truong11_1.Enabled = true;
+                    item.txt_Truong11_2.Enabled = true;
+                    
+                    item.txt_Truong10.Enabled = false;
+                }
+                else
+                {
+                    item.txt_Truong03.Enabled = true;
+                    item.txt_Truong04.Enabled = true;
+                    item.txt_Truong05.Enabled = true;
+                    item.txt_Truong11_1.Enabled = true;
+                    item.txt_Truong11_2.Enabled = true;
+                    item.txt_Truong10.Enabled = true;
+                }
+            }
+        }
+        public void SaveData_Loai2_DeJP(string idImage)
         {
             foreach (uc_DeJP_Row item in Controls)
             {
@@ -131,22 +172,54 @@ namespace KOMTSU.MyUserControl
             }
         }
 
-        public void SuaVaLuu(int RowNumber,string usersaiit, string usersainhieu, string idimage )
+        public void SaveData_Loai2_DeSo(string idImage)
+        {
+            foreach (uc_DeJP_Row item in Controls)
+            {
+                if (!item.IsEmpty())
+                {
+                    item.Save_Data_DeSo(idImage, Global.Truong06, Global.Truong08);
+                }
+            }
+        }
+
+        public void SuaVaLuu_DEJP(int rowNumber,string usersaiit, string usersainhieu, string idimage )
         {
             string rownumber = "";
             foreach (uc_DeJP_Row item in Controls)
             {
-                if (string.IsNullOrEmpty(item.lb_stt.Text))
-                    break;
-                rownumber = item.lb_stt.Text;
-                item.SuaVaLuu(usersaiit,usersainhieu,idimage, Global.Truong06, Global.Truong08);
+                if (!string.IsNullOrEmpty(item.lb_stt.Text))
+                {
+                    rownumber = item.lb_stt.Text;
+                    item.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.Truong06, Global.Truong08);
+                }
             }
             int irowrumber = Convert.ToInt32(rownumber);
-            if (irowrumber<RowNumber)
+            if (irowrumber<rowNumber)
             {
-                for (int i = irowrumber; i < RowNumber; i++)
+                for (int i = irowrumber; i < rowNumber; i++)
                 {
                     Global.db.DelecteRow(idimage, Global.StrBatch, i + 1);
+                }
+            }
+        }
+        public void SuaVaLuu_DESO(int rowNumber, string usersaiit, string usersainhieu, string idimage)
+        {
+            string rownumber = "";
+            foreach (uc_DeJP_Row item in Controls)
+            {
+                if (!string.IsNullOrEmpty(item.lb_stt.Text))
+                {
+                    rownumber = item.lb_stt.Text;
+                    item.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, Global.Truong06, Global.Truong08);
+                }
+            }
+            int irowrumber = Convert.ToInt32(rownumber);
+            if (irowrumber < rowNumber)
+            {
+                for (int i = irowrumber; i < rowNumber; i++)
+                {
+                    Global.db.DelecteRow_DeSo(idimage, Global.StrBatch, i + 1);
                 }
             }
         }

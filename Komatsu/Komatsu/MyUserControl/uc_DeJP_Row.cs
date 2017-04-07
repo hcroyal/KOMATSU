@@ -261,7 +261,20 @@ namespace KOMTSU.MyUserControl
                         txt_Truong11_1.Text, txt_Truong11_2.Text,
                         Global.LoaiPhieu, lb_stt.Text);
         }
-        public void SuaVaLuu(string usersaiit,string usersainhieu,string idimage, string truong06, string truong08)
+        public void Save_Data_DeSo(string idimage, string truong06, string truong08)
+        {
+            if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+            {
+                var temp = truong06;
+                truong06 = truong08;
+                truong08 = temp;
+            }
+            Global.db.Insert_Loai2_DeS0(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
+                        txt_Truong04.Text, txt_Truong05.Text, truong06, truong08, txt_Truong10.Text,
+                        txt_Truong11_1.Text, txt_Truong11_2.Text,
+                        Global.LoaiPhieu, lb_stt.Text);
+        }
+        public void SuaVaLuu_DEJP(string usersaiit,string usersainhieu,string idimage, string truong06, string truong08)
         {
             if (!IsEmpty())
             {
@@ -271,7 +284,23 @@ namespace KOMTSU.MyUserControl
                     truong06 = truong08;
                     truong08 = temp;
                 }
-                Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+                Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+                    txt_Truong03.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, truong06, "", truong08, "", txt_Truong10.Text,
+                    txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(), "Loai2");
+            }
+        }
+        public void SuaVaLuu_DESO(string usersaiit, string usersainhieu, string idimage, string truong06, string truong08)
+        {
+            if (!IsEmpty())
+            {
+                if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+                {
+                    var temp = truong06;
+                    truong06 = truong08;
+                    truong08 = temp;
+                }
+                Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
                     txt_Truong03.Text,
                     txt_Truong04.Text, txt_Truong05.Text, truong06, "", truong08, "", txt_Truong10.Text,
                     txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(), "Loai2");

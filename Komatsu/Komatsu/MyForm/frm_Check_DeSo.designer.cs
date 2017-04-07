@@ -2,7 +2,7 @@
 
 namespace KOMTSU.MyForm
 {
-    partial class frm_Check
+    partial class frm_Check_DeSo
     {
         /// <summary>
         /// Required designer variable.
@@ -742,7 +742,7 @@ namespace KOMTSU.MyForm
             this.uc_PictureBox1.Size = new System.Drawing.Size(823, 668);
             this.uc_PictureBox1.TabIndex = 35;
             // 
-            // frm_Check
+            // frm_Check_DeSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -755,9 +755,9 @@ namespace KOMTSU.MyForm
             this.Controls.Add(this.labela);
             this.Controls.Add(this.labelb);
             this.Controls.Add(this.panelControl1);
-            this.Name = "frm_Check";
+            this.Name = "frm_Check_DeSo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_Check";
+            this.Text = "Check DeSo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Check_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

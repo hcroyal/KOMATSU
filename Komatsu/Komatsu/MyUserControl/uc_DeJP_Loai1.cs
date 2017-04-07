@@ -48,8 +48,14 @@ namespace KOMTSU.MyUserControl
             txt_Truong10.ForeColor = Color.Black;
             txt_Truong11.ForeColor = Color.Black;
             txt_Truong12.ForeColor = Color.Black;
-            
-            txt_Truong03.Focus();
+            if (Global.BatCoDeSo && Global.StrRole == "DEJP")
+            {
+                txt_Truong07.Focus();
+            }
+            else
+            {
+                txt_Truong03.Focus();
+            }
         }
 
         public bool IsEmpty()
@@ -66,6 +72,44 @@ namespace KOMTSU.MyUserControl
             return false;
         }
 
+        public void CheckBatch_CoDeSo()
+        {
+            if ((Global.StrRole == "DEJP" && Global.BatCoDeSo)||(Global.StrCheck == "CHECKDEJP" && Global.BatCoDeSo))
+            {
+                txt_Truong03.Enabled = false;
+                txt_Truong04.Enabled = false;
+                txt_Truong05.Enabled = false;
+                txt_Truong11.Enabled = false;
+
+                txt_Truong07.Enabled = true;
+                txt_Truong09.Enabled = true;
+                txt_Truong10.Enabled = true;
+                txt_Truong12.Enabled = true;
+            }
+            else if ((Global.StrRole=="DESO" && Global.BatCoDeSo) || (Global.StrCheck == "CHECKDESO" && Global.BatCoDeSo))
+            {
+                txt_Truong03.Enabled = true;
+                txt_Truong04.Enabled = true;
+                txt_Truong05.Enabled = true;
+                txt_Truong11.Enabled = true;
+
+                txt_Truong07.Enabled = false;
+                txt_Truong09.Enabled = false;
+                txt_Truong10.Enabled = false;
+                txt_Truong12.Enabled = false;
+            }
+            else
+            {
+                txt_Truong03.Enabled = true;
+                txt_Truong04.Enabled = true;
+                txt_Truong05.Enabled = true;
+                txt_Truong11.Enabled = true;
+                txt_Truong07.Enabled = true;
+                txt_Truong09.Enabled = true;
+                txt_Truong10.Enabled = true;
+                txt_Truong12.Enabled = true;
+            }
+        }
         private void txt_Truong03_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong03.Text.IndexOf('?') >= 0)
@@ -257,16 +301,25 @@ namespace KOMTSU.MyUserControl
         {
             ((TextEdit)sender).SelectAll();
         }
-        public void SaveData_Loai1(string idImage)
+        public void SaveData_Loai1_DeJP(string idImage)
         {
             Global.db.Insert_Loai1(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text,Global.LoaiPhieu);
         }
-
-        public void SuaVaLuu(string usersaiit, string usersainhieu, string idimage)
+        public void SaveData_Loai1_DeSo(string idImage)
+        {
+            Global.db.Insert_Loai1_DeSo(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text, Global.LoaiPhieu);
+        }
+        public void SuaVaLuu_DEJP(string usersaiit, string usersainhieu, string idimage)
         {
             Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
                 txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
                 txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1","Loai1");
+        }
+        public void SuaVaLuu_DESO(string usersaiit, string usersainhieu, string idimage)
+        {
+            Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+                txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
+                txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1", "Loai1");
         }
     }
 }

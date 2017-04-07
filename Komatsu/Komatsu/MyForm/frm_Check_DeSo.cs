@@ -13,9 +13,9 @@ using KOMTSU.MyUserControl;
 
 namespace KOMTSU.MyForm
 {
-    public partial class frm_Check : XtraForm
+    public partial class frm_Check_DeSo : XtraForm
     {
-        public frm_Check()
+        public frm_Check_DeSo()
         {
             InitializeComponent();
         }
@@ -66,6 +66,7 @@ namespace KOMTSU.MyForm
                 Global.StrBatch = cbb_Batch_Check.Text;
                 int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
                 lb_Loi.Text = soloi + " Lỗi";
+                Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
                 Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
                 Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
@@ -80,11 +81,12 @@ namespace KOMTSU.MyForm
                 TabControl_User1.TabPages.Remove(tp_Loai2_User1);
                 TabControl_User2.TabPages.Remove(tp_Loai1_User2);
                 TabControl_User2.TabPages.Remove(tp_Loai2_User2);
-                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeJP(Global.StrUsername) select w.fBatchName).ToList();
+                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
                 cbb_Batch_Check.DisplayMember = "fBatchName";
                 Global.StrBatch = cbb_Batch_Check.Text;
-                int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
+                int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
                 lb_Loi.Text = soloi + " Lỗi";
+                Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
                 Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
                 Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
@@ -104,9 +106,16 @@ namespace KOMTSU.MyForm
                     txt_Truong06.Visible = true;
                     txt_Truong08.Visible = true;
                     txt_Truong06.Text = Global.Truong06;
-                    txt_Truong08.Text = Global.Truong08;TabControl_User1.TabPages.Add(tp_Loai2_User1);
+                    txt_Truong08.Text = Global.Truong08;
+                    TabControl_User1.TabPages.Add(tp_Loai2_User1);
                     TabControl_User2.TabPages.Add(tp_Loai2_User2);
                 }
+                uc_DeJP_Loai11.CheckBatch_CoDeSo();
+                uc_DeJP_Loai12.CheckBatch_CoDeSo();
+
+                uc_DeJP_Loai21.CheckBatch_CoDeSo();
+                uc_DeJP_Loai22.CheckBatch_CoDeSo();
+
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
@@ -142,12 +151,12 @@ namespace KOMTSU.MyForm
             {
                 var nhap =
                 (from w in Global.db.tbl_Images
-                    where w.fbatchname == Global.StrBatch && w.ReadImageDEJP == 2
+                    where w.fbatchname == Global.StrBatch && w.ReadImageDESo == 2
                     select w.idimage).Count();
                 var sohinh =
                     (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count();
                 var check =
-                (from w in Global.db.tbl_MissImage_DEJPs
+                (from w in Global.db.tbl_MissImage_DESOs
                     where w.fBatchName == Global.StrBatch && w.Submit == 0
                     select w.IdImage).Count();
                 if (sohinh > nhap)
@@ -158,7 +167,7 @@ namespace KOMTSU.MyForm
                 if (check > 0)
                 {
                     var listUser =
-                    (from w in Global.db.tbl_MissImage_DEJPs
+                    (from w in Global.db.tbl_MissImage_DESOs
                         where w.fBatchName == Global.StrBatch && w.Submit == 0
                         select w.UserName).ToList();
                     string sss = "";
@@ -175,6 +184,13 @@ namespace KOMTSU.MyForm
                 }
                 txt_Truong06.Text = Global.Truong06;
                 txt_Truong08.Text = Global.Truong08;
+
+                uc_DeJP_Loai11.CheckBatch_CoDeSo();
+                uc_DeJP_Loai12.CheckBatch_CoDeSo();
+
+                uc_DeJP_Loai21.CheckBatch_CoDeSo();
+                uc_DeJP_Loai22.CheckBatch_CoDeSo();
+
                 string temp = GetImage_DeSo();
                 if (temp == "NULL")
                 {
@@ -202,13 +218,13 @@ namespace KOMTSU.MyForm
 
         private string GetImage_DeSo()
         {
-            var temp = (from w in Global.db.tbl_MissCheck_DEJPs
+            var temp = (from w in Global.db.tbl_MissCheck_DESOs
                         where w.fBatchName == Global.StrBatch && w.UserName == Global.StrUsername && w.Submit == 0
                         select w.IdImage).FirstOrDefault();
             if (string.IsNullOrEmpty(temp))
             {
                 var getFilename =
-                    (from w in Global.db.ImageCheck_DeJP(Global.StrBatch, Global.StrUsername)
+                    (from w in Global.db.ImageCheck_DeSo(Global.StrBatch, Global.StrUsername)
                      select w.Column1).FirstOrDefault();
                 if (string.IsNullOrEmpty(getFilename))
                 {
@@ -240,10 +256,10 @@ namespace KOMTSU.MyForm
 
         private void Load_DeSo(string strBatch, string idimage)
         {
-            int soloi = ((from w in Global.db.tbl_DEJPs where w.fBatchName == Global.StrBatch && w.Dem == 1 select w.IdImage).Count() / 2);
+            int soloi = ((from w in Global.db.tbl_DESOs where w.fBatchName == Global.StrBatch && w.Dem == 1 select w.IdImage).Count() / 2);
             lb_Loi.Text = soloi + " Lỗi";
 
-            var deso = (from w in Global.db.tbl_DEJPs
+            var deso = (from w in Global.db.tbl_DESOs
                         where w.fBatchName == strBatch && w.IdImage == idimage
                         select new
                         {
@@ -425,7 +441,7 @@ namespace KOMTSU.MyForm
         
         private void btn_Luu_DeSo1_Click(object sender, EventArgs e)
         {
-            Global.db.LuuDEJP(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername);
+            Global.db.LuuDESo(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername);
             ResetData();
             string temp = GetImage_DeSo();
 
@@ -454,7 +470,7 @@ namespace KOMTSU.MyForm
 
         private void btn_Luu_DeSo2_Click(object sender, EventArgs e)
         {
-            Global.db.LuuDEJP(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername);
+            Global.db.LuuDESo(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername);
             ResetData();
             string temp = GetImage_DeSo();
 
@@ -485,11 +501,11 @@ namespace KOMTSU.MyForm
         {
             if (Global.LoaiPhieu == "Loai1")
             {
-                uc_DeJP_Loai11.SuaVaLuu(lb_username1.Text, lb_username2.Text, lb_Image.Text);
+                uc_DeJP_Loai11.SuaVaLuu_DESO(lb_username1.Text, lb_username2.Text, lb_Image.Text);
             }
             else if(Global.LoaiPhieu=="Loai2")
             {
-                uc_DeJP_Loai21.SuaVaLuu(row_user1,lb_username1.Text, lb_username2.Text, lb_Image.Text);
+                uc_DeJP_Loai21.SuaVaLuu_DESO(row_user1,lb_username1.Text, lb_username2.Text, lb_Image.Text);
             }
             ResetData();
             string temp = GetImage_DeSo();
@@ -521,11 +537,11 @@ namespace KOMTSU.MyForm
         {
             if (Global.LoaiPhieu == "Loai1")
             {
-                uc_DeJP_Loai12.SuaVaLuu(lb_username2.Text, lb_username1.Text, lb_Image.Text);
+                uc_DeJP_Loai12.SuaVaLuu_DESO(lb_username2.Text, lb_username1.Text, lb_Image.Text);
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
-                uc_DeJP_Loai22.SuaVaLuu(row_user2,lb_username2.Text, lb_username1.Text, lb_Image.Text);
+                uc_DeJP_Loai22.SuaVaLuu_DESO(row_user2,lb_username2.Text, lb_username1.Text, lb_Image.Text);
             }
             ResetData();
             string temp = GetImage_DeSo();
@@ -610,6 +626,7 @@ namespace KOMTSU.MyForm
             Global.StrBatch = cbb_Batch_Check.Text;
             int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
             lb_Loi.Text = soloi + " Lỗi";
+            Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
             Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
             Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
             Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
@@ -624,6 +641,11 @@ namespace KOMTSU.MyForm
                 tp_Loai2_User1.PageVisible = true;
                 tp_Loai2_User2.PageVisible = true;
             }
+            uc_DeJP_Loai11.CheckBatch_CoDeSo();
+            uc_DeJP_Loai12.CheckBatch_CoDeSo();
+
+            uc_DeJP_Loai21.CheckBatch_CoDeSo();
+            uc_DeJP_Loai22.CheckBatch_CoDeSo();
             btn_Start.Visible = true;
         }
     }

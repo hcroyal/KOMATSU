@@ -123,8 +123,8 @@ namespace Komatsu
                 role = (from w in Global.db_BPO.tbl_Users where w.Username == username select w.IDRole).FirstOrDefault();
                 if (!string.IsNullOrEmpty(role))
                     role = role.ToUpper();
-                if (iKiemtraLogin == 1 && role == "ADMIN"){
-
+                if (iKiemtraLogin == 1 && role == "ADMIN")
+                {
                     cbb.DataSource = Global.db.GetBatch();
                     cbb.DisplayMember = "fBatchName";
                 }
@@ -134,9 +134,19 @@ namespace Komatsu
                     cbb.DataSource = Global.db.GetBatNotFinishDeJP(username);
                     cbb.DisplayMember = "fBatchName";
                 }
-                else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
+                else if (iKiemtraLogin == 1 && role == "CHECKERDEJP")
                 {
                     cbb.DataSource = Global.db.GetBatNotFinishCheckerDeJP(username);
+                    cbb.DisplayMember = "fBatchName";
+                }
+                else if (iKiemtraLogin == 1 && role == "DESO")
+                {
+                    cbb.DataSource = Global.db.GetBatNotFinishDeSo(username);
+                    cbb.DisplayMember = "fBatchName";
+                }
+                else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
+                {
+                    cbb.DataSource = Global.db.GetBatNotFinishCheckerDeSo(username);
                     cbb.DisplayMember = "fBatchName";
                 }
             }
