@@ -38,6 +38,22 @@ namespace KOMTSU.MyForm
             }
         }
 
+        private void Load_Truong06_08()
+        {
+            Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.TruongSo06).FirstOrDefault();
+            Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.TruongSo08).FirstOrDefault();
+            if (Global.LoaiPhieu == "Loai1")
+            {
+                uc_DeJP_Loai11.txt_Truong06.Text = Global.Truong06;
+                uc_DeJP_Loai11.txt_Truong08.Text = Global.Truong08;
+            }
+            else if (Global.LoaiPhieu == "Loai2")
+            {
+                txt_Truong06.Text = Global.Truong06;
+                txt_Truong08.Text = Global.Truong08;
+            }
+        }
+
         public string GetImage()
         {
             if (Global.StrRole == "DEJP")
@@ -126,6 +142,7 @@ namespace KOMTSU.MyForm
                     }
                 }
             }
+            Load_Truong06_08();
             return "OK";
         }
 
@@ -141,9 +158,7 @@ namespace KOMTSU.MyForm
                 }
                 Global.BatCoDeSo =Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.LoaiBatch).FirstOrDefault();
-                Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
-                Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
-
+                
                 lb_IdImage.Text = "";
                 lb_fBatchName.Text = Global.StrBatch;
                 lb_UserName.Text = Global.StrUsername;
@@ -161,15 +176,11 @@ namespace KOMTSU.MyForm
                         {
                             tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
                             uc_DeJP_Loai11.CheckBatch_CoDeSo();
-                            uc_DeJP_Loai11.txt_Truong06.Text = Global.Truong06;
-                            uc_DeJP_Loai11.txt_Truong08.Text = Global.Truong08;
                         }
                         else if (Global.LoaiPhieu == "Loai2")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai2_JP_Main);
                             uc_DeJP_Loai21.CheckBatch_CoDeSo();
-                            txt_Truong06.Text = Global.Truong06;
-                            txt_Truong08.Text = Global.Truong08;
                         }
                     }
                     else if (Global.StrRole == "DESO")
@@ -178,15 +189,11 @@ namespace KOMTSU.MyForm
                         {
                             tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
                             uc_DeJP_Loai11.CheckBatch_CoDeSo();
-                            uc_DeJP_Loai11.txt_Truong06.Text = Global.Truong06;
-                            uc_DeJP_Loai11.txt_Truong08.Text = Global.Truong08;
                         }
                         else if (Global.LoaiPhieu == "Loai2")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai2_JP_Main);
                             uc_DeJP_Loai21.CheckBatch_CoDeSo();
-                            txt_Truong06.Text = Global.Truong06;
-                            txt_Truong08.Text = Global.Truong08;
                         }
                     }
                     else
@@ -203,14 +210,10 @@ namespace KOMTSU.MyForm
                         if (Global.LoaiPhieu == "Loai1")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
-                            uc_DeJP_Loai11.txt_Truong06.Text = Global.Truong06;
-                            uc_DeJP_Loai11.txt_Truong08.Text = Global.Truong08;
                         }
                         else if (Global.LoaiPhieu == "Loai2")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai2_JP_Main);
-                            txt_Truong06.Text = Global.Truong06;
-                            txt_Truong08.Text = Global.Truong08;
                         }
                     }
                     else if (Global.StrRole == "DESO")
@@ -258,6 +261,7 @@ namespace KOMTSU.MyForm
                     MessageBox.Show("User đã đăng nhập ở PC khác, bạn vui lòng đăng nhập lại!");
                     DialogResult = DialogResult.Yes;
                 }
+
                 if (btn_Start_Submit.Text == "Start")
                 {
                     if (string.IsNullOrEmpty(Global.StrBatch))
@@ -347,6 +351,7 @@ namespace KOMTSU.MyForm
                     }
 
                     string temp = GetImage();
+                    
                     if (temp == "NULL")
                     {
                         MessageBox.Show("Hết Hình!");

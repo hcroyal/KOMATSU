@@ -167,7 +167,8 @@ namespace KOMTSU.MyUserControl
             {
                 if (!item.IsEmpty())
                 {
-                    item.Save_Data(idImage,Global.Truong06,Global.Truong08);
+                    item.Save_Data(idImage);
+                    //item.Save_Data(idImage, Global.Truong06, Global.Truong08);
                 }
             }
         }
@@ -178,7 +179,8 @@ namespace KOMTSU.MyUserControl
             {
                 if (!item.IsEmpty())
                 {
-                    item.Save_Data_DeSo(idImage, Global.Truong06, Global.Truong08);
+                    item.Save_Data_DeSo(idImage);
+                    //item.Save_Data_DeSo(idImage, Global.Truong06, Global.Truong08);
                 }
             }
         }
@@ -191,7 +193,8 @@ namespace KOMTSU.MyUserControl
                 if (!string.IsNullOrEmpty(item.lb_stt.Text))
                 {
                     rownumber = item.lb_stt.Text;
-                    item.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.Truong06, Global.Truong08);
+                    item.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage);
+                    //item.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.Truong06, Global.Truong08);
                 }
             }
             int irowrumber = Convert.ToInt32(rownumber);
@@ -211,7 +214,7 @@ namespace KOMTSU.MyUserControl
                 if (!string.IsNullOrEmpty(item.lb_stt.Text))
                 {
                     rownumber = item.lb_stt.Text;
-                    item.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, Global.Truong06, Global.Truong08);
+                    item.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage);
                 }
             }
             int irowrumber = Convert.ToInt32(rownumber);
