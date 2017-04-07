@@ -268,7 +268,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1310, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1317, 20);
             // 
             // barDockControlBottom
             // 
@@ -276,7 +276,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 645);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1310, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1317, 0);
             // 
             // barDockControlLeft
             // 
@@ -290,7 +290,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1310, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1317, 20);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 625);
             // 
@@ -322,7 +322,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 20);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1310, 33);
+            this.panelControl1.Size = new System.Drawing.Size(1317, 33);
             this.panelControl1.TabIndex = 2;
             // 
             // lb_SoHinhLamDuoc
@@ -432,7 +432,7 @@
             this.panelControl2.Controls.Add(this.tabControl_Main);
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(887, 53);
+            this.panelControl2.Location = new System.Drawing.Point(894, 53);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(423, 592);
             this.panelControl2.TabIndex = 5;
@@ -685,12 +685,12 @@
             this.uc_PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_PictureBox1.Location = new System.Drawing.Point(0, 53);
             this.uc_PictureBox1.Name = "uc_PictureBox1";
-            this.uc_PictureBox1.Size = new System.Drawing.Size(887, 592);
+            this.uc_PictureBox1.Size = new System.Drawing.Size(894, 592);
             this.uc_PictureBox1.TabIndex = 1;
             // 
             // frm_Main
             // 
-            this.ClientSize = new System.Drawing.Size(1310, 645);
+            this.ClientSize = new System.Drawing.Size(1317, 645);
             this.Controls.Add(this.uc_PictureBox1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
