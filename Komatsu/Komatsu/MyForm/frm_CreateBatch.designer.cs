@@ -483,7 +483,6 @@
             this.TruongSo06.DataPropertyName = "TruongSo06";
             this.TruongSo06.HeaderText = "Trường số 6";
             this.TruongSo06.Name = "TruongSo06";
-            this.TruongSo06.ReadOnly = true;
             this.TruongSo06.Width = 170;
             // 
             // TruongSo08
