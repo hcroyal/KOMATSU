@@ -40,8 +40,8 @@ namespace KOMTSU.MyForm
 
         private void Load_Truong06_08()
         {
-            Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.TruongSo06).FirstOrDefault();
-            Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.TruongSo08).FirstOrDefault();
+            Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
+            Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
             if (Global.LoaiPhieu == "Loai1")
             {
                 uc_DeJP_Loai11.txt_Truong06.Text = Global.Truong06;

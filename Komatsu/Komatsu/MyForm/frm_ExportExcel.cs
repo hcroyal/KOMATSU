@@ -146,10 +146,7 @@ namespace KOMTSU.MyForm
         {
             try
             {
-                bool DeSo =
-                    Convert.ToBoolean(
-                        (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch.Text select w.CoDeSo)
-                        .FirstOrDefault());
+                bool DeSo =Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch.Text select w.CoDeSo).FirstOrDefault());
                 dataGridView1.DataSource = null;
                 if (DeSo)
                 {

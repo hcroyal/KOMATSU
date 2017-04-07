@@ -232,7 +232,7 @@
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
     <ElementType Name="ExportExcel_Loai1Result">
       <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_02" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -249,7 +249,7 @@
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
     <ElementType Name="ExportExcel_Loai1_CoDeSoResult">
       <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_02" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -266,7 +266,7 @@
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
     <ElementType Name="ExportExcel_Loai2Result">
       <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_02" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -280,7 +280,7 @@
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
     <ElementType Name="ExportExcel_Loai2_CoDeSoResult">
       <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_02" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_04" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -289,9 +289,6 @@
       <Column Name="Truong_10" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Truong_11" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.ExportExcel_new" Method="ExportExcel_new">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
   </Function>
   <Function Name="dbo.GetBatch" Method="GetBatch">
     <ElementType Name="GetBatchResult">
@@ -382,12 +379,6 @@
   <Function Name="dbo.InputFinish" Method="InputFinish">
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Insert_DEJP" Method="Insert_DEJP">
-    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="Truong_002" Parameter="truong_002" Type="System.String" DbType="NVarChar(255)" />
   </Function>
   <Function Name="dbo.Insert_Loai1" Method="Insert_Loai1">
     <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />

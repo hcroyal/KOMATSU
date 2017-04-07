@@ -240,6 +240,7 @@
     </None>
     <None Include="DataKomtsu.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataKomtsu.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

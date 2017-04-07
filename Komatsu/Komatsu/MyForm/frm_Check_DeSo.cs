@@ -67,8 +67,6 @@ namespace KOMTSU.MyForm
                 int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
                 lb_Loi.Text = soloi + " Lỗi";
                 Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
-                //Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
-                //Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
                 btn_Start_Click(null, null);
             }
@@ -87,8 +85,6 @@ namespace KOMTSU.MyForm
                 int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
                 lb_Loi.Text = soloi + " Lỗi";
                 Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
-                //Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
-                //Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
                 if (Global.LoaiPhieu == "Loai1")
                 {
@@ -105,8 +101,7 @@ namespace KOMTSU.MyForm
                     labelControl18.Visible = true;
                     txt_Truong06.Visible = true;
                     txt_Truong08.Visible = true;
-                    txt_Truong06.Text = Global.Truong06;
-                    txt_Truong08.Text = Global.Truong08;
+
                     TabControl_User1.TabPages.Add(tp_Loai2_User1);
                     TabControl_User2.TabPages.Add(tp_Loai2_User2);
                 }
@@ -182,8 +177,6 @@ namespace KOMTSU.MyForm
                         return;
                     }
                 }
-                txt_Truong06.Text = Global.Truong06;
-                txt_Truong08.Text = Global.Truong08;
 
                 uc_DeJP_Loai11.CheckBatch_CoDeSo();
                 uc_DeJP_Loai12.CheckBatch_CoDeSo();
@@ -215,7 +208,14 @@ namespace KOMTSU.MyForm
                 MessageBox.Show("Lỗi : " + i.Message);
             }
         }
-
+        private void Load_Truong06_08()
+        {
+            if (Global.LoaiPhieu == "Loai2")
+            {
+                txt_Truong06.Text = Global.Truong06 = (from w in Global.db.tbl_DESOs where w.fBatchName == Global.StrBatch && w.IdImage == lb_Image.Text select w.Truong_06).FirstOrDefault();
+                txt_Truong08.Text = Global.Truong08 = (from w in Global.db.tbl_DESOs where w.fBatchName == Global.StrBatch && w.IdImage == lb_Image.Text select w.Truong_08).FirstOrDefault();
+            }
+        }
         private string GetImage_DeSo()
         {
             var temp = (from w in Global.db.tbl_MissCheck_DESOs
@@ -251,6 +251,7 @@ namespace KOMTSU.MyForm
                     return "Error";
                 }
             }
+            Load_Truong06_08();
             return "ok";
         }
 
@@ -627,8 +628,6 @@ namespace KOMTSU.MyForm
             int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
             lb_Loi.Text = soloi + " Lỗi";
             Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
-            //Global.Truong06 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo06).FirstOrDefault();
-            //Global.Truong08 = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.TruongSo08).FirstOrDefault();
             Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
             ResetData();
             if (Global.LoaiPhieu == "Loai1")
