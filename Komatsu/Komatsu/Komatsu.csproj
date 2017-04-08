@@ -163,6 +163,12 @@
     <Compile Include="MyForm\frm_ManagerBatch.Designer.cs">
       <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\frm_NangSuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_NangSuat.designer.cs">
+      <DependentUpon>frm_NangSuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_TienDo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     <EmbeddedResource Include="MyForm\frm_ManagerBatch.resx">
       <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_NangSuat.resx">
+      <DependentUpon>frm_NangSuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_TienDo.resx">
       <DependentUpon>frm_TienDo.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +302,8 @@
     <Content Include="MyDll\SautinSoft.PdfFocus.dll" />
     <None Include="Resources\ExportExcel_Loai1.xlsx" />
     <None Include="Resources\ExportExcel_Loai2.xlsx" />
+    <None Include="Resources\Productivity_DEJP.xls" />
+    <None Include="Resources\Productivity_DESO.xls" />
     <None Include="Resources\svn_deleted.png" />
   </ItemGroup>
   <ItemGroup />

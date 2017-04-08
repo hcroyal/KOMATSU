@@ -583,6 +583,13 @@ namespace Komatsu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_03, truong_04, truong_05, truong_06, truong_08, truong_10, truong_11, truong_11B, loaiPhieu, idPhieu);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.NangSuatDeSo")]
+		public ISingleResult<NangSuatDeSoResult> NangSuatDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TuNgay", DbType="DateTime")] System.Nullable<System.DateTime> tuNgay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DenNgay", DbType="DateTime")] System.Nullable<System.DateTime> denNgay)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tuNgay, denNgay);
+			return ((ISingleResult<NangSuatDeSoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
@@ -6677,6 +6684,140 @@ namespace Komatsu
 				if ((this._UserName != value))
 				{
 					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class NangSuatDeSoResult
+	{
+		
+		private string _UserName;
+		
+		private string _FullName;
+		
+		private System.Nullable<int> _SoPhieuNhap;
+		
+		private System.Nullable<int> _PhieuDung;
+		
+		private System.Nullable<int> _PhieuSai;
+		
+		private string _ThoiGian;
+		
+		private System.Nullable<double> _HieuSuat;
+		
+		public NangSuatDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(255)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(100)")]
+		public string FullName
+		{
+			get
+			{
+				return this._FullName;
+			}
+			set
+			{
+				if ((this._FullName != value))
+				{
+					this._FullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPhieuNhap", DbType="Int")]
+		public System.Nullable<int> SoPhieuNhap
+		{
+			get
+			{
+				return this._SoPhieuNhap;
+			}
+			set
+			{
+				if ((this._SoPhieuNhap != value))
+				{
+					this._SoPhieuNhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhieuDung", DbType="Int")]
+		public System.Nullable<int> PhieuDung
+		{
+			get
+			{
+				return this._PhieuDung;
+			}
+			set
+			{
+				if ((this._PhieuDung != value))
+				{
+					this._PhieuDung = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhieuSai", DbType="Int")]
+		public System.Nullable<int> PhieuSai
+		{
+			get
+			{
+				return this._PhieuSai;
+			}
+			set
+			{
+				if ((this._PhieuSai != value))
+				{
+					this._PhieuSai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGian", DbType="VarChar(8)")]
+		public string ThoiGian
+		{
+			get
+			{
+				return this._ThoiGian;
+			}
+			set
+			{
+				if ((this._ThoiGian != value))
+				{
+					this._ThoiGian = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HieuSuat", DbType="Float")]
+		public System.Nullable<double> HieuSuat
+		{
+			get
+			{
+				return this._HieuSuat;
+			}
+			set
+			{
+				if ((this._HieuSuat != value))
+				{
+					this._HieuSuat = value;
 				}
 			}
 		}

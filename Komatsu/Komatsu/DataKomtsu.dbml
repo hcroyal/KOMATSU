@@ -652,4 +652,17 @@
     <Parameter Name="IdPhieu" Parameter="idPhieu" Type="System.String" DbType="NVarChar(255)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.NangSuatDeSo" Method="NangSuatDeSo">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="NangSuatDeSoResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoPhieuNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhieuDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhieuSai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiGian" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="HieuSuat" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
