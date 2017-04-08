@@ -52,7 +52,10 @@ namespace KOMTSU.MyForm
             {
                 string category = View.GetRowCellDisplayText(e.RowHandle, View.Columns["ThongTin"]);
                 if (category == "Hình đang nhập")
+                {
                     e.Appearance.BackColor = Color.HotPink;
+                    e.Appearance.ForeColor = Color.White;
+                }
                 else if (category == "Hình chờ check")
                 {
                     e.Appearance.BackColor = Color.OrangeRed;
@@ -70,7 +73,6 @@ namespace KOMTSU.MyForm
                 }
             }
         }
-
         private void popupContainerControl1_Paint(object sender, PaintEventArgs e)
         {
            

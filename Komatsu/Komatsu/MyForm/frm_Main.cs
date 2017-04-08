@@ -509,12 +509,7 @@ namespace KOMTSU.MyForm
         {
             new frm_ExportExcel().ShowDialog();
         }
-
-        private void btn_nangsuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           // new frm_NangSuat().ShowDialog();
-        }
-
+        
         private void btn_tiendo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new frm_TienDo().ShowDialog();
@@ -529,6 +524,11 @@ namespace KOMTSU.MyForm
         private void btn_data_auto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new frm_DataAuto().ShowDialog();
+        }
+        
+        private void btn_nangsuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // new frm_NangSuat().ShowDialog();
         }
     }
 }

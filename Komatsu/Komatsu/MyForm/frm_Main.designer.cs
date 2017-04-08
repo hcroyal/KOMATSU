@@ -37,14 +37,14 @@
             this.btn_exit = new DevExpress.XtraBars.BarButtonItem();
             this.menu_quanly = new DevExpress.XtraBars.BarSubItem();
             this.btn_qyanlybatch = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_data_auto = new DevExpress.XtraBars.BarButtonItem();
             this.btn_quanlyuser = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.btn_checkdeso = new DevExpress.XtraBars.BarButtonItem();
             this.btn_checkDEJP = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_nangsuat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_tiendo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xuatexcel = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_data_auto = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_tinhnangsuat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Zoomimage = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -52,6 +52,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_nangsuat = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lb_SoHinhLamDuoc = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoHinhConLai = new DevExpress.XtraEditors.LabelControl();
@@ -133,9 +134,10 @@
             this.btn_Zoomimage,
             this.btn_checkdeso,
             this.btn_checkDEJP,
-            this.btn_data_auto});
+            this.btn_data_auto,
+            this.btn_tinhnangsuat});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 19;
+            this.barManager1.MaxItemId = 21;
             // 
             // bar2
             // 
@@ -182,12 +184,14 @@
             this.menu_quanly.Id = 3;
             this.menu_quanly.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_qyanlybatch),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_data_auto),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_quanlyuser),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_nangsuat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_tiendo),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_xuatexcel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_data_auto)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_data_auto),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_xuatexcel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_tinhnangsuat)});
             this.menu_quanly.Name = "menu_quanly";
             // 
             // btn_qyanlybatch
@@ -196,6 +200,13 @@
             this.btn_qyanlybatch.Id = 5;
             this.btn_qyanlybatch.Name = "btn_qyanlybatch";
             this.btn_qyanlybatch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_qyanlybatch_ItemClick);
+            // 
+            // btn_data_auto
+            // 
+            this.btn_data_auto.Caption = "Data AutoComplete";
+            this.btn_data_auto.Id = 18;
+            this.btn_data_auto.Name = "btn_data_auto";
+            this.btn_data_auto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_data_auto_ItemClick);
             // 
             // btn_quanlyuser
             // 
@@ -227,13 +238,6 @@
             this.btn_checkDEJP.Name = "btn_checkDEJP";
             this.btn_checkDEJP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_checkqc_ItemClick);
             // 
-            // btn_nangsuat
-            // 
-            this.btn_nangsuat.Caption = "&Năng suất";
-            this.btn_nangsuat.Id = 10;
-            this.btn_nangsuat.Name = "btn_nangsuat";
-            this.btn_nangsuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_nangsuat_ItemClick);
-            // 
             // btn_tiendo
             // 
             this.btn_tiendo.Caption = "&Tiến độ";
@@ -248,12 +252,12 @@
             this.btn_xuatexcel.Name = "btn_xuatexcel";
             this.btn_xuatexcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_xuatexcel_ItemClick);
             // 
-            // btn_data_auto
+            // btn_tinhnangsuat
             // 
-            this.btn_data_auto.Caption = "Data AutoComplete";
-            this.btn_data_auto.Id = 18;
-            this.btn_data_auto.Name = "btn_data_auto";
-            this.btn_data_auto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_data_auto_ItemClick);
+            this.btn_tinhnangsuat.Caption = "&Năng suất";
+            this.btn_tinhnangsuat.Id = 19;
+            this.btn_tinhnangsuat.Name = "btn_tinhnangsuat";
+            this.btn_tinhnangsuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_nangsuat_ItemClick);
             // 
             // btn_Zoomimage
             // 
@@ -304,6 +308,11 @@
             // 
             this.barButtonItem6.Id = 9;
             this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // btn_nangsuat
+            // 
+            this.btn_nangsuat.Id = 20;
+            this.btn_nangsuat.Name = "btn_nangsuat";
             // 
             // panelControl1
             // 
@@ -794,6 +803,7 @@
         public DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraTab.XtraTabPage tp_Loai1_JP_Main;
         private MyUserControl.uc_DeJP_Loai1 uc_DeJP_Loai11;
+        private DevExpress.XtraBars.BarButtonItem btn_tinhnangsuat;
     }
 }
 
