@@ -31,7 +31,8 @@ namespace KOMTSU.MyUserControl
                 uc.Location = p;
                 uc.Tag = i + 1;
                 Controls.Add(uc);
-            }}
+            }
+        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Down && Global.Flag)

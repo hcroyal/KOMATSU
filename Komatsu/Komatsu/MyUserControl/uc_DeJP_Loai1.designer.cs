@@ -41,7 +41,6 @@
             this.txt_Truong11 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Truong12 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Truong04 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -196,17 +195,6 @@
             this.txt_Truong12.TabIndex = 10;
             this.txt_Truong12.EditValueChanged += new System.EventHandler(this.txt_Truong12_EditValueChanged);
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(170, 163);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(0, 13);
-            this.labelControl8.TabIndex = 10;
-            // 
             // txt_Truong04
             // 
             this.txt_Truong04.Location = new System.Drawing.Point(130, 6);
@@ -286,8 +274,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.txt_Truong10);
-            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.txt_Truong12);
             this.Controls.Add(this.txt_Truong11);
             this.Controls.Add(this.txt_Truong08);
@@ -308,7 +296,7 @@
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_DeJP_Loai1";
-            this.Size = new System.Drawing.Size(299, 142);
+            this.Size = new System.Drawing.Size(298, 140);
             this.Load += new System.EventHandler(this.uc_DeJP_Loai1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong07.Properties)).EndInit();
@@ -340,7 +328,6 @@
         public DevExpress.XtraEditors.TextEdit txt_Truong11;
         public DevExpress.XtraEditors.LabelControl labelControl7;
         public DevExpress.XtraEditors.TextEdit txt_Truong12;
-        public DevExpress.XtraEditors.LabelControl labelControl8;
         public DevExpress.XtraEditors.TextEdit txt_Truong04;
         public DevExpress.XtraEditors.LabelControl labelControl5;
         public DevExpress.XtraEditors.LabelControl labelControl9;

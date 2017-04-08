@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraTab;
 using Komatsu.MyForm;
 using Komatsu.Properties;
 using KOMTSU.MyUserControl;
@@ -291,7 +293,7 @@ namespace KOMTSU.MyForm
                                     return;
                             }
                             int k = 1;
-                            foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                            foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                             {
                                 variable.SaveData_Loai1_DeJP(lb_IdImage.Text,k);
                                 k++;
@@ -341,7 +343,7 @@ namespace KOMTSU.MyForm
                                     return;
                             }
                             int k = 1;
-                            foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                            foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                             {
                                 variable.SaveData_Loai1_DeSo(lb_IdImage.Text, k);
                                 k++;
@@ -429,7 +431,7 @@ namespace KOMTSU.MyForm
                                 return;
                         }
                         int k = 1;
-                        foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                        foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                         {
                             variable.SaveData_Loai1_DeJP(lb_IdImage.Text, k);
                             k++;
@@ -478,7 +480,7 @@ namespace KOMTSU.MyForm
                                 return;
                         }
                         int k = 1;
-                        foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                        foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                         {
                             variable.SaveData_Loai1_DeSo(lb_IdImage.Text, k);
                             k++;
@@ -601,6 +603,32 @@ namespace KOMTSU.MyForm
         private void btn_nangsuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // new frm_NangSuat().ShowDialog();
+        }
+
+        private int count;
+        private void btn_ThemPhieu_Click(object sender, EventArgs e)
+        {
+            uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+            Point p = new Point();
+            foreach (uc_DeJP_Loai1 ct in tp_Loai1_JP_Main.Controls)
+            {
+                p = ct.Location;
+                p.Y += ct.Size.Height + 20;
+
+            }
+            uc.Location = p;
+            count++;
+            uc.Tag = count.ToString();
+            tp_Loai1_JP_Main.Controls.Add(uc);
+            ScrollToBottom(tp_Loai1_JP_Main);
+        }
+        public void ScrollToBottom(XtraTabPage p)
+        {
+            using (Control c = new Control() { Parent = p, Dock = DockStyle.Bottom })
+            {
+                p.ScrollControlIntoView(c);
+                c.Parent = null;
+            }
         }
     }
 }

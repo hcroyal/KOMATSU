@@ -90,6 +90,7 @@
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
+            this.btn_ThemPhieu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -458,6 +459,7 @@
             // 
             // tp_Loai1_JP_Main
             // 
+            this.tp_Loai1_JP_Main.AutoScroll = true;
             this.tp_Loai1_JP_Main.Controls.Add(this.uc_DeJP_Loai11);
             this.tp_Loai1_JP_Main.Name = "tp_Loai1_JP_Main";
             this.tp_Loai1_JP_Main.Size = new System.Drawing.Size(413, 530);
@@ -467,9 +469,10 @@
             // 
             this.uc_DeJP_Loai11.AutoScroll = true;
             this.uc_DeJP_Loai11.AutoSize = true;
-            this.uc_DeJP_Loai11.Location = new System.Drawing.Point(0, 0);
+            this.uc_DeJP_Loai11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.uc_DeJP_Loai11.Location = new System.Drawing.Point(10, 3);
             this.uc_DeJP_Loai11.Name = "uc_DeJP_Loai11";
-            this.uc_DeJP_Loai11.Size = new System.Drawing.Size(413, 530);
+            this.uc_DeJP_Loai11.Size = new System.Drawing.Size(299, 143);
             this.uc_DeJP_Loai11.TabIndex = 0;
             // 
             // tp_Loai2_JP_Main
@@ -651,6 +654,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btn_ThemPhieu);
             this.panelControl3.Controls.Add(this.btn_Pause);
             this.panelControl3.Controls.Add(this.btn_Submit_Logout);
             this.panelControl3.Controls.Add(this.btn_Start_Submit);
@@ -662,7 +666,7 @@
             // 
             // btn_Pause
             // 
-            this.btn_Pause.Location = new System.Drawing.Point(270, 4);
+            this.btn_Pause.Location = new System.Drawing.Point(314, 4);
             this.btn_Pause.Name = "btn_Pause";
             this.btn_Pause.Size = new System.Drawing.Size(95, 23);
             this.btn_Pause.TabIndex = 4;
@@ -671,7 +675,7 @@
             // 
             // btn_Submit_Logout
             // 
-            this.btn_Submit_Logout.Location = new System.Drawing.Point(154, 5);
+            this.btn_Submit_Logout.Location = new System.Drawing.Point(218, 5);
             this.btn_Submit_Logout.Name = "btn_Submit_Logout";
             this.btn_Submit_Logout.Size = new System.Drawing.Size(90, 21);
             this.btn_Submit_Logout.TabIndex = 3;
@@ -680,7 +684,7 @@
             // 
             // btn_Start_Submit
             // 
-            this.btn_Start_Submit.Location = new System.Drawing.Point(24, 5);
+            this.btn_Start_Submit.Location = new System.Drawing.Point(122, 5);
             this.btn_Start_Submit.Name = "btn_Start_Submit";
             this.btn_Start_Submit.Size = new System.Drawing.Size(90, 21);
             this.btn_Start_Submit.TabIndex = 2;
@@ -694,6 +698,19 @@
             this.uc_PictureBox1.Name = "uc_PictureBox1";
             this.uc_PictureBox1.Size = new System.Drawing.Size(894, 592);
             this.uc_PictureBox1.TabIndex = 1;
+            // 
+            // btn_ThemPhieu
+            // 
+            this.btn_ThemPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemPhieu.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ThemPhieu.Appearance.Options.UseFont = true;
+            this.btn_ThemPhieu.Appearance.Options.UseForeColor = true;
+            this.btn_ThemPhieu.Location = new System.Drawing.Point(4, 5);
+            this.btn_ThemPhieu.Name = "btn_ThemPhieu";
+            this.btn_ThemPhieu.Size = new System.Drawing.Size(45, 21);
+            this.btn_ThemPhieu.TabIndex = 5;
+            this.btn_ThemPhieu.Text = "+";
+            this.btn_ThemPhieu.Click += new System.EventHandler(this.btn_ThemPhieu_Click);
             // 
             // frm_Main
             // 
@@ -802,6 +819,7 @@
         private DevExpress.XtraTab.XtraTabPage tp_Loai1_JP_Main;
         private MyUserControl.uc_DeJP_Loai1 uc_DeJP_Loai11;
         private DevExpress.XtraBars.BarButtonItem btn_tinhnangsuat;
+        private DevExpress.XtraEditors.SimpleButton btn_ThemPhieu;
     }
 }
 
