@@ -222,7 +222,7 @@ namespace KOMTSU.MyForm
             progressBarControl1.EditValue = 0;
             progressBarControl1.Properties.Step = 1;
             progressBarControl1.Properties.PercentView = true;
-            progressBarControl1.Properties.Maximum = _lFileNames.Length;
+            progressBarControl1.Properties.Maximum = TongSoTrang;
             progressBarControl1.Properties.Minimum = 0;
             var batch = (from w in Global.db.tbl_Batches.Where(w => w.fBatchName == txt_BatchName.Text) select w.fBatchName).FirstOrDefault();
 
@@ -294,21 +294,22 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                foreach (string i in filePaths)
+                for (int i = 1; i <= TongSoTrang; i++)
                 {
-                    FileInfo fi = new FileInfo(i);
+                    string filePath = txt_FolderSaveImage.Text + @"\" + "Page" + i + ".jpg";
+                    FileInfo fi = new FileInfo(filePath);
 
                     tbl_Image tempImage = new tbl_Image
                     {
                         fbatchname = txt_BatchName.Text,
-                        idimage = Path.GetFileName(fi.ToString()),
+                        idimage = "Page" + i + ".jpg",
                         ReadImageDESo = 0,
                         CheckedDESo = 0,
                         ReadImageDEJP = 0,
                         CheckedDEJP = 0,
                         TienDoDESO = "Hình chưa nhập",
                         TienDoDEJP = "Hình chưa nhập",
-                        Page = k,
+                        Page = i,
                         TruongSo06 = txt_TruongSo06.Text,
                         TruongSo08 = txt_TruongSo08.Text
                     };
@@ -316,7 +317,7 @@ namespace KOMTSU.MyForm
                     Global.db.SubmitChanges();
 
                     k++;
-                    string des = temp + @"\" + Path.GetFileName(fi.ToString());
+                    string des = temp + @"\" + "Page" + i + ".jpg";
                     fi.CopyTo(des);
                     progressBarControl1.PerformStep();
                     progressBarControl1.Update();
