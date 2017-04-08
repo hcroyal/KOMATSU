@@ -517,7 +517,7 @@ namespace KOMTSU.MyForm
 
         private void btn_tiendo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //new frm_TienDo().ShowDialog();
+            new frm_TienDo().ShowDialog();
         }
 
         private void btn_Pause_Click(object sender, EventArgs e)

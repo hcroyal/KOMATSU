@@ -34,12 +34,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.2" />
+    <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DuAnJEMS\DuAnJEMS_QuanLyDuAn\JEMS\JEMS\bin\Debug\DevExpress.Charts.v16.2.Core.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v16.2" />
     <Reference Include="DevExpress.Utils.v16.2" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
     <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\KOMTSU\KOMTSU\KOMTSU\KOMTSU\KOMTSU\bin\Debug\DevExpress.XtraBars.v16.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DuAnJEMS\DuAnJEMS_QuanLyDuAn\JEMS\JEMS\bin\Debug\DevExpress.XtraCharts.v16.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.2.UI, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DuAnJEMS\DuAnJEMS_QuanLyDuAn\JEMS\JEMS\bin\Debug\DevExpress.XtraCharts.v16.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.2.Wizard, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DuAnJEMS\DuAnJEMS_QuanLyDuAn\JEMS\JEMS\bin\Debug\DevExpress.XtraCharts.v16.2.Wizard.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v16.2" />
     <Reference Include="DevExpress.Printing.v16.2.Core" />
@@ -105,6 +121,12 @@
     <Compile Include="MyForm\frm_Check_DeSo.designer.cs">
       <DependentUpon>frm_Check_DeSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\frm_ChiTietTienDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ChiTietTienDo.designer.cs">
+      <DependentUpon>frm_ChiTietTienDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_CreateBatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +162,12 @@
     </Compile>
     <Compile Include="MyForm\frm_ManagerBatch.Designer.cs">
       <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_TienDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_TienDo.designer.cs">
+      <DependentUpon>frm_TienDo.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_User.cs">
       <SubType>Form</SubType>
@@ -185,6 +213,9 @@
     <EmbeddedResource Include="MyForm\frm_Check_DeSo.resx">
       <DependentUpon>frm_Check_DeSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_ChiTietTienDo.resx">
+      <DependentUpon>frm_ChiTietTienDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_CreateBatch.resx">
       <DependentUpon>frm_CreateBatch.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_ManagerBatch.resx">
       <DependentUpon>frm_ManagerBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_TienDo.resx">
+      <DependentUpon>frm_TienDo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_User.resx">
       <DependentUpon>frm_User.cs</DependentUpon>
