@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using Komatsu.MyForm;
 using Komatsu.Properties;
+using KOMTSU.MyUserControl;
 
 
 namespace KOMTSU.MyForm
@@ -289,7 +290,13 @@ namespace KOMTSU.MyForm
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
-                            uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
+                            int k = 1;
+                            foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                            {
+                                variable.SaveData_Loai1_DeJP(lb_IdImage.Text,k);
+                                k++;
+                            }
+                            //uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                         {
@@ -333,7 +340,13 @@ namespace KOMTSU.MyForm
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
-                            uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
+                            int k = 1;
+                            foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                            {
+                                variable.SaveData_Loai1_DeSo(lb_IdImage.Text, k);
+                                k++;
+                            }
+                            //uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                         {
@@ -415,7 +428,13 @@ namespace KOMTSU.MyForm
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
-                        uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
+                        int k = 1;
+                        foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                        {
+                            variable.SaveData_Loai1_DeJP(lb_IdImage.Text, k);
+                            k++;
+                        }
+                        //uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                     {
@@ -458,7 +477,13 @@ namespace KOMTSU.MyForm
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
-                        uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
+                        int k = 1;
+                        foreach (uc_DeJP_Loai1 variable in uc_DeJP_Loai11.Controls)
+                        {
+                            variable.SaveData_Loai1_DeSo(lb_IdImage.Text, k);
+                            k++;
+                        }
+                        //uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                     {

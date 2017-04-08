@@ -313,13 +313,13 @@ namespace KOMTSU.MyUserControl
         {
             ((TextEdit)sender).SelectAll();
         }
-        public void SaveData_Loai1_DeJP(string idImage)
+        public void SaveData_Loai1_DeJP(string idImage, int idphieu)
         {
-            Global.db.Insert_Loai1(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text,Global.LoaiPhieu);
+            Global.db.Insert_Loai1(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text, idphieu,Global.LoaiPhieu);
         }
-        public void SaveData_Loai1_DeSo(string idImage)
+        public void SaveData_Loai1_DeSo(string idImage, int idphieu)
         {
-            Global.db.Insert_Loai1_DeSo(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text, Global.LoaiPhieu);
+            Global.db.Insert_Loai1_DeSo(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text,idphieu, Global.LoaiPhieu);
         }
         public void SuaVaLuu_DEJP(string usersaiit, string usersainhieu, string batch, string idimage)
         {
