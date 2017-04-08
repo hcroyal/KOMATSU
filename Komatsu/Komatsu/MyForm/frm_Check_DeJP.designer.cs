@@ -144,7 +144,6 @@ namespace KOMTSU.MyForm
             this.txt_Truong08.Properties.ReadOnly = true;
             this.txt_Truong08.Size = new System.Drawing.Size(82, 20);
             this.txt_Truong08.TabIndex = 19;
-            this.txt_Truong08.Visible = false;
             // 
             // txt_Truong06
             // 
@@ -155,7 +154,6 @@ namespace KOMTSU.MyForm
             this.txt_Truong06.Properties.ReadOnly = true;
             this.txt_Truong06.Size = new System.Drawing.Size(73, 20);
             this.txt_Truong06.TabIndex = 18;
-            this.txt_Truong06.Visible = false;
             // 
             // labelControl17
             // 

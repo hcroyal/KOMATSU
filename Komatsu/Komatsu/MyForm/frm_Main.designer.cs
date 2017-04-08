@@ -189,8 +189,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_tiendo),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_xuatexcel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_data_auto),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_xuatexcel),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_tinhnangsuat)});
             this.menu_quanly.Name = "menu_quanly";
             // 

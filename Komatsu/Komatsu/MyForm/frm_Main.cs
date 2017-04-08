@@ -170,20 +170,7 @@ namespace KOMTSU.MyForm
 
                 if (Global.BatCoDeSo)
                 {
-                    if (Global.StrRole == "DEJP")
-                    {
-                        if (Global.LoaiPhieu == "Loai1")
-                        {
-                            tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
-                            uc_DeJP_Loai11.CheckBatch_CoDeSo();
-                        }
-                        else if (Global.LoaiPhieu == "Loai2")
-                        {
-                            tabControl_Main.TabPages.Add(tp_Loai2_JP_Main);
-                            uc_DeJP_Loai21.CheckBatch_CoDeSo();
-                        }
-                    }
-                    else if (Global.StrRole == "DESO")
+                    if (Global.StrRole == "DEJP" || Global.StrRole == "DESO")
                     {
                         if (Global.LoaiPhieu == "Loai1")
                         {
@@ -292,25 +279,39 @@ namespace KOMTSU.MyForm
                     {
                         if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                         {
+                            if (uc_DeJP_Loai11.IsError_Color())
+                            {
+                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                    return;
+                            }
                             if (uc_DeJP_Loai11.IsEmpty())
                             {
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
-                            else
                             uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                         {
+                            if (uc_DeJP_Loai21.IsError_Color())
+                            {
+                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                return;
+                            }
                             if (uc_DeJP_Loai21.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                                {
+                                    Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
+                                    "", "", txt_Truong06.Text, txt_Truong08.Text,"","", "",Global.LoaiPhieu, "1");}
+                                else
+                                {
                                     return;
-                                Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                "", "", txt_Truong06.Text, txt_Truong08.Text,"","", "",Global.LoaiPhieu, "1");
+                                }
                             }
                             else
-                            {uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text);
+                            {
+                                uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text,txt_Truong06.Text,txt_Truong08.Text);
                             }
                             //Xứ lý 2 user nhập số lượng dòng khác nhau
                             Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -322,26 +323,40 @@ namespace KOMTSU.MyForm
                     {
                         if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                         {
+                            if (uc_DeJP_Loai11.IsError_Color())
+                            {
+                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                return;
+                            }
                             if (uc_DeJP_Loai11.IsEmpty())
                             {
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
-                            else
-                                uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
+                            uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                         {
+                            if (uc_DeJP_Loai21.IsError_Color())
+                            {
+                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                return;
+                            }
                             if (uc_DeJP_Loai21.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                                {
+                                    Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
+                                        "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                                }
+                                else
+                                {
                                     return;
-                                Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                                }
                             }
                             else
                             {
-                                uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text);
+                                uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text, txt_Truong06.Text, txt_Truong08.Text);
                             }
                             //Xứ lý 2 user nhập số lượng dòng khác nhau
                             Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -390,6 +405,11 @@ namespace KOMTSU.MyForm
                 {
                     if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                     {
+                        if (uc_DeJP_Loai11.IsError_Color())
+                        {
+                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                            return;
+                        }
                         if (uc_DeJP_Loai11.IsEmpty())
                         {
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
@@ -399,16 +419,26 @@ namespace KOMTSU.MyForm
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                     {
+                        if (uc_DeJP_Loai21.IsError_Color())
+                        {
+                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                            return;
+                        }
                         if (uc_DeJP_Loai21.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                            {
+                                Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
+                                    "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                            }
+                            else
+                            {
                                 return;
-                            Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                            }
                         }
                         else
                         {
-                            uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text);
+                            uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text, txt_Truong06.Text, txt_Truong08.Text);
                         }
                         //Xứ lý 2 user nhập số lượng dòng khác nhau
                         Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -418,6 +448,11 @@ namespace KOMTSU.MyForm
                 {
                     if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                     {
+                        if (uc_DeJP_Loai11.IsError_Color())
+                        {
+                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                            return;
+                        }
                         if (uc_DeJP_Loai11.IsEmpty())
                         {
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
@@ -427,16 +462,26 @@ namespace KOMTSU.MyForm
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                     {
+                        if (uc_DeJP_Loai21.IsError_Color())
+                        {
+                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                            return;
+                        }
                         if (uc_DeJP_Loai21.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                            {
+                                Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
+                                    "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                            }
+                            else
+                            {
                                 return;
-                            Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                            }
                         }
                         else
                         {
-                            uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text);
+                            uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text, txt_Truong06.Text, txt_Truong08.Text);
                         }
                         //Xứ lý 2 user nhập số lượng dòng khác nhau
                         Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -469,6 +514,7 @@ namespace KOMTSU.MyForm
         {
             Global.StrCheck = "CHECKDESO";
             new frm_Check_DeSo().ShowDialog();
+            frm_Main_Load(sender,e);
         }
         private void frm_Main_KeyDown(object sender, KeyEventArgs e)
         {
@@ -495,6 +541,7 @@ namespace KOMTSU.MyForm
         {
             Global.StrCheck = "CHECKDEJP";
             new frm_Check_DeJP().ShowDialog();
+            frm_Main_Load(sender, e);
         }
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)

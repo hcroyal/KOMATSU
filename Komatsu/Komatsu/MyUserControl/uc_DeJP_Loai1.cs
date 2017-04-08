@@ -60,8 +60,7 @@ namespace KOMTSU.MyUserControl
 
         public bool IsEmpty()
         {
-            if (string.IsNullOrEmpty(txt_Truong03.Text) &&
-            string.IsNullOrEmpty(txt_Truong04.Text) &&
+            if (string.IsNullOrEmpty(txt_Truong04.Text) &&
             string.IsNullOrEmpty(txt_Truong05.Text) &&
             string.IsNullOrEmpty(txt_Truong07.Text) &&
             string.IsNullOrEmpty(txt_Truong09.Text) &&
@@ -72,6 +71,19 @@ namespace KOMTSU.MyUserControl
             return false;
         }
 
+        public bool IsError_Color()
+        {
+            if (txt_Truong03.BackColor == Color.Red ||
+                txt_Truong04.BackColor == Color.Red ||
+                txt_Truong05.BackColor == Color.Red ||
+                txt_Truong07.BackColor == Color.Red ||
+                txt_Truong09.BackColor == Color.Red ||
+                txt_Truong10.BackColor == Color.Red ||
+                txt_Truong11.BackColor == Color.Red ||
+                txt_Truong12.BackColor == Color.Red)
+                return true;
+            return false;
+        }
         public void CheckBatch_CoDeSo()
         {
             if ((Global.StrRole == "DEJP" && Global.BatCoDeSo)||(Global.StrCheck == "CHECKDEJP" && Global.BatCoDeSo))
@@ -309,15 +321,15 @@ namespace KOMTSU.MyUserControl
         {
             Global.db.Insert_Loai1_DeSo(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text, Global.LoaiPhieu);
         }
-        public void SuaVaLuu_DEJP(string usersaiit, string usersainhieu, string idimage)
+        public void SuaVaLuu_DEJP(string usersaiit, string usersainhieu, string batch, string idimage)
         {
-            Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+            Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, batch, Global.StrUsername,
                 txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
                 txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1","Loai1");
         }
-        public void SuaVaLuu_DESO(string usersaiit, string usersainhieu, string idimage)
+        public void SuaVaLuu_DESO(string usersaiit, string usersainhieu, string batch, string idimage)
         {
-            Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, Global.StrBatch, Global.StrUsername,
+            Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, batch, Global.StrUsername,
                 txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
                 txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1", "Loai1");
         }
