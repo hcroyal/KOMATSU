@@ -618,4 +618,36 @@
       <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ChiTietTienDo_DeJP" Method="ChiTietTienDo_DeJP">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="ChiTietTienDo_DeJPResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameDEJP" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Checker" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ThongTin" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ChiTietUserDeSo" Method="ChiTietUserDeSo">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="idimage" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="ChiTietUserDeSoResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ChiTietTienDo_DeSo" Method="ChiTietTienDo_DeSo">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="ChiTietTienDo_DeSoResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameDESo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Checker" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ThongTin" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ChiTietUserDeJP" Method="ChiTietUserDeJP">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="idimage" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="ChiTietUserDeJPResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

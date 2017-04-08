@@ -42,6 +42,7 @@ namespace KOMTSU.MyForm
                 if (radioGroup1.Properties.Items[radioGroup1.SelectedIndex].Value == "DESO" && !CoDeSo)
                 {
                     chartControl1.DataSource = null;chartControl1.Series.Clear();
+                    btn_ChiTiet.Visible = false;
                 }
                 else if (radioGroup1.Properties.Items[radioGroup1.SelectedIndex].Value == "DESO" && CoDeSo)
                 {
@@ -57,6 +58,7 @@ namespace KOMTSU.MyForm
                     ((PiePointOptions)series1.Label.PointOptions).PointView = PointView.ArgumentAndValues;
                     chartControl1.PaletteName = "Palette 1";
                     loai = "DESO";
+                    btn_ChiTiet.Visible = true;
                 }
                 else
                 {
@@ -72,7 +74,7 @@ namespace KOMTSU.MyForm
                     ((PiePointOptions)series1.Label.PointOptions).PointView = PointView.ArgumentAndValues;
                     chartControl1.PaletteName = "Palette 1";
                     loai = "DEJP";
-                }
+                    btn_ChiTiet.Visible = true;}
                
             }
             catch (Exception)

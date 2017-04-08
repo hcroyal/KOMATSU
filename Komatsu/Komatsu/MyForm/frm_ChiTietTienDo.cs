@@ -22,12 +22,13 @@ namespace KOMTSU.MyForm
             if (Loai=="DESO")
             {
                 lb_SoHinhChuaNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình chưa nhập" select w.idimage).Count().ToString();
+                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình đang nhập" select w.idimage).Count().ToString();
                 lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình chờ check" select w.idimage).Count().ToString();
                 lb_SoHinhDangCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình đang check" select w.idimage).Count().ToString();
                 lb_SoHinhHoanThanh.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình hoàn thành" select w.idimage).Count().ToString();
 
                 gridControl1.DataSource = null;
-                //gridControl1.DataSource = Global.db.ChiTietTienDoDeSo(lb_fBatchName.Text);
+                gridControl1.DataSource = Global.db.ChiTietTienDo_DeSo(lb_fBatchName.Text);
                 gridView1.RowCellStyle += GridView1_RowCellStyle;
             }
             else
@@ -38,7 +39,7 @@ namespace KOMTSU.MyForm
                 lb_SoHinhDangCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình đang check" select w.idimage).Count().ToString();
                 lb_SoHinhHoanThanh.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình hoàn thành" select w.idimage).Count().ToString();
                 gridControl1.DataSource = null;
-                //gridControl1.DataSource = Global.db.ChiTietTienDoDeJP(lb_fBatchName.Text);
+                gridControl1.DataSource = Global.db.ChiTietTienDo_DeJP(lb_fBatchName.Text);
                 gridView1.RowCellStyle += GridView1_RowCellStyle;
             }
         }
@@ -81,11 +82,11 @@ namespace KOMTSU.MyForm
             gridControl2.DataSource = null;
             if (Loai == "DESO")
             {
-                //gridControl2.DataSource = Global.db.ChiTietUserDeSo(lb_fBatchName.Text, idimage);
+                gridControl2.DataSource = Global.db.ChiTietUserDeSo(lb_fBatchName.Text, idimage);
             }
             else
             {
-                //gridControl2.DataSource = Global.db.ChiTietUserDeJP(lb_fBatchName.Text, idimage);
+                gridControl2.DataSource = Global.db.ChiTietUserDeJP(lb_fBatchName.Text, idimage);
             }
         }
     }

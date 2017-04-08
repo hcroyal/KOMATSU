@@ -555,6 +555,34 @@ namespace Komatsu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((ISingleResult<ThongKeTienDo_DeSoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ChiTietTienDo_DeJP")]
+		public ISingleResult<ChiTietTienDo_DeJPResult> ChiTietTienDo_DeJP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
+			return ((ISingleResult<ChiTietTienDo_DeJPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ChiTietUserDeSo")]
+		public ISingleResult<ChiTietUserDeSoResult> ChiTietUserDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string idimage)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname, idimage);
+			return ((ISingleResult<ChiTietUserDeSoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ChiTietTienDo_DeSo")]
+		public ISingleResult<ChiTietTienDo_DeSoResult> ChiTietTienDo_DeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
+			return ((ISingleResult<ChiTietTienDo_DeSoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ChiTietUserDeJP")]
+		public ISingleResult<ChiTietUserDeJPResult> ChiTietUserDeJP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string idimage)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname, idimage);
+			return ((ISingleResult<ChiTietUserDeJPResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
@@ -6437,6 +6465,218 @@ namespace Komatsu
 				if ((this._soluong != value))
 				{
 					this._soluong = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ChiTietTienDo_DeJPResult
+	{
+		
+		private string _idimage;
+		
+		private string _UserNameDEJP;
+		
+		private string _Checker;
+		
+		private string _ThongTin;
+		
+		public ChiTietTienDo_DeJPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idimage", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string idimage
+		{
+			get
+			{
+				return this._idimage;
+			}
+			set
+			{
+				if ((this._idimage != value))
+				{
+					this._idimage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserNameDEJP", DbType="NVarChar(200)")]
+		public string UserNameDEJP
+		{
+			get
+			{
+				return this._UserNameDEJP;
+			}
+			set
+			{
+				if ((this._UserNameDEJP != value))
+				{
+					this._UserNameDEJP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Checker", DbType="NVarChar(255)")]
+		public string Checker
+		{
+			get
+			{
+				return this._Checker;
+			}
+			set
+			{
+				if ((this._Checker != value))
+				{
+					this._Checker = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThongTin", DbType="NVarChar(100)")]
+		public string ThongTin
+		{
+			get
+			{
+				return this._ThongTin;
+			}
+			set
+			{
+				if ((this._ThongTin != value))
+				{
+					this._ThongTin = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ChiTietUserDeSoResult
+	{
+		
+		private string _UserName;
+		
+		public ChiTietUserDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ChiTietTienDo_DeSoResult
+	{
+		
+		private string _idimage;
+		
+		private string _UserNameDESo;
+		
+		private string _Checker;
+		
+		private string _ThongTin;
+		
+		public ChiTietTienDo_DeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idimage", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string idimage
+		{
+			get
+			{
+				return this._idimage;
+			}
+			set
+			{
+				if ((this._idimage != value))
+				{
+					this._idimage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserNameDESo", DbType="NVarChar(200)")]
+		public string UserNameDESo
+		{
+			get
+			{
+				return this._UserNameDESo;
+			}
+			set
+			{
+				if ((this._UserNameDESo != value))
+				{
+					this._UserNameDESo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Checker", DbType="NVarChar(255)")]
+		public string Checker
+		{
+			get
+			{
+				return this._Checker;
+			}
+			set
+			{
+				if ((this._Checker != value))
+				{
+					this._Checker = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThongTin", DbType="NVarChar(100)")]
+		public string ThongTin
+		{
+			get
+			{
+				return this._ThongTin;
+			}
+			set
+			{
+				if ((this._ThongTin != value))
+				{
+					this._ThongTin = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ChiTietUserDeJPResult
+	{
+		
+		private string _UserName;
+		
+		public ChiTietUserDeJPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
 				}
 			}
 		}
