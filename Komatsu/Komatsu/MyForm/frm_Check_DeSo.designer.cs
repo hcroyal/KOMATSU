@@ -63,6 +63,8 @@ namespace KOMTSU.MyForm
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_XoaPhieu2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ThemPhieu2 = new DevExpress.XtraEditors.SimpleButton();
             this.lb_username2 = new System.Windows.Forms.Label();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_SuaVaLuu_User2 = new DevExpress.XtraEditors.SimpleButton();
@@ -83,6 +85,8 @@ namespace KOMTSU.MyForm
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_XoaPhieu1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ThemPhieu1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.lb_username1 = new System.Windows.Forms.Label();
             this.btn_SuaVaLuu_User1 = new DevExpress.XtraEditors.SimpleButton();
@@ -334,11 +338,13 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User2.Name = "tp_Loai1_User2";
             this.tp_Loai1_User2.Size = new System.Drawing.Size(414, 284);
             this.tp_Loai1_User2.Text = "Loại 1";
+            this.tp_Loai1_User2.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.tp_Loai1_User2_Scroll);
             // 
             // uc_DeJP_Loai12
             // 
             this.uc_DeJP_Loai12.AutoScroll = true;
             this.uc_DeJP_Loai12.AutoSize = true;
+            this.uc_DeJP_Loai12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uc_DeJP_Loai12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_DeJP_Loai12.Location = new System.Drawing.Point(0, 0);
             this.uc_DeJP_Loai12.Name = "uc_DeJP_Loai12";
@@ -466,6 +472,8 @@ namespace KOMTSU.MyForm
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btn_XoaPhieu2);
+            this.panel4.Controls.Add(this.btn_ThemPhieu2);
             this.panel4.Controls.Add(this.lb_username2);
             this.panel4.Controls.Add(this.simpleButton2);
             this.panel4.Controls.Add(this.btn_SuaVaLuu_User2);
@@ -476,12 +484,40 @@ namespace KOMTSU.MyForm
             this.panel4.Size = new System.Drawing.Size(424, 24);
             this.panel4.TabIndex = 0;
             // 
+            // btn_XoaPhieu2
+            // 
+            this.btn_XoaPhieu2.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaPhieu2.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_XoaPhieu2.Appearance.Options.UseFont = true;
+            this.btn_XoaPhieu2.Appearance.Options.UseForeColor = true;
+            this.btn_XoaPhieu2.Location = new System.Drawing.Point(54, 2);
+            this.btn_XoaPhieu2.Name = "btn_XoaPhieu2";
+            this.btn_XoaPhieu2.Size = new System.Drawing.Size(45, 21);
+            this.btn_XoaPhieu2.TabIndex = 40;
+            this.btn_XoaPhieu2.Text = "-";
+            this.btn_XoaPhieu2.Visible = false;
+            this.btn_XoaPhieu2.Click += new System.EventHandler(this.btn_XoaPhieu2_Click);
+            // 
+            // btn_ThemPhieu2
+            // 
+            this.btn_ThemPhieu2.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemPhieu2.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ThemPhieu2.Appearance.Options.UseFont = true;
+            this.btn_ThemPhieu2.Appearance.Options.UseForeColor = true;
+            this.btn_ThemPhieu2.Location = new System.Drawing.Point(5, 2);
+            this.btn_ThemPhieu2.Name = "btn_ThemPhieu2";
+            this.btn_ThemPhieu2.Size = new System.Drawing.Size(45, 21);
+            this.btn_ThemPhieu2.TabIndex = 42;
+            this.btn_ThemPhieu2.Text = "+";
+            this.btn_ThemPhieu2.Visible = false;
+            this.btn_ThemPhieu2.Click += new System.EventHandler(this.btn_ThemPhieu2_Click);
+            // 
             // lb_username2
             // 
             this.lb_username2.AutoSize = true;
             this.lb_username2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_username2.ForeColor = System.Drawing.Color.Maroon;
-            this.lb_username2.Location = new System.Drawing.Point(5, 2);
+            this.lb_username2.Location = new System.Drawing.Point(110, 3);
             this.lb_username2.Name = "lb_username2";
             this.lb_username2.Size = new System.Drawing.Size(51, 18);
             this.lb_username2.TabIndex = 6;
@@ -489,7 +525,7 @@ namespace KOMTSU.MyForm
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(260, 1);
+            this.simpleButton2.Location = new System.Drawing.Point(365, 2);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(52, 21);
             this.simpleButton2.TabIndex = 36;
@@ -499,7 +535,7 @@ namespace KOMTSU.MyForm
             // 
             // btn_SuaVaLuu_User2
             // 
-            this.btn_SuaVaLuu_User2.Location = new System.Drawing.Point(154, 3);
+            this.btn_SuaVaLuu_User2.Location = new System.Drawing.Point(259, 4);
             this.btn_SuaVaLuu_User2.Name = "btn_SuaVaLuu_User2";
             this.btn_SuaVaLuu_User2.Size = new System.Drawing.Size(72, 17);
             this.btn_SuaVaLuu_User2.TabIndex = 2;
@@ -508,7 +544,7 @@ namespace KOMTSU.MyForm
             // 
             // btn_Luu_DeSo2
             // 
-            this.btn_Luu_DeSo2.Location = new System.Drawing.Point(88, 3);
+            this.btn_Luu_DeSo2.Location = new System.Drawing.Point(193, 4);
             this.btn_Luu_DeSo2.Name = "btn_Luu_DeSo2";
             this.btn_Luu_DeSo2.Size = new System.Drawing.Size(50, 16);
             this.btn_Luu_DeSo2.TabIndex = 2;
@@ -553,11 +589,13 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User1.Name = "tp_Loai1_User1";
             this.tp_Loai1_User1.Size = new System.Drawing.Size(418, 288);
             this.tp_Loai1_User1.Text = "Loại 1";
+            this.tp_Loai1_User1.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.tp_Loai1_User1_Scroll);
             // 
             // uc_DeJP_Loai11
             // 
             this.uc_DeJP_Loai11.AutoScroll = true;
             this.uc_DeJP_Loai11.AutoSize = true;
+            this.uc_DeJP_Loai11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uc_DeJP_Loai11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_DeJP_Loai11.Location = new System.Drawing.Point(0, 0);
             this.uc_DeJP_Loai11.Name = "uc_DeJP_Loai11";
@@ -685,6 +723,8 @@ namespace KOMTSU.MyForm
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_XoaPhieu1);
+            this.panel2.Controls.Add(this.btn_ThemPhieu1);
             this.panel2.Controls.Add(this.simpleButton1);
             this.panel2.Controls.Add(this.lb_username1);
             this.panel2.Controls.Add(this.btn_SuaVaLuu_User1);
@@ -695,9 +735,37 @@ namespace KOMTSU.MyForm
             this.panel2.Size = new System.Drawing.Size(428, 24);
             this.panel2.TabIndex = 0;
             // 
+            // btn_XoaPhieu1
+            // 
+            this.btn_XoaPhieu1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaPhieu1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_XoaPhieu1.Appearance.Options.UseFont = true;
+            this.btn_XoaPhieu1.Appearance.Options.UseForeColor = true;
+            this.btn_XoaPhieu1.Location = new System.Drawing.Point(55, 1);
+            this.btn_XoaPhieu1.Name = "btn_XoaPhieu1";
+            this.btn_XoaPhieu1.Size = new System.Drawing.Size(45, 21);
+            this.btn_XoaPhieu1.TabIndex = 39;
+            this.btn_XoaPhieu1.Text = "-";
+            this.btn_XoaPhieu1.Visible = false;
+            this.btn_XoaPhieu1.Click += new System.EventHandler(this.btn_XoaPhieu1_Click);
+            // 
+            // btn_ThemPhieu1
+            // 
+            this.btn_ThemPhieu1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemPhieu1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ThemPhieu1.Appearance.Options.UseFont = true;
+            this.btn_ThemPhieu1.Appearance.Options.UseForeColor = true;
+            this.btn_ThemPhieu1.Location = new System.Drawing.Point(6, 1);
+            this.btn_ThemPhieu1.Name = "btn_ThemPhieu1";
+            this.btn_ThemPhieu1.Size = new System.Drawing.Size(45, 21);
+            this.btn_ThemPhieu1.TabIndex = 41;
+            this.btn_ThemPhieu1.Text = "+";
+            this.btn_ThemPhieu1.Visible = false;
+            this.btn_ThemPhieu1.Click += new System.EventHandler(this.btn_ThemPhieu1_Click);
+            // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(256, 1);
+            this.simpleButton1.Location = new System.Drawing.Point(363, 1);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(52, 21);
             this.simpleButton1.TabIndex = 36;
@@ -710,7 +778,7 @@ namespace KOMTSU.MyForm
             this.lb_username1.AutoSize = true;
             this.lb_username1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_username1.ForeColor = System.Drawing.Color.Maroon;
-            this.lb_username1.Location = new System.Drawing.Point(5, 4);
+            this.lb_username1.Location = new System.Drawing.Point(112, 4);
             this.lb_username1.Name = "lb_username1";
             this.lb_username1.Size = new System.Drawing.Size(51, 18);
             this.lb_username1.TabIndex = 6;
@@ -718,7 +786,7 @@ namespace KOMTSU.MyForm
             // 
             // btn_SuaVaLuu_User1
             // 
-            this.btn_SuaVaLuu_User1.Location = new System.Drawing.Point(154, 3);
+            this.btn_SuaVaLuu_User1.Location = new System.Drawing.Point(261, 3);
             this.btn_SuaVaLuu_User1.Name = "btn_SuaVaLuu_User1";
             this.btn_SuaVaLuu_User1.Size = new System.Drawing.Size(72, 18);
             this.btn_SuaVaLuu_User1.TabIndex = 2;
@@ -727,7 +795,7 @@ namespace KOMTSU.MyForm
             // 
             // btn_Luu_DeSo1
             // 
-            this.btn_Luu_DeSo1.Location = new System.Drawing.Point(88, 2);
+            this.btn_Luu_DeSo1.Location = new System.Drawing.Point(195, 2);
             this.btn_Luu_DeSo1.Name = "btn_Luu_DeSo1";
             this.btn_Luu_DeSo1.Size = new System.Drawing.Size(50, 19);
             this.btn_Luu_DeSo1.TabIndex = 2;
@@ -861,5 +929,9 @@ namespace KOMTSU.MyForm
         public DevExpress.XtraEditors.TextEdit txt_Truong06;
         public DevExpress.XtraEditors.LabelControl labelControl17;
         public DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.SimpleButton btn_XoaPhieu2;
+        private DevExpress.XtraEditors.SimpleButton btn_ThemPhieu2;
+        private DevExpress.XtraEditors.SimpleButton btn_XoaPhieu1;
+        private DevExpress.XtraEditors.SimpleButton btn_ThemPhieu1;
     }
 }

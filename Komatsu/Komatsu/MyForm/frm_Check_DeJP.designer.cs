@@ -63,6 +63,8 @@ namespace KOMTSU.MyForm
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_XoaPhieu2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ThemPhieu2 = new DevExpress.XtraEditors.SimpleButton();
             this.lb_username2 = new System.Windows.Forms.Label();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_SuaVaLuu_User2 = new DevExpress.XtraEditors.SimpleButton();
@@ -83,15 +85,13 @@ namespace KOMTSU.MyForm
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_XoaPhieu1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ThemPhieu1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.lb_username1 = new System.Windows.Forms.Label();
             this.btn_SuaVaLuu_User1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Luu_DeSo1 = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
-            this.btn_XoaPhieu1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_ThemPhieu1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_ThemPhieu2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_XoaPhieu2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08.Properties)).BeginInit();
@@ -336,6 +336,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User2.Name = "tp_Loai1_User2";
             this.tp_Loai1_User2.Size = new System.Drawing.Size(414, 284);
             this.tp_Loai1_User2.Text = "Loại 1";
+            this.tp_Loai1_User2.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.tp_Loai1_User2_Scroll);
             // 
             // uc_DeJP_Loai12
             // 
@@ -347,7 +348,6 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai12.Name = "uc_DeJP_Loai12";
             this.uc_DeJP_Loai12.Size = new System.Drawing.Size(414, 284);
             this.uc_DeJP_Loai12.TabIndex = 0;
-            this.uc_DeJP_Loai12.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai12_Scroll);
             // 
             // tp_Loai2_User2
             // 
@@ -481,6 +481,34 @@ namespace KOMTSU.MyForm
             this.panel4.Size = new System.Drawing.Size(424, 24);
             this.panel4.TabIndex = 0;
             // 
+            // btn_XoaPhieu2
+            // 
+            this.btn_XoaPhieu2.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaPhieu2.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_XoaPhieu2.Appearance.Options.UseFont = true;
+            this.btn_XoaPhieu2.Appearance.Options.UseForeColor = true;
+            this.btn_XoaPhieu2.Location = new System.Drawing.Point(52, 1);
+            this.btn_XoaPhieu2.Name = "btn_XoaPhieu2";
+            this.btn_XoaPhieu2.Size = new System.Drawing.Size(45, 21);
+            this.btn_XoaPhieu2.TabIndex = 37;
+            this.btn_XoaPhieu2.Text = "-";
+            this.btn_XoaPhieu2.Visible = false;
+            this.btn_XoaPhieu2.Click += new System.EventHandler(this.btn_XoaPhieu2_Click);
+            // 
+            // btn_ThemPhieu2
+            // 
+            this.btn_ThemPhieu2.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemPhieu2.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ThemPhieu2.Appearance.Options.UseFont = true;
+            this.btn_ThemPhieu2.Appearance.Options.UseForeColor = true;
+            this.btn_ThemPhieu2.Location = new System.Drawing.Point(3, 1);
+            this.btn_ThemPhieu2.Name = "btn_ThemPhieu2";
+            this.btn_ThemPhieu2.Size = new System.Drawing.Size(45, 21);
+            this.btn_ThemPhieu2.TabIndex = 38;
+            this.btn_ThemPhieu2.Text = "+";
+            this.btn_ThemPhieu2.Visible = false;
+            this.btn_ThemPhieu2.Click += new System.EventHandler(this.btn_ThemPhieu2_Click);
+            // 
             // lb_username2
             // 
             this.lb_username2.AutoSize = true;
@@ -558,6 +586,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User1.Name = "tp_Loai1_User1";
             this.tp_Loai1_User1.Size = new System.Drawing.Size(418, 288);
             this.tp_Loai1_User1.Text = "Loại 1";
+            this.tp_Loai1_User1.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.tp_Loai1_User1_Scroll);
             // 
             // uc_DeJP_Loai11
             // 
@@ -569,7 +598,6 @@ namespace KOMTSU.MyForm
             this.uc_DeJP_Loai11.Name = "uc_DeJP_Loai11";
             this.uc_DeJP_Loai11.Size = new System.Drawing.Size(418, 288);
             this.uc_DeJP_Loai11.TabIndex = 0;
-            this.uc_DeJP_Loai11.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_DeJP_Loai11_Scroll);
             // 
             // tp_Loai2_User1
             // 
@@ -703,6 +731,34 @@ namespace KOMTSU.MyForm
             this.panel2.Size = new System.Drawing.Size(428, 24);
             this.panel2.TabIndex = 0;
             // 
+            // btn_XoaPhieu1
+            // 
+            this.btn_XoaPhieu1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaPhieu1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_XoaPhieu1.Appearance.Options.UseFont = true;
+            this.btn_XoaPhieu1.Appearance.Options.UseForeColor = true;
+            this.btn_XoaPhieu1.Location = new System.Drawing.Point(54, 2);
+            this.btn_XoaPhieu1.Name = "btn_XoaPhieu1";
+            this.btn_XoaPhieu1.Size = new System.Drawing.Size(45, 21);
+            this.btn_XoaPhieu1.TabIndex = 37;
+            this.btn_XoaPhieu1.Text = "-";
+            this.btn_XoaPhieu1.Visible = false;
+            this.btn_XoaPhieu1.Click += new System.EventHandler(this.btn_XoaPhieu1_Click);
+            // 
+            // btn_ThemPhieu1
+            // 
+            this.btn_ThemPhieu1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemPhieu1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ThemPhieu1.Appearance.Options.UseFont = true;
+            this.btn_ThemPhieu1.Appearance.Options.UseForeColor = true;
+            this.btn_ThemPhieu1.Location = new System.Drawing.Point(5, 2);
+            this.btn_ThemPhieu1.Name = "btn_ThemPhieu1";
+            this.btn_ThemPhieu1.Size = new System.Drawing.Size(45, 21);
+            this.btn_ThemPhieu1.TabIndex = 38;
+            this.btn_ThemPhieu1.Text = "+";
+            this.btn_ThemPhieu1.Visible = false;
+            this.btn_ThemPhieu1.Click += new System.EventHandler(this.btn_ThemPhieu1_Click);
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(357, 1);
@@ -749,62 +805,6 @@ namespace KOMTSU.MyForm
             this.uc_PictureBox1.Name = "uc_PictureBox1";
             this.uc_PictureBox1.Size = new System.Drawing.Size(823, 668);
             this.uc_PictureBox1.TabIndex = 35;
-            // 
-            // btn_XoaPhieu1
-            // 
-            this.btn_XoaPhieu1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.btn_XoaPhieu1.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.btn_XoaPhieu1.Appearance.Options.UseFont = true;
-            this.btn_XoaPhieu1.Appearance.Options.UseForeColor = true;
-            this.btn_XoaPhieu1.Location = new System.Drawing.Point(54, 2);
-            this.btn_XoaPhieu1.Name = "btn_XoaPhieu1";
-            this.btn_XoaPhieu1.Size = new System.Drawing.Size(45, 21);
-            this.btn_XoaPhieu1.TabIndex = 37;
-            this.btn_XoaPhieu1.Text = "-";
-            this.btn_XoaPhieu1.Visible = false;
-            this.btn_XoaPhieu1.Click += new System.EventHandler(this.btn_XoaPhieu1_Click);
-            // 
-            // btn_ThemPhieu1
-            // 
-            this.btn_ThemPhieu1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.btn_ThemPhieu1.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.btn_ThemPhieu1.Appearance.Options.UseFont = true;
-            this.btn_ThemPhieu1.Appearance.Options.UseForeColor = true;
-            this.btn_ThemPhieu1.Location = new System.Drawing.Point(5, 2);
-            this.btn_ThemPhieu1.Name = "btn_ThemPhieu1";
-            this.btn_ThemPhieu1.Size = new System.Drawing.Size(45, 21);
-            this.btn_ThemPhieu1.TabIndex = 38;
-            this.btn_ThemPhieu1.Text = "+";
-            this.btn_ThemPhieu1.Visible = false;
-            this.btn_ThemPhieu1.Click += new System.EventHandler(this.btn_ThemPhieu1_Click);
-            // 
-            // btn_ThemPhieu2
-            // 
-            this.btn_ThemPhieu2.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.btn_ThemPhieu2.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.btn_ThemPhieu2.Appearance.Options.UseFont = true;
-            this.btn_ThemPhieu2.Appearance.Options.UseForeColor = true;
-            this.btn_ThemPhieu2.Location = new System.Drawing.Point(3, 1);
-            this.btn_ThemPhieu2.Name = "btn_ThemPhieu2";
-            this.btn_ThemPhieu2.Size = new System.Drawing.Size(45, 21);
-            this.btn_ThemPhieu2.TabIndex = 38;
-            this.btn_ThemPhieu2.Text = "+";
-            this.btn_ThemPhieu2.Visible = false;
-            this.btn_ThemPhieu2.Click += new System.EventHandler(this.btn_ThemPhieu2_Click);
-            // 
-            // btn_XoaPhieu2
-            // 
-            this.btn_XoaPhieu2.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.btn_XoaPhieu2.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.btn_XoaPhieu2.Appearance.Options.UseFont = true;
-            this.btn_XoaPhieu2.Appearance.Options.UseForeColor = true;
-            this.btn_XoaPhieu2.Location = new System.Drawing.Point(52, 1);
-            this.btn_XoaPhieu2.Name = "btn_XoaPhieu2";
-            this.btn_XoaPhieu2.Size = new System.Drawing.Size(45, 21);
-            this.btn_XoaPhieu2.TabIndex = 37;
-            this.btn_XoaPhieu2.Text = "-";
-            this.btn_XoaPhieu2.Visible = false;
-            this.btn_XoaPhieu2.Click += new System.EventHandler(this.btn_XoaPhieu2_Click);
             // 
             // frm_Check_DeJP
             // 

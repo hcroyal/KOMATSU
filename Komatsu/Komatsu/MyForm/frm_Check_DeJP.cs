@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using Komatsu.Properties;
 using KOMTSU.MyUserControl;
+using ScrollOrientation = DevExpress.XtraEditors.ScrollOrientation;
 
 namespace KOMTSU.MyForm
 {
@@ -24,8 +25,8 @@ namespace KOMTSU.MyForm
         {
             if (Global.LoaiPhieu == "Loai1")
             {
-                uc_DeJP_Loai12.ResetData();
-                uc_DeJP_Loai11.ResetData();
+                //uc_DeJP_Loai12.ResetData();
+                //uc_DeJP_Loai11.ResetData();
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
@@ -71,6 +72,16 @@ namespace KOMTSU.MyForm
                 btn_Start_Click(null, null);
             }
         }
+        private void Load_Truong06_08(uc_DeJP_Loai1 uc)
+        {
+            Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo06).FirstOrDefault();
+            Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo08).FirstOrDefault();
+            if (Global.LoaiPhieu == "Loai1")
+            {
+                uc.txt_Truong06.Text = Global.Truong06;
+                uc.txt_Truong08.Text = Global.Truong08;
+            }
+        }
         private void frm_Check_Load(object sender, EventArgs e)
         {
             try
@@ -99,9 +110,6 @@ namespace KOMTSU.MyForm
                     TabControl_User1.TabPages.Add(tp_Loai2_User1);
                     TabControl_User2.TabPages.Add(tp_Loai2_User2);
                 }
-                uc_DeJP_Loai11.CheckBatch_CoDeSo();
-                uc_DeJP_Loai12.CheckBatch_CoDeSo();
-
                 uc_DeJP_Loai21.CheckBatch_CoDeSo();
                 uc_DeJP_Loai22.CheckBatch_CoDeSo();
 
@@ -109,11 +117,9 @@ namespace KOMTSU.MyForm
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
                 btn_SuaVaLuu_User2.Visible = false;
-
-                uc_DeJP_Loai11.Changed += UC_Row_01_Changed;
+                
                 uc_DeJP_Loai21.Changed += UC_Row_01_Changed;
-
-                uc_DeJP_Loai12.Changed += UC_Row_01_Changed1;
+                
                 uc_DeJP_Loai22.Changed += UC_Row_01_Changed1;
             }
             catch (Exception i)
@@ -171,9 +177,6 @@ namespace KOMTSU.MyForm
                         return;
                     }
                 }
-                uc_DeJP_Loai11.CheckBatch_CoDeSo();
-                uc_DeJP_Loai12.CheckBatch_CoDeSo();
-
                 uc_DeJP_Loai21.CheckBatch_CoDeSo();
                 uc_DeJP_Loai22.CheckBatch_CoDeSo();
 
@@ -268,8 +271,6 @@ namespace KOMTSU.MyForm
             if (Global.LoaiPhieu == "Loai1")
             {
                 int countRowUser1 = 0, countRowUser2 = 0, r1 = 0, r2 = 0;
-                TabControl_User1.TabPages.Add(tp_Loai1_User1);
-                TabControl_User2.TabPages.Add(tp_Loai1_User2);
 
                 for (int i = 0; i < deso.Count - 1; i++)
                 {
@@ -284,9 +285,11 @@ namespace KOMTSU.MyForm
                 }
                 
                 //----------------------------------------
-                for (int i = 0; i < countRowUser1; i++)
+                tp_Loai1_User1.Controls.Clear();
+                tp_Loai1_User2.Controls.Clear();
+                for (int i = 0; i < row_user1; i++)
                 {
-                    uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+                    uc_DeJP_Loai1 uc_1 = new uc_DeJP_Loai1();
                     Point p = new Point();
                     foreach (uc_DeJP_Loai1 ct in tp_Loai1_User1.Controls)
                     {
@@ -294,38 +297,45 @@ namespace KOMTSU.MyForm
                         p.Y += ct.Size.Height + 20;
 
                     }
-                    uc.Location = p;
-                    count2++;
-                    uc.Tag = (i+1).ToString();
-                    tp_Loai1_User1.Controls.Add(uc);
+                    uc_1.Location = p;
+                    count1++;
+                    uc_1.Tag = (i+1).ToString();
+                    tp_Loai1_User1.Controls.Add(uc_1);
+                    uc_1.Changed += UC_Row_01_Changed;
+                    uc_1.CheckBatch_CoDeSo();
+
                 }
-                for (int i = 0; i < countRowUser1; i++)
+                for (int i = 0; i < row_user2; i++)
                 {
-                    uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+                    uc_DeJP_Loai1 uc_2 = new uc_DeJP_Loai1();
                     Point p = new Point();
-                    foreach (uc_DeJP_Loai1 ct in tp_Loai1_User1.Controls)
+                    foreach (uc_DeJP_Loai1 ct in tp_Loai1_User2.Controls)
                     {
                         p = ct.Location;
                         p.Y += ct.Size.Height + 20;
 
                     }
-                    uc.Location = p;
+                    uc_2.Location = p;
                     count2++;
-                    uc.Tag = (i + 1).ToString();
-                    tp_Loai1_User1.Controls.Add(uc);
+                    uc_2.Tag = (i + 1).ToString();
+                    tp_Loai1_User2.Controls.Add(uc_2);
+                    uc_2.Changed += UC_Row_01_Changed1;
+                    uc_2.CheckBatch_CoDeSo();
                 }
                 //---------------------------------
 
-                foreach (uc_DeJP_Row item in uc_DeJP_Loai21.Controls)
+                foreach (uc_DeJP_Loai1 item in tp_Loai1_User1.Controls)
                 {
-                    item.lb_stt.Text = deso[r1].IdPhieu.ToString();
-                    item.txt_Truong03.Text = deso[r1].Truong_03;
                     item.txt_Truong03.Text = deso[r1].Truong_03;
                     item.txt_Truong04.Text = deso[r1].Truong_04;
                     item.txt_Truong05.Text = deso[r1].Truong_05;
+                    item.txt_Truong06.Text = deso[r1].Truong_06;
+                    item.txt_Truong07.Text = deso[r1].Truong_07;
+                    item.txt_Truong08.Text = deso[r1].Truong_08;
+                    item.txt_Truong09.Text = deso[r1].Truong_09;
                     item.txt_Truong10.Text = deso[r1].Truong_10;
-                    item.txt_Truong11_1.Text = deso[r1].Truong_11;
-                    item.txt_Truong11_2.Text = deso[r1].Truong_11B;
+                    item.txt_Truong11.Text = deso[r1].Truong_11;
+                    item.txt_Truong12.Text = deso[r1].Truong_12;
                     if (r1 == countRowUser1)
                     {
                         r2 = r1 + 1;
@@ -333,44 +343,24 @@ namespace KOMTSU.MyForm
                     }
                     r1++;
                 }
-                foreach (uc_DeJP_Row item in uc_DeJP_Loai22.Controls)
+                foreach (uc_DeJP_Loai1 item in tp_Loai1_User2.Controls)
                 {
-                    item.lb_stt.Text = deso[r2].IdPhieu.ToString();
-                    item.txt_Truong03.Text = deso[r2].Truong_03;
                     item.txt_Truong03.Text = deso[r2].Truong_03;
                     item.txt_Truong04.Text = deso[r2].Truong_04;
                     item.txt_Truong05.Text = deso[r2].Truong_05;
+                    item.txt_Truong06.Text = deso[r2].Truong_06;
+                    item.txt_Truong07.Text = deso[r2].Truong_07;
+                    item.txt_Truong08.Text = deso[r2].Truong_08;
+                    item.txt_Truong09.Text = deso[r2].Truong_09;
                     item.txt_Truong10.Text = deso[r2].Truong_10;
-                    item.txt_Truong11_1.Text = deso[r2].Truong_11;
-                    item.txt_Truong11_2.Text = deso[r2].Truong_11B;
+                    item.txt_Truong11.Text = deso[r2].Truong_11;
+                    item.txt_Truong12.Text = deso[r2].Truong_12;
                     if (r2 == countRowUser2)
                     {
                         break;
                     }
                     r2++;
                 }
-                uc_DeJP_Loai11.txt_Truong03.Text = deso[0].Truong_03;
-                uc_DeJP_Loai11.txt_Truong04.Text = deso[0].Truong_04;
-                uc_DeJP_Loai11.txt_Truong05.Text = deso[0].Truong_05;
-                uc_DeJP_Loai11.txt_Truong06.Text = deso[0].Truong_06;
-                uc_DeJP_Loai11.txt_Truong07.Text = deso[0].Truong_07;
-                uc_DeJP_Loai11.txt_Truong08.Text = deso[0].Truong_08;
-                uc_DeJP_Loai11.txt_Truong09.Text = deso[0].Truong_09;
-                uc_DeJP_Loai11.txt_Truong10.Text = deso[0].Truong_10;
-                uc_DeJP_Loai11.txt_Truong11.Text = deso[0].Truong_11;
-                uc_DeJP_Loai11.txt_Truong12.Text = deso[0].Truong_12;
-
-
-                uc_DeJP_Loai12.txt_Truong03.Text = deso[1].Truong_03;
-                uc_DeJP_Loai12.txt_Truong04.Text = deso[1].Truong_04;
-                uc_DeJP_Loai12.txt_Truong05.Text = deso[1].Truong_05;
-                uc_DeJP_Loai12.txt_Truong06.Text = deso[1].Truong_06;
-                uc_DeJP_Loai12.txt_Truong07.Text = deso[1].Truong_07;
-                uc_DeJP_Loai12.txt_Truong08.Text = deso[1].Truong_08;
-                uc_DeJP_Loai12.txt_Truong09.Text = deso[1].Truong_09;
-                uc_DeJP_Loai12.txt_Truong10.Text = deso[1].Truong_10;
-                uc_DeJP_Loai12.txt_Truong11.Text = deso[1].Truong_11;
-                uc_DeJP_Loai12.txt_Truong12.Text = deso[1].Truong_12;
 
                 txt_Truong06.Visible = false;
                 txt_Truong08.Visible = false;
@@ -432,17 +422,28 @@ namespace KOMTSU.MyForm
                 }
 
             }
-
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong03, uc_DeJP_Loai12.txt_Truong03);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong04, uc_DeJP_Loai12.txt_Truong04);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong05, uc_DeJP_Loai12.txt_Truong05);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong06, uc_DeJP_Loai12.txt_Truong06);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong07, uc_DeJP_Loai12.txt_Truong07);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong08, uc_DeJP_Loai12.txt_Truong08);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong09, uc_DeJP_Loai12.txt_Truong09);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong10, uc_DeJP_Loai12.txt_Truong10);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong11, uc_DeJP_Loai12.txt_Truong11);
-            Compare_TextEdit(uc_DeJP_Loai11.txt_Truong12, uc_DeJP_Loai12.txt_Truong12);
+            
+            foreach (uc_DeJP_Loai1 item_User1 in tp_Loai1_User1.Controls)
+            {
+                foreach (uc_DeJP_Loai1 item_User2 in tp_Loai1_User2.Controls)
+                {
+                    if(tp_Loai1_User1.Controls.Count <1 || tp_Loai1_User2.Controls.Count < 1 )
+                        return;
+                    if (item_User1.Tag.ToString() == item_User2.Tag.ToString())
+                    {
+                        Compare_TextEdit(item_User1.txt_Truong03, item_User2.txt_Truong03);
+                        Compare_TextEdit(item_User1.txt_Truong04, item_User2.txt_Truong04);
+                        Compare_TextEdit(item_User1.txt_Truong05, item_User2.txt_Truong05);
+                        Compare_TextEdit(item_User1.txt_Truong06, item_User2.txt_Truong06);
+                        Compare_TextEdit(item_User1.txt_Truong07, item_User2.txt_Truong07);
+                        Compare_TextEdit(item_User1.txt_Truong08, item_User2.txt_Truong08);
+                        Compare_TextEdit(item_User1.txt_Truong09, item_User2.txt_Truong09);
+                        Compare_TextEdit(item_User1.txt_Truong10, item_User2.txt_Truong10);
+                        Compare_TextEdit(item_User1.txt_Truong11, item_User2.txt_Truong11);
+                        Compare_TextEdit(item_User1.txt_Truong12, item_User2.txt_Truong12);
+                    }
+                }
+            }
 
             foreach (uc_DeJP_Row item_User1 in uc_DeJP_Loai21.Controls)
             {
@@ -573,12 +574,41 @@ namespace KOMTSU.MyForm
         {
             if (Global.LoaiPhieu == "Loai1")
             {
-                if (uc_DeJP_Loai11.IsError_Color())
+                foreach (uc_DeJP_Loai1 variable in tp_Loai1_User1.Controls)
                 {
-                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
-                    return;
+                    if (variable.IsError_Color())
+                    {
+                        MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                        return;
+                    }
                 }
-                uc_DeJP_Loai11.SuaVaLuu_DEJP(lb_username1.Text, lb_username2.Text,cbb_Batch_Check.Text, lb_Image.Text);
+                bool c = false;
+                foreach (uc_DeJP_Loai1 variable in tp_Loai1_User1.Controls)
+                {
+                    if (variable.IsEmpty())
+                    {
+                        c = true;
+                    }
+                }
+                if (c)
+                {
+                    if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                        return;
+                }
+                string rownumber = "";
+                foreach (uc_DeJP_Loai1 item in tp_Loai1_User1.Controls)
+                {
+                    rownumber = item.Tag.ToString();
+                    item.SuaVaLuu_DEJP(lb_username1.Text, lb_username2.Text, cbb_Batch_Check.Text, lb_Image.Text, item.Tag.ToString());
+                }
+                int irowrumber = Convert.ToInt32(rownumber);
+                if (irowrumber < row_user1)
+                {
+                    for (int i = irowrumber; i < row_user1; i++)
+                    {
+                        Global.db.DelecteRow(lb_Image.Text, cbb_Batch_Check.Text, i + 1);
+                    }
+                }
             }
             else if(Global.LoaiPhieu=="Loai2")
             {
@@ -619,12 +649,41 @@ namespace KOMTSU.MyForm
         {
             if (Global.LoaiPhieu == "Loai1")
             {
-                if (uc_DeJP_Loai12.IsError_Color())
+                foreach (uc_DeJP_Loai1 variable in tp_Loai1_User2.Controls)
                 {
-                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
-                    return;
+                    if (variable.IsError_Color())
+                    {
+                        MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                        return;
+                    }
                 }
-                uc_DeJP_Loai12.SuaVaLuu_DEJP(lb_username2.Text, lb_username1.Text,cbb_Batch_Check.Text, lb_Image.Text);
+                bool c = false;
+                foreach (uc_DeJP_Loai1 variable in tp_Loai1_User2.Controls)
+                {
+                    if (variable.IsEmpty())
+                    {
+                        c = true;
+                    }
+                }
+                if (c)
+                {
+                    if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                        return;
+                }
+                string rownumber = "";
+                foreach (uc_DeJP_Loai1 item in tp_Loai1_User1.Controls)
+                {
+                    rownumber = item.Tag.ToString();
+                    item.SuaVaLuu_DEJP(lb_username1.Text, lb_username2.Text, cbb_Batch_Check.Text, lb_Image.Text, item.Tag.ToString());
+                }
+                int irowrumber = Convert.ToInt32(rownumber);
+                if (irowrumber < row_user2)
+                {
+                    for (int i = irowrumber; i < row_user2; i++)
+                    {
+                        Global.db.DelecteRow(lb_Image.Text, cbb_Batch_Check.Text, i + 1);
+                    }
+                }
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
@@ -670,23 +729,6 @@ namespace KOMTSU.MyForm
         {
             //uC_DESO1.setRandom(false);
         }
-
-        private void uc_DeJP_Loai11_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.HorizontalScroll)
-                uc_DeJP_Loai11.HorizontalScroll.Value = e.NewValue;
-            else if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
-                uc_DeJP_Loai12.VerticalScroll.Value = e.NewValue;
-        }
-
-        private void uc_DeJP_Loai12_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.HorizontalScroll)
-                uc_DeJP_Loai12.HorizontalScroll.Value = e.NewValue;
-            else if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
-                uc_DeJP_Loai11.VerticalScroll.Value = e.NewValue;
-        }
-
         private void uc_DeJP_Loai21_Scroll(object sender, ScrollEventArgs e)
         {
             if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.HorizontalScroll)
@@ -718,7 +760,9 @@ namespace KOMTSU.MyForm
             uc.Location = p;
             count1++;
             uc.Tag = count1.ToString();
+            Load_Truong06_08(uc);
             tp_Loai1_User1.Controls.Add(uc);
+            uc.Changed += UC_Row_01_Changed;
             ScrollToBottom(tp_Loai1_User1);
         }
         public void ScrollToBottom(XtraTabPage p)
@@ -752,7 +796,8 @@ namespace KOMTSU.MyForm
             uc.Location = p;
             count2++;
             uc.Tag = count2.ToString();
-            tp_Loai1_User2.Controls.Add(uc);
+            Load_Truong06_08(uc);tp_Loai1_User2.Controls.Add(uc);
+            uc.Changed += UC_Row_01_Changed1;
             ScrollToBottom(tp_Loai1_User2);
         }
 
@@ -763,6 +808,22 @@ namespace KOMTSU.MyForm
                 tp_Loai1_User2.Controls.RemoveAt(tp_Loai1_User2.Controls.Count - 1);
                 ScrollToBottom(tp_Loai1_User2);
             }
+        }
+
+        private void tp_Loai1_User1_Scroll(object sender, XtraScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+                tp_Loai1_User1.HorizontalScroll.Value = e.NewValue;
+            else if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+                tp_Loai1_User2.VerticalScroll.Value = e.NewValue;
+        }
+
+        private void tp_Loai1_User2_Scroll(object sender, XtraScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+                tp_Loai1_User2.HorizontalScroll.Value = e.NewValue;
+            else if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+                tp_Loai1_User1.VerticalScroll.Value = e.NewValue;
         }
 
         private void cbb_Batch_Check_SelectedIndexChanged(object sender, EventArgs e)
@@ -800,8 +861,8 @@ namespace KOMTSU.MyForm
                 btn_XoaPhieu1.Visible = false;
                 btn_XoaPhieu2.Visible = false;
             }
-            uc_DeJP_Loai11.CheckBatch_CoDeSo();
-            uc_DeJP_Loai12.CheckBatch_CoDeSo();
+            tp_Loai1_User1.Controls.Clear();
+            tp_Loai1_User2.Controls.Clear();
 
             uc_DeJP_Loai21.CheckBatch_CoDeSo();
             uc_DeJP_Loai22.CheckBatch_CoDeSo();
