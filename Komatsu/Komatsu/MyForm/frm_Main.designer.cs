@@ -86,11 +86,12 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_ThemPhieu = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
-            this.btn_ThemPhieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_XoaPhieu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -654,6 +655,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btn_XoaPhieu);
             this.panelControl3.Controls.Add(this.btn_ThemPhieu);
             this.panelControl3.Controls.Add(this.btn_Pause);
             this.panelControl3.Controls.Add(this.btn_Submit_Logout);
@@ -663,6 +665,19 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(419, 30);
             this.panelControl3.TabIndex = 0;
+            // 
+            // btn_ThemPhieu
+            // 
+            this.btn_ThemPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_ThemPhieu.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_ThemPhieu.Appearance.Options.UseFont = true;
+            this.btn_ThemPhieu.Appearance.Options.UseForeColor = true;
+            this.btn_ThemPhieu.Location = new System.Drawing.Point(4, 5);
+            this.btn_ThemPhieu.Name = "btn_ThemPhieu";
+            this.btn_ThemPhieu.Size = new System.Drawing.Size(45, 21);
+            this.btn_ThemPhieu.TabIndex = 5;
+            this.btn_ThemPhieu.Text = "+";
+            this.btn_ThemPhieu.Click += new System.EventHandler(this.btn_ThemPhieu_Click);
             // 
             // btn_Pause
             // 
@@ -699,18 +714,18 @@
             this.uc_PictureBox1.Size = new System.Drawing.Size(894, 592);
             this.uc_PictureBox1.TabIndex = 1;
             // 
-            // btn_ThemPhieu
+            // btn_XoaPhieu
             // 
-            this.btn_ThemPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.btn_ThemPhieu.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.btn_ThemPhieu.Appearance.Options.UseFont = true;
-            this.btn_ThemPhieu.Appearance.Options.UseForeColor = true;
-            this.btn_ThemPhieu.Location = new System.Drawing.Point(4, 5);
-            this.btn_ThemPhieu.Name = "btn_ThemPhieu";
-            this.btn_ThemPhieu.Size = new System.Drawing.Size(45, 21);
-            this.btn_ThemPhieu.TabIndex = 5;
-            this.btn_ThemPhieu.Text = "+";
-            this.btn_ThemPhieu.Click += new System.EventHandler(this.btn_ThemPhieu_Click);
+            this.btn_XoaPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaPhieu.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_XoaPhieu.Appearance.Options.UseFont = true;
+            this.btn_XoaPhieu.Appearance.Options.UseForeColor = true;
+            this.btn_XoaPhieu.Location = new System.Drawing.Point(53, 5);
+            this.btn_XoaPhieu.Name = "btn_XoaPhieu";
+            this.btn_XoaPhieu.Size = new System.Drawing.Size(45, 21);
+            this.btn_XoaPhieu.TabIndex = 5;
+            this.btn_XoaPhieu.Text = "-";
+            this.btn_XoaPhieu.Click += new System.EventHandler(this.btn_XoaPhieu_Click);
             // 
             // frm_Main
             // 
@@ -820,6 +835,7 @@
         private MyUserControl.uc_DeJP_Loai1 uc_DeJP_Loai11;
         private DevExpress.XtraBars.BarButtonItem btn_tinhnangsuat;
         private DevExpress.XtraEditors.SimpleButton btn_ThemPhieu;
+        private DevExpress.XtraEditors.SimpleButton btn_XoaPhieu;
     }
 }
 

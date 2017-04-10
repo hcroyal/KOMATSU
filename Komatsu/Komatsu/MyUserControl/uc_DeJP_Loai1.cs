@@ -168,7 +168,10 @@ namespace KOMTSU.MyUserControl
 
         int Hople( int ngay,int thang)
         {
-            if (thang > 12 || thang < 1) return 0;
+            if (thang > 12 || thang < 1)
+            {
+                return 0;
+            }
             else
             {
                 if (thang == 2)
@@ -186,15 +189,22 @@ namespace KOMTSU.MyUserControl
                     if (ngay > 31) return 0;
                     else return 1;
                 }
-                return 0;}
+                return 0;
+            }
         }
         private void txt_Truong05_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong05.Text.IndexOf('?') >= 0)
                 txt_Truong05.Text = @"?";
+            
             if (txt_Truong05.Text != "" && txt_Truong05.Text != @"?" && txt_Truong05.Text.IndexOf('●') < 0)
             {
-                if (txt_Truong04.Text != "" && txt_Truong04.Text != @"?" && txt_Truong04.Text.IndexOf('●') < 0)
+                if (Convert.ToInt32(txt_Truong05.Text) < 1)
+                {
+                    txt_Truong05.BackColor = Color.Red;
+                    txt_Truong05.ForeColor = Color.White;
+                }
+                else if (txt_Truong04.Text != "" && txt_Truong04.Text != @"?" && txt_Truong04.Text.IndexOf('●') < 0)
                 {
                     if (Hople(Convert.ToInt32(txt_Truong05.Text), Convert.ToInt32(txt_Truong04.Text)) == 0)
                     {
