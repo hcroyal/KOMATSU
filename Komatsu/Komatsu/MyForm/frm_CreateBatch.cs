@@ -217,11 +217,23 @@ namespace KOMTSU.MyForm
         }
         private void UploadImage()
         {
-            if (dataGridView1.RowCount == 1)
+            if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                MessageBox.Show("You haven't filled in the TruongSo06 or TruongSo08!");
-                return;
+                if (dataGridView1.RowCount == 1)
+                {
+                    MessageBox.Show("You haven't filled in the TruongSo06 or TruongSo08!");
+                    return;
+                }
             }
+            else
+            {
+                if (string.IsNullOrEmpty(txt_TruongSo06.Text)||string.IsNullOrEmpty(txt_TruongSo08.Text))
+                {
+                    MessageBox.Show("You haven't filled in the TruongSo06 or TruongSo08!");
+                    return;
+                }
+            }
+           
             ExtractImage();
             string[] filePaths = Directory.GetFiles(txt_FolderSaveImage.Text, "*.jpg");
             progressBarControl1.EditValue = 0;
