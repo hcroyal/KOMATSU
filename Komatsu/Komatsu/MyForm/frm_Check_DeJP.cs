@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using DevExpress.XtraEditors;
+using DevExpress.XtraTab;
 using Komatsu.Properties;
 using KOMTSU.MyUserControl;
 
@@ -88,6 +89,10 @@ namespace KOMTSU.MyForm
                 {
                     TabControl_User1.TabPages.Add(tp_Loai1_User1);
                     TabControl_User2.TabPages.Add(tp_Loai1_User2);
+                    btn_ThemPhieu1.Visible = true;
+                    btn_ThemPhieu2.Visible = true;
+                    btn_XoaPhieu1.Visible = true;
+                    btn_XoaPhieu2.Visible = true;
                 }
                 else if (Global.LoaiPhieu == "Loai2")
                 {
@@ -262,6 +267,8 @@ namespace KOMTSU.MyForm
             lb_username2.Text = deso[deso.Count-1].UserName;
             if (Global.LoaiPhieu == "Loai1")
             {
+                int countRowUser1 = 0, countRowUser2 = 0, r1 = 0, r2 = 0;
+
                 TabControl_User1.TabPages.Add(tp_Loai1_User1);
                 uc_DeJP_Loai11.txt_Truong03.Text = deso[0].Truong_03;
                 uc_DeJP_Loai11.txt_Truong04.Text = deso[0].Truong_04;
@@ -618,6 +625,68 @@ namespace KOMTSU.MyForm
                 uc_DeJP_Loai21.VerticalScroll.Value = e.NewValue;
         }
 
+        private int count1;
+        private int count2;
+        private void btn_ThemPhieu1_Click(object sender, EventArgs e)
+        {
+            uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+            Point p = new Point();
+            foreach (uc_DeJP_Loai1 ct in tp_Loai1_User1.Controls)
+            {
+                p = ct.Location;
+                p.Y += ct.Size.Height + 20;
+
+            }
+            uc.Location = p;
+            count1++;
+            uc.Tag = count1.ToString();
+            tp_Loai1_User1.Controls.Add(uc);
+            ScrollToBottom(tp_Loai1_User1);
+        }
+        public void ScrollToBottom(XtraTabPage p)
+        {
+            using (Control c = new Control() { Parent = p, Dock = DockStyle.Bottom })
+            {
+                p.ScrollControlIntoView(c);
+                c.Parent = null;
+            }
+        }
+
+        private void btn_XoaPhieu1_Click(object sender, EventArgs e)
+        {
+            if (tp_Loai1_User1.Controls.Count > 1)
+            {
+                tp_Loai1_User1.Controls.RemoveAt(tp_Loai1_User1.Controls.Count - 1);
+                ScrollToBottom(tp_Loai1_User1);
+            }
+        }
+
+        private void btn_ThemPhieu2_Click(object sender, EventArgs e)
+        {
+            uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+            Point p = new Point();
+            foreach (uc_DeJP_Loai1 ct in tp_Loai1_User2.Controls)
+            {
+                p = ct.Location;
+                p.Y += ct.Size.Height + 20;
+
+            }
+            uc.Location = p;
+            count2++;
+            uc.Tag = count2.ToString();
+            tp_Loai1_User2.Controls.Add(uc);
+            ScrollToBottom(tp_Loai1_User2);
+        }
+
+        private void btn_XoaPhieu2_Click(object sender, EventArgs e)
+        {
+            if (tp_Loai1_User2.Controls.Count > 1)
+            {
+                tp_Loai1_User2.Controls.RemoveAt(tp_Loai1_User2.Controls.Count - 1);
+                ScrollToBottom(tp_Loai1_User2);
+            }
+        }
+
         private void cbb_Batch_Check_SelectedIndexChanged(object sender, EventArgs e)
         {
             tp_Loai1_User1.PageVisible = false;
@@ -639,11 +708,19 @@ namespace KOMTSU.MyForm
             {
                 tp_Loai1_User1.PageVisible = true;
                 tp_Loai1_User2.PageVisible = true;
+                btn_ThemPhieu1.Visible = true;
+                btn_ThemPhieu2.Visible = true;
+                btn_XoaPhieu1.Visible = true;
+                btn_XoaPhieu2.Visible = true;
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
                 tp_Loai2_User1.PageVisible = true;
                 tp_Loai2_User2.PageVisible = true;
+                btn_ThemPhieu1.Visible = false;
+                btn_ThemPhieu2.Visible = false;
+                btn_XoaPhieu1.Visible = false;
+                btn_XoaPhieu2.Visible = false;
             }
             uc_DeJP_Loai11.CheckBatch_CoDeSo();
             uc_DeJP_Loai12.CheckBatch_CoDeSo();

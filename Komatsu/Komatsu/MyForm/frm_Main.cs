@@ -19,26 +19,33 @@ namespace KOMTSU.MyForm
         {
             InitializeComponent();
         }
+
         private void setValue()
         {
             if (Global.StrRole == "DEJP")
             {
                 lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where w.ReadImageDEJP < 2 && w.fbatchname == Global.StrBatch &&( w.UserNameDEJP != Global.StrUsername || w.UserNameDEJP == null || w.UserNameDEJP == "")
-                                        select w.idimage).Count().ToString();
+                    where
+                    w.ReadImageDEJP < 2 && w.fbatchname == Global.StrBatch &&
+                    (w.UserNameDEJP != Global.StrUsername || w.UserNameDEJP == null || w.UserNameDEJP == "")
+                    select w.idimage).Count().ToString();
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DEJPs
-                                         where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
-                                         select w.IdImage).Count().ToString();
+                    where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                    select w.IdImage).Count().ToString();
             }
             if (Global.StrRole == "DESO")
             {
                 lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
-                                        select w.idimage).Count().ToString();
+                    where
+                    w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&
+                    (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
+                    select w.idimage).Count().ToString();
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
-                                         where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
-                                         select w.IdImage).Count().ToString();
+                    where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                    select w.IdImage).Count().ToString();
             }
+            tp_Loai1_JP_Main.Controls.Clear();
+            btn_ThemPhieu_Click(null, null);
         }
 
         private void Load_Truong06_08()
@@ -170,6 +177,7 @@ namespace KOMTSU.MyForm
                 tabControl_Main.TabPages.Remove(tp_Loai1_JP_Main);
                 tabControl_Main.TabPages.Remove(tp_Loai2_JP_Main);
                 menu_quanly.Enabled = false;
+                btn_Submit_Logout.Enabled = false;
 
                 if (Global.BatCoDeSo)
                 {
@@ -274,7 +282,7 @@ namespace KOMTSU.MyForm
                     uc_DeJP_Loai11.ResetData();
                     uc_DeJP_Loai21.ResetData();
                     btn_Start_Submit.Text = "Submit";
-                    btn_Submit_Logout.Visible = true;
+                    btn_Submit_Logout.Enabled = true;
                 }
                 else
                 {
@@ -282,12 +290,23 @@ namespace KOMTSU.MyForm
                     {
                         if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                         {
-                            if (uc_DeJP_Loai11.IsError_Color())
+                            foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                             {
-                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                if (variable.IsError_Color())
+                                {
+                                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
                                     return;
+                                }
                             }
-                            if (uc_DeJP_Loai11.IsEmpty())
+                            bool c = false;
+                            foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
+                            {
+                                if (variable.IsEmpty())
+                                {
+                                    c = true;
+                                }
+                            }
+                            if (c)
                             {
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
@@ -332,12 +351,23 @@ namespace KOMTSU.MyForm
                     {
                         if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                         {
-                            if (uc_DeJP_Loai11.IsError_Color())
+                            foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                             {
-                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
-                                return;
+                                if (variable.IsError_Color())
+                                {
+                                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                    return;
+                                }
                             }
-                            if (uc_DeJP_Loai11.IsEmpty())
+                            bool c = false;
+                            foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
+                            {
+                                if (variable.IsEmpty())
+                                {
+                                    c = true;
+                                }
+                            }
+                            if (c)
                             {
                                 if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
@@ -420,12 +450,23 @@ namespace KOMTSU.MyForm
                 {
                     if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                     {
-                        if (uc_DeJP_Loai11.IsError_Color())
+                        foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                         {
-                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
-                            return;
+                            if (variable.IsError_Color())
+                            {
+                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                return;
+                            }
                         }
-                        if (uc_DeJP_Loai11.IsEmpty())
+                        bool c = false;
+                        foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
+                        {
+                            if (variable.IsEmpty())
+                            {
+                                c = true;
+                            }
+                        }
+                        if (c)
                         {
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                 return;
@@ -469,12 +510,23 @@ namespace KOMTSU.MyForm
                 {
                     if (tabControl_Main.SelectedTabPage == tp_Loai1_JP_Main)
                     {
-                        if (uc_DeJP_Loai11.IsError_Color())
+                        foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
                         {
-                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
-                            return;
+                            if (variable.IsError_Color())
+                            {
+                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                return;
+                            }
                         }
-                        if (uc_DeJP_Loai11.IsEmpty())
+                        bool c = false;
+                        foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
+                        {
+                            if (variable.IsEmpty())
+                            {
+                                c = true;
+                            }
+                        }
+                        if (c)
                         {
                             if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                 return;
@@ -502,8 +554,7 @@ namespace KOMTSU.MyForm
                                     "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
                             }
                             else
-                            {
-                                return;
+                            {return;
                             }
                         }
                         else
@@ -628,6 +679,15 @@ namespace KOMTSU.MyForm
             {
                 p.ScrollControlIntoView(c);
                 c.Parent = null;
+            }
+        }
+
+        private void btn_XoaPhieu_Click(object sender, EventArgs e)
+        {
+            if (tp_Loai1_JP_Main.Controls.Count > 1)
+            {
+                tp_Loai1_JP_Main.Controls.RemoveAt(tp_Loai1_JP_Main.Controls.Count - 1);
+                ScrollToBottom(tp_Loai1_JP_Main);
             }
         }
     }
