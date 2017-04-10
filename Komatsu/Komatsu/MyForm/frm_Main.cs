@@ -312,7 +312,8 @@ namespace KOMTSU.MyForm
                                 variable.SaveData_Loai1_DeJP(lb_IdImage.Text,k);
                                 k++;
                             }
-                            //uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
+                            //Xứ lý 2 user nhập số lượng dòng khác nhau
+                            Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                         {
@@ -373,7 +374,8 @@ namespace KOMTSU.MyForm
                                 variable.SaveData_Loai1_DeSo(lb_IdImage.Text, k);
                                 k++;
                             }
-                            //uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
+                            //Xứ lý 2 user nhập số lượng dòng khác nhau
+                            Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
                         }
                         else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                         {
@@ -472,7 +474,8 @@ namespace KOMTSU.MyForm
                             variable.SaveData_Loai1_DeJP(lb_IdImage.Text, k);
                             k++;
                         }
-                        //uc_DeJP_Loai11.SaveData_Loai1_DeJP(lb_IdImage.Text);
+                        //Xứ lý 2 user nhập số lượng dòng khác nhau
+                        Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                     {
@@ -532,7 +535,8 @@ namespace KOMTSU.MyForm
                             variable.SaveData_Loai1_DeSo(lb_IdImage.Text, k);
                             k++;
                         }
-                        //uc_DeJP_Loai11.SaveData_Loai1_DeSo(lb_IdImage.Text);
+                        //Xứ lý 2 user nhập số lượng dòng khác nhau
+                        Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
                     }
                     else if (tabControl_Main.SelectedTabPage == tp_Loai2_JP_Main)
                     {
