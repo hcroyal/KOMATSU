@@ -19,28 +19,34 @@ namespace KOMTSU.MyForm
         {
             InitializeComponent();
         }
+
         private void setValue()
         {
             if (Global.StrRole == "DEJP")
             {
                 lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where w.ReadImageDEJP < 2 && w.fbatchname == Global.StrBatch &&( w.UserNameDEJP != Global.StrUsername || w.UserNameDEJP == null || w.UserNameDEJP == "")
-                                        select w.idimage).Count().ToString();
+                    where
+                    w.ReadImageDEJP < 2 && w.fbatchname == Global.StrBatch &&
+                    (w.UserNameDEJP != Global.StrUsername || w.UserNameDEJP == null || w.UserNameDEJP == "")
+                    select w.idimage).Count().ToString();
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DEJPs
-                                         where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
-                                         select w.IdImage).Count().ToString();
+                    where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                    select w.IdImage).Count().ToString();
             }
             if (Global.StrRole == "DESO")
             {
                 lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
-                                        select w.idimage).Count().ToString();
+                    where
+                    w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&
+                    (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
+                    select w.idimage).Count().ToString();
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
-                                         where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
-                                         select w.IdImage).Count().ToString();
+                    where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                    select w.IdImage).Count().ToString();
             }
+            tp_Loai1_JP_Main.Controls.Clear();
+            btn_ThemPhieu_Click(null, null);
         }
-
         private void Load_Truong06_08()
         {
             Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
@@ -502,8 +508,7 @@ namespace KOMTSU.MyForm
                                     "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
                             }
                             else
-                            {
-                                return;
+                            {return;
                             }
                         }
                         else

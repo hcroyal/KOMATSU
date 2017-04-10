@@ -35,7 +35,7 @@ namespace KOMTSU.MyUserControl
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == Keys.Down && Global.Flag)
+            if (keyData == Keys.Down && Global.Flag && !Global.BatCoDeSo)
             {
                 SendKeys.Send("{Tab}");
                 SendKeys.Send("{Tab}");
@@ -45,7 +45,7 @@ namespace KOMTSU.MyUserControl
                 SendKeys.Send("{Tab}");
                 return true;
             }
-            if (keyData == Keys.Up && Global.Flag)
+            if (keyData == Keys.Up && Global.Flag && !Global.BatCoDeSo)
             {
                 SendKeys.Send("+{Tab}");
                 SendKeys.Send("+{Tab}");
@@ -54,6 +54,22 @@ namespace KOMTSU.MyUserControl
                 SendKeys.Send("+{Tab}");
                 SendKeys.Send("+{Tab}");
                 return true;
+            }
+            if (keyData == Keys.Down && Global.Flag && Global.BatCoDeSo)
+            {
+                SendKeys.Send("{Tab}");SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                return true;
+            }
+            if (keyData == Keys.Up && Global.Flag && !Global.BatCoDeSo)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");return true;
             }
             else
             {

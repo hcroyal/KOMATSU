@@ -60,6 +60,7 @@ namespace KOMTSU.MyUserControl
             {
                 txt_Truong03.BackColor = Color.Red;
                 txt_Truong03.ForeColor = Color.White;
+
             }
             else
             {

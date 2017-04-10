@@ -337,6 +337,7 @@ namespace KOMTSU.MyForm
             // 
             this.uc_DeJP_Loai12.AutoScroll = true;
             this.uc_DeJP_Loai12.AutoSize = true;
+            this.uc_DeJP_Loai12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uc_DeJP_Loai12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_DeJP_Loai12.Location = new System.Drawing.Point(0, 0);
             this.uc_DeJP_Loai12.Name = "uc_DeJP_Loai12";
@@ -556,6 +557,7 @@ namespace KOMTSU.MyForm
             // 
             this.uc_DeJP_Loai11.AutoScroll = true;
             this.uc_DeJP_Loai11.AutoSize = true;
+            this.uc_DeJP_Loai11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uc_DeJP_Loai11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_DeJP_Loai11.Location = new System.Drawing.Point(0, 0);
             this.uc_DeJP_Loai11.Name = "uc_DeJP_Loai11";
