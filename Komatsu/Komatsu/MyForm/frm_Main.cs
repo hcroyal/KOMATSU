@@ -602,7 +602,7 @@ namespace KOMTSU.MyForm
         
         private void btn_nangsuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // new frm_NangSuat().ShowDialog();
+             new frm_NangSuat().ShowDialog();
         }
 
         private int count;
