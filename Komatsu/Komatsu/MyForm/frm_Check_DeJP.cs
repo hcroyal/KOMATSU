@@ -268,8 +268,87 @@ namespace KOMTSU.MyForm
             if (Global.LoaiPhieu == "Loai1")
             {
                 int countRowUser1 = 0, countRowUser2 = 0, r1 = 0, r2 = 0;
-
                 TabControl_User1.TabPages.Add(tp_Loai1_User1);
+                TabControl_User2.TabPages.Add(tp_Loai1_User2);
+
+                for (int i = 0; i < deso.Count - 1; i++)
+                {
+                    if (deso[i].UserName != deso[i + 1].UserName)
+                    {
+                        countRowUser1 = i;
+                        row_user1 = deso[i].IdPhieu;
+                        countRowUser2 = deso.Count - 1;
+                        row_user2 = deso[countRowUser2 - row_user1].IdPhieu;
+                        break;
+                    }
+                }
+                
+                //----------------------------------------
+                for (int i = 0; i < countRowUser1; i++)
+                {
+                    uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+                    Point p = new Point();
+                    foreach (uc_DeJP_Loai1 ct in tp_Loai1_User1.Controls)
+                    {
+                        p = ct.Location;
+                        p.Y += ct.Size.Height + 20;
+
+                    }
+                    uc.Location = p;
+                    count2++;
+                    uc.Tag = (i+1).ToString();
+                    tp_Loai1_User1.Controls.Add(uc);
+                }
+                for (int i = 0; i < countRowUser1; i++)
+                {
+                    uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
+                    Point p = new Point();
+                    foreach (uc_DeJP_Loai1 ct in tp_Loai1_User1.Controls)
+                    {
+                        p = ct.Location;
+                        p.Y += ct.Size.Height + 20;
+
+                    }
+                    uc.Location = p;
+                    count2++;
+                    uc.Tag = (i + 1).ToString();
+                    tp_Loai1_User1.Controls.Add(uc);
+                }
+                //---------------------------------
+
+                foreach (uc_DeJP_Row item in uc_DeJP_Loai21.Controls)
+                {
+                    item.lb_stt.Text = deso[r1].IdPhieu.ToString();
+                    item.txt_Truong03.Text = deso[r1].Truong_03;
+                    item.txt_Truong03.Text = deso[r1].Truong_03;
+                    item.txt_Truong04.Text = deso[r1].Truong_04;
+                    item.txt_Truong05.Text = deso[r1].Truong_05;
+                    item.txt_Truong10.Text = deso[r1].Truong_10;
+                    item.txt_Truong11_1.Text = deso[r1].Truong_11;
+                    item.txt_Truong11_2.Text = deso[r1].Truong_11B;
+                    if (r1 == countRowUser1)
+                    {
+                        r2 = r1 + 1;
+                        break;
+                    }
+                    r1++;
+                }
+                foreach (uc_DeJP_Row item in uc_DeJP_Loai22.Controls)
+                {
+                    item.lb_stt.Text = deso[r2].IdPhieu.ToString();
+                    item.txt_Truong03.Text = deso[r2].Truong_03;
+                    item.txt_Truong03.Text = deso[r2].Truong_03;
+                    item.txt_Truong04.Text = deso[r2].Truong_04;
+                    item.txt_Truong05.Text = deso[r2].Truong_05;
+                    item.txt_Truong10.Text = deso[r2].Truong_10;
+                    item.txt_Truong11_1.Text = deso[r2].Truong_11;
+                    item.txt_Truong11_2.Text = deso[r2].Truong_11B;
+                    if (r2 == countRowUser2)
+                    {
+                        break;
+                    }
+                    r2++;
+                }
                 uc_DeJP_Loai11.txt_Truong03.Text = deso[0].Truong_03;
                 uc_DeJP_Loai11.txt_Truong04.Text = deso[0].Truong_04;
                 uc_DeJP_Loai11.txt_Truong05.Text = deso[0].Truong_05;
@@ -282,7 +361,6 @@ namespace KOMTSU.MyForm
                 uc_DeJP_Loai11.txt_Truong12.Text = deso[0].Truong_12;
 
 
-                TabControl_User2.TabPages.Add(tp_Loai1_User2);
                 uc_DeJP_Loai12.txt_Truong03.Text = deso[1].Truong_03;
                 uc_DeJP_Loai12.txt_Truong04.Text = deso[1].Truong_04;
                 uc_DeJP_Loai12.txt_Truong05.Text = deso[1].Truong_05;
