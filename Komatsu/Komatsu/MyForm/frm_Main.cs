@@ -52,12 +52,7 @@ namespace KOMTSU.MyForm
         {
             Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
             Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
-            if (Global.LoaiPhieu == "Loai1")
-            {
-                uc_DeJP_Loai11.txt_Truong06.Text = Global.Truong06;
-                uc_DeJP_Loai11.txt_Truong08.Text = Global.Truong08;
-            }
-            else if (Global.LoaiPhieu == "Loai2")
+            if (Global.LoaiPhieu == "Loai2")
             {
                 txt_Truong06.Text = Global.Truong06;
                 txt_Truong08.Text = Global.Truong08;
@@ -596,6 +591,8 @@ namespace KOMTSU.MyForm
         }
         private void frm_Main_KeyDown(object sender, KeyEventArgs e)
         {
+            //MessageBox.Show(e.KeyCode.ToString());
+
             if (e.Control && e.KeyCode == Keys.Enter)
                 btn_Start_Submit_Click(null, null);
             if (e.Control && e.KeyCode == Keys.Up)
@@ -607,12 +604,13 @@ namespace KOMTSU.MyForm
                 new frm_FreeTime().ShowDialog();
                 Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
             }
-            if (!e.Control && e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyCode == Keys.Add)
             {
-                //if (tabControl_Main.SelectedTabPage == tp_AEON_Main)
-                //    uc_AEON1.txt_Truong03_1.Focus();
-                //else if (tabControl_Main.SelectedTabPage == tp_Asahi_Main)
-                //    uc_ASAHI1.txt_Truong03_1.Focus();
+                btn_ThemPhieu_Click(null,null);
+            }
+            if (e.Control && e.KeyCode == Keys.Subtract)
+            {
+                btn_XoaPhieu_Click(null, null);
             }
         }
         private void btn_checkqc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -671,6 +669,10 @@ namespace KOMTSU.MyForm
             count++;
             uc.Tag = count.ToString();
             tp_Loai1_JP_Main.Controls.Add(uc);
+
+            uc.txt_Truong06.Text = Global.Truong06;
+            uc.txt_Truong08.Text = Global.Truong08;
+
             ScrollToBottom(tp_Loai1_JP_Main);
         }
         public void ScrollToBottom(XtraTabPage p)
@@ -685,10 +687,10 @@ namespace KOMTSU.MyForm
         private void btn_XoaPhieu_Click(object sender, EventArgs e)
         {
             if (tp_Loai1_JP_Main.Controls.Count > 1)
-            {
-                tp_Loai1_JP_Main.Controls.RemoveAt(tp_Loai1_JP_Main.Controls.Count - 1);
+            {tp_Loai1_JP_Main.Controls.RemoveAt(tp_Loai1_JP_Main.Controls.Count - 1);
                 ScrollToBottom(tp_Loai1_JP_Main);
             }
+           
         }
     }
 }
