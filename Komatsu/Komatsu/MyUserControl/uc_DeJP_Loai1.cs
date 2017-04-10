@@ -331,17 +331,17 @@ namespace KOMTSU.MyUserControl
         {
             Global.db.Insert_Loai1_DeSo(idImage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, txt_Truong12.Text,idphieu, Global.LoaiPhieu);
         }
-        public void SuaVaLuu_DEJP(string usersaiit, string usersainhieu, string batch, string idimage)
+        public void SuaVaLuu_DEJP(string usersaiit, string usersainhieu, string batch, string idimage, string idphieu)
         {
             Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, batch, Global.StrUsername,
                 txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
-                txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1","Loai1");
+                txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, idphieu,"Loai1");
         }
-        public void SuaVaLuu_DESO(string usersaiit, string usersainhieu, string batch, string idimage)
+        public void SuaVaLuu_DESO(string usersaiit, string usersainhieu, string batch, string idimage,string idphieu)
         {
             Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage, batch, Global.StrUsername,
                 txt_Truong03.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,
-                txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, "1", "Loai1");
+                txt_Truong08.Text, txt_Truong09.Text, txt_Truong10.Text, txt_Truong11.Text, "", txt_Truong12.Text, idphieu, "Loai1");
         }
     }
 }
