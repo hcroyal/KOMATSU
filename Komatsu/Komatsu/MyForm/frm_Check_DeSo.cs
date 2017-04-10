@@ -93,16 +93,12 @@ namespace KOMTSU.MyForm
                 cbb_Batch_Check.DisplayMember = "fBatchName";
                 int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
                 lb_Loi.Text = soloi + " Lỗi";
-                Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.CoDeSo).FirstOrDefault());
+                Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName ==cbb_Batch_Check.Text select w.CoDeSo).FirstOrDefault());
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
                 if (Global.LoaiPhieu == "Loai1")
                 {
                     TabControl_User1.TabPages.Add(tp_Loai1_User1);
                     TabControl_User2.TabPages.Add(tp_Loai1_User2);
-                    btn_ThemPhieu1.Visible = true;
-                    btn_ThemPhieu2.Visible = true;
-                    btn_XoaPhieu1.Visible = true;
-                    btn_XoaPhieu2.Visible = true;
                 }
                 else if (Global.LoaiPhieu == "Loai2")
                 {
@@ -271,6 +267,11 @@ namespace KOMTSU.MyForm
 
             if (Global.LoaiPhieu == "Loai1")
             {
+                btn_ThemPhieu1.Visible = true;
+                btn_ThemPhieu2.Visible = true;
+                btn_XoaPhieu1.Visible = true;
+                btn_XoaPhieu2.Visible = true;
+
                 int countRowUser1 = 0, countRowUser2 = 0, r1 = 0, r2 = 0;
 
                 for (int i = 0; i < deso.Count - 1; i++)
@@ -674,10 +675,10 @@ namespace KOMTSU.MyForm
                         return;
                 }
                 string rownumber = "";
-                foreach (uc_DeJP_Loai1 item in tp_Loai1_User1.Controls)
+                foreach (uc_DeJP_Loai1 item in tp_Loai1_User2.Controls)
                 {
                     rownumber = item.Tag.ToString();
-                    item.SuaVaLuu_DESO(lb_username1.Text, lb_username2.Text, cbb_Batch_Check.Text, lb_Image.Text, item.Tag.ToString());
+                    item.SuaVaLuu_DESO(lb_username2.Text, lb_username2.Text, cbb_Batch_Check.Text, lb_Image.Text, item.Tag.ToString());
                 }
                 int irowrumber = Convert.ToInt32(rownumber);
                 if (irowrumber < row_user2)
@@ -790,12 +791,16 @@ namespace KOMTSU.MyForm
             uc.Tag = count1.ToString();
             Load_Truong06_08(uc);
             tp_Loai1_User1.Controls.Add(uc);
+            btn_Luu_DeSo1.Visible = false;
+            btn_SuaVaLuu_User1.Visible = true;
             uc.Changed += UC_Row_01_Changed;
             ScrollToBottom(tp_Loai1_User1);
         }
 
         private void btn_XoaPhieu1_Click(object sender, EventArgs e)
         {
+            btn_Luu_DeSo1.Visible = false;
+            btn_SuaVaLuu_User1.Visible = true;
             if (tp_Loai1_User1.Controls.Count > 1)
             {
                 tp_Loai1_User1.Controls.RemoveAt(tp_Loai1_User1.Controls.Count - 1);
@@ -819,6 +824,8 @@ namespace KOMTSU.MyForm
             Load_Truong06_08(uc);
             tp_Loai1_User2.Controls.Add(uc);
             uc.Changed += UC_Row_01_Changed1;
+            btn_Luu_DeSo2.Visible = false;
+            btn_SuaVaLuu_User2.Visible = true;
             ScrollToBottom(tp_Loai1_User2);
         }
 
@@ -829,6 +836,8 @@ namespace KOMTSU.MyForm
                 tp_Loai1_User2.Controls.RemoveAt(tp_Loai1_User2.Controls.Count - 1);
                 ScrollToBottom(tp_Loai1_User2);
             }
+            btn_Luu_DeSo2.Visible = false;
+            btn_SuaVaLuu_User2.Visible = true;
         }
 
         private void tp_Loai1_User1_Scroll(object sender, XtraScrollEventArgs e)
@@ -853,6 +862,10 @@ namespace KOMTSU.MyForm
             tp_Loai1_User2.PageVisible = false;
             tp_Loai2_User1.PageVisible = false;
             tp_Loai2_User2.PageVisible = false;
+            btn_ThemPhieu1.Visible = false;
+            btn_ThemPhieu2.Visible = false;
+            btn_XoaPhieu1.Visible = false;
+            btn_XoaPhieu2.Visible = false;
 
             btn_Luu_DeSo1.Visible = false;
             btn_Luu_DeSo2.Visible = false;
@@ -868,10 +881,11 @@ namespace KOMTSU.MyForm
             {
                 tp_Loai1_User1.PageVisible = true;
                 tp_Loai1_User2.PageVisible = true;
-                btn_ThemPhieu1.Visible = true;
-                btn_ThemPhieu2.Visible = true;
-                btn_XoaPhieu1.Visible = true;
-                btn_XoaPhieu2.Visible = true;
+
+                btn_ThemPhieu1.Visible = false;
+                btn_ThemPhieu2.Visible = false;
+                btn_XoaPhieu1.Visible = false;
+                btn_XoaPhieu2.Visible = false;
             }
             else if (Global.LoaiPhieu == "Loai2")
             {

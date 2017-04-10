@@ -171,17 +171,28 @@ namespace KOMTSU.MyForm
 
                 tabControl_Main.TabPages.Remove(tp_Loai1_JP_Main);
                 tabControl_Main.TabPages.Remove(tp_Loai2_JP_Main);
+                tp_Loai1_JP_Main.Visible = true;
                 menu_quanly.Enabled = false;
                 btn_Submit_Logout.Enabled = false;
 
+                if (Global.LoaiPhieu == "Loai1")
+                {
+                    btn_ThemPhieu.Visible = true;
+                    btn_XoaPhieu.Visible = true;
+                }
+                else
+                {
+                    btn_ThemPhieu.Visible = false;
+                    btn_XoaPhieu.Visible = false;
+                }
                 if (Global.BatCoDeSo)
                 {
                     if (Global.StrRole == "DEJP" || Global.StrRole == "DESO")
                     {
                         if (Global.LoaiPhieu == "Loai1")
                         {
+
                             tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
-                            uc_DeJP_Loai11.CheckBatch_CoDeSo();
                         }
                         else if (Global.LoaiPhieu == "Loai2")
                         {
@@ -202,8 +213,7 @@ namespace KOMTSU.MyForm
                     {
                         if (Global.LoaiPhieu == "Loai1")
                         {
-                            tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
-                        }
+                            tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);}
                         else if (Global.LoaiPhieu == "Loai2")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai2_JP_Main);
@@ -274,7 +284,6 @@ namespace KOMTSU.MyForm
                         MessageBox.Show("Không thể load hình!");
                         btn_logout_ItemClick(null, null);
                     }
-                    uc_DeJP_Loai11.ResetData();
                     uc_DeJP_Loai21.ResetData();
                     btn_Start_Submit.Text = "Submit";
                     btn_Submit_Logout.Enabled = true;
@@ -340,7 +349,6 @@ namespace KOMTSU.MyForm
                             //Xứ lý 2 user nhập số lượng dòng khác nhau
                             Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
                         }
-                        uc_DeJP_Loai11.ResetData();
                         uc_DeJP_Loai21.ResetData();
                     }
                     else if (Global.StrRole == "DESO")
@@ -403,7 +411,6 @@ namespace KOMTSU.MyForm
                             //Xứ lý 2 user nhập số lượng dòng khác nhau
                             Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
                         }
-                        uc_DeJP_Loai11.ResetData();
                         uc_DeJP_Loai21.ResetData();
                     }
 
@@ -672,6 +679,7 @@ namespace KOMTSU.MyForm
             uc.Location = p;
             count++;
             uc.Tag = count.ToString();
+            uc.CheckBatch_CoDeSo();
             tp_Loai1_JP_Main.Controls.Add(uc);
 
             uc.txt_Truong06.Text = Global.Truong06;
