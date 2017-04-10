@@ -300,7 +300,6 @@ namespace KOMTSU.MyForm
 
                     }
                     uc_1.Location = p;
-                    count1++;
                     uc_1.Tag = (i + 1).ToString();
                     tp_Loai1_User1.Controls.Add(uc_1);
                     uc_1.Changed += UC_Row_01_Changed;
@@ -318,7 +317,6 @@ namespace KOMTSU.MyForm
 
                     }
                     uc_2.Location = p;
-                    count2++;
                     uc_2.Tag = (i + 1).ToString();
                     tp_Loai1_User2.Controls.Add(uc_2);
                     uc_2.Changed += UC_Row_01_Changed1;
@@ -765,8 +763,6 @@ namespace KOMTSU.MyForm
             else if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
                 uc_DeJP_Loai21.VerticalScroll.Value = e.NewValue;
         }
-        private int count1;
-        private int count2;
         public void ScrollToBottom(XtraTabPage p)
         {
             using (Control c = new Control() { Parent = p, Dock = DockStyle.Bottom })
@@ -787,10 +783,10 @@ namespace KOMTSU.MyForm
 
             }
             uc.Location = p;
-            count1++;
-            uc.Tag = count1.ToString();
+            uc.Tag = (tp_Loai1_User1.Controls.Count+1).ToString();
             Load_Truong06_08(uc);
             tp_Loai1_User1.Controls.Add(uc);
+            uc.CheckBatch_CoDeSo();
             btn_Luu_DeSo1.Visible = false;
             btn_SuaVaLuu_User1.Visible = true;
             uc.Changed += UC_Row_01_Changed;
@@ -819,11 +815,10 @@ namespace KOMTSU.MyForm
 
             }
             uc.Location = p;
-            count2++;
-            uc.Tag = count2.ToString();
+            uc.Tag = (tp_Loai1_User2.Controls.Count + 1).ToString();
             Load_Truong06_08(uc);
             tp_Loai1_User2.Controls.Add(uc);
-            uc.Changed += UC_Row_01_Changed1;
+            uc.CheckBatch_CoDeSo();uc.Changed += UC_Row_01_Changed1;
             btn_Luu_DeSo2.Visible = false;
             btn_SuaVaLuu_User2.Visible = true;
             ScrollToBottom(tp_Loai1_User2);

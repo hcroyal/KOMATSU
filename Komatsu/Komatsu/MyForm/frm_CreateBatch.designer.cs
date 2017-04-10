@@ -38,7 +38,6 @@
             this.dateEdit_ngayketthuc = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit_ngaybatdau = new DevExpress.XtraEditors.DateEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -221,14 +220,6 @@
             this.labelControl11.TabIndex = 25;
             this.labelControl11.Text = "Thời gian kết thúc :";
             this.labelControl11.Visible = false;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(317, 327);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(22, 13);
-            this.labelControl14.TabIndex = 24;
-            this.labelControl14.Text = "Phút";
             // 
             // labelControl13
             // 
@@ -533,7 +524,6 @@
             this.Controls.Add(this.dateEdit_ngayketthuc);
             this.Controls.Add(this.dateEdit_ngaybatdau);
             this.Controls.Add(this.labelControl11);
-            this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.labelControl10);
@@ -599,7 +589,6 @@
         private DevExpress.XtraEditors.DateEdit dateEdit_ngayketthuc;
         private DevExpress.XtraEditors.DateEdit dateEdit_ngaybatdau;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl10;
