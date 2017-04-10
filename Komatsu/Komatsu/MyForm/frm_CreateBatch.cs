@@ -99,7 +99,7 @@ namespace KOMTSU.MyForm
             {
                 _truongSo06 = new string[TongSoTrang + 1];
                 _truongSo08 = new string[TongSoTrang + 1];
-
+               
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
                     string temp = "";
@@ -217,6 +217,11 @@ namespace KOMTSU.MyForm
         }
         private void UploadImage()
         {
+            if (dataGridView1.RowCount == 1)
+            {
+                MessageBox.Show("You haven't filled in the TruongSo06 or TruongSo08!");
+                return;
+            }
             ExtractImage();
             string[] filePaths = Directory.GetFiles(txt_FolderSaveImage.Text, "*.jpg");
             progressBarControl1.EditValue = 0;
@@ -345,26 +350,28 @@ namespace KOMTSU.MyForm
                 txt_TruongSo08.Enabled = false;
 
                 dataGridView1.Enabled = true;
-                dataGridView1.Visible = true;
 
-                labelControl3.Visible = false;
-                labelControl4.Visible = false;
-                txt_TruongSo06.Visible = false;
-                txt_TruongSo08.Visible = false;
+                //dataGridView1.Visible = true;
+
+                //labelControl3.Visible = false;
+                //labelControl4.Visible = false;
+                //txt_TruongSo06.Visible = false;
+                //txt_TruongSo08.Visible = false;
             }
             else
             {
                 txt_TruongSo06.Enabled = true;
                 txt_TruongSo08.Enabled = true;
 
-                labelControl3.Visible = true;
-                labelControl4.Visible = true;
-                txt_TruongSo06.Visible = true;
-                txt_TruongSo08.Visible = true;
+                //labelControl3.Visible = true;
+                //labelControl4.Visible = true;
+                //txt_TruongSo06.Visible = true;
+                //txt_TruongSo08.Visible = true;
 
                 dataGridView1.Rows.Clear();
                 dataGridView1.Enabled = false;
-                dataGridView1.Visible = false;
+
+                //dataGridView1.Visible = false;
 
             }
         }

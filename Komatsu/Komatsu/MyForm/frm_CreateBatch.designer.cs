@@ -65,14 +65,14 @@
             this.txt_TruongSo08 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txt_FolderSaveImage = new DevExpress.XtraEditors.TextEdit();
             this.btn_BrowserFolder = new DevExpress.XtraEditors.SimpleButton();
             this.lbl_Page = new DevExpress.XtraEditors.LabelControl();
             this.ck_CoDeso = new DevExpress.XtraEditors.CheckEdit();
-            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -104,6 +104,7 @@
             this.cbb_loaithoigian.Name = "cbb_loaithoigian";
             this.cbb_loaithoigian.Size = new System.Drawing.Size(93, 21);
             this.cbb_loaithoigian.TabIndex = 47;
+            this.cbb_loaithoigian.Visible = false;
             // 
             // nud_sophutlam
             // 
@@ -116,6 +117,7 @@
             this.nud_sophutlam.Name = "nud_sophutlam";
             this.nud_sophutlam.Size = new System.Drawing.Size(36, 21);
             this.nud_sophutlam.TabIndex = 46;
+            this.nud_sophutlam.Visible = false;
             // 
             // nud_sogiolam
             // 
@@ -128,6 +130,7 @@
             this.nud_sogiolam.Name = "nud_sogiolam";
             this.nud_sogiolam.Size = new System.Drawing.Size(37, 21);
             this.nud_sogiolam.TabIndex = 45;
+            this.nud_sogiolam.Visible = false;
             // 
             // nud_thoigiandeadline
             // 
@@ -141,6 +144,7 @@
             this.nud_thoigiandeadline.Name = "nud_thoigiandeadline";
             this.nud_thoigiandeadline.Size = new System.Drawing.Size(59, 21);
             this.nud_thoigiandeadline.TabIndex = 44;
+            this.nud_thoigiandeadline.Visible = false;
             // 
             // nud_songaylam
             // 
@@ -153,6 +157,7 @@
             this.nud_songaylam.Name = "nud_songaylam";
             this.nud_songaylam.Size = new System.Drawing.Size(37, 21);
             this.nud_songaylam.TabIndex = 43;
+            this.nud_songaylam.Visible = false;
             // 
             // timeEdit_ngayketthuc
             // 
@@ -164,6 +169,7 @@
             this.timeEdit_ngayketthuc.Properties.Mask.EditMask = "HH:mm:ss";
             this.timeEdit_ngayketthuc.Size = new System.Drawing.Size(86, 20);
             this.timeEdit_ngayketthuc.TabIndex = 42;
+            this.timeEdit_ngayketthuc.Visible = false;
             // 
             // timeEdit_ngaybatdau
             // 
@@ -175,6 +181,7 @@
             this.timeEdit_ngaybatdau.Properties.Mask.EditMask = "HH:mm:ss";
             this.timeEdit_ngaybatdau.Size = new System.Drawing.Size(86, 20);
             this.timeEdit_ngaybatdau.TabIndex = 41;
+            this.timeEdit_ngaybatdau.Visible = false;
             // 
             // dateEdit_ngayketthuc
             // 
@@ -189,6 +196,7 @@
             this.dateEdit_ngayketthuc.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dateEdit_ngayketthuc.Size = new System.Drawing.Size(100, 20);
             this.dateEdit_ngayketthuc.TabIndex = 40;
+            this.dateEdit_ngayketthuc.Visible = false;
             // 
             // dateEdit_ngaybatdau
             // 
@@ -203,6 +211,7 @@
             this.dateEdit_ngaybatdau.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dateEdit_ngaybatdau.Size = new System.Drawing.Size(100, 20);
             this.dateEdit_ngaybatdau.TabIndex = 39;
+            this.dateEdit_ngaybatdau.Visible = false;
             // 
             // labelControl11
             // 
@@ -211,6 +220,7 @@
             this.labelControl11.Size = new System.Drawing.Size(92, 13);
             this.labelControl11.TabIndex = 25;
             this.labelControl11.Text = "Thời gian kết thúc :";
+            this.labelControl11.Visible = false;
             // 
             // labelControl14
             // 
@@ -227,6 +237,7 @@
             this.labelControl13.Size = new System.Drawing.Size(15, 13);
             this.labelControl13.TabIndex = 26;
             this.labelControl13.Text = "Giờ";
+            this.labelControl13.Visible = false;
             // 
             // labelControl12
             // 
@@ -235,6 +246,7 @@
             this.labelControl12.Size = new System.Drawing.Size(25, 13);
             this.labelControl12.TabIndex = 23;
             this.labelControl12.Text = "Ngày";
+            this.labelControl12.Visible = false;
             // 
             // labelControl10
             // 
@@ -243,6 +255,7 @@
             this.labelControl10.Size = new System.Drawing.Size(69, 13);
             this.labelControl10.TabIndex = 22;
             this.labelControl10.Text = "Thời gian làm :";
+            this.labelControl10.Visible = false;
             // 
             // labelControl9
             // 
@@ -251,6 +264,7 @@
             this.labelControl9.Size = new System.Drawing.Size(90, 13);
             this.labelControl9.TabIndex = 21;
             this.labelControl9.Text = "Thời gian bắt đầu :";
+            this.labelControl9.Visible = false;
             // 
             // labelControl8
             // 
@@ -347,6 +361,7 @@
             this.labelControl15.Size = new System.Drawing.Size(99, 13);
             this.labelControl15.TabIndex = 17;
             this.labelControl15.Text = "Thông báo Deadline:";
+            this.labelControl15.Visible = false;
             // 
             // labelControl5
             // 
@@ -434,6 +449,26 @@
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
+            // TruongSo06
+            // 
+            this.TruongSo06.DataPropertyName = "TruongSo06";
+            this.TruongSo06.HeaderText = "Trường số 6";
+            this.TruongSo06.Name = "TruongSo06";
+            this.TruongSo06.Width = 170;
+            // 
+            // TruongSo08
+            // 
+            this.TruongSo08.DataPropertyName = "TruongSo08";
+            this.TruongSo08.HeaderText = "Trường số 8";
+            this.TruongSo08.Name = "TruongSo08";
+            this.TruongSo08.Width = 170;
+            // 
+            // Page
+            // 
+            this.Page.DataPropertyName = "Page";
+            this.Page.HeaderText = "Trang";
+            this.Page.Name = "Page";
+            // 
             // labelControl16
             // 
             this.labelControl16.Location = new System.Drawing.Point(30, 121);
@@ -477,26 +512,6 @@
             this.ck_CoDeso.Properties.Caption = "Có DESo";
             this.ck_CoDeso.Size = new System.Drawing.Size(75, 19);
             this.ck_CoDeso.TabIndex = 52;
-            // 
-            // TruongSo06
-            // 
-            this.TruongSo06.DataPropertyName = "TruongSo06";
-            this.TruongSo06.HeaderText = "Trường số 6";
-            this.TruongSo06.Name = "TruongSo06";
-            this.TruongSo06.Width = 170;
-            // 
-            // TruongSo08
-            // 
-            this.TruongSo08.DataPropertyName = "TruongSo08";
-            this.TruongSo08.HeaderText = "Trường số 8";
-            this.TruongSo08.Name = "TruongSo08";
-            this.TruongSo08.Width = 170;
-            // 
-            // Page
-            // 
-            this.Page.DataPropertyName = "Page";
-            this.Page.HeaderText = "Trang";
-            this.Page.Name = "Page";
             // 
             // frm_CreateBatch
             // 
