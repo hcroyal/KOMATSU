@@ -40,19 +40,19 @@ namespace Komatsu.MyForm
         {
             string fbatchname = gridView1.GetFocusedRowCellValue("fBatchName").ToString();
             string temp = Global.StrPath + "\\" + fbatchname;
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa batch: " + fbatchname + "?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("You definitely want to delete the batch: " + fbatchname + "?", "Notification", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
                     Global.db.XoaBatch(fbatchname);
                     Directory.Delete(temp, true);
-                    MessageBox.Show("Đã xóa batch thành công!");
+                    MessageBox.Show("Delete the batch successfully!");
 
                 }
                 catch (Exception)
                 {
 
-                    MessageBox.Show("Xóa batch bị lỗi!");
+                    MessageBox.Show("Delete batch Error!");
 
                 }
 

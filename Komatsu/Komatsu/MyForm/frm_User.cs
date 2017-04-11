@@ -25,7 +25,7 @@ namespace KOMTSU.MyForm
 
             if (!string.IsNullOrEmpty(roleid) && !string.IsNullOrEmpty(nhanvien) && !string.IsNullOrEmpty(txt_username.Text) && !string.IsNullOrEmpty(txt_password.Text))
             {
-                DialogResult thongbao = MessageBox.Show("Bạn chắc chắn muốn sửa UserName '" + txt_username.Text + "'", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult thongbao = MessageBox.Show(@"You want to edit the UserName '" + txt_username.Text + "'", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (thongbao == DialogResult.Yes)
                 {
                     Global.db_BPO.UpdateUsername(txt_username.Text, txt_password.Text, roleid, nhanvien, txt_grouplevel.Text);
@@ -34,7 +34,7 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                MessageBox.Show("Nhập đầy đủ thông tin trước khi lưu !");
+                MessageBox.Show("Enter full information before saving !");
             }
         }
         
@@ -52,11 +52,11 @@ namespace KOMTSU.MyForm
                 r = Global.db_BPO.InsertUsername(txt_username.Text, txt_password.Text, roleid,nhanvien, txt_grouplevel.Text);
                 if (r == 0)
                 {
-                    MessageBox.Show("UserName đã tồn tại, Vui lòng nhập UserName khác !");
+                    MessageBox.Show("UserName already exists, Please enter another UserName");
                 }
                 if (r == 1)
                 {
-                    MessageBox.Show("Đã thêm UserName '" + txt_username.Text + "' !");
+                    MessageBox.Show("Added UserName '" + txt_username.Text + "' !");
                     frm_User_Load(sender, e);
                     txt_username.Text = "";
                     txt_FullName.Text = "";
@@ -65,14 +65,14 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                MessageBox.Show("Nhập đầy đủ thông tin trước khi lưu !");
+                MessageBox.Show("Enter full information before saving !");
             }
         }
 
         private void btn_delete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             string username = gridView1.GetFocusedRowCellValue("Username") != null ? gridView1.GetFocusedRowCellValue("Username").ToString() : "";
-            DialogResult thongbao = MessageBox.Show("Bạn chắc chắn muốn xóa UserName '" +username + "'", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult thongbao = MessageBox.Show(@"You want to delete the UserName'" + username + "'", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thongbao == DialogResult.Yes)
             {
                 if(!string.IsNullOrEmpty(username))
@@ -82,7 +82,7 @@ namespace KOMTSU.MyForm
                 }
                 else
                 {
-                    MessageBox.Show("Username rỗng, không thể xóa!");
+                    MessageBox.Show("Username does not exist, can not delete");
                 }
             }
         }

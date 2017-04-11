@@ -335,7 +335,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User2.Controls.Add(this.uc_DeJP_Loai12);
             this.tp_Loai1_User2.Name = "tp_Loai1_User2";
             this.tp_Loai1_User2.Size = new System.Drawing.Size(414, 284);
-            this.tp_Loai1_User2.Text = "Loại 1";
+            this.tp_Loai1_User2.Text = "Type 1";
             this.tp_Loai1_User2.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.tp_Loai1_User2_Scroll);
             // 
             // uc_DeJP_Loai12
@@ -355,7 +355,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai2_User2.Controls.Add(this.panelControl7);
             this.tp_Loai2_User2.Name = "tp_Loai2_User2";
             this.tp_Loai2_User2.Size = new System.Drawing.Size(414, 284);
-            this.tp_Loai2_User2.Text = "Loại 2";
+            this.tp_Loai2_User2.Text = "Type 2";
             // 
             // uc_DeJP_Loai22
             // 
@@ -585,7 +585,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai1_User1.Controls.Add(this.uc_DeJP_Loai11);
             this.tp_Loai1_User1.Name = "tp_Loai1_User1";
             this.tp_Loai1_User1.Size = new System.Drawing.Size(418, 288);
-            this.tp_Loai1_User1.Text = "Loại 1";
+            this.tp_Loai1_User1.Text = "Type 1";
             this.tp_Loai1_User1.Scroll += new DevExpress.XtraEditors.XtraScrollEventHandler(this.tp_Loai1_User1_Scroll);
             // 
             // uc_DeJP_Loai11
@@ -605,7 +605,7 @@ namespace KOMTSU.MyForm
             this.tp_Loai2_User1.Controls.Add(this.panelControl6);
             this.tp_Loai2_User1.Name = "tp_Loai2_User1";
             this.tp_Loai2_User1.Size = new System.Drawing.Size(418, 288);
-            this.tp_Loai2_User1.Text = "Loại 2";
+            this.tp_Loai2_User1.Text = "Type 2";
             // 
             // uc_DeJP_Loai21
             // 

@@ -42,9 +42,9 @@
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(12, 30);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(361, 48);
+            this.labelControl1.Size = new System.Drawing.Size(250, 48);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Bạn đã tạm dừng:";
+            this.labelControl1.Text = "You paused:";
             // 
             // lb_time
             // 

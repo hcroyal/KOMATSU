@@ -47,31 +47,31 @@ namespace KOMTSU.MyForm
 
             if (r == 1)
             {
-                MessageBox.Show("Dữ liệu đã tồn tại. Vui lòng kiểm tra lại");
+                MessageBox.Show(@"Data already exists. Please check again");
             }
             else if (r == 0)
             {
                 gridControl1.DataSource =
                     (from w in Global.db.tbl_DataAutoCompletes select new {w.Id, w.DataAutoComplete}).ToList();
-                MessageBox.Show("Lưu dữ liệu thành công.");
+                MessageBox.Show(@"Save the data successfully");
             }
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
             string data = dgv_data_auto.GetRowCellValue(dgv_data_auto.FocusedRowHandle, "DataAutoComplete").ToString();
-            DialogResult thongbao = MessageBox.Show("Bạn muốn sửa dữ liệu : " + data + " thành : "+txt_data.Text+"", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult thongbao = MessageBox.Show(@"You want to edit the data : " + data + @" to : "+txt_data.Text+"", @"Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thongbao == DialogResult.Yes){
                 int r = Global.db.UpdateDataAutoComplete(Convert.ToInt32(dgv_data_auto.GetRowCellValue(dgv_data_auto.FocusedRowHandle, "Id").ToString()), txt_data.Text);
                 if (r == 1)
                 {
                     gridControl1.DataSource =
                    (from w in Global.db.tbl_DataAutoCompletes select new { w.Id, w.DataAutoComplete }).ToList();
-                    MessageBox.Show("Lưu dữ liệu thành công.");
+                    MessageBox.Show(@"Save the data successfully");
                 }
                 else if (r == 0)
                 {
-                    MessageBox.Show("Sửa dữ liệu thất bại, Vui lòng kiểm tra lại.");
+                    MessageBox.Show(@"Fix failed data, Please check again");
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace KOMTSU.MyForm
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             string data = dgv_data_auto.GetRowCellValue(dgv_data_auto.FocusedRowHandle, "Id").ToString();
-            DialogResult thongbao = MessageBox.Show("Bạn muốn xóa dữ liệu dòng '" + data + "'", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult thongbao = MessageBox.Show(@"You want to delete row data : '" + data + "'", @"Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thongbao == DialogResult.Yes)
             {
                 int r = Global.db.DeleteDataAutoComplete(Convert.ToInt32(dgv_data_auto.GetRowCellValue(dgv_data_auto.FocusedRowHandle, "Id").ToString()));
@@ -87,11 +87,11 @@ namespace KOMTSU.MyForm
                 {
                     gridControl1.DataSource =
                    (from w in Global.db.tbl_DataAutoCompletes select new { w.Id, w.DataAutoComplete }).ToList();
-                    MessageBox.Show("Xóa dữ liệu thành công.");
+                    MessageBox.Show(@"Delete the data successfully");
                 }
                 else if (r == 0)
                 {
-                    MessageBox.Show("Xóa dữ liệu thất bại, Vui lòng kiểm tra lại.");
+                    MessageBox.Show(@"Delete failed data, Please check again");
                 }
             }
         }

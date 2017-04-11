@@ -89,7 +89,7 @@
             // 
             this.cbb_idrole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbb_idrole.FormattingEnabled = true;
-            this.cbb_idrole.Location = new System.Drawing.Point(294, 42);
+            this.cbb_idrole.Location = new System.Drawing.Point(330, 42);
             this.cbb_idrole.Name = "cbb_idrole";
             this.cbb_idrole.Size = new System.Drawing.Size(147, 21);
             this.cbb_idrole.TabIndex = 6;
@@ -97,7 +97,7 @@
             // txt_grouplevel
             // 
             this.txt_grouplevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_grouplevel.Location = new System.Drawing.Point(529, 11);
+            this.txt_grouplevel.Location = new System.Drawing.Point(565, 11);
             this.txt_grouplevel.Name = "txt_grouplevel";
             this.txt_grouplevel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_grouplevel.Properties.Appearance.Options.UseFont = true;
@@ -109,7 +109,7 @@
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(447, 14);
+            this.labelControl6.Location = new System.Drawing.Point(483, 14);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(76, 16);
             this.labelControl6.TabIndex = 13;
@@ -122,16 +122,16 @@
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(225, 15);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(65, 16);
+            this.labelControl5.Size = new System.Drawing.Size(97, 16);
             this.labelControl5.TabIndex = 11;
-            this.labelControl5.Text = "Nhân viên :";
+            this.labelControl5.Text = "Personnel name:";
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(224, 45);
+            this.labelControl4.Location = new System.Drawing.Point(271, 44);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(50, 16);
             this.labelControl4.TabIndex = 14;
@@ -150,7 +150,7 @@
             // txt_FullName
             // 
             this.txt_FullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_FullName.Location = new System.Drawing.Point(294, 13);
+            this.txt_FullName.Location = new System.Drawing.Point(330, 13);
             this.txt_FullName.Name = "txt_FullName";
             this.txt_FullName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FullName.Properties.Appearance.Options.UseFont = true;
@@ -192,21 +192,21 @@
             // btn_suauser
             // 
             this.btn_suauser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_suauser.Location = new System.Drawing.Point(551, 40);
+            this.btn_suauser.Location = new System.Drawing.Point(587, 40);
             this.btn_suauser.Name = "btn_suauser";
             this.btn_suauser.Size = new System.Drawing.Size(75, 23);
             this.btn_suauser.TabIndex = 8;
-            this.btn_suauser.Text = "&Sửa";
+            this.btn_suauser.Text = "&Edit";
             this.btn_suauser.Click += new System.EventHandler(this.btn_suauser_Click);
             // 
             // btn_themuser
             // 
             this.btn_themuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_themuser.Location = new System.Drawing.Point(469, 40);
+            this.btn_themuser.Location = new System.Drawing.Point(505, 40);
             this.btn_themuser.Name = "btn_themuser";
             this.btn_themuser.Size = new System.Drawing.Size(75, 23);
             this.btn_themuser.TabIndex = 7;
-            this.btn_themuser.Text = "&Thêm User";
+            this.btn_themuser.Text = "&Add";
             this.btn_themuser.Click += new System.EventHandler(this.btn_themuser_Click);
             // 
             // labelControl1
@@ -267,7 +267,7 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Nhân Viên";
+            this.gridColumn4.Caption = "Personnel name";
             this.gridColumn4.FieldName = "FullName";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.ReadOnly = true;
@@ -307,7 +307,7 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "Xóa";
+            this.gridColumn6.Caption = "Delete";
             this.gridColumn6.ColumnEdit = this.btn_delete;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -340,7 +340,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý User";
+            this.Text = "Manager User";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

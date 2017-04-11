@@ -68,7 +68,7 @@
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(75, 23);
             this.btn_sua.TabIndex = 1;
-            this.btn_sua.Text = "Sửa";
+            this.btn_sua.Text = "Edit";
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_them
@@ -78,7 +78,7 @@
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(75, 23);
             this.btn_them.TabIndex = 1;
-            this.btn_them.Text = "Thêm";
+            this.btn_them.Text = "Add";
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // txt_data
@@ -142,7 +142,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn2.Caption = "Dữ liệu";
+            this.gridColumn2.Caption = "Data";
             this.gridColumn2.FieldName = "DataAutoComplete";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.ReadOnly = true;
@@ -155,7 +155,7 @@
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn3.Caption = "Xóa";
+            this.gridColumn3.Caption = "Delete";
             this.gridColumn3.ColumnEdit = this.btn_xoa;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -179,7 +179,7 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "frm_DataAuto";
-            this.Text = "Dữ liệu AutoComplete";
+            this.Text = "Data AutoComplete";
             this.Load += new System.EventHandler(this.frm_DataAuto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

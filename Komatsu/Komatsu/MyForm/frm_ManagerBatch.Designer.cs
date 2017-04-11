@@ -71,7 +71,7 @@
             this.btn_TaoBatch.Name = "btn_TaoBatch";
             this.btn_TaoBatch.Size = new System.Drawing.Size(126, 55);
             this.btn_TaoBatch.TabIndex = 0;
-            this.btn_TaoBatch.Text = "Tạo Batch";
+            this.btn_TaoBatch.Text = "Create Batch";
             this.btn_TaoBatch.Click += new System.EventHandler(this.btn_TaoBatch_Click);
             // 
             // gridControl1
@@ -128,7 +128,7 @@
             // 
             // fBatchName
             // 
-            this.fBatchName.Caption = "Tên Batch";
+            this.fBatchName.Caption = "Batch Name";
             this.fBatchName.FieldName = "fBatchName";
             this.fBatchName.Name = "fBatchName";
             this.fBatchName.Visible = true;
@@ -137,7 +137,7 @@
             // 
             // fdatecreated
             // 
-            this.fdatecreated.Caption = "Ngày tạo Batch";
+            this.fdatecreated.Caption = "Date create Batch";
             this.fdatecreated.FieldName = "fdatecreated";
             this.fdatecreated.Name = "fdatecreated";
             this.fdatecreated.Visible = true;
@@ -146,7 +146,7 @@
             // 
             // fusercreate
             // 
-            this.fusercreate.Caption = "User tạo Batch";
+            this.fusercreate.Caption = "User create Batch";
             this.fusercreate.FieldName = "fusercreate";
             this.fusercreate.Name = "fusercreate";
             this.fusercreate.Visible = true;
@@ -155,7 +155,7 @@
             // 
             // fPathPicture
             // 
-            this.fPathPicture.Caption = "Đường dẫn up Batch";
+            this.fPathPicture.Caption = "Path up Batch";
             this.fPathPicture.FieldName = "fPathPicture";
             this.fPathPicture.Name = "fPathPicture";
             this.fPathPicture.Visible = true;
@@ -164,7 +164,7 @@
             // 
             // CoDeSo
             // 
-            this.CoDeSo.Caption = "Có DE số";
+            this.CoDeSo.Caption = "DESO";
             this.CoDeSo.FieldName = "CoDeSo";
             this.CoDeSo.Name = "CoDeSo";
             this.CoDeSo.Visible = true;
@@ -173,7 +173,7 @@
             // 
             // fSoLuongAnh
             // 
-            this.fSoLuongAnh.Caption = "Số lượng ảnh";
+            this.fSoLuongAnh.Caption = "Total image";
             this.fSoLuongAnh.FieldName = "fSoLuongAnh";
             this.fSoLuongAnh.Name = "fSoLuongAnh";
             this.fSoLuongAnh.Visible = true;
@@ -182,7 +182,7 @@
             // 
             // LoaiBatch
             // 
-            this.LoaiBatch.Caption = "Loại Batch";
+            this.LoaiBatch.Caption = "Type Batch";
             this.LoaiBatch.FieldName = "LoaiBatch";
             this.LoaiBatch.Name = "LoaiBatch";
             this.LoaiBatch.Visible = true;
@@ -191,7 +191,7 @@
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "Xoá Batch";
+            this.gridColumn8.Caption = "Delete Batch";
             this.gridColumn8.ColumnEdit = this.repositoryItemButtonEdit3;
             this.gridColumn8.ImageAlignment = System.Drawing.StringAlignment.Center;
             this.gridColumn8.Name = "gridColumn8";
@@ -216,7 +216,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
             this.Name = "frm_ManagerBatch";
-            this.Text = "frm_ManagerBatch";
+            this.Text = "Manager Batch";
             this.Load += new System.EventHandler(this.frm_ManagerBatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
