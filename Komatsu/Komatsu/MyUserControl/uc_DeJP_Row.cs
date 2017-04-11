@@ -291,7 +291,7 @@ namespace KOMTSU.MyUserControl
                     Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, batch, Global.StrUsername,
                         txt_Truong03.Text,
                         txt_Truong04.Text, txt_Truong05.Text, truong08, "", truong06, "", txt_Truong10.Text,
-                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(),
+                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", lb_stt.Text,
                         "Loai2");
                 }
                 else
@@ -301,7 +301,7 @@ namespace KOMTSU.MyUserControl
                     Global.db.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, batch, Global.StrUsername,
                         txt_Truong03.Text,
                         txt_Truong04.Text, txt_Truong05.Text, truong06, "", truong08, "", txt_Truong10.Text,
-                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(),
+                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", lb_stt.Text,
                         "Loai2");
                 }
             }
@@ -316,7 +316,7 @@ namespace KOMTSU.MyUserControl
                         txt_Truong03.Text,
                         txt_Truong04.Text, txt_Truong05.Text, truong08, "", truong06, "",
                         txt_Truong10.Text,
-                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(),
+                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", lb_stt.Text,
                         "Loai2");
                 }
                 else
@@ -324,7 +324,7 @@ namespace KOMTSU.MyUserControl
                     Global.db.SuaVaLuu_DESO(usersaiit, usersainhieu, idimage,batch, Global.StrUsername,
                         txt_Truong03.Text,
                         txt_Truong04.Text, txt_Truong05.Text, truong06, "", truong08, "", txt_Truong10.Text,
-                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", Convert.ToInt32(Tag.ToString()).ToString(),
+                        txt_Truong11_1.Text, txt_Truong11_2.Text, "", lb_stt.Text,
                         "Loai2");
                 }
             }

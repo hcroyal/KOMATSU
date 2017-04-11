@@ -351,12 +351,7 @@ namespace KOMTSU.MyForm
 ;           lbl_Page.Text = "";
             dataGridView1.Rows.Clear();
         }
-
-        private void labelControl14_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void rb_LoaiBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")

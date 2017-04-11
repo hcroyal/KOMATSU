@@ -55,7 +55,16 @@ namespace KOMTSU.MyForm
                 TabControl_User1.TabPages.Remove(tp_Loai2_User1);
                 TabControl_User2.TabPages.Remove(tp_Loai1_User2);
                 TabControl_User2.TabPages.Remove(tp_Loai2_User2);
-
+                if (Global.LoaiPhieu == "Loai1")
+                {
+                    TabControl_User1.TabPages.Add(tp_Loai1_User1);
+                    TabControl_User2.TabPages.Add(tp_Loai1_User2);
+                }
+                else if (Global.LoaiPhieu == "Loai2")
+                {
+                    TabControl_User1.TabPages.Add(tp_Loai2_User1);
+                    TabControl_User2.TabPages.Add(tp_Loai2_User2);
+                }
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
@@ -268,8 +277,7 @@ namespace KOMTSU.MyForm
             {
                 btn_ThemPhieu1.Visible = true;
                 btn_ThemPhieu2.Visible = true;
-                btn_XoaPhieu1.Visible = true;
-                btn_XoaPhieu2.Visible = true;
+                btn_XoaPhieu1.Visible = true;btn_XoaPhieu2.Visible = true;
                 int countRowUser1 = 0, countRowUser2 = 0, r1 = 0, r2 = 0;
 
                 for (int i = 0; i < deso.Count - 1; i++)
@@ -279,7 +287,7 @@ namespace KOMTSU.MyForm
                         countRowUser1 = i;
                         row_user1 = deso[i].IdPhieu;
                         countRowUser2 = deso.Count - 1;
-                        row_user2 = deso[countRowUser2 - row_user1].IdPhieu;
+                        row_user2 = deso[deso.Count - row_user1].IdPhieu;
                         break;
                     }
                 }
@@ -381,7 +389,7 @@ namespace KOMTSU.MyForm
                         countRowUser1 = i;
                         row_user1 = deso[i].IdPhieu;
                         countRowUser2 = deso.Count - 1;
-                        row_user2 = deso[countRowUser2- row_user1].IdPhieu;
+                        row_user2 = deso[deso.Count - row_user1].IdPhieu;
                         break;
                     }
                 }
@@ -604,7 +612,7 @@ namespace KOMTSU.MyForm
                 {
                     for (int i = irowrumber; i < row_user1; i++)
                     {
-                        Global.db.DelecteRow(lb_Image.Text, cbb_Batch_Check.Text, i + 1);
+                        Global.db.DelecteRow(lb_Image.Text, cbb_Batch_Check.Text, i+1);
                     }
                 }
             }
@@ -679,7 +687,7 @@ namespace KOMTSU.MyForm
                 {
                     for (int i = irowrumber; i < row_user2; i++)
                     {
-                        Global.db.DelecteRow(lb_Image.Text, cbb_Batch_Check.Text, i + 1);
+                        Global.db.DelecteRow(lb_Image.Text, cbb_Batch_Check.Text, i+1);
                     }
                 }
             }
@@ -862,10 +870,6 @@ namespace KOMTSU.MyForm
             {
                 tp_Loai2_User1.PageVisible = true;
                 tp_Loai2_User2.PageVisible = true;
-                btn_ThemPhieu1.Visible = true;
-                btn_ThemPhieu2.Visible = true;
-                btn_XoaPhieu1.Visible = true;
-                btn_XoaPhieu2.Visible = true;
             }
             tp_Loai1_User1.Controls.Clear();
             tp_Loai1_User2.Controls.Clear();

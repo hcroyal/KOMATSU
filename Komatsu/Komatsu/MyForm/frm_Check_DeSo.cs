@@ -281,7 +281,7 @@ namespace KOMTSU.MyForm
                         countRowUser1 = i;
                         row_user1 = deso[i].IdPhieu;
                         countRowUser2 = deso.Count - 1;
-                        row_user2 = deso[countRowUser2 - row_user1].IdPhieu;
+                        row_user2 = deso[deso.Count - row_user1].IdPhieu;
                         break;
                     }
                 }
@@ -608,7 +608,7 @@ namespace KOMTSU.MyForm
                 {
                     for (int i = irowrumber; i < row_user1; i++)
                     {
-                        Global.db.DelecteRow_DeSo(lb_Image.Text, cbb_Batch_Check.Text, i + 1);
+                        Global.db.DelecteRow_DeSo(lb_Image.Text, cbb_Batch_Check.Text, i+1);
                     }
                 }
             }
@@ -683,7 +683,7 @@ namespace KOMTSU.MyForm
                 {
                     for (int i = irowrumber; i < row_user2; i++)
                     {
-                        Global.db.DelecteRow_DeSo(lb_Image.Text, cbb_Batch_Check.Text, i + 1);
+                        Global.db.DelecteRow_DeSo(lb_Image.Text, cbb_Batch_Check.Text, i+1);
                     }
                 }
             }
@@ -857,6 +857,7 @@ namespace KOMTSU.MyForm
             tp_Loai1_User2.PageVisible = false;
             tp_Loai2_User1.PageVisible = false;
             tp_Loai2_User2.PageVisible = false;
+
             btn_ThemPhieu1.Visible = false;
             btn_ThemPhieu2.Visible = false;
             btn_XoaPhieu1.Visible = false;
@@ -876,20 +877,12 @@ namespace KOMTSU.MyForm
             {
                 tp_Loai1_User1.PageVisible = true;
                 tp_Loai1_User2.PageVisible = true;
-
-                btn_ThemPhieu1.Visible = false;
-                btn_ThemPhieu2.Visible = false;
-                btn_XoaPhieu1.Visible = false;
-                btn_XoaPhieu2.Visible = false;
+                
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
                 tp_Loai2_User1.PageVisible = true;
                 tp_Loai2_User2.PageVisible = true;
-                btn_ThemPhieu1.Visible = false;
-                btn_ThemPhieu2.Visible = false;
-                btn_XoaPhieu1.Visible = false;
-                btn_XoaPhieu2.Visible = false;
             }
             tp_Loai1_User1.Controls.Clear();
             tp_Loai1_User2.Controls.Clear();

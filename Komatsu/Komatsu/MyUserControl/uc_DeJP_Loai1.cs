@@ -265,7 +265,7 @@ namespace KOMTSU.MyUserControl
                 txt_Truong11.Text = @"?";
             if (txt_Truong11.Text != "" && txt_Truong11.Text != @"?" && txt_Truong11.Text.IndexOf('●') < 0)
             {
-                if (Convert.ToInt32(txt_Truong11.Text) == 0)
+                if (txt_Truong11.Text == "0")
                 {txt_Truong11.BackColor = Color.Red;
                     txt_Truong11.ForeColor = Color.White;
                 }
