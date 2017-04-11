@@ -92,7 +92,7 @@
             this.btn_xoayphai.Name = "btn_xoayphai";
             this.btn_xoayphai.Size = new System.Drawing.Size(75, 23);
             this.btn_xoayphai.TabIndex = 16;
-            this.btn_xoayphai.Text = "Xoay phải";
+            this.btn_xoayphai.Text = "Rotate right";
             this.btn_xoayphai.Click += new System.EventHandler(this.btn_xoayphai_Click);
             // 
             // btn_Xoaytrai
@@ -102,7 +102,7 @@
             this.btn_Xoaytrai.Name = "btn_Xoaytrai";
             this.btn_Xoaytrai.Size = new System.Drawing.Size(75, 23);
             this.btn_Xoaytrai.TabIndex = 17;
-            this.btn_Xoaytrai.Text = "Xoay trái";
+            this.btn_Xoaytrai.Text = "Rotate left";
             this.btn_Xoaytrai.Click += new System.EventHandler(this.btn_Xoaytrai_Click);
             // 
             // panelControl2

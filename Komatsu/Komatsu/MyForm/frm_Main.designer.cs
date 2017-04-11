@@ -86,12 +86,12 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_XoaPhieu = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ThemPhieu = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
-            this.btn_XoaPhieu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -182,7 +182,7 @@
             // 
             // menu_quanly
             // 
-            this.menu_quanly.Caption = "&Quản Lý";
+            this.menu_quanly.Caption = "&Manager";
             this.menu_quanly.Id = 3;
             this.menu_quanly.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_qyanlybatch),
@@ -196,7 +196,7 @@
             // 
             // btn_qyanlybatch
             // 
-            this.btn_qyanlybatch.Caption = "Quản lý &Batch";
+            this.btn_qyanlybatch.Caption = "Manager &Batch";
             this.btn_qyanlybatch.Id = 5;
             this.btn_qyanlybatch.Name = "btn_qyanlybatch";
             this.btn_qyanlybatch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_qyanlybatch_ItemClick);
@@ -210,7 +210,7 @@
             // 
             // btn_quanlyuser
             // 
-            this.btn_quanlyuser.Caption = "Quản lý &User";
+            this.btn_quanlyuser.Caption = "Manager &User";
             this.btn_quanlyuser.Id = 6;
             this.btn_quanlyuser.Name = "btn_quanlyuser";
             this.btn_quanlyuser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_quanlyuser_ItemClick);
@@ -240,21 +240,21 @@
             // 
             // btn_tiendo
             // 
-            this.btn_tiendo.Caption = "&Tiến độ";
+            this.btn_tiendo.Caption = "&Progress";
             this.btn_tiendo.Id = 11;
             this.btn_tiendo.Name = "btn_tiendo";
             this.btn_tiendo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tiendo_ItemClick);
             // 
             // btn_xuatexcel
             // 
-            this.btn_xuatexcel.Caption = "Xuất &Excel";
+            this.btn_xuatexcel.Caption = "Export &Excel";
             this.btn_xuatexcel.Id = 12;
             this.btn_xuatexcel.Name = "btn_xuatexcel";
             this.btn_xuatexcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_xuatexcel_ItemClick);
             // 
             // btn_tinhnangsuat
             // 
-            this.btn_tinhnangsuat.Caption = "&Năng suất";
+            this.btn_tinhnangsuat.Caption = "&Productivity";
             this.btn_tinhnangsuat.Id = 19;
             this.btn_tinhnangsuat.Name = "btn_tinhnangsuat";
             this.btn_tinhnangsuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_nangsuat_ItemClick);
@@ -338,7 +338,7 @@
             // 
             this.lb_SoHinhLamDuoc.Appearance.ForeColor = System.Drawing.Color.DarkGreen;
             this.lb_SoHinhLamDuoc.Appearance.Options.UseForeColor = true;
-            this.lb_SoHinhLamDuoc.Location = new System.Drawing.Point(516, 10);
+            this.lb_SoHinhLamDuoc.Location = new System.Drawing.Point(524, 10);
             this.lb_SoHinhLamDuoc.Name = "lb_SoHinhLamDuoc";
             this.lb_SoHinhLamDuoc.Size = new System.Drawing.Size(6, 13);
             this.lb_SoHinhLamDuoc.TabIndex = 1;
@@ -348,7 +348,7 @@
             // 
             this.lb_SoHinhConLai.Appearance.ForeColor = System.Drawing.Color.Crimson;
             this.lb_SoHinhConLai.Appearance.Options.UseForeColor = true;
-            this.lb_SoHinhConLai.Location = new System.Drawing.Point(396, 10);
+            this.lb_SoHinhConLai.Location = new System.Drawing.Point(416, 10);
             this.lb_SoHinhConLai.Name = "lb_SoHinhConLai";
             this.lb_SoHinhConLai.Size = new System.Drawing.Size(6, 13);
             this.lb_SoHinhConLai.TabIndex = 2;
@@ -358,15 +358,15 @@
             // 
             this.labelControl6.Location = new System.Drawing.Point(456, 10);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(58, 13);
+            this.labelControl6.Size = new System.Drawing.Size(67, 13);
             this.labelControl6.TabIndex = 3;
-            this.labelControl6.Text = "Số hình làm:";
+            this.labelControl6.Text = "Images Done:";
             // 
             // lb_TongSoHinh
             // 
             this.lb_TongSoHinh.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.lb_TongSoHinh.Appearance.Options.UseForeColor = true;
-            this.lb_TongSoHinh.Location = new System.Drawing.Point(276, 10);
+            this.lb_TongSoHinh.Location = new System.Drawing.Point(266, 10);
             this.lb_TongSoHinh.Name = "lb_TongSoHinh";
             this.lb_TongSoHinh.Size = new System.Drawing.Size(6, 13);
             this.lb_TongSoHinh.TabIndex = 4;
@@ -374,11 +374,11 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(336, 10);
+            this.labelControl4.Location = new System.Drawing.Point(305, 10);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(59, 13);
+            this.labelControl4.Size = new System.Drawing.Size(109, 13);
             this.labelControl4.TabIndex = 5;
-            this.labelControl4.Text = "Số hình còn:";
+            this.labelControl4.Text = "The remaining Images:";
             // 
             // lb_UserName
             // 
@@ -422,11 +422,11 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(224, 10);
+            this.labelControl2.Location = new System.Drawing.Point(199, 10);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(51, 13);
+            this.labelControl2.Size = new System.Drawing.Size(66, 13);
             this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "Tổng hình:";
+            this.labelControl2.Text = "Total Images:";
             // 
             // labelControl1
             // 
@@ -464,7 +464,7 @@
             this.tp_Loai1_JP_Main.Controls.Add(this.uc_DeJP_Loai11);
             this.tp_Loai1_JP_Main.Name = "tp_Loai1_JP_Main";
             this.tp_Loai1_JP_Main.Size = new System.Drawing.Size(413, 530);
-            this.tp_Loai1_JP_Main.Text = "Loại 1";
+            this.tp_Loai1_JP_Main.Text = "Type 1";
             // 
             // uc_DeJP_Loai11
             // 
@@ -483,7 +483,7 @@
             this.tp_Loai2_JP_Main.Controls.Add(this.panelControl4);
             this.tp_Loai2_JP_Main.Name = "tp_Loai2_JP_Main";
             this.tp_Loai2_JP_Main.Size = new System.Drawing.Size(413, 530);
-            this.tp_Loai2_JP_Main.Text = "Loại 2";
+            this.tp_Loai2_JP_Main.Text = "Type 2";
             // 
             // panelControl5
             // 
@@ -666,6 +666,19 @@
             this.panelControl3.Size = new System.Drawing.Size(419, 30);
             this.panelControl3.TabIndex = 0;
             // 
+            // btn_XoaPhieu
+            // 
+            this.btn_XoaPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
+            this.btn_XoaPhieu.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.btn_XoaPhieu.Appearance.Options.UseFont = true;
+            this.btn_XoaPhieu.Appearance.Options.UseForeColor = true;
+            this.btn_XoaPhieu.Location = new System.Drawing.Point(53, 5);
+            this.btn_XoaPhieu.Name = "btn_XoaPhieu";
+            this.btn_XoaPhieu.Size = new System.Drawing.Size(45, 21);
+            this.btn_XoaPhieu.TabIndex = 5;
+            this.btn_XoaPhieu.Text = "-";
+            this.btn_XoaPhieu.Click += new System.EventHandler(this.btn_XoaPhieu_Click);
+            // 
             // btn_ThemPhieu
             // 
             this.btn_ThemPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
@@ -685,7 +698,7 @@
             this.btn_Pause.Name = "btn_Pause";
             this.btn_Pause.Size = new System.Drawing.Size(95, 23);
             this.btn_Pause.TabIndex = 4;
-            this.btn_Pause.Text = "Tạm dừng (ESC)";
+            this.btn_Pause.Text = "Pause (ESC)";
             this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
             // btn_Submit_Logout
@@ -713,19 +726,6 @@
             this.uc_PictureBox1.Name = "uc_PictureBox1";
             this.uc_PictureBox1.Size = new System.Drawing.Size(894, 592);
             this.uc_PictureBox1.TabIndex = 1;
-            // 
-            // btn_XoaPhieu
-            // 
-            this.btn_XoaPhieu.Appearance.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
-            this.btn_XoaPhieu.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.btn_XoaPhieu.Appearance.Options.UseFont = true;
-            this.btn_XoaPhieu.Appearance.Options.UseForeColor = true;
-            this.btn_XoaPhieu.Location = new System.Drawing.Point(53, 5);
-            this.btn_XoaPhieu.Name = "btn_XoaPhieu";
-            this.btn_XoaPhieu.Size = new System.Drawing.Size(45, 21);
-            this.btn_XoaPhieu.TabIndex = 5;
-            this.btn_XoaPhieu.Text = "-";
-            this.btn_XoaPhieu.Click += new System.EventHandler(this.btn_XoaPhieu_Click);
             // 
             // frm_Main
             // 

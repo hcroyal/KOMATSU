@@ -58,7 +58,7 @@ namespace KOMTSU.MyForm
             Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
             if (string.IsNullOrEmpty(cbb_Batch.Text))
             {
-                MessageBox.Show("Chưa chọn batch.");
+                MessageBox.Show("No batch selected yet!");
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace KOMTSU.MyForm
             var result = Global.db.InputFinish(cbb_Batch.Text);
             if (result == 1)
             {
-                MessageBox.Show("Batch này chưa nhập xong. Vui lòng nhập xong batch trước khi ExportExcel.");
+                MessageBox.Show("This batch has not been completed yet. Please complete the batch before ExportExcel!");
                 return;
             }
             var userMissimage = Global.db.UserMissIMage(cbb_Batch.Text).ToList();
@@ -81,7 +81,7 @@ namespace KOMTSU.MyForm
 
             if (userMissimage.Count > 0)
             {
-                MessageBox.Show("Những user lấy hình về nhưng không nhập: \r\n" + sss);
+                MessageBox.Show("The users took the picture but did not do: \r\n" + sss);
                 return;
             }
 
@@ -90,7 +90,7 @@ namespace KOMTSU.MyForm
 
             if (xyz != 0)
             {
-                MessageBox.Show("Chưa check xong hoặc có user lấy về nhưng chưa check. Vui lòng check trước");
+                MessageBox.Show("Not finished check or have user get but not check. Please complete check!");
 
                 var u = (from w in Global.db.UserMissIMageCheck(cbb_Batch.Text)
                     select w.UserName).ToList();
@@ -102,7 +102,7 @@ namespace KOMTSU.MyForm
 
                 if (u.Count > 0)
                 {
-                    MessageBox.Show("Danh sách checker lấy hình về nhưng chưa check: \r\n" + sssss);
+                    MessageBox.Show("Checklist checklist to check but not check: \r\n" + sssss);
                 }
 
                 return;
@@ -197,7 +197,7 @@ namespace KOMTSU.MyForm
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xuất excel!");
+                    MessageBox.Show("Error when exporting excel!");
                     return false;
                 }
                 Process.Start(savePath);
@@ -263,7 +263,7 @@ namespace KOMTSU.MyForm
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xuất excel!");
+                    MessageBox.Show("Error when exporting excel!");
                     return false;
                 }
                 Process.Start(savePath);

@@ -235,7 +235,7 @@ namespace KOMTSU.MyForm
             }
             catch (Exception i)
             {
-                MessageBox.Show("Lỗi Load Main: " + i.Message);
+                MessageBox.Show("Error Load Main: " + i.Message);
             }
         }
 
@@ -261,7 +261,7 @@ namespace KOMTSU.MyForm
 
                 if (token != Global.Strtoken)
                 {
-                    MessageBox.Show("User đã đăng nhập ở PC khác, bạn vui lòng đăng nhập lại!");
+                    MessageBox.Show("User logged on to another PC, please login again!");
                     DialogResult = DialogResult.Yes;
                 }
 
@@ -269,19 +269,19 @@ namespace KOMTSU.MyForm
                 {
                     if (string.IsNullOrEmpty(Global.StrBatch))
                     {
-                        MessageBox.Show("Vui lòng đăng nhập lại và chọn Batch!");
+                        MessageBox.Show("Please log in again and select Batch!");
                         return;
                     }
 
                     string temp = GetImage();
                     if (temp == "NULL")
                     {
-                        MessageBox.Show("Hết Hình!");
+                        MessageBox.Show("Picture is out!");
                         btn_logout_ItemClick(null, null);
                     }
                     else if (temp == "Error")
                     {
-                        MessageBox.Show("Không thể load hình!");
+                        MessageBox.Show("Can not load image!");
                         btn_logout_ItemClick(null, null);
                     }
                     uc_DeJP_Loai21.ResetData();
@@ -298,7 +298,7 @@ namespace KOMTSU.MyForm
                             {
                                 if (variable.IsError_Color())
                                 {
-                                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                    MessageBox.Show("You entered the wrong data. Please check again!");
                                     return;
                                 }
                             }
@@ -312,7 +312,7 @@ namespace KOMTSU.MyForm
                             }
                             if (c)
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("You are empty one or more fields.Do you want to submit ? \r\nYes = Submit and next Image < Press Enter >\r\nNo = Enter the blank field for this image. < Press N > ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
                             int k = 1;
@@ -328,12 +328,12 @@ namespace KOMTSU.MyForm
                         {
                             if (uc_DeJP_Loai21.IsError_Color())
                             {
-                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                MessageBox.Show("You entered the wrong data. Please check again!");
                                 return;
                             }
                             if (uc_DeJP_Loai21.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                                if (MessageBox.Show("You are empty one or more fields.Do you want to submit ? \r\nYes = Submit and next Image < Press Enter >\r\nNo = Enter the blank field for this image. < Press N > ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                                 {
                                     Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
                                     "", "", txt_Truong06.Text, txt_Truong08.Text,"","", "",Global.LoaiPhieu, "1");
@@ -360,7 +360,7 @@ namespace KOMTSU.MyForm
                             {
                                 if (variable.IsError_Color())
                                 {
-                                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                    MessageBox.Show("You entered the wrong data. Please check again!");
                                     return;
                                 }
                             }
@@ -374,8 +374,8 @@ namespace KOMTSU.MyForm
                             }
                             if (c)
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
-                                    return;
+                                if (MessageBox.Show("You are empty one or more fields.Do you want to submit ? \r\nYes = Submit and next Image < Press Enter >\r\nNo = Enter the blank field for this image. < Press N > ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                      return;
                             }
                             int k = 1;
                             foreach (uc_DeJP_Loai1 variable in tp_Loai1_JP_Main.Controls)
@@ -390,12 +390,12 @@ namespace KOMTSU.MyForm
                         {
                             if (uc_DeJP_Loai21.IsError_Color())
                             {
-                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                MessageBox.Show("You entered the wrong data. Please check again!");
                                 return;
                             }
                             if (uc_DeJP_Loai21.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                                if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                                 {
                                     Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
                                         "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
@@ -419,12 +419,12 @@ namespace KOMTSU.MyForm
                     
                     if (temp == "NULL")
                     {
-                        MessageBox.Show("Hết Hình!");
+                        MessageBox.Show("Picture is out!");
                         btn_logout_ItemClick(null, null);
                     }
                     else if (temp == "Error")
                     {
-                        MessageBox.Show("Không thể load hình!");
+                        MessageBox.Show("Can not load image!");
                         btn_logout_ItemClick(null, null);
                     }
                 }
@@ -432,7 +432,7 @@ namespace KOMTSU.MyForm
             }
             catch (Exception i)
             {
-                MessageBox.Show("Lỗi khi Submit" + i.Message);
+                MessageBox.Show("Error Submit" + i.Message);
             }
         }
 
@@ -447,7 +447,7 @@ namespace KOMTSU.MyForm
 
                 if (token != Global.Strtoken)
                 {
-                    MessageBox.Show("User đã đăng nhập ở PC khác, bạn vui lòng đăng nhập lại!");
+                    MessageBox.Show("User logged on to another PC, please login again!");
                     DialogResult = DialogResult.Yes;
                 }
                 
@@ -459,7 +459,7 @@ namespace KOMTSU.MyForm
                         {
                             if (variable.IsError_Color())
                             {
-                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                MessageBox.Show("You entered the wrong data. Please check again!");
                                 return;
                             }
                         }
@@ -473,7 +473,7 @@ namespace KOMTSU.MyForm
                         }
                         if (c)
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
                         int k = 1;
@@ -489,12 +489,12 @@ namespace KOMTSU.MyForm
                     {
                         if (uc_DeJP_Loai21.IsError_Color())
                         {
-                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                            MessageBox.Show("You entered the wrong data. Please check again!");
                             return;
                         }
                         if (uc_DeJP_Loai21.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                            if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                             {
                                 Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
                                     "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
@@ -520,7 +520,7 @@ namespace KOMTSU.MyForm
                         {
                             if (variable.IsError_Color())
                             {
-                                MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                                MessageBox.Show("You entered the wrong data. Please check again!");
                                 return;
                             }
                         }
@@ -534,7 +534,7 @@ namespace KOMTSU.MyForm
                         }
                         if (c)
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
                         int k = 1;
@@ -550,12 +550,12 @@ namespace KOMTSU.MyForm
                     {
                         if (uc_DeJP_Loai21.IsError_Color())
                         {
-                            MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                            MessageBox.Show("You entered the wrong data. Please check again!");
                             return;
                         }
                         if (uc_DeJP_Loai21.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                            if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                             {
                                 Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
                                     "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
@@ -576,7 +576,7 @@ namespace KOMTSU.MyForm
             }
             catch (Exception i)
             {
-                MessageBox.Show("Lỗi khi Submit_Logout" + i.Message);
+                MessageBox.Show("Error Submit_Logout" + i.Message);
             }
         }
 

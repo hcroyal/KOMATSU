@@ -39,7 +39,7 @@ namespace KOMTSU.MyForm
         private int row_user1 = 0,row_user2=0;
         public void LoadBatchMoi()
         {
-            if (MessageBox.Show("Bạn muốn làm batch tiếp theo.", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Want to do the next batch?", "Notification", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 ResetData();
                 btn_Luu_DeSo1.Visible = false;
@@ -120,7 +120,7 @@ namespace KOMTSU.MyForm
             }
             catch (Exception i)
             {
-                MessageBox.Show("Lỗi" + i);
+                MessageBox.Show("Error: " + i);
             }
         }
         
@@ -152,7 +152,7 @@ namespace KOMTSU.MyForm
                     select w.IdImage).Count();
                 if (sohinh > nhap)
                 {
-                    MessageBox.Show("Chưa nhập xong DeSo!");
+                    MessageBox.Show("Not finished yet DeSo!");
                     return;
                 }
                 if (check > 0)
@@ -169,7 +169,7 @@ namespace KOMTSU.MyForm
 
                     if (listUser.Count > 0)
                     {
-                        MessageBox.Show("Những user lấy hình về nhưng không nhập: \r\n" + sss);
+                        MessageBox.Show("The user took the picture but did not enter: \r\n" + sss);
                         return;
                     }
                 }
@@ -181,12 +181,12 @@ namespace KOMTSU.MyForm
                 if (temp == "NULL")
                 {
                 uc_PictureBox1.imageBox1.Image = null;
-                    MessageBox.Show("Hết Hình!");
+                    MessageBox.Show("Out of image!");
                     return;
                 }
                 if (temp == "Error")
                 {
-                    MessageBox.Show("Lỗi load hình");
+                    MessageBox.Show("Error load image");
                     return;
                 }
                 Load_DeSo(cbb_Batch_Check.Text, lb_Image.Text);
@@ -242,7 +242,7 @@ namespace KOMTSU.MyForm
         private void Load_DeSo(string strBatch, string idimage)
         {
             int soloi = ((from w in Global.db.tbl_DESOs where w.fBatchName == cbb_Batch_Check.Text && w.Dem == 1 select w.IdImage).Count() / 2);
-            lb_Loi.Text = soloi + " Lỗi";
+            lb_Loi.Text = soloi + " Error";
 
             var deso = (from w in Global.db.tbl_DESOs
                         where w.fBatchName == strBatch && w.IdImage == idimage
@@ -552,13 +552,13 @@ namespace KOMTSU.MyForm
             if (temp == "NULL")
             {
                 uc_PictureBox1.imageBox1.Image = null;
-                MessageBox.Show("Hết Hình!");
+                MessageBox.Show("Out of image!");
                 LoadBatchMoi();
                 return;
             }
             if (temp == "Error")
             {
-                MessageBox.Show("Lỗi load hình");
+                MessageBox.Show("Error load image");
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
@@ -580,7 +580,7 @@ namespace KOMTSU.MyForm
                 {
                     if (variable.IsError_Color())
                     {
-                        MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                        MessageBox.Show("You entered the wrong data. Please check again!");
                         return;
                     }
                 }
@@ -594,7 +594,7 @@ namespace KOMTSU.MyForm
                 }
                 if (c)
                 {
-                    if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                    if (MessageBox.Show("You are empty one or more fields.Do you want to submit ? \r\nYes = Submit and next Image < Press Enter >\r\nNo = Enter the blank field for this image. < Press N > ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                         return;
                 }
                 string rownumber = "";
@@ -616,7 +616,7 @@ namespace KOMTSU.MyForm
             {
                 if (uc_DeJP_Loai21.IsError_Color())
                 {
-                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                    MessageBox.Show("You entered the wrong data. Please check again!");
                     return;
                 }
                 uc_DeJP_Loai21.SuaVaLuu_DESO(row_user1,lb_username1.Text, lb_username2.Text,cbb_Batch_Check.Text, lb_Image.Text, txt_Truong06.Text, txt_Truong08.Text);
@@ -627,13 +627,13 @@ namespace KOMTSU.MyForm
             if (temp == "NULL")
             {
                 uc_PictureBox1.imageBox1.Image = null;
-                MessageBox.Show("Hết Hình!");
+                MessageBox.Show("Out of image!");
                 LoadBatchMoi();
                 return;
             }
             if (temp == "Error")
             {
-                MessageBox.Show("Lỗi load hình");
+                MessageBox.Show("Error load image");
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
@@ -655,7 +655,7 @@ namespace KOMTSU.MyForm
                 {
                     if (variable.IsError_Color())
                     {
-                        MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                        MessageBox.Show("You entered the wrong data. Please check again!");
                         return;
                     }
                 }
@@ -669,7 +669,7 @@ namespace KOMTSU.MyForm
                 }
                 if (c)
                 {
-                    if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                    if (MessageBox.Show("You are empty one or more fields.Do you want to submit ? \r\nYes = Submit and next Image < Press Enter >\r\nNo = Enter the blank field for this image. < Press N > ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                         return;
                 }
                 string rownumber = "";
@@ -691,7 +691,7 @@ namespace KOMTSU.MyForm
             {
                 if (uc_DeJP_Loai22.IsError_Color())
                 {
-                    MessageBox.Show("Bạn nhâp dữ liệu sai. Vui lòng kiểm tra lại!");
+                    MessageBox.Show("You entered the wrong data. Please check again!");
                     return;
                 }
                 uc_DeJP_Loai22.SuaVaLuu_DESO(row_user2,lb_username2.Text, lb_username1.Text, cbb_Batch_Check.Text,lb_Image.Text, txt_Truong06.Text, txt_Truong08.Text);
@@ -702,13 +702,13 @@ namespace KOMTSU.MyForm
             if (temp == "NULL")
             {
                 uc_PictureBox1.imageBox1.Image = null;
-                MessageBox.Show("Hết Hình!");
+                MessageBox.Show("Out of image!!");
                 LoadBatchMoi();
                 return;
             }
             if (temp == "Error")
             {
-                MessageBox.Show("Lỗi load hình");
+                MessageBox.Show("Error load image");
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;

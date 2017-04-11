@@ -536,7 +536,7 @@ namespace KOMTSU.MyForm
             this.btn_SuaVaLuu_User2.Name = "btn_SuaVaLuu_User2";
             this.btn_SuaVaLuu_User2.Size = new System.Drawing.Size(72, 17);
             this.btn_SuaVaLuu_User2.TabIndex = 2;
-            this.btn_SuaVaLuu_User2.Text = "Sửa và Lưu";
+            this.btn_SuaVaLuu_User2.Text = "Edit & Save";
             this.btn_SuaVaLuu_User2.Click += new System.EventHandler(this.btn_SuaVaLuu_User2_Click);
             // 
             // btn_Luu_DeSo2
@@ -545,7 +545,7 @@ namespace KOMTSU.MyForm
             this.btn_Luu_DeSo2.Name = "btn_Luu_DeSo2";
             this.btn_Luu_DeSo2.Size = new System.Drawing.Size(50, 16);
             this.btn_Luu_DeSo2.TabIndex = 2;
-            this.btn_Luu_DeSo2.Text = "Lưu";
+            this.btn_Luu_DeSo2.Text = "Save";
             this.btn_Luu_DeSo2.Click += new System.EventHandler(this.btn_Luu_DeSo2_Click);
             // 
             // panel3
@@ -786,7 +786,7 @@ namespace KOMTSU.MyForm
             this.btn_SuaVaLuu_User1.Name = "btn_SuaVaLuu_User1";
             this.btn_SuaVaLuu_User1.Size = new System.Drawing.Size(72, 18);
             this.btn_SuaVaLuu_User1.TabIndex = 2;
-            this.btn_SuaVaLuu_User1.Text = "Sửa và Lưu";
+            this.btn_SuaVaLuu_User1.Text = "Edit & Save";
             this.btn_SuaVaLuu_User1.Click += new System.EventHandler(this.btn_SuaVaLuu_User1_Click);
             // 
             // btn_Luu_DeSo1
@@ -795,7 +795,7 @@ namespace KOMTSU.MyForm
             this.btn_Luu_DeSo1.Name = "btn_Luu_DeSo1";
             this.btn_Luu_DeSo1.Size = new System.Drawing.Size(50, 19);
             this.btn_Luu_DeSo1.TabIndex = 2;
-            this.btn_Luu_DeSo1.Text = "Lưu";
+            this.btn_Luu_DeSo1.Text = "Save";
             this.btn_Luu_DeSo1.Click += new System.EventHandler(this.btn_Luu_DeSo1_Click);
             // 
             // uc_PictureBox1
