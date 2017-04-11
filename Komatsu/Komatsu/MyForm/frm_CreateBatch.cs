@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Linq;
-using System.Net;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using Komatsu;
 using SautinSoft;
 
@@ -64,7 +60,7 @@ namespace KOMTSU.MyForm
         {
             if (string.IsNullOrEmpty(txt_BatchName.Text))
             {
-                MessageBox.Show("Vui lòng điền tên batch", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please enter a batch name", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -201,9 +197,7 @@ namespace KOMTSU.MyForm
                 string[] filePaths = Directory.GetFiles(txt_FolderSaveImage.Text, "*.jpg");
                 if (filePaths.Length > 0)
                 {
-                    MessageBox.Show("Folder đã có File ảnh, hãy chọn folder khác!");
-                    sender = null;
-                    e = null;
+                    MessageBox.Show(@"Folder has image file, choose another folder");
                     continue;
                 }
                 break;
@@ -221,7 +215,7 @@ namespace KOMTSU.MyForm
             {
                 if (dataGridView1.RowCount == 1)
                 {
-                    MessageBox.Show("You haven't filled in the TruongSo06 or TruongSo08!");
+                    MessageBox.Show(@"You haven't filled in the Field 06 or Field 08!");
                     return;
                 }
             }
@@ -229,7 +223,7 @@ namespace KOMTSU.MyForm
             {
                 if (string.IsNullOrEmpty(txt_TruongSo06.Text)||string.IsNullOrEmpty(txt_TruongSo08.Text))
                 {
-                    MessageBox.Show("You haven't filled in the TruongSo06 or TruongSo08!");
+                    MessageBox.Show(@"You haven't filled in the Field 06 or Field 08!");
                     return;
                 }
             }
@@ -263,7 +257,7 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                MessageBox.Show("Batch đã tồn tại vui lòng điền tên batch khác!");
+                MessageBox.Show(@"Batch already exists, please enter another batch name!");
                 return;
             }
             string temp = Global.StrPath + "\\" + txt_BatchName.Text;
@@ -273,7 +267,7 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                MessageBox.Show("Bị trùng tên batch!");
+                MessageBox.Show(@"Coincidence batch name");
                 return;
             }
             int k = 1;
@@ -341,7 +335,7 @@ namespace KOMTSU.MyForm
                 }
             }
                 
-            MessageBox.Show("Tạo batch mới thành công!");
+            MessageBox.Show(@"Create a new batch successfully!");
             progressBarControl1.EditValue = 0;
             txt_BatchName.Text = "";
             txt_ImagePath.Text = "";

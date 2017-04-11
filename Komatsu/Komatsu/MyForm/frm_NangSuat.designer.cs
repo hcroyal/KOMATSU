@@ -124,24 +124,24 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(93, 45);
             this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "Xuất Excel";
+            this.simpleButton1.Text = "Export Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(221, 54);
+            this.labelControl2.Location = new System.Drawing.Point(234, 54);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(51, 13);
+            this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Đến ngày:";
+            this.labelControl2.Text = "To date:";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(228, 22);
+            this.labelControl1.Location = new System.Drawing.Point(223, 22);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(44, 13);
+            this.labelControl1.Size = new System.Drawing.Size(53, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Từ ngày:";
+            this.labelControl1.Text = "From date:";
             // 
             // xtraTabControl1
             // 
@@ -201,7 +201,7 @@
             // 
             // gridColumn14
             // 
-            this.gridColumn14.Caption = "Họ và tên";
+            this.gridColumn14.Caption = "Name";
             this.gridColumn14.FieldName = "FullName";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
@@ -210,7 +210,7 @@
             // 
             // gridColumn15
             // 
-            this.gridColumn15.Caption = "Số phiếu nhập được";
+            this.gridColumn15.Caption = "Total bill do";
             this.gridColumn15.FieldName = "SoPhieuNhap";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
@@ -219,7 +219,7 @@
             // 
             // gridColumn16
             // 
-            this.gridColumn16.Caption = "Số phiếu đúng";
+            this.gridColumn16.Caption = "Number of bill correct";
             this.gridColumn16.FieldName = "PhieuDung";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
@@ -228,7 +228,7 @@
             // 
             // gridColumn17
             // 
-            this.gridColumn17.Caption = "Số phiếu sai";
+            this.gridColumn17.Caption = "Number of bill wrong ";
             this.gridColumn17.FieldName = "PhieuSai";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
@@ -237,7 +237,7 @@
             // 
             // gridColumn33
             // 
-            this.gridColumn33.Caption = "Thời gian";
+            this.gridColumn33.Caption = "Time";
             this.gridColumn33.FieldName = "ThoiGian";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.Visible = true;
@@ -245,7 +245,7 @@
             // 
             // gridColumn18
             // 
-            this.gridColumn18.Caption = "Hiệu suất (%)";
+            this.gridColumn18.Caption = "Performance(%)";
             this.gridColumn18.FieldName = "HieuSuat";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
@@ -359,7 +359,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_NangSuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Năng suất";
+            this.Text = "Productivity";
             this.Load += new System.EventHandler(this.frm_NangSuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

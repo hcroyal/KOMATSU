@@ -79,7 +79,7 @@
             this.btn_ChiTiet.Name = "btn_ChiTiet";
             this.btn_ChiTiet.Size = new System.Drawing.Size(75, 23);
             this.btn_ChiTiet.TabIndex = 2;
-            this.btn_ChiTiet.Text = "Chi tiết";
+            this.btn_ChiTiet.Text = "Show details";
             this.btn_ChiTiet.Click += new System.EventHandler(this.btn_ChiTiet_Click);
             // 
             // cbb_Batch
@@ -89,7 +89,7 @@
             this.cbb_Batch.Name = "cbb_Batch";
             this.cbb_Batch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_Batch.Properties.NullText = "Không có batch";
+            this.cbb_Batch.Properties.NullText = "No batch";
             this.cbb_Batch.Size = new System.Drawing.Size(306, 20);
             this.cbb_Batch.TabIndex = 1;
             this.cbb_Batch.EditValueChanged += new System.EventHandler(this.cbb_Batch_EditValueChanged);
@@ -134,7 +134,7 @@
             this.Controls.Add(this.panelControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_TienDo";
-            this.Text = "Tiến độ";
+            this.Text = "Progress";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_TienDo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

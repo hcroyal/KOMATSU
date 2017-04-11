@@ -84,7 +84,7 @@ namespace KOMTSU.MyForm
             gridControl_DeJP.DataSource = null;
             if (firstDateTime > lastDateTime)
             {
-                MessageBox.Show("Ngày kết thúc phải lớn hơn hoặc bằng ngày bắt đầu");
+                MessageBox.Show(@"Start date must be less than end date");
             }
             else
             {
@@ -143,7 +143,7 @@ namespace KOMTSU.MyForm
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xuất excel!");
+                    MessageBox.Show("Error export excel!");
                     return false;
                 }
                 Process.Start(savePath);

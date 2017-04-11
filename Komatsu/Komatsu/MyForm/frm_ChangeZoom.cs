@@ -21,7 +21,7 @@ namespace KOMTSU.MyForm
         {
             Settings.Default.ZoomImage = Convert.ToInt32(trackBarControl1.EditValue);
             Settings.Default.Save();
-            MessageBox.Show(string.Format("Thay {0}đổi Zoom thành công!", ""));
+            MessageBox.Show(@"Change zoom successfully!");
             Close();
         }
     }

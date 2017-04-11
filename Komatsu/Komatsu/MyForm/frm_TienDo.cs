@@ -16,22 +16,11 @@ namespace KOMTSU.MyForm
 
         private void frm_TienDo_Load(object sender, EventArgs e)
         {
-            //btn_ChiTiet.Visible = false;
-            //radioGroup1.Visible = false;
             var fBatchName = (from w in Global.db.tbl_Batches orderby w.IDBatch select new { w.fBatchName }).ToList();
             cbb_Batch.Properties.DataSource = fBatchName;
             cbb_Batch.Properties.DisplayMember = "fBatchName";
             cbb_Batch.Properties.ValueMember = "fBatchName";
             cbb_Batch.Text = Global.StrBatch;
-            //if (cbb_Batch.Text == "Không có batch")
-            //{
-            //    btn_ChiTiet.Visible = false;
-            //    radioGroup1.Visible = false;//}
-            //else
-            //{
-            //    btn_ChiTiet.Visible = true;
-            //    radioGroup1.Visible = true;
-            //}
         }
         private void ThongKe()
         {

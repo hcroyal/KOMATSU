@@ -64,14 +64,14 @@
             this.txt_TruongSo08 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txt_FolderSaveImage = new DevExpress.XtraEditors.TextEdit();
             this.btn_BrowserFolder = new DevExpress.XtraEditors.SimpleButton();
             this.lbl_Page = new DevExpress.XtraEditors.LabelControl();
             this.ck_CoDeso = new DevExpress.XtraEditors.CheckEdit();
+            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -259,11 +259,11 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(30, 191);
+            this.labelControl8.Location = new System.Drawing.Point(48, 191);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(56, 13);
+            this.labelControl8.Size = new System.Drawing.Size(61, 13);
             this.labelControl8.TabIndex = 20;
-            this.labelControl8.Text = "Loại Batch :";
+            this.labelControl8.Text = "Type Batch :";
             // 
             // backgroundWorker1
             // 
@@ -284,66 +284,66 @@
             this.btn_CreateBatch.Name = "btn_CreateBatch";
             this.btn_CreateBatch.Size = new System.Drawing.Size(164, 44);
             this.btn_CreateBatch.TabIndex = 35;
-            this.btn_CreateBatch.Text = "Tạo Batch";
+            this.btn_CreateBatch.Text = "Create Batch";
             this.btn_CreateBatch.Click += new System.EventHandler(this.btn_CreateBatch_Click);
             // 
             // btn_BrowserPDF
             // 
-            this.btn_BrowserPDF.Location = new System.Drawing.Point(747, 87);
+            this.btn_BrowserPDF.Location = new System.Drawing.Point(720, 87);
             this.btn_BrowserPDF.Name = "btn_BrowserPDF";
-            this.btn_BrowserPDF.Size = new System.Drawing.Size(85, 23);
+            this.btn_BrowserPDF.Size = new System.Drawing.Size(109, 23);
             this.btn_BrowserPDF.TabIndex = 33;
-            this.btn_BrowserPDF.Text = "Chọn file PDF...";
+            this.btn_BrowserPDF.Text = "Browse PDF...";
             this.btn_BrowserPDF.Click += new System.EventHandler(this.btn_BrowserPDF_Click);
             // 
             // txt_ImagePath
             // 
-            this.txt_ImagePath.Location = new System.Drawing.Point(137, 89);
+            this.txt_ImagePath.Location = new System.Drawing.Point(113, 89);
             this.txt_ImagePath.Name = "txt_ImagePath";
             this.txt_ImagePath.Properties.ReadOnly = true;
-            this.txt_ImagePath.Size = new System.Drawing.Size(605, 20);
+            this.txt_ImagePath.Size = new System.Drawing.Size(601, 20);
             this.txt_ImagePath.TabIndex = 31;
             this.txt_ImagePath.EditValueChanged += new System.EventHandler(this.txt_ImagePath_EditValueChanged);
             // 
             // txt_DateCreate
             // 
-            this.txt_DateCreate.Location = new System.Drawing.Point(137, 302);
+            this.txt_DateCreate.Location = new System.Drawing.Point(114, 302);
             this.txt_DateCreate.Name = "txt_DateCreate";
             this.txt_DateCreate.Properties.ReadOnly = true;
-            this.txt_DateCreate.Size = new System.Drawing.Size(174, 20);
+            this.txt_DateCreate.Size = new System.Drawing.Size(198, 20);
             this.txt_DateCreate.TabIndex = 30;
             // 
             // txt_UserCreate
             // 
-            this.txt_UserCreate.Location = new System.Drawing.Point(137, 274);
+            this.txt_UserCreate.Location = new System.Drawing.Point(114, 274);
             this.txt_UserCreate.Name = "txt_UserCreate";
             this.txt_UserCreate.Properties.ReadOnly = true;
-            this.txt_UserCreate.Size = new System.Drawing.Size(174, 20);
+            this.txt_UserCreate.Size = new System.Drawing.Size(198, 20);
             this.txt_UserCreate.TabIndex = 32;
             // 
             // txt_BatchName
             // 
-            this.txt_BatchName.Location = new System.Drawing.Point(137, 59);
+            this.txt_BatchName.Location = new System.Drawing.Point(113, 59);
             this.txt_BatchName.Name = "txt_BatchName";
-            this.txt_BatchName.Size = new System.Drawing.Size(605, 20);
+            this.txt_BatchName.Size = new System.Drawing.Size(601, 20);
             this.txt_BatchName.TabIndex = 0;
             this.txt_BatchName.EditValueChanged += new System.EventHandler(this.txt_BatchName_EditValueChanged);
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(30, 92);
+            this.labelControl7.Location = new System.Drawing.Point(41, 92);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(99, 13);
+            this.labelControl7.Size = new System.Drawing.Size(67, 13);
             this.labelControl7.TabIndex = 19;
-            this.labelControl7.Text = "Đường dẫn File PDF:";
+            this.labelControl7.Text = "Path File PDF:";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(30, 305);
+            this.labelControl6.Location = new System.Drawing.Point(18, 305);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(78, 13);
+            this.labelControl6.Size = new System.Drawing.Size(91, 13);
             this.labelControl6.TabIndex = 18;
-            this.labelControl6.Text = "Ngày tạo Batch:";
+            this.labelControl6.Text = "Date create Batch:";
             // 
             // labelControl15
             // 
@@ -356,19 +356,19 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(30, 277);
+            this.labelControl5.Location = new System.Drawing.Point(19, 277);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(75, 13);
+            this.labelControl5.Size = new System.Drawing.Size(90, 13);
             this.labelControl5.TabIndex = 16;
-            this.labelControl5.Text = "User tạo Batch:";
+            this.labelControl5.Text = "User create Batch:";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(30, 62);
+            this.labelControl2.Location = new System.Drawing.Point(48, 62);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(52, 13);
+            this.labelControl2.Size = new System.Drawing.Size(60, 13);
             this.labelControl2.TabIndex = 13;
-            this.labelControl2.Text = "Tên Batch:";
+            this.labelControl2.Text = "Batch name:";
             // 
             // labelControl1
             // 
@@ -378,53 +378,53 @@
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(311, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(182, 27);
+            this.labelControl1.Size = new System.Drawing.Size(188, 25);
             this.labelControl1.TabIndex = 12;
-            this.labelControl1.Text = "TẠO BATCH MỚI";
+            this.labelControl1.Text = "Create Batch New";
             // 
             // rb_LoaiBatch
             // 
             this.rb_LoaiBatch.EditValue = "1";
-            this.rb_LoaiBatch.Location = new System.Drawing.Point(137, 184);
+            this.rb_LoaiBatch.Location = new System.Drawing.Point(113, 184);
             this.rb_LoaiBatch.Name = "rb_LoaiBatch";
             this.rb_LoaiBatch.Properties.Columns = 2;
             this.rb_LoaiBatch.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai1", "Loại 1"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai2", "Loại 2")});
-            this.rb_LoaiBatch.Size = new System.Drawing.Size(202, 28);
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai1", "Type 1"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Loai2", "Type 2")});
+            this.rb_LoaiBatch.Size = new System.Drawing.Size(226, 28);
             this.rb_LoaiBatch.TabIndex = 48;
             this.rb_LoaiBatch.SelectedIndexChanged += new System.EventHandler(this.rb_LoaiBatch_SelectedIndexChanged);
             // 
             // txt_TruongSo06
             // 
-            this.txt_TruongSo06.Location = new System.Drawing.Point(137, 218);
+            this.txt_TruongSo06.Location = new System.Drawing.Point(113, 218);
             this.txt_TruongSo06.Name = "txt_TruongSo06";
-            this.txt_TruongSo06.Size = new System.Drawing.Size(202, 20);
+            this.txt_TruongSo06.Size = new System.Drawing.Size(226, 20);
             this.txt_TruongSo06.TabIndex = 49;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(30, 221);
+            this.labelControl3.Location = new System.Drawing.Point(74, 221);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(62, 13);
+            this.labelControl3.Size = new System.Drawing.Size(35, 13);
             this.labelControl3.TabIndex = 20;
-            this.labelControl3.Text = "Trường số 6:";
+            this.labelControl3.Text = "Field 6:";
             this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // txt_TruongSo08
             // 
-            this.txt_TruongSo08.Location = new System.Drawing.Point(137, 244);
+            this.txt_TruongSo08.Location = new System.Drawing.Point(113, 244);
             this.txt_TruongSo08.Name = "txt_TruongSo08";
-            this.txt_TruongSo08.Size = new System.Drawing.Size(202, 20);
+            this.txt_TruongSo08.Size = new System.Drawing.Size(226, 20);
             this.txt_TruongSo08.TabIndex = 50;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(30, 247);
+            this.labelControl4.Location = new System.Drawing.Point(74, 247);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(62, 13);
+            this.labelControl4.Size = new System.Drawing.Size(35, 13);
             this.labelControl4.TabIndex = 20;
-            this.labelControl4.Text = "Trường số 8:";
+            this.labelControl4.Text = "Field 8:";
             this.labelControl4.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // dataGridView1
@@ -440,49 +440,29 @@
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
-            // TruongSo06
-            // 
-            this.TruongSo06.DataPropertyName = "TruongSo06";
-            this.TruongSo06.HeaderText = "Trường số 6";
-            this.TruongSo06.Name = "TruongSo06";
-            this.TruongSo06.Width = 170;
-            // 
-            // TruongSo08
-            // 
-            this.TruongSo08.DataPropertyName = "TruongSo08";
-            this.TruongSo08.HeaderText = "Trường số 8";
-            this.TruongSo08.Name = "TruongSo08";
-            this.TruongSo08.Width = 170;
-            // 
-            // Page
-            // 
-            this.Page.DataPropertyName = "Page";
-            this.Page.HeaderText = "Trang";
-            this.Page.Name = "Page";
-            // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(30, 121);
+            this.labelControl16.Location = new System.Drawing.Point(47, 121);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(58, 13);
+            this.labelControl16.Size = new System.Drawing.Size(61, 13);
             this.labelControl16.TabIndex = 19;
-            this.labelControl16.Text = "Nơi lưu ảnh:";
+            this.labelControl16.Text = "Save Image:";
             // 
             // txt_FolderSaveImage
             // 
-            this.txt_FolderSaveImage.Location = new System.Drawing.Point(137, 118);
+            this.txt_FolderSaveImage.Location = new System.Drawing.Point(113, 118);
             this.txt_FolderSaveImage.Name = "txt_FolderSaveImage";
             this.txt_FolderSaveImage.Properties.ReadOnly = true;
-            this.txt_FolderSaveImage.Size = new System.Drawing.Size(605, 20);
+            this.txt_FolderSaveImage.Size = new System.Drawing.Size(601, 20);
             this.txt_FolderSaveImage.TabIndex = 31;
             // 
             // btn_BrowserFolder
             // 
-            this.btn_BrowserFolder.Location = new System.Drawing.Point(747, 116);
+            this.btn_BrowserFolder.Location = new System.Drawing.Point(720, 116);
             this.btn_BrowserFolder.Name = "btn_BrowserFolder";
-            this.btn_BrowserFolder.Size = new System.Drawing.Size(85, 23);
+            this.btn_BrowserFolder.Size = new System.Drawing.Size(109, 23);
             this.btn_BrowserFolder.TabIndex = 33;
-            this.btn_BrowserFolder.Text = "Chọn Folder...";
+            this.btn_BrowserFolder.Text = "Folder save...";
             this.btn_BrowserFolder.Click += new System.EventHandler(this.btn_BrowserFolder_Click);
             // 
             // lbl_Page
@@ -500,9 +480,29 @@
             // 
             this.ck_CoDeso.Location = new System.Drawing.Point(748, 62);
             this.ck_CoDeso.Name = "ck_CoDeso";
-            this.ck_CoDeso.Properties.Caption = "Có DESo";
+            this.ck_CoDeso.Properties.Caption = "DESo";
             this.ck_CoDeso.Size = new System.Drawing.Size(75, 19);
             this.ck_CoDeso.TabIndex = 52;
+            // 
+            // TruongSo06
+            // 
+            this.TruongSo06.DataPropertyName = "TruongSo06";
+            this.TruongSo06.HeaderText = "Field 6";
+            this.TruongSo06.Name = "TruongSo06";
+            this.TruongSo06.Width = 170;
+            // 
+            // TruongSo08
+            // 
+            this.TruongSo08.DataPropertyName = "TruongSo08";
+            this.TruongSo08.HeaderText = "Field 8";
+            this.TruongSo08.Name = "TruongSo08";
+            this.TruongSo08.Width = 170;
+            // 
+            // Page
+            // 
+            this.Page.DataPropertyName = "Page";
+            this.Page.HeaderText = "Page";
+            this.Page.Name = "Page";
             // 
             // frm_CreateBatch
             // 
@@ -549,7 +549,8 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "frm_CreateBatch";
-            this.Text = "frm_CreateBatch";
+            this.Text = "Create Batch";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frm_CreateBatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).EndInit();
