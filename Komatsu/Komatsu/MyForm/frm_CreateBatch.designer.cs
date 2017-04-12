@@ -64,14 +64,14 @@
             this.txt_TruongSo08 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txt_FolderSaveImage = new DevExpress.XtraEditors.TextEdit();
             this.btn_BrowserFolder = new DevExpress.XtraEditors.SimpleButton();
             this.lbl_Page = new DevExpress.XtraEditors.LabelControl();
             this.ck_CoDeso = new DevExpress.XtraEditors.CheckEdit();
-            this.TruongSo06 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TruongSo08 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Page = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -440,6 +440,26 @@
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
+            // TruongSo06
+            // 
+            this.TruongSo06.DataPropertyName = "TruongSo06";
+            this.TruongSo06.HeaderText = "Field 6";
+            this.TruongSo06.Name = "TruongSo06";
+            this.TruongSo06.Width = 170;
+            // 
+            // TruongSo08
+            // 
+            this.TruongSo08.DataPropertyName = "TruongSo08";
+            this.TruongSo08.HeaderText = "Field 8";
+            this.TruongSo08.Name = "TruongSo08";
+            this.TruongSo08.Width = 170;
+            // 
+            // Page
+            // 
+            this.Page.DataPropertyName = "Page";
+            this.Page.HeaderText = "Page";
+            this.Page.Name = "Page";
+            // 
             // labelControl16
             // 
             this.labelControl16.Location = new System.Drawing.Point(47, 121);
@@ -483,26 +503,6 @@
             this.ck_CoDeso.Properties.Caption = "DESo";
             this.ck_CoDeso.Size = new System.Drawing.Size(75, 19);
             this.ck_CoDeso.TabIndex = 52;
-            // 
-            // TruongSo06
-            // 
-            this.TruongSo06.DataPropertyName = "TruongSo06";
-            this.TruongSo06.HeaderText = "Field 6";
-            this.TruongSo06.Name = "TruongSo06";
-            this.TruongSo06.Width = 170;
-            // 
-            // TruongSo08
-            // 
-            this.TruongSo08.DataPropertyName = "TruongSo08";
-            this.TruongSo08.HeaderText = "Field 8";
-            this.TruongSo08.Name = "TruongSo08";
-            this.TruongSo08.Width = 170;
-            // 
-            // Page
-            // 
-            this.Page.DataPropertyName = "Page";
-            this.Page.HeaderText = "Page";
-            this.Page.Name = "Page";
             // 
             // frm_CreateBatch
             // 
@@ -549,8 +549,8 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "frm_CreateBatch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Batch";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frm_CreateBatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).EndInit();

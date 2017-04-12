@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>98356-logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.2" />
     <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -297,6 +300,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="98356-logo.ico" />
     <Content Include="MyDll\ImageGlass.ImageBox.dll" />
     <Content Include="MyDll\LibraryLogin.dll" />
     <Content Include="MyDll\SautinSoft.PdfFocus.dll" />

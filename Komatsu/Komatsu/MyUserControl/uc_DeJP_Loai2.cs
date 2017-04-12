@@ -57,13 +57,14 @@ namespace KOMTSU.MyUserControl
             }
             if (keyData == Keys.Down && Global.Flag && Global.BatCoDeSo)
             {
-                SendKeys.Send("{Tab}");SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
                 SendKeys.Send("{Tab}");
                 SendKeys.Send("{Tab}");
                 SendKeys.Send("{Tab}");
                 return true;
             }
-            if (keyData == Keys.Up && Global.Flag && !Global.BatCoDeSo)
+            if (keyData == Keys.Up && Global.Flag && Global.BatCoDeSo)
             {
                 SendKeys.Send("+{Tab}");
                 SendKeys.Send("+{Tab}");

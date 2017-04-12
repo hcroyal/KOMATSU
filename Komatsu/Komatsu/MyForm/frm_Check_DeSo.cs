@@ -46,7 +46,7 @@ namespace KOMTSU.MyForm
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
                 btn_SuaVaLuu_User2.Visible = false;
-                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeJP(Global.StrUsername) select w.fBatchName).ToList();
+                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
                 cbb_Batch_Check.DisplayMember = "fBatchName";
             }
             else
@@ -63,12 +63,22 @@ namespace KOMTSU.MyForm
 
                 ResetData();
 
-                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeJP(Global.StrUsername) select w.fBatchName).ToList();
-                cbb_Batch_Check.DisplayMember = "fBatchName";int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
-                lb_Loi.Text = soloi + " Lỗi";
+                cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
+                cbb_Batch_Check.DisplayMember = "fBatchName";
+                double soloi = Math.Round(Convert.ToDouble((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault()), 0);
+                lb_Loi.Text = soloi + " Error";
                 Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.CoDeSo).FirstOrDefault());
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
-                btn_Start_Click(null, null);
+                if (Global.LoaiPhieu == "Loai1")
+                {
+                    TabControl_User1.TabPages.Add(tp_Loai1_User1);
+                    TabControl_User2.TabPages.Add(tp_Loai1_User2);
+                }
+                else if (Global.LoaiPhieu == "Loai2")
+                {
+                    TabControl_User1.TabPages.Add(tp_Loai2_User1);
+                    TabControl_User2.TabPages.Add(tp_Loai2_User2);
+                }btn_Start_Click(null, null);
             }
         }
         private void Load_Truong06_08(uc_DeJP_Loai1 uc)
@@ -91,8 +101,8 @@ namespace KOMTSU.MyForm
                 TabControl_User2.TabPages.Remove(tp_Loai2_User2);
                 cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeSo(Global.StrUsername) select w.fBatchName).ToList();
                 cbb_Batch_Check.DisplayMember = "fBatchName";
-                int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
-                lb_Loi.Text = soloi + " Lỗi";
+                double soloi = Math.Round(Convert.ToDouble((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault()), 0);
+                lb_Loi.Text = soloi + " Error";
                 Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName ==cbb_Batch_Check.Text select w.CoDeSo).FirstOrDefault());
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
                 if (Global.LoaiPhieu == "Loai1")
@@ -241,7 +251,7 @@ namespace KOMTSU.MyForm
 
         private void Load_DeSo(string strBatch, string idimage)
         {
-            int soloi = ((from w in Global.db.tbl_DESOs where w.fBatchName == cbb_Batch_Check.Text && w.Dem == 1 select w.IdImage).Count() / 2);
+            double soloi = Math.Round(Convert.ToDouble((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault()), 0);
             lb_Loi.Text = soloi + " Error";
 
             var deso = (from w in Global.db.tbl_DESOs
@@ -281,7 +291,7 @@ namespace KOMTSU.MyForm
                         countRowUser1 = i;
                         row_user1 = deso[i].IdPhieu;
                         countRowUser2 = deso.Count - 1;
-                        row_user2 = deso[deso.Count - row_user1].IdPhieu;
+                        row_user2 = deso.Count - row_user1;
                         break;
                     }
                 }
@@ -385,7 +395,7 @@ namespace KOMTSU.MyForm
                         countRowUser1 = i;
                         row_user1 = deso[i].IdPhieu;
                         countRowUser2 = deso.Count - 1;
-                        row_user2 = deso[countRowUser2- row_user1].IdPhieu;
+                        row_user2 = deso.Count - row_user1;
                         break;
                     }
                 }
@@ -868,8 +878,8 @@ namespace KOMTSU.MyForm
             btn_SuaVaLuu_User1.Visible = false;
             btn_SuaVaLuu_User2.Visible = false;
             
-            int soloi = Convert.ToInt32((from w in Global.db.GetSoLoi_CheckDeJP(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault());
-            lb_Loi.Text = soloi + " Lỗi";
+            double soloi =Math.Round( Convert.ToDouble((from w in Global.db.GetSoLoi_CheckDeSo(cbb_Batch_Check.Text) select w.Column1).FirstOrDefault()),0);
+            lb_Loi.Text = soloi + " Error";
             Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.CoDeSo).FirstOrDefault());
             Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
             ResetData();
