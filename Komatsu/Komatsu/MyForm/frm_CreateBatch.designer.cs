@@ -107,6 +107,7 @@
             this.cbb_loaithoigian.Name = "cbb_loaithoigian";
             this.cbb_loaithoigian.Size = new System.Drawing.Size(101, 21);
             this.cbb_loaithoigian.TabIndex = 47;
+            this.cbb_loaithoigian.Visible = false;
             this.cbb_loaithoigian.SelectedIndexChanged += new System.EventHandler(this.cbb_loaithoigian_SelectedIndexChanged);
             // 
             // nud_sophutlam
@@ -120,6 +121,7 @@
             this.nud_sophutlam.Name = "nud_sophutlam";
             this.nud_sophutlam.Size = new System.Drawing.Size(40, 21);
             this.nud_sophutlam.TabIndex = 46;
+            this.nud_sophutlam.Visible = false;
             this.nud_sophutlam.ValueChanged += new System.EventHandler(this.nud_sophutlam_ValueChanged);
             this.nud_sophutlam.Click += new System.EventHandler(this.nud_sophutlam_Click);
             // 
@@ -134,6 +136,7 @@
             this.nud_sogiolam.Name = "nud_sogiolam";
             this.nud_sogiolam.Size = new System.Drawing.Size(40, 21);
             this.nud_sogiolam.TabIndex = 45;
+            this.nud_sogiolam.Visible = false;
             this.nud_sogiolam.ValueChanged += new System.EventHandler(this.nud_sogiolam_ValueChanged);
             this.nud_sogiolam.Click += new System.EventHandler(this.nud_sogiolam_Click);
             // 
@@ -149,6 +152,7 @@
             this.nud_thoigiandeadline.Name = "nud_thoigiandeadline";
             this.nud_thoigiandeadline.Size = new System.Drawing.Size(117, 21);
             this.nud_thoigiandeadline.TabIndex = 44;
+            this.nud_thoigiandeadline.Visible = false;
             this.nud_thoigiandeadline.ValueChanged += new System.EventHandler(this.nud_thoigiandeadline_ValueChanged);
             this.nud_thoigiandeadline.Click += new System.EventHandler(this.nud_thoigiandeadline_Click);
             // 
@@ -163,6 +167,7 @@
             this.nud_songaylam.Name = "nud_songaylam";
             this.nud_songaylam.Size = new System.Drawing.Size(40, 21);
             this.nud_songaylam.TabIndex = 43;
+            this.nud_songaylam.Visible = false;
             this.nud_songaylam.ValueChanged += new System.EventHandler(this.nud_songaylam_ValueChanged);
             this.nud_songaylam.Click += new System.EventHandler(this.nud_songaylam_Click);
             // 
@@ -176,6 +181,7 @@
             this.timeEdit_ngayketthuc.Properties.Mask.EditMask = "HH:mm:ss";
             this.timeEdit_ngayketthuc.Size = new System.Drawing.Size(101, 20);
             this.timeEdit_ngayketthuc.TabIndex = 42;
+            this.timeEdit_ngayketthuc.Visible = false;
             this.timeEdit_ngayketthuc.EditValueChanged += new System.EventHandler(this.timeEdit_ngayketthuc_EditValueChanged);
             this.timeEdit_ngayketthuc.Click += new System.EventHandler(this.timeEdit_ngayketthuc_Click);
             // 
@@ -189,6 +195,7 @@
             this.timeEdit_ngaybatdau.Properties.Mask.EditMask = "HH:mm:ss";
             this.timeEdit_ngaybatdau.Size = new System.Drawing.Size(101, 20);
             this.timeEdit_ngaybatdau.TabIndex = 41;
+            this.timeEdit_ngaybatdau.Visible = false;
             this.timeEdit_ngaybatdau.EditValueChanged += new System.EventHandler(this.timeEdit_ngaybatdau_EditValueChanged);
             this.timeEdit_ngaybatdau.Click += new System.EventHandler(this.timeEdit_ngaybatdau_Click);
             // 
@@ -207,6 +214,7 @@
             this.dateEdit_ngayketthuc.Properties.MaxValue = new System.DateTime(3000, 12, 31, 23, 59, 0, 0);
             this.dateEdit_ngayketthuc.Size = new System.Drawing.Size(117, 20);
             this.dateEdit_ngayketthuc.TabIndex = 40;
+            this.dateEdit_ngayketthuc.Visible = false;
             this.dateEdit_ngayketthuc.EditValueChanged += new System.EventHandler(this.dateEdit_ngayketthuc_EditValueChanged);
             this.dateEdit_ngayketthuc.Click += new System.EventHandler(this.dateEdit_ngayketthuc_Click);
             // 
@@ -225,6 +233,7 @@
             this.dateEdit_ngaybatdau.Properties.MaxValue = new System.DateTime(3000, 12, 31, 23, 59, 0, 0);
             this.dateEdit_ngaybatdau.Size = new System.Drawing.Size(117, 20);
             this.dateEdit_ngaybatdau.TabIndex = 39;
+            this.dateEdit_ngaybatdau.Visible = false;
             this.dateEdit_ngaybatdau.EditValueChanged += new System.EventHandler(this.dateEdit_ngaybatdau_EditValueChanged);
             this.dateEdit_ngaybatdau.Click += new System.EventHandler(this.dateEdit_ngaybatdau_Click);
             // 
@@ -235,6 +244,7 @@
             this.labelControl11.Size = new System.Drawing.Size(92, 13);
             this.labelControl11.TabIndex = 25;
             this.labelControl11.Text = "Thời gian kết thúc :";
+            this.labelControl11.Visible = false;
             // 
             // labelControl13
             // 
@@ -243,6 +253,7 @@
             this.labelControl13.Size = new System.Drawing.Size(15, 13);
             this.labelControl13.TabIndex = 26;
             this.labelControl13.Text = "Giờ";
+            this.labelControl13.Visible = false;
             // 
             // labelControl12
             // 
@@ -251,6 +262,7 @@
             this.labelControl12.Size = new System.Drawing.Size(25, 13);
             this.labelControl12.TabIndex = 23;
             this.labelControl12.Text = "Ngày";
+            this.labelControl12.Visible = false;
             // 
             // labelControl10
             // 
@@ -259,6 +271,7 @@
             this.labelControl10.Size = new System.Drawing.Size(69, 13);
             this.labelControl10.TabIndex = 22;
             this.labelControl10.Text = "Thời gian làm :";
+            this.labelControl10.Visible = false;
             // 
             // labelControl9
             // 
@@ -267,6 +280,7 @@
             this.labelControl9.Size = new System.Drawing.Size(90, 13);
             this.labelControl9.TabIndex = 21;
             this.labelControl9.Text = "Thời gian bắt đầu :";
+            this.labelControl9.Visible = false;
             // 
             // labelControl8
             // 
@@ -363,6 +377,7 @@
             this.labelControl15.Size = new System.Drawing.Size(99, 13);
             this.labelControl15.TabIndex = 17;
             this.labelControl15.Text = "Thông báo Deadline:";
+            this.labelControl15.Visible = false;
             // 
             // labelControl5
             // 
@@ -521,6 +536,7 @@
             this.labelControl14.Size = new System.Drawing.Size(22, 13);
             this.labelControl14.TabIndex = 26;
             this.labelControl14.Text = "Phút";
+            this.labelControl14.Visible = false;
             // 
             // statusStrip1
             // 
