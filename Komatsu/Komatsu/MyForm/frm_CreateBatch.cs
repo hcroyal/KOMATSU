@@ -40,7 +40,7 @@ namespace KOMTSU.MyForm
             timeEdit_ngaybatdau.Time = DateTime.Now;
             timeEdit_ngayketthuc.Time = DateTime.Now;
             dateEdit_ngayketthuc.DateTime = DateTime.Now;
-
+            lb_status.Text = "";
             flag_load = true;
         }
 
@@ -367,14 +367,14 @@ namespace KOMTSU.MyForm
         {
             try
             {
+                if (!_flag) return;
                 TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(nud_songaylam.Value), Convert.ToInt32(nud_sogiolam.Value), Convert.ToInt32(nud_sophutlam.Value), 0);
-                if (_flag) return;
                 DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                        dateEdit_ngaybatdau.DateTime.Month,
-                        dateEdit_ngaybatdau.DateTime.Day,
-                        timeEdit_ngaybatdau.Time.Hour,
-                        timeEdit_ngaybatdau.Time.Minute,
-                        timeEdit_ngaybatdau.Time.Second);
+                                                    dateEdit_ngaybatdau.DateTime.Month,
+                                                    dateEdit_ngaybatdau.DateTime.Day,
+                                                    timeEdit_ngaybatdau.Time.Hour,
+                                                    timeEdit_ngaybatdau.Time.Minute,
+                                                    timeEdit_ngaybatdau.Time.Second);
                 DateTime timeEnd = timeStart.Add(timeAdd);
                 dateEdit_ngayketthuc.EditValue = timeEnd;
                 timeEdit_ngayketthuc.EditValue = timeEnd;
@@ -393,17 +393,17 @@ namespace KOMTSU.MyForm
                 {
                     if (_flag) return;
                     DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                        dateEdit_ngaybatdau.DateTime.Month,
-                        dateEdit_ngaybatdau.DateTime.Day,
-                        timeEdit_ngaybatdau.Time.Hour,
-                        timeEdit_ngaybatdau.Time.Minute,
-                        timeEdit_ngaybatdau.Time.Second);
+                                                        dateEdit_ngaybatdau.DateTime.Month,
+                                                        dateEdit_ngaybatdau.DateTime.Day,
+                                                        timeEdit_ngaybatdau.Time.Hour,
+                                                        timeEdit_ngaybatdau.Time.Minute,
+                                                        timeEdit_ngaybatdau.Time.Second);
                     DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
-                        dateEdit_ngayketthuc.DateTime.Month,
-                        dateEdit_ngayketthuc.DateTime.Day,
-                        timeEdit_ngayketthuc.Time.Hour,
-                        timeEdit_ngayketthuc.Time.Minute,
-                        timeEdit_ngayketthuc.Time.Second);
+                                                        dateEdit_ngayketthuc.DateTime.Month,
+                                                        dateEdit_ngayketthuc.DateTime.Day,
+                                                        timeEdit_ngayketthuc.Time.Hour,
+                                                        timeEdit_ngayketthuc.Time.Minute,
+                                                        timeEdit_ngayketthuc.Time.Second);
                     TimeSpan time = timeEnd.Subtract(timeStart);
                     nud_songaylam.Value = time.Days;
                     nud_sogiolam.Value = time.Hours;
@@ -452,13 +452,27 @@ namespace KOMTSU.MyForm
 
         private void nud_thoigiandeadline_ValueChanged(object sender, EventArgs e)
         {
-            DateTime timeStart = DateTime.Parse(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
-            DateTime timeEnd = DateTime.Parse(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+            DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+                                                dateEdit_ngaybatdau.DateTime.Month,
+                                                dateEdit_ngaybatdau.DateTime.Day,
+                                                timeEdit_ngaybatdau.Time.Hour,
+                                                timeEdit_ngaybatdau.Time.Minute,
+                                                timeEdit_ngaybatdau.Time.Second);
+            DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
+                                                dateEdit_ngayketthuc.DateTime.Month,
+                                                dateEdit_ngayketthuc.DateTime.Day,
+                                                timeEdit_ngayketthuc.Time.Hour,
+                                                timeEdit_ngayketthuc.Time.Minute,
+                                                timeEdit_ngayketthuc.Time.Second);
             TimeSpan time = timeEnd.Subtract(timeStart);
             if (timeStart > timeEnd)
             {
-                lb_status.Text=string.Format("Ngày{0} kết thúc dự án không được trước ngày bắt đầu", "");
+                lb_status.Text="Ngày kết thúc dự án không được trước ngày bắt đầu";
                 return;
+            }
+            else
+            {
+                lb_status.Text = "";
             }
             if (cbb_loaithoigian.Text == "Ngày")
             {
@@ -466,8 +480,9 @@ namespace KOMTSU.MyForm
                 if (Convert.ToSingle(nud_thoigiandeadline.Value) > ngay)
                 {
                     lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Days + " ngày "+ time.Hours+" giờ "+ time.Minutes+" Phút";
-                    nud_thoigiandeadline.Value = 0; return;
+                    return;
                 }
+                lb_status.Text = "";
             }
             else if (cbb_loaithoigian.Text == "Giờ")
             {
@@ -475,18 +490,19 @@ namespace KOMTSU.MyForm
                 if (Convert.ToSingle(nud_thoigiandeadline.Value) > gio)
                 {
                     lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Hours + " giờ" + time.Minutes + " Phút";
-                    nud_thoigiandeadline.Value = 0;
                     return;
                 }
+                lb_status.Text = "";
             }
             else if (cbb_loaithoigian.Text == "Phút")
             {
                 float phut = (float)time.Days * (24 * 60) + (float)time.Hours * 60 + (float)time.Minutes;
-                if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut){
-                    lb_status.Text = string.Format("Thời{0} gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Minutes + " phút{1}", "", "");
-                    nud_thoigiandeadline.Value = 0;
+                if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut)
+                {
+                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Minutes + " phút";
                     return;
                 }
+                lb_status.Text = "";
             }
         }
 
