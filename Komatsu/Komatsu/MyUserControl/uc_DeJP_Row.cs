@@ -257,6 +257,28 @@ namespace KOMTSU.MyUserControl
         private void Txt_Truong03_GotFocus(object sender, EventArgs e)
         {
             ((TextEdit) sender).SelectAll();
+            Global.Tag_UcRow=Convert.ToInt32(this.Tag);
+            if ((TextEdit)sender==txt_Truong03)
+            {
+                Global.tb_Forcus = "3";
+            }
+            else if((TextEdit)sender == txt_Truong04)
+            {
+                Global.tb_Forcus = "4";
+            }
+            else if ((TextEdit)sender == txt_Truong05)
+            {
+                Global.tb_Forcus = "5";
+            }
+            else if ((TextEdit)sender == txt_Truong11_1)
+            {
+                Global.tb_Forcus = "11_1";
+            }
+            else if ((TextEdit)sender == txt_Truong11_2)
+            {
+                Global.tb_Forcus = "11_2";
+            }
+
         }
 
         public void Save_Data(string idimage ,string truong06,string truong08)

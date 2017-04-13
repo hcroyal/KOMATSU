@@ -63,7 +63,8 @@ namespace KOMTSU.MyForm
                     ((PiePointOptions)series1.Label.PointOptions).PointView = PointView.ArgumentAndValues;
                     chartControl1.PaletteName = "Palette 1";
                     loai = "DEJP";
-                    btn_ChiTiet.Visible = true;}
+                    btn_ChiTiet.Visible = true;
+                }
                
             }
             catch (Exception)

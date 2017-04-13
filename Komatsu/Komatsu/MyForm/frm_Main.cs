@@ -624,6 +624,51 @@ namespace KOMTSU.MyForm
             {
                 btn_XoaPhieu_Click(null, null);
             }
+            if (e.Control && e.KeyCode == Keys.Down)
+            {int i = 1;
+                string[] s = new string[12];
+                foreach (uc_DeJP_Row item  in uc_DeJP_Loai21.Controls)
+                {
+                    if (i == Global.Tag_UcRow)
+                    {
+                        if (Global.tb_Forcus == "3")
+                        {
+                            item.txt_Truong03.Text = s[3];
+                            item.txt_Truong03.SelectionStart = item.txt_Truong03.Text.Length;
+
+                        }
+                        else if (Global.tb_Forcus == "4")
+                        {
+                            item.txt_Truong04.Text = s[4];
+                            item.txt_Truong04.SelectionStart = item.txt_Truong04.Text.Length;
+                        }
+                        else if (Global.tb_Forcus == "5")
+                        {
+                            item.txt_Truong05.Text = s[5];
+                            item.txt_Truong05.SelectionStart = item.txt_Truong05.Text.Length;
+
+                        }
+                        else if (Global.tb_Forcus == "11_1")
+                        {
+                            item.txt_Truong11_1.Text = s[10];
+                            item.txt_Truong11_1.SelectionStart = item.txt_Truong11_1.Text.Length;
+
+                        }
+                        else if (Global.tb_Forcus == "11_2")
+                        {
+                            item.txt_Truong11_2.Text = s[11];
+                            item.txt_Truong11_2.SelectionStart = item.txt_Truong11_2.Text.Length;
+
+                        }
+                        break;}
+                    s[3] = item.txt_Truong03.Text;
+                    s[4] = item.txt_Truong04.Text;
+                    s[5] = item.txt_Truong05.Text;
+                    s[10] = item.txt_Truong11_1.Text;
+                    s[11] = item.txt_Truong11_2.Text;
+                    i++;
+                }
+            }
         }
         private void btn_checkqc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

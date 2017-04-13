@@ -72,6 +72,7 @@ namespace KOMTSU.MyUserControl
                 SendKeys.Send("+{Tab}");
                 SendKeys.Send("+{Tab}");return true;
             }
+           
             else
             {
                 return base.ProcessCmdKey(ref msg, keyData);
@@ -260,6 +261,11 @@ namespace KOMTSU.MyUserControl
                     Global.db.DelecteRow_DeSo(idimage, batch, i + 1);
                 }
             }
+        }
+
+        private void uc_DeJP_Loai2_KeyDown(object sender, KeyEventArgs e)
+        {
+           
         }
     }
 }
