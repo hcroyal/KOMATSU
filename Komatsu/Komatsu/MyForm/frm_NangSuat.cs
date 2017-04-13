@@ -101,11 +101,8 @@ namespace KOMTSU.MyForm
                 }
                 else if(xtraTabControl1.SelectedTabPage==tp_DeSo)
                 {
-                    saveFileDialog1.FileName = "NangSuat_DeSo_Loai2_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
+                    saveFileDialog1.FileName = "NangSuat_DeSo_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
                 }
-                else
-                    saveFileDialog1.FileName = "NangSuat_DeSo_Loai4_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
-
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
