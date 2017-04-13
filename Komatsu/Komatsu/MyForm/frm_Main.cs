@@ -191,7 +191,6 @@ namespace KOMTSU.MyForm
                     {
                         if (Global.LoaiPhieu == "Loai1")
                         {
-
                             tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
                         }
                         else if (Global.LoaiPhieu == "Loai2")
@@ -213,7 +212,8 @@ namespace KOMTSU.MyForm
                     {
                         if (Global.LoaiPhieu == "Loai1")
                         {
-                            tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);}
+                            tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
+                        }
                         else if (Global.LoaiPhieu == "Loai2")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai2_JP_Main);
@@ -607,9 +607,9 @@ namespace KOMTSU.MyForm
 
             if (e.Control && e.KeyCode == Keys.Enter)
                 btn_Start_Submit_Click(null, null);
-            if (e.Control && e.KeyCode == Keys.Up)
+            if (e.Control && e.KeyCode == Keys.Left)
                 uc_PictureBox1.btn_Xoaytrai_Click(null, null);
-            if (e.Control && e.KeyCode == Keys.Down)
+            if (e.Control && e.KeyCode == Keys.Right)
                 uc_PictureBox1.btn_xoayphai_Click(null, null);
             if (e.KeyCode == Keys.Escape)
             {
@@ -705,5 +705,19 @@ namespace KOMTSU.MyForm
             }
            
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void hideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();}
     }
 }

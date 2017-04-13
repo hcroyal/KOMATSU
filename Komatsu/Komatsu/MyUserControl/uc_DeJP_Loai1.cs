@@ -144,6 +144,11 @@ namespace KOMTSU.MyUserControl
         {
             if (txt_Truong04.Text.IndexOf('?') >= 0)
                 txt_Truong04.Text = @"?";
+
+            if (txt_Truong04.Text.IndexOf('0') == 0)
+            {
+                txt_Truong04.Text = txt_Truong04.Text.Remove(0, 1);
+            }
             if (txt_Truong04.Text != @"?" && txt_Truong04.Text.IndexOf('●') < 0 && txt_Truong04.Text != "")
             {
                 if (Convert.ToInt32(txt_Truong04.Text) <= 0 || Convert.ToInt32(txt_Truong04.Text) > 12)
@@ -196,7 +201,11 @@ namespace KOMTSU.MyUserControl
         {
             if (txt_Truong05.Text.IndexOf('?') >= 0)
                 txt_Truong05.Text = @"?";
-            
+            if (txt_Truong05.Text.IndexOf('0') == 0)
+            {
+                txt_Truong05.Text = txt_Truong05.Text.Remove(0, 1);
+            }
+
             if (txt_Truong05.Text != "" && txt_Truong05.Text != @"?" && txt_Truong05.Text.IndexOf('●') < 0)
             {
                 if (Convert.ToInt32(txt_Truong05.Text) < 1)

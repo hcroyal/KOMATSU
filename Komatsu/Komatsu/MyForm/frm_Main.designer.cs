@@ -92,6 +92,12 @@
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -109,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -727,6 +735,52 @@
             this.uc_PictureBox1.Size = new System.Drawing.Size(894, 592);
             this.uc_PictureBox1.TabIndex = 1;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem,
+            this.showToolStripMenuItem,
+            this.hideToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 70);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Text = "Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // hideToolStripMenuItem
+            // 
+            this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.hideToolStripMenuItem.Text = "Hide";
+            this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
+            // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "4188051b-8e9a-45fa-890c-0ad61543d275";
+            this.toastNotificationsManager1.ApplicationName = "Komatsu";
+            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("99ca9243-9058-4847-b626-55553474f827", null, "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+                    "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            // 
             // frm_Main
             // 
             this.ClientSize = new System.Drawing.Size(1317, 645);
@@ -767,6 +821,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -836,6 +892,12 @@
         private DevExpress.XtraBars.BarButtonItem btn_tinhnangsuat;
         private DevExpress.XtraEditors.SimpleButton btn_ThemPhieu;
         private DevExpress.XtraEditors.SimpleButton btn_XoaPhieu;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
     }
 }
 
