@@ -38,6 +38,7 @@
             this.Name = "uc_DeJP_Loai2";
             this.Size = new System.Drawing.Size(349, 195);
             this.Load += new System.EventHandler(this.uc_DeJP_Loai2_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uc_DeJP_Loai2_KeyDown);
             this.ResumeLayout(false);
 
         }

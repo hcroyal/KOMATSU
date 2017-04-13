@@ -21,11 +21,11 @@ namespace KOMTSU.MyForm
             lb_TongSoHinh.Text =(from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text select w.idimage).Count().ToString();
             if (Loai=="DESO")
             {
-                lb_SoHinhChuaNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình chưa nhập" select w.idimage).Count().ToString();
-                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình đang nhập" select w.idimage).Count().ToString();
-                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình chờ check" select w.idimage).Count().ToString();
-                lb_SoHinhDangCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình đang check" select w.idimage).Count().ToString();
-                lb_SoHinhHoanThanh.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Hình hoàn thành" select w.idimage).Count().ToString();
+                lb_SoHinhChuaNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Image remaining" select w.idimage).Count().ToString();
+                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Image is doing" select w.idimage).Count().ToString();
+                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Image waiting for check" select w.idimage).Count().ToString();
+                lb_SoHinhDangCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Image is checking" select w.idimage).Count().ToString();
+                lb_SoHinhHoanThanh.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDESO == "Image completed" select w.idimage).Count().ToString();
 
                 gridControl1.DataSource = null;
                 gridControl1.DataSource = Global.db.ChiTietTienDo_DeSo(lb_fBatchName.Text);
@@ -33,11 +33,11 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                lb_SoHinhChuaNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình chưa nhập" select w.idimage).Count().ToString();
-                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình đang nhập" select w.idimage).Count().ToString();
-                lb_SoHinhChoCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình chờ check" select w.idimage).Count().ToString();
-                lb_SoHinhDangCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình đang check" select w.idimage).Count().ToString();
-                lb_SoHinhHoanThanh.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Hình hoàn thành" select w.idimage).Count().ToString();
+                lb_SoHinhChuaNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Image remaining" select w.idimage).Count().ToString();
+                lb_SoHinhDangNhap.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Image is doing" select w.idimage).Count().ToString();
+                lb_SoHinhChoCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Image waiting for check" select w.idimage).Count().ToString();
+                lb_SoHinhDangCheck.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Image is checking" select w.idimage).Count().ToString();
+                lb_SoHinhHoanThanh.Text = (from w in Global.db.tbl_Images where w.fbatchname == lb_fBatchName.Text && w.TienDoDEJP == "Image completed" select w.idimage).Count().ToString();
                 gridControl1.DataSource = null;
                 gridControl1.DataSource = Global.db.ChiTietTienDo_DeJP(lb_fBatchName.Text);
                 gridView1.RowCellStyle += GridView1_RowCellStyle;
@@ -51,22 +51,22 @@ namespace KOMTSU.MyForm
             if (e.Column.FieldName == "ThongTin")
             {
                 string category = View.GetRowCellDisplayText(e.RowHandle, View.Columns["ThongTin"]);
-                if (category == "Hình đang nhập")
+                if (category == "Image is doing")
                 {
                     e.Appearance.BackColor = Color.HotPink;
                     e.Appearance.ForeColor = Color.White;
                 }
-                else if (category == "Hình chờ check")
+                else if (category == "Image waiting for check")
                 {
                     e.Appearance.BackColor = Color.OrangeRed;
                     e.Appearance.ForeColor = Color.White;
                 }
-                else if (category == "Hình đang check")
+                else if (category == "Image is checking")
                 {
                     e.Appearance.BackColor = Color.Purple;
                     e.Appearance.ForeColor = Color.White;
                 }
-                else if (category == "Hình hoàn thành")
+                else if (category == "Image completed")
                 {
                     e.Appearance.BackColor = Color.Green;
                     e.Appearance.ForeColor = Color.White;
