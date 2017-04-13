@@ -24,6 +24,9 @@ namespace KOMTSU.MyForm
         private bool flag_load = false;
         private void frm_CreateBatch_Load(object sender, EventArgs e)
         {
+            txt_TruongSo06.Enabled = false;
+            txt_TruongSo08.Enabled = false;
+            dataGridView1.Enabled = false;
             btn_BrowserPDF.Enabled = false;
             btn_BrowserFolder.Enabled = false;
             txt_UserCreate.Text = Global.StrUsername;
@@ -104,6 +107,7 @@ namespace KOMTSU.MyForm
         }
 
         private string[] _truongSo06, _truongSo08;
+        private string truongso6, truongso8;
         private void ExtractImage()
         {
             int h = 1;
@@ -111,24 +115,50 @@ namespace KOMTSU.MyForm
             {
                 _truongSo06 = new string[TongSoTrang + 1];
                 _truongSo08 = new string[TongSoTrang + 1];
-               
-                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                if (dataGridView1.RowCount<3)
                 {
-                    string temp = "";
-                    string[] temp1 = null;
+                    truongso6 = dataGridView1.Rows[0].Cells[0].Value.ToString();
+                    truongso8 = dataGridView1.Rows[0].Cells[1].Value.ToString();
 
-
-                    if (h < dataGridView1.RowCount)
+                }
+                else
+                {
+                    foreach (DataGridViewRow dr in dataGridView1.Rows)
                     {
-                        temp = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";
-                        if (temp.IndexOf(";", StringComparison.Ordinal) > 0)
+                        string temp = "";
+                        string[] temp1 = null;
+
+
+                        if (h < dataGridView1.RowCount)
                         {
-                            temp1 = temp.Split(';');
-                            for (int i = 0; i < temp1.Length; i++)
+                            temp = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";
+                            if (temp.IndexOf(";", StringComparison.Ordinal) > 0)
                             {
-                                if (temp1[i].IndexOf("-", StringComparison.Ordinal) > 0)
+                                temp1 = temp.Split(';');
+                                for (int i = 0; i < temp1.Length; i++)
                                 {
-                                    string[] temp2 = temp1[i].Split('-');
+                                    if (temp1[i].IndexOf("-", StringComparison.Ordinal) > 0)
+                                    {
+                                        string[] temp2 = temp1[i].Split('-');
+                                        for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
+                                        {
+                                            _truongSo06[j] = dr.Cells[0].Value.ToString();
+                                            _truongSo08[j] = dr.Cells[1].Value.ToString();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        _truongSo06[int.Parse(temp1[i])] = dr.Cells[0].Value.ToString();
+                                        _truongSo08[int.Parse(temp1[i])] = dr.Cells[1].Value.ToString();
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                if (temp.IndexOf("-", StringComparison.Ordinal) > 0)
+                                {
+                                    string[] temp2 = temp.Split('-');
                                     for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
                                     {
                                         _truongSo06[j] = dr.Cells[0].Value.ToString();
@@ -137,33 +167,16 @@ namespace KOMTSU.MyForm
                                 }
                                 else
                                 {
-                                    _truongSo06[int.Parse(temp1[i])] = dr.Cells[0].Value.ToString();
-                                    _truongSo08[int.Parse(temp1[i])] = dr.Cells[1].Value.ToString();
-                                }
-
-                            }
-                        }
-                        else
-                        {
-                            if (temp.IndexOf("-", StringComparison.Ordinal) > 0)
-                            {
-                                string[] temp2 = temp.Split('-');
-                                for (int j = int.Parse(temp2[0]); j <= int.Parse(temp2[1]); j++)
-                                {
-                                    _truongSo06[j] = dr.Cells[0].Value.ToString();
-                                    _truongSo08[j] = dr.Cells[1].Value.ToString();
+                                    _truongSo06[int.Parse(temp)] = dr.Cells[0].Value.ToString();
+                                    _truongSo08[int.Parse(temp)] = dr.Cells[1].Value.ToString();
                                 }
                             }
-                            else
-                            {
-                                _truongSo06[int.Parse(temp)] = dr.Cells[0].Value.ToString();
-                                _truongSo08[int.Parse(temp)] = dr.Cells[1].Value.ToString();
-                            }
-                        }
 
+                        }
+                        h++;
                     }
-                    h++;
                 }
+                
             }
 
             var f = new PdfFocus {Serial = "1234567890"};
@@ -210,7 +223,12 @@ namespace KOMTSU.MyForm
                     string savePath = Path.GetDirectoryName(sf.FileName);
                     txt_FolderSaveImage.Text = savePath;
                 }
-                string[] filePaths = Directory.GetFiles(txt_FolderSaveImage.Text, "*.jpg");
+                string[] filePaths = null;
+                if (!string.IsNullOrEmpty(txt_FolderSaveImage.Text))
+                {
+                    filePaths = Directory.GetFiles(txt_FolderSaveImage.Text, "*.jpg");
+                }
+                
                 if (filePaths.Length > 0)
                 {
                     MessageBox.Show(@"Folder has image file, choose another folder");
@@ -227,12 +245,24 @@ namespace KOMTSU.MyForm
         }
         private void UploadImage()
         {
+            Global.db = new DataKomtsuDataContext();
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                if (dataGridView1.RowCount == 1)
+                if (dataGridView1.RowCount < 2)
                 {
                     MessageBox.Show(@"You haven't filled in the Field 06 or Field 08!");
                     return;
+                }
+                else
+                {
+                    for (int i = 0; i < dataGridView1.RowCount-1; i++)
+                    {
+                        if (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[0].Value?.ToString()) || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value?.ToString()) || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value?.ToString()))
+                        {
+                            MessageBox.Show(@"You haven't filled in the Field 06 or Field 08 or Field Page!");
+                            return;
+                        }
+                    }
                 }
             }
             else
@@ -294,23 +324,45 @@ namespace KOMTSU.MyForm
                 {
                     string filePath = txt_FolderSaveImage.Text + @"\" + "Page" + i+".jpg";
                     FileInfo fi = new FileInfo(filePath);
-
-                    tbl_Image tempImage = new tbl_Image
+                    if (dataGridView1.RowCount<3)
                     {
-                        fbatchname = txt_BatchName.Text,
-                        idimage = "Page"+i+".jpg",
-                        ReadImageDESo = 0,
-                        CheckedDESo = 0,
-                        ReadImageDEJP = 0,
-                        CheckedDEJP = 0,
-                        TienDoDESO = "Hình chưa nhập",
-                        TienDoDEJP = "Hình chưa nhập",
-                        Page = i,
-                        TruongSo06 = _truongSo06[i],
-                        TruongSo08 = _truongSo08[i]
-                    };
-                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
-                    Global.db.SubmitChanges();
+                        tbl_Image tempImage = new tbl_Image
+                        {
+                            fbatchname = txt_BatchName.Text,
+                            idimage = "Page" + i + ".jpg",
+                            ReadImageDESo = 0,
+                            CheckedDESo = 0,
+                            ReadImageDEJP = 0,
+                            CheckedDEJP = 0,
+                            TienDoDESO = "Hình chưa nhập",
+                            TienDoDEJP = "Hình chưa nhập",
+                            Page = i,
+                            TruongSo06 = truongso6,
+                            TruongSo08 = truongso8
+                        };
+                        Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                        Global.db.SubmitChanges();
+                    }
+                    else
+                    {
+                        tbl_Image tempImage = new tbl_Image
+                        {
+                            fbatchname = txt_BatchName.Text,
+                            idimage = "Page" + i + ".jpg",
+                            ReadImageDESo = 0,
+                            CheckedDESo = 0,
+                            ReadImageDEJP = 0,
+                            CheckedDEJP = 0,
+                            TienDoDESO = "Hình chưa nhập",
+                            TienDoDEJP = "Hình chưa nhập",
+                            Page = i,
+                            TruongSo06 = _truongSo06[i],
+                            TruongSo08 = _truongSo08[i]
+                        };
+                        Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                        Global.db.SubmitChanges();
+                    }
+                   
 
                     k++;
                     string des = temp + @"\" + "Page" + i+".jpg";
@@ -479,7 +531,7 @@ namespace KOMTSU.MyForm
                 float ngay = (float)time.Days + (float)time.Hours / 24 + (float)time.Minutes / (60 * 24);
                 if (Convert.ToSingle(nud_thoigiandeadline.Value) > ngay)
                 {
-                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Days + " ngày "+ time.Hours+" giờ "+ time.Minutes+" Phút";
+                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " + time.Days + " ngày "+ time.Hours+" giờ "+ time.Minutes+" Phút";
                     return;
                 }
                 lb_status.Text = "";
@@ -489,7 +541,7 @@ namespace KOMTSU.MyForm
                 float gio = (float)time.Days * 24 + (float)time.Hours + (float)time.Minutes / 60;
                 if (Convert.ToSingle(nud_thoigiandeadline.Value) > gio)
                 {
-                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Hours + " giờ" + time.Minutes + " Phút";
+                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " + time.Hours + " giờ" + time.Minutes + " Phút";
                     return;
                 }
                 lb_status.Text = "";
@@ -499,7 +551,7 @@ namespace KOMTSU.MyForm
                 float phut = (float)time.Days * (24 * 60) + (float)time.Hours * 60 + (float)time.Minutes;
                 if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut)
                 {
-                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Minutes + " phút";
+                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " + time.Minutes + " phút";
                     return;
                 }
                 lb_status.Text = "";

@@ -73,7 +73,8 @@
             this.lbl_Page = new DevExpress.XtraEditors.LabelControl();
             this.ck_CoDeso = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.lb_status = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lb_status = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -95,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_FolderSaveImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ck_CoDeso.Properties)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbb_loaithoigian
@@ -281,10 +283,10 @@
             // progressBarControl1
             // 
             this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarControl1.Location = new System.Drawing.Point(0, 523);
+            this.progressBarControl1.Location = new System.Drawing.Point(0, 532);
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Properties.Step = 1;
-            this.progressBarControl1.Size = new System.Drawing.Size(835, 40);
+            this.progressBarControl1.Size = new System.Drawing.Size(835, 27);
             this.progressBarControl1.TabIndex = 36;
             // 
             // btn_CreateBatch
@@ -392,7 +394,6 @@
             // 
             // rb_LoaiBatch
             // 
-            this.rb_LoaiBatch.EditValue = "1";
             this.rb_LoaiBatch.Location = new System.Drawing.Point(113, 178);
             this.rb_LoaiBatch.Name = "rb_LoaiBatch";
             this.rb_LoaiBatch.Properties.Columns = 2;
@@ -499,6 +500,7 @@
             this.lbl_Page.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lbl_Page.Appearance.Options.UseFont = true;
             this.lbl_Page.Appearance.Options.UseForeColor = true;
+            this.lbl_Page.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbl_Page.Location = new System.Drawing.Point(140, 148);
             this.lbl_Page.Name = "lbl_Page";
             this.lbl_Page.Size = new System.Drawing.Size(0, 19);
@@ -520,22 +522,27 @@
             this.labelControl14.TabIndex = 26;
             this.labelControl14.Text = "Phút";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lb_status});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 559);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(835, 22);
+            this.statusStrip1.TabIndex = 54;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // lb_status
             // 
-            this.lb_status.AutoSize = true;
-            this.lb_status.ForeColor = System.Drawing.Color.Maroon;
-            this.lb_status.Location = new System.Drawing.Point(13, 464);
+            this.lb_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lb_status.Name = "lb_status";
-            this.lb_status.Size = new System.Drawing.Size(28, 13);
-            this.lb_status.TabIndex = 53;
-            this.lb_status.Text = "       ";
+            this.lb_status.Size = new System.Drawing.Size(0, 17);
             // 
             // frm_CreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 563);
-            this.Controls.Add(this.lb_status);
+            this.ClientSize = new System.Drawing.Size(835, 581);
             this.Controls.Add(this.ck_CoDeso);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_TruongSo08);
@@ -576,6 +583,8 @@
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.statusStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frm_CreateBatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -602,6 +611,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_FolderSaveImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ck_CoDeso.Properties)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,6 +665,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TruongSo08;
         private System.Windows.Forms.DataGridViewTextBoxColumn Page;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private System.Windows.Forms.Label lb_status;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lb_status;
     }
 }
