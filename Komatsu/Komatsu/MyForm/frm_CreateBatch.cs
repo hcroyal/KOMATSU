@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using Komatsu;
 using SautinSoft;
 
@@ -19,13 +20,28 @@ namespace KOMTSU.MyForm
             InitializeComponent();
         }
 
+
+        private bool flag_load = false;
         private void frm_CreateBatch_Load(object sender, EventArgs e)
         {
             btn_BrowserPDF.Enabled = false;
             btn_BrowserFolder.Enabled = false;
             txt_UserCreate.Text = Global.StrUsername;
             txt_DateCreate.Text = DateTime.Now.ToShortDateString() + "  -  " + DateTime.Now.ToShortTimeString();
+            cbb_loaithoigian.DisplayMember = "Text";
+            cbb_loaithoigian.ValueMember = "Value";
 
+            cbb_loaithoigian.Items.Add(new { Text = "", Value = "" });
+            cbb_loaithoigian.Items.Add(new { Text = "Ngày", Value = "Ngay" });
+            cbb_loaithoigian.Items.Add(new { Text = "Giờ", Value = "Gio" });
+            cbb_loaithoigian.Items.Add(new { Text = "Phút", Value = "Phut" });
+            cbb_loaithoigian.SelectedIndex = 0;
+            dateEdit_ngaybatdau.DateTime = DateTime.Now;
+            timeEdit_ngaybatdau.Time = DateTime.Now;
+            timeEdit_ngayketthuc.Time = DateTime.Now;
+            dateEdit_ngayketthuc.DateTime = DateTime.Now;
+
+            flag_load = true;
         }
 
         private void labelControl3_Click(object sender, EventArgs e)
@@ -345,7 +361,184 @@ namespace KOMTSU.MyForm
 ;           lbl_Page.Text = "";
             dataGridView1.Rows.Clear();
         }
-        
+
+        private bool _flag;
+        public void HandlingTimeWork()
+        {
+            try
+            {
+                TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(nud_songaylam.Value), Convert.ToInt32(nud_sogiolam.Value), Convert.ToInt32(nud_sophutlam.Value), 0);
+                if (_flag) return;
+                DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+                        dateEdit_ngaybatdau.DateTime.Month,
+                        dateEdit_ngaybatdau.DateTime.Day,
+                        timeEdit_ngaybatdau.Time.Hour,
+                        timeEdit_ngaybatdau.Time.Minute,
+                        timeEdit_ngaybatdau.Time.Second);
+                DateTime timeEnd = timeStart.Add(timeAdd);
+                dateEdit_ngayketthuc.EditValue = timeEnd;
+                timeEdit_ngayketthuc.EditValue = timeEnd;
+                lb_status.Text = "";
+            }
+            catch (Exception i)
+            {
+                lb_status.Text = " Ngày kết thúc không được nhỏ hơn ngày bắt đầu";
+            }
+        }
+
+        public void HandlingTimeWork_1()
+        {
+            if(flag_load)
+                try
+                {
+                    if (_flag) return;
+                    DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+                        dateEdit_ngaybatdau.DateTime.Month,
+                        dateEdit_ngaybatdau.DateTime.Day,
+                        timeEdit_ngaybatdau.Time.Hour,
+                        timeEdit_ngaybatdau.Time.Minute,
+                        timeEdit_ngaybatdau.Time.Second);
+                    DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
+                        dateEdit_ngayketthuc.DateTime.Month,
+                        dateEdit_ngayketthuc.DateTime.Day,
+                        timeEdit_ngayketthuc.Time.Hour,
+                        timeEdit_ngayketthuc.Time.Minute,
+                        timeEdit_ngayketthuc.Time.Second);
+                    TimeSpan time = timeEnd.Subtract(timeStart);
+                    nud_songaylam.Value = time.Days;
+                    nud_sogiolam.Value = time.Hours;
+                    nud_sophutlam.Value = time.Minutes;
+                    lb_status.Text = "";
+                }
+                catch (Exception e)
+                {
+                    lb_status.Text = " Ngày kết thúc không được nhỏ hơn ngày bắt đầu";
+                }
+        }
+        private void nud_sophutlam_ValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void dateEdit_ngaybatdau_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void timeEdit_ngaybatdau_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void nud_songaylam_ValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void nud_sogiolam_ValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void dateEdit_ngayketthuc_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork_1();
+        }
+
+        private void timeEdit_ngayketthuc_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork_1();
+        }
+
+        private void nud_thoigiandeadline_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime timeStart = DateTime.Parse(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+            DateTime timeEnd = DateTime.Parse(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+            TimeSpan time = timeEnd.Subtract(timeStart);
+            if (timeStart > timeEnd)
+            {
+                lb_status.Text=string.Format("Ngày{0} kết thúc dự án không được trước ngày bắt đầu", "");
+                return;
+            }
+            if (cbb_loaithoigian.Text == "Ngày")
+            {
+                float ngay = (float)time.Days + (float)time.Hours / 24 + (float)time.Minutes / (60 * 24);
+                if (Convert.ToSingle(nud_thoigiandeadline.Value) > ngay)
+                {
+                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Days + " ngày "+ time.Hours+" giờ "+ time.Minutes+" Phút";
+                    nud_thoigiandeadline.Value = 0; return;
+                }
+            }
+            else if (cbb_loaithoigian.Text == "Giờ")
+            {
+                float gio = (float)time.Days * 24 + (float)time.Hours + (float)time.Minutes / 60;
+                if (Convert.ToSingle(nud_thoigiandeadline.Value) > gio)
+                {
+                    lb_status.Text = "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Hours + " giờ" + time.Minutes + " Phút";
+                    nud_thoigiandeadline.Value = 0;
+                    return;
+                }
+            }
+            else if (cbb_loaithoigian.Text == "Phút")
+            {
+                float phut = (float)time.Days * (24 * 60) + (float)time.Hours * 60 + (float)time.Minutes;
+                if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut){
+                    lb_status.Text = string.Format("Thời{0} gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\nThời gian tối đa: " + time.Minutes + " phút{1}", "", "");
+                    nud_thoigiandeadline.Value = 0;
+                    return;
+                }
+            }
+        }
+
+        private void cbb_loaithoigian_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nud_thoigiandeadline_ValueChanged(null, null);
+        }
+
+        private void nud_thoigiandeadline_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cbb_loaithoigian.Text))
+            {
+                MessageBox.Show(string.Format("Bạn{0} hãy chọn kiểu thời gian", ""));
+                nud_thoigiandeadline.Value = 0; return;
+            }
+        }
+
+        private void dateEdit_ngaybatdau_Click(object sender, EventArgs e)
+        {
+            _flag = true;
+        }
+
+        private void timeEdit_ngaybatdau_Click(object sender, EventArgs e)
+        {
+            _flag = true;
+        }
+
+        private void nud_songaylam_Click(object sender, EventArgs e)
+        {
+            _flag = true;
+        }
+
+        private void nud_sogiolam_Click(object sender, EventArgs e)
+        {
+            _flag = true;
+        }
+
+        private void nud_sophutlam_Click(object sender, EventArgs e)
+        {
+            _flag = true;
+        }
+
+        private void dateEdit_ngayketthuc_Click(object sender, EventArgs e)
+        {
+            _flag = false;
+        }
+
+        private void timeEdit_ngayketthuc_Click(object sender, EventArgs e)
+        {
+            _flag = false;
+        }
+
         private void rb_LoaiBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")

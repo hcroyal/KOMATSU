@@ -88,7 +88,7 @@ namespace Komatsu
                     }
                     else
                     {
-                        if (MessageBox.Show("User này đã đăng nhập ở máy khác. Bạn có muốn tiếp tục đăng nhập?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        if (MessageBox.Show("This user has logged in on another machine. Would you like to continue signing in?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
                             Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken, Global.StrIdProject);

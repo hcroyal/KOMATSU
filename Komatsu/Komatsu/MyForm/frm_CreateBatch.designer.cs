@@ -72,6 +72,8 @@
             this.btn_BrowserFolder = new DevExpress.XtraEditors.SimpleButton();
             this.lbl_Page = new DevExpress.XtraEditors.LabelControl();
             this.ck_CoDeso = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.lb_status = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -99,167 +101,174 @@
             // 
             this.cbb_loaithoigian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_loaithoigian.FormattingEnabled = true;
-            this.cbb_loaithoigian.Location = new System.Drawing.Point(204, 423);
+            this.cbb_loaithoigian.Location = new System.Drawing.Point(238, 428);
             this.cbb_loaithoigian.Name = "cbb_loaithoigian";
-            this.cbb_loaithoigian.Size = new System.Drawing.Size(93, 21);
+            this.cbb_loaithoigian.Size = new System.Drawing.Size(101, 21);
             this.cbb_loaithoigian.TabIndex = 47;
-            this.cbb_loaithoigian.Visible = false;
+            this.cbb_loaithoigian.SelectedIndexChanged += new System.EventHandler(this.cbb_loaithoigian_SelectedIndexChanged);
             // 
             // nud_sophutlam
             // 
-            this.nud_sophutlam.Location = new System.Drawing.Point(275, 358);
+            this.nud_sophutlam.Location = new System.Drawing.Point(273, 370);
             this.nud_sophutlam.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.nud_sophutlam.Name = "nud_sophutlam";
-            this.nud_sophutlam.Size = new System.Drawing.Size(36, 21);
+            this.nud_sophutlam.Size = new System.Drawing.Size(40, 21);
             this.nud_sophutlam.TabIndex = 46;
-            this.nud_sophutlam.Visible = false;
+            this.nud_sophutlam.ValueChanged += new System.EventHandler(this.nud_sophutlam_ValueChanged);
+            this.nud_sophutlam.Click += new System.EventHandler(this.nud_sophutlam_Click);
             // 
             // nud_sogiolam
             // 
-            this.nud_sogiolam.Location = new System.Drawing.Point(211, 358);
+            this.nud_sogiolam.Location = new System.Drawing.Point(198, 370);
             this.nud_sogiolam.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.nud_sogiolam.Name = "nud_sogiolam";
-            this.nud_sogiolam.Size = new System.Drawing.Size(37, 21);
+            this.nud_sogiolam.Size = new System.Drawing.Size(40, 21);
             this.nud_sogiolam.TabIndex = 45;
-            this.nud_sogiolam.Visible = false;
+            this.nud_sogiolam.ValueChanged += new System.EventHandler(this.nud_sogiolam_ValueChanged);
+            this.nud_sogiolam.Click += new System.EventHandler(this.nud_sogiolam_Click);
             // 
             // nud_thoigiandeadline
             // 
             this.nud_thoigiandeadline.DecimalPlaces = 2;
-            this.nud_thoigiandeadline.Location = new System.Drawing.Point(137, 423);
+            this.nud_thoigiandeadline.Location = new System.Drawing.Point(115, 428);
             this.nud_thoigiandeadline.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
             this.nud_thoigiandeadline.Name = "nud_thoigiandeadline";
-            this.nud_thoigiandeadline.Size = new System.Drawing.Size(59, 21);
+            this.nud_thoigiandeadline.Size = new System.Drawing.Size(117, 21);
             this.nud_thoigiandeadline.TabIndex = 44;
-            this.nud_thoigiandeadline.Visible = false;
+            this.nud_thoigiandeadline.ValueChanged += new System.EventHandler(this.nud_thoigiandeadline_ValueChanged);
+            this.nud_thoigiandeadline.Click += new System.EventHandler(this.nud_thoigiandeadline_Click);
             // 
             // nud_songaylam
             // 
-            this.nud_songaylam.Location = new System.Drawing.Point(137, 358);
+            this.nud_songaylam.Location = new System.Drawing.Point(115, 370);
             this.nud_songaylam.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.nud_songaylam.Name = "nud_songaylam";
-            this.nud_songaylam.Size = new System.Drawing.Size(37, 21);
+            this.nud_songaylam.Size = new System.Drawing.Size(40, 21);
             this.nud_songaylam.TabIndex = 43;
-            this.nud_songaylam.Visible = false;
+            this.nud_songaylam.ValueChanged += new System.EventHandler(this.nud_songaylam_ValueChanged);
+            this.nud_songaylam.Click += new System.EventHandler(this.nud_songaylam_Click);
             // 
             // timeEdit_ngayketthuc
             // 
             this.timeEdit_ngayketthuc.EditValue = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
-            this.timeEdit_ngayketthuc.Location = new System.Drawing.Point(253, 391);
+            this.timeEdit_ngayketthuc.Location = new System.Drawing.Point(238, 399);
             this.timeEdit_ngayketthuc.Name = "timeEdit_ngayketthuc";
             this.timeEdit_ngayketthuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit_ngayketthuc.Properties.Mask.EditMask = "HH:mm:ss";
-            this.timeEdit_ngayketthuc.Size = new System.Drawing.Size(86, 20);
+            this.timeEdit_ngayketthuc.Size = new System.Drawing.Size(101, 20);
             this.timeEdit_ngayketthuc.TabIndex = 42;
-            this.timeEdit_ngayketthuc.Visible = false;
+            this.timeEdit_ngayketthuc.EditValueChanged += new System.EventHandler(this.timeEdit_ngayketthuc_EditValueChanged);
+            this.timeEdit_ngayketthuc.Click += new System.EventHandler(this.timeEdit_ngayketthuc_Click);
             // 
             // timeEdit_ngaybatdau
             // 
             this.timeEdit_ngaybatdau.EditValue = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
-            this.timeEdit_ngaybatdau.Location = new System.Drawing.Point(253, 328);
+            this.timeEdit_ngaybatdau.Location = new System.Drawing.Point(238, 343);
             this.timeEdit_ngaybatdau.Name = "timeEdit_ngaybatdau";
             this.timeEdit_ngaybatdau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit_ngaybatdau.Properties.Mask.EditMask = "HH:mm:ss";
-            this.timeEdit_ngaybatdau.Size = new System.Drawing.Size(86, 20);
+            this.timeEdit_ngaybatdau.Size = new System.Drawing.Size(101, 20);
             this.timeEdit_ngaybatdau.TabIndex = 41;
-            this.timeEdit_ngaybatdau.Visible = false;
+            this.timeEdit_ngaybatdau.EditValueChanged += new System.EventHandler(this.timeEdit_ngaybatdau_EditValueChanged);
+            this.timeEdit_ngaybatdau.Click += new System.EventHandler(this.timeEdit_ngaybatdau_Click);
             // 
             // dateEdit_ngayketthuc
             // 
             this.dateEdit_ngayketthuc.EditValue = null;
-            this.dateEdit_ngayketthuc.Location = new System.Drawing.Point(137, 391);
+            this.dateEdit_ngayketthuc.Location = new System.Drawing.Point(115, 400);
             this.dateEdit_ngayketthuc.Name = "dateEdit_ngayketthuc";
             this.dateEdit_ngayketthuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_ngayketthuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit_ngayketthuc.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEdit_ngayketthuc.Properties.CalendarTimeProperties.TouchUIMaxValue = new System.DateTime(3000, 12, 31, 23, 59, 0, 0);
+            this.dateEdit_ngayketthuc.Properties.Mask.EditMask = "yyyy/MM/dd";
             this.dateEdit_ngayketthuc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dateEdit_ngayketthuc.Size = new System.Drawing.Size(100, 20);
+            this.dateEdit_ngayketthuc.Properties.MaxValue = new System.DateTime(3000, 12, 31, 23, 59, 0, 0);
+            this.dateEdit_ngayketthuc.Size = new System.Drawing.Size(117, 20);
             this.dateEdit_ngayketthuc.TabIndex = 40;
-            this.dateEdit_ngayketthuc.Visible = false;
+            this.dateEdit_ngayketthuc.EditValueChanged += new System.EventHandler(this.dateEdit_ngayketthuc_EditValueChanged);
+            this.dateEdit_ngayketthuc.Click += new System.EventHandler(this.dateEdit_ngayketthuc_Click);
             // 
             // dateEdit_ngaybatdau
             // 
             this.dateEdit_ngaybatdau.EditValue = null;
-            this.dateEdit_ngaybatdau.Location = new System.Drawing.Point(137, 328);
+            this.dateEdit_ngaybatdau.Location = new System.Drawing.Point(115, 344);
             this.dateEdit_ngaybatdau.Name = "dateEdit_ngaybatdau";
             this.dateEdit_ngaybatdau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_ngaybatdau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit_ngaybatdau.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEdit_ngaybatdau.Properties.CalendarTimeProperties.TouchUIMaxValue = new System.DateTime(3000, 12, 31, 23, 59, 0, 0);
+            this.dateEdit_ngaybatdau.Properties.Mask.EditMask = "yyyy/MM/dd";
             this.dateEdit_ngaybatdau.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dateEdit_ngaybatdau.Size = new System.Drawing.Size(100, 20);
+            this.dateEdit_ngaybatdau.Properties.MaxValue = new System.DateTime(3000, 12, 31, 23, 59, 0, 0);
+            this.dateEdit_ngaybatdau.Size = new System.Drawing.Size(117, 20);
             this.dateEdit_ngaybatdau.TabIndex = 39;
-            this.dateEdit_ngaybatdau.Visible = false;
+            this.dateEdit_ngaybatdau.EditValueChanged += new System.EventHandler(this.dateEdit_ngaybatdau_EditValueChanged);
+            this.dateEdit_ngaybatdau.Click += new System.EventHandler(this.dateEdit_ngaybatdau_Click);
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(30, 394);
+            this.labelControl11.Location = new System.Drawing.Point(16, 403);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(92, 13);
             this.labelControl11.TabIndex = 25;
             this.labelControl11.Text = "Thời gian kết thúc :";
-            this.labelControl11.Visible = false;
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(254, 362);
+            this.labelControl13.Location = new System.Drawing.Point(242, 374);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(15, 13);
             this.labelControl13.TabIndex = 26;
             this.labelControl13.Text = "Giờ";
-            this.labelControl13.Visible = false;
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(180, 362);
+            this.labelControl12.Location = new System.Drawing.Point(158, 374);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(25, 13);
             this.labelControl12.TabIndex = 23;
             this.labelControl12.Text = "Ngày";
-            this.labelControl12.Visible = false;
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(31, 362);
+            this.labelControl10.Location = new System.Drawing.Point(39, 375);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(69, 13);
             this.labelControl10.TabIndex = 22;
             this.labelControl10.Text = "Thời gian làm :";
-            this.labelControl10.Visible = false;
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(30, 331);
+            this.labelControl9.Location = new System.Drawing.Point(18, 348);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(90, 13);
             this.labelControl9.TabIndex = 21;
             this.labelControl9.Text = "Thời gian bắt đầu :";
-            this.labelControl9.Visible = false;
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(48, 191);
+            this.labelControl8.Location = new System.Drawing.Point(48, 185);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(61, 13);
             this.labelControl8.TabIndex = 20;
@@ -280,7 +289,7 @@
             // 
             // btn_CreateBatch
             // 
-            this.btn_CreateBatch.Location = new System.Drawing.Point(317, 467);
+            this.btn_CreateBatch.Location = new System.Drawing.Point(317, 464);
             this.btn_CreateBatch.Name = "btn_CreateBatch";
             this.btn_CreateBatch.Size = new System.Drawing.Size(164, 44);
             this.btn_CreateBatch.TabIndex = 35;
@@ -307,18 +316,18 @@
             // 
             // txt_DateCreate
             // 
-            this.txt_DateCreate.Location = new System.Drawing.Point(114, 302);
+            this.txt_DateCreate.Location = new System.Drawing.Point(114, 296);
             this.txt_DateCreate.Name = "txt_DateCreate";
             this.txt_DateCreate.Properties.ReadOnly = true;
-            this.txt_DateCreate.Size = new System.Drawing.Size(198, 20);
+            this.txt_DateCreate.Size = new System.Drawing.Size(225, 20);
             this.txt_DateCreate.TabIndex = 30;
             // 
             // txt_UserCreate
             // 
-            this.txt_UserCreate.Location = new System.Drawing.Point(114, 274);
+            this.txt_UserCreate.Location = new System.Drawing.Point(114, 268);
             this.txt_UserCreate.Name = "txt_UserCreate";
             this.txt_UserCreate.Properties.ReadOnly = true;
-            this.txt_UserCreate.Size = new System.Drawing.Size(198, 20);
+            this.txt_UserCreate.Size = new System.Drawing.Size(225, 20);
             this.txt_UserCreate.TabIndex = 32;
             // 
             // txt_BatchName
@@ -339,7 +348,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(18, 305);
+            this.labelControl6.Location = new System.Drawing.Point(18, 299);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(91, 13);
             this.labelControl6.TabIndex = 18;
@@ -347,16 +356,15 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(30, 427);
+            this.labelControl15.Location = new System.Drawing.Point(9, 431);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(99, 13);
             this.labelControl15.TabIndex = 17;
             this.labelControl15.Text = "Thông báo Deadline:";
-            this.labelControl15.Visible = false;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(19, 277);
+            this.labelControl5.Location = new System.Drawing.Point(19, 271);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(90, 13);
             this.labelControl5.TabIndex = 16;
@@ -385,7 +393,7 @@
             // rb_LoaiBatch
             // 
             this.rb_LoaiBatch.EditValue = "1";
-            this.rb_LoaiBatch.Location = new System.Drawing.Point(113, 184);
+            this.rb_LoaiBatch.Location = new System.Drawing.Point(113, 178);
             this.rb_LoaiBatch.Name = "rb_LoaiBatch";
             this.rb_LoaiBatch.Properties.Columns = 2;
             this.rb_LoaiBatch.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
@@ -397,14 +405,14 @@
             // 
             // txt_TruongSo06
             // 
-            this.txt_TruongSo06.Location = new System.Drawing.Point(113, 218);
+            this.txt_TruongSo06.Location = new System.Drawing.Point(113, 212);
             this.txt_TruongSo06.Name = "txt_TruongSo06";
             this.txt_TruongSo06.Size = new System.Drawing.Size(226, 20);
             this.txt_TruongSo06.TabIndex = 49;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(74, 221);
+            this.labelControl3.Location = new System.Drawing.Point(74, 215);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(35, 13);
             this.labelControl3.TabIndex = 20;
@@ -413,14 +421,14 @@
             // 
             // txt_TruongSo08
             // 
-            this.txt_TruongSo08.Location = new System.Drawing.Point(113, 244);
+            this.txt_TruongSo08.Location = new System.Drawing.Point(113, 238);
             this.txt_TruongSo08.Name = "txt_TruongSo08";
             this.txt_TruongSo08.Size = new System.Drawing.Size(226, 20);
             this.txt_TruongSo08.TabIndex = 50;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(74, 247);
+            this.labelControl4.Location = new System.Drawing.Point(74, 241);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(35, 13);
             this.labelControl4.TabIndex = 20;
@@ -436,7 +444,7 @@
             this.Page});
             this.dataGridView1.Location = new System.Drawing.Point(345, 149);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(487, 301);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
@@ -491,7 +499,7 @@
             this.lbl_Page.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lbl_Page.Appearance.Options.UseFont = true;
             this.lbl_Page.Appearance.Options.UseForeColor = true;
-            this.lbl_Page.Location = new System.Drawing.Point(140, 149);
+            this.lbl_Page.Location = new System.Drawing.Point(140, 148);
             this.lbl_Page.Name = "lbl_Page";
             this.lbl_Page.Size = new System.Drawing.Size(0, 19);
             this.lbl_Page.TabIndex = 19;
@@ -504,11 +512,32 @@
             this.ck_CoDeso.Size = new System.Drawing.Size(75, 19);
             this.ck_CoDeso.TabIndex = 52;
             // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(317, 375);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(22, 13);
+            this.labelControl14.TabIndex = 26;
+            this.labelControl14.Text = "Phút";
+            // 
+            // lb_status
+            // 
+            this.lb_status.AutoSize = true;
+            this.lb_status.ForeColor = System.Drawing.Color.Maroon;
+            this.lb_status.Location = new System.Drawing.Point(13, 464);
+            this.lb_status.Name = "lb_status";
+            this.lb_status.Size = new System.Drawing.Size(28, 13);
+            this.lb_status.TabIndex = 53;
+            this.lb_status.Text = "       ";
+            // 
             // frm_CreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(835, 563);
+            this.Controls.Add(this.lb_status);
             this.Controls.Add(this.ck_CoDeso);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_TruongSo08);
@@ -524,6 +553,7 @@
             this.Controls.Add(this.dateEdit_ngayketthuc);
             this.Controls.Add(this.dateEdit_ngaybatdau);
             this.Controls.Add(this.labelControl11);
+            this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.labelControl10);
@@ -548,6 +578,7 @@
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.MaximizeBox = false;
             this.Name = "frm_CreateBatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Batch";
@@ -624,5 +655,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TruongSo06;
         private System.Windows.Forms.DataGridViewTextBoxColumn TruongSo08;
         private System.Windows.Forms.DataGridViewTextBoxColumn Page;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private System.Windows.Forms.Label lb_status;
     }
 }
