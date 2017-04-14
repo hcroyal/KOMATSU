@@ -727,7 +727,7 @@ namespace KOMTSU.MyForm
             uc.Tag = count.ToString();
             uc.CheckBatch_CoDeSo();
             tp_Loai1_JP_Main.Controls.Add(uc);
-
+            
             uc.txt_Truong06.Text = Global.Truong06;
             uc.txt_Truong08.Text = Global.Truong08;
 

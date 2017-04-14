@@ -86,7 +86,16 @@ namespace KOMTSU.MyUserControl
         }
         public void CheckBatch_CoDeSo()
         {
-            if ((Global.StrRole == "DEJP" && Global.BatCoDeSo)||(Global.StrCheck == "CHECKDEJP" && Global.BatCoDeSo))
+            txt_Truong03.Enabled = false;
+            txt_Truong04.Enabled = false;
+            txt_Truong05.Enabled = false;
+            txt_Truong11.Enabled = false;
+            txt_Truong07.Enabled = false;
+            txt_Truong09.Enabled = false;
+            txt_Truong10.Enabled = false;
+            txt_Truong12.Enabled = false;
+
+            if ((Global.StrRole.ToUpper() == "DEJP" && Global.BatCoDeSo)||(Global.StrCheck.ToUpper() == "CHECKDEJP" && Global.BatCoDeSo))
             {
                 txt_Truong03.Enabled = false;
                 txt_Truong04.Enabled = false;
@@ -98,7 +107,7 @@ namespace KOMTSU.MyUserControl
                 txt_Truong10.Enabled = true;
                 txt_Truong12.Enabled = true;
             }
-            else if ((Global.StrRole=="DESO" && Global.BatCoDeSo) || (Global.StrCheck == "CHECKDESO" && Global.BatCoDeSo))
+            else if ((Global.StrRole.ToUpper() == "DESO" && Global.BatCoDeSo) || (Global.StrCheck.ToUpper() == "CHECKDESO" && Global.BatCoDeSo))
             {
                 txt_Truong03.Enabled = true;
                 txt_Truong04.Enabled = true;
