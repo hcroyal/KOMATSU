@@ -97,11 +97,11 @@ namespace KOMTSU.MyForm
                 saveFileDialog1.Filter = @"Excel files (*.xls)|*.xls";
                 if(xtraTabControl1.SelectedTabPage==tp_DeJP)
                 {
-                    saveFileDialog1.FileName = "NangSuat_DeJP_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
+                    saveFileDialog1.FileName = "Performance_DeJP_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
                 }
                 else if(xtraTabControl1.SelectedTabPage==tp_DeSo)
                 {
-                    saveFileDialog1.FileName = "NangSuat_DeSo_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
+                    saveFileDialog1.FileName = "Performance_DeSo_" + dtp_FirstDay.Value.Day + "-" + dtp_EndDay.Value.Day;
                 }
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)

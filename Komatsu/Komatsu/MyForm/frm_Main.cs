@@ -192,6 +192,7 @@ namespace KOMTSU.MyForm
                         if (Global.LoaiPhieu == "Loai1")
                         {
                             tabControl_Main.TabPages.Add(tp_Loai1_JP_Main);
+                            uc_DeJP_Loai11.CheckBatch_CoDeSo();
                         }
                         else if (Global.LoaiPhieu == "Loai2")
                         {

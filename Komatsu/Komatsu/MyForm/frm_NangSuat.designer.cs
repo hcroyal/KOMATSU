@@ -245,7 +245,7 @@
             // 
             // gridColumn18
             // 
-            this.gridColumn18.Caption = "Performance(%)";
+            this.gridColumn18.Caption = "Performance (%)";
             this.gridColumn18.FieldName = "HieuSuat";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
