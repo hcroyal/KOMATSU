@@ -665,4 +665,9 @@
       <Column Name="HieuSuat" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.CoDeSo" Method="CoDeSo">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CoDeSo" Parameter="coDeSo" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

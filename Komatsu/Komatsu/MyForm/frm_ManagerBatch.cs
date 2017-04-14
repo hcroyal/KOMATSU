@@ -59,5 +59,33 @@ namespace Komatsu.MyForm
             }
             RefreshBatch();
         }
+
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            string fbatchname = gridView1.GetFocusedRowCellValue("fBatchName").ToString();
+            int kt = (from w in Global.db.tbl_Images where w.ReadImageDESo != 0 || w.ReadImageDEJP != 0 select w.idimage).Count();
+            if (kt>0)
+            {
+                MessageBox.Show("Batch này đã có người nhập!");
+                RefreshBatch();
+                return;
+            }
+            if (e.Column.FieldName == "CoDeSo")
+            {
+                bool check_ = (bool)e.Value;
+
+                if (check_)
+                {
+                    Global.db.CoDeSo(fbatchname, true);
+                    //MessageBox.Show("Đã công khai batch: " + fbatchname);
+                }
+                else
+                {
+                    Global.db.CoDeSo(fbatchname, false);
+                    //MessageBox.Show("Đã tắt công khai batch: " + fbatchname);
+                }
+            }
+            RefreshBatch();
+        }
     }
 }

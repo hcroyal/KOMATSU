@@ -216,7 +216,7 @@ namespace KOMTSU.MyForm
                 SaveFileDialog sf = new SaveFileDialog();
                 // Feed the dummy name to the save dialog
                 sf.FileName = dummyFileName;
-
+                
                 if (sf.ShowDialog() == DialogResult.OK)
                 {
                     // Now here's our save folder

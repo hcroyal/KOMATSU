@@ -590,6 +590,13 @@ namespace Komatsu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tuNgay, denNgay);
 			return ((ISingleResult<NangSuatDeSoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CoDeSo")]
+		public int CoDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CoDeSo", DbType="Bit")] System.Nullable<bool> coDeSo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname, coDeSo);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
