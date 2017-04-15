@@ -50,10 +50,10 @@ namespace KOMTSU.MyForm
 
         private void Load_Truong06_08()
         {
-            Global.Truong06_A = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
-            Global.Truong08_A = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
-            Global.Truong06_B = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
-            Global.Truong08_B = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
+            Global.Truong06_A = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06_A).FirstOrDefault();
+            Global.Truong08_A = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08_A).FirstOrDefault();
+            Global.Truong06_B = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06_B).FirstOrDefault();
+            Global.Truong08_B = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08_B).FirstOrDefault();
             if (Global.LoaiPhieu == "Loai2")
             {
                 txt_Truong06_A.Text = Global.Truong06_A;

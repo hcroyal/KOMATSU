@@ -221,7 +221,7 @@ namespace KOMTSU.MyUserControl
             }
         }
 
-        public void SuaVaLuu_DEJP(int rowNumber,string usersaiit, string usersainhieu,string batch, string idimage, string truong06, string truong08)
+        public void SuaVaLuu_DEJP(int rowNumber,string usersaiit, string usersainhieu,string batch, string idimage, string truong06A, string truong08A, string truong06B, string truong08B)
         {
             string rownumber = "";
             foreach (uc_DeJP_Row item in Controls)
@@ -229,7 +229,7 @@ namespace KOMTSU.MyUserControl
                 if (!string.IsNullOrEmpty(item.lb_stt.Text))
                 {
                     rownumber = item.lb_stt.Text;
-                    item.SuaVaLuu_DEJP(usersaiit, usersainhieu, batch,idimage,truong06,truong08);
+                    item.SuaVaLuu_DEJP(usersaiit, usersainhieu, batch,idimage, truong06A, truong08A, truong06B, truong08B);
                     //item.SuaVaLuu_DEJP(usersaiit, usersainhieu, idimage, Global.Truong06, Global.Truong08);
                 }
             }
@@ -242,7 +242,7 @@ namespace KOMTSU.MyUserControl
                 }
             }
         }
-        public void SuaVaLuu_DESO(int rowNumber, string usersaiit, string usersainhieu, string batch, string idimage, string truong06, string truong08)
+        public void SuaVaLuu_DESO(int rowNumber, string usersaiit, string usersainhieu, string batch, string idimage, string truong06A, string truong08A, string truong06B, string truong08B)
         {
             string rownumber = "";
             foreach (uc_DeJP_Row item in Controls)
@@ -250,7 +250,7 @@ namespace KOMTSU.MyUserControl
                 if (!string.IsNullOrEmpty(item.lb_stt.Text))
                 {
                     rownumber = item.lb_stt.Text;
-                    item.SuaVaLuu_DESO(usersaiit, usersainhieu,batch, idimage,truong06,truong08);
+                    item.SuaVaLuu_DESO(usersaiit, usersainhieu,batch, idimage, truong06A, truong08A, truong06B, truong08B);
                 }
             }
             int irowrumber = Convert.ToInt32(rownumber);
