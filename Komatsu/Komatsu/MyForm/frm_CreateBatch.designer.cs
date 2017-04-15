@@ -327,7 +327,7 @@
             // progressBarControl1
             // 
             this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarControl1.Location = new System.Drawing.Point(2, 53);
+            this.progressBarControl1.Location = new System.Drawing.Point(2, 38);
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Properties.Step = 1;
             this.progressBarControl1.Size = new System.Drawing.Size(836, 27);
@@ -335,9 +335,9 @@
             // 
             // btn_CreateBatch
             // 
-            this.btn_CreateBatch.Location = new System.Drawing.Point(323, 5);
+            this.btn_CreateBatch.Location = new System.Drawing.Point(323, 4);
             this.btn_CreateBatch.Name = "btn_CreateBatch";
-            this.btn_CreateBatch.Size = new System.Drawing.Size(164, 44);
+            this.btn_CreateBatch.Size = new System.Drawing.Size(164, 30);
             this.btn_CreateBatch.TabIndex = 35;
             this.btn_CreateBatch.Text = "Create Batch";
             this.btn_CreateBatch.Click += new System.EventHandler(this.btn_CreateBatch_Click);
@@ -503,7 +503,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(358, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(484, 431);
+            this.dataGridView1.Size = new System.Drawing.Size(484, 428);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
@@ -559,10 +559,11 @@
             this.lbl_Page.Appearance.Options.UseFont = true;
             this.lbl_Page.Appearance.Options.UseForeColor = true;
             this.lbl_Page.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_Page.Location = new System.Drawing.Point(140, 148);
+            this.lbl_Page.Location = new System.Drawing.Point(101, 134);
             this.lbl_Page.Name = "lbl_Page";
-            this.lbl_Page.Size = new System.Drawing.Size(0, 19);
+            this.lbl_Page.Size = new System.Drawing.Size(41, 19);
             this.lbl_Page.TabIndex = 19;
+            this.lbl_Page.Text = "Page";
             // 
             // ck_CoDeso
             // 
@@ -643,6 +644,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lbl_Page);
             this.panelControl1.Controls.Add(this.btn_BrowserFolder);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl2);
@@ -656,7 +658,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(844, 142);
+            this.panelControl1.Size = new System.Drawing.Size(844, 160);
             this.panelControl1.TabIndex = 55;
             // 
             // panelControl2
@@ -665,9 +667,9 @@
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.panelControl4);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 142);
+            this.panelControl2.Location = new System.Drawing.Point(0, 160);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(844, 517);
+            this.panelControl2.Size = new System.Drawing.Size(844, 499);
             this.panelControl2.TabIndex = 56;
             // 
             // panelControl3
@@ -679,7 +681,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl3.Location = new System.Drawing.Point(2, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(356, 431);
+            this.panelControl3.Size = new System.Drawing.Size(356, 428);
             this.panelControl3.TabIndex = 0;
             this.panelControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl3_Paint);
             // 
@@ -688,9 +690,9 @@
             this.panelControl4.Controls.Add(this.btn_CreateBatch);
             this.panelControl4.Controls.Add(this.progressBarControl1);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl4.Location = new System.Drawing.Point(2, 433);
+            this.panelControl4.Location = new System.Drawing.Point(2, 430);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(840, 82);
+            this.panelControl4.Size = new System.Drawing.Size(840, 67);
             this.panelControl4.TabIndex = 1;
             // 
             // panelControl5
@@ -722,7 +724,7 @@
             this.groupControl1.Controls.Add(this.nud_thoigiandeadline);
             this.groupControl1.Controls.Add(this.nud_songaylam);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(2, 281);
+            this.groupControl1.Location = new System.Drawing.Point(2, 278);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(352, 148);
             this.groupControl1.TabIndex = 50;
@@ -736,7 +738,7 @@
             this.groupControl2.Controls.Add(this.txt_UserCreate);
             this.groupControl2.Controls.Add(this.txt_DateCreate);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl2.Location = new System.Drawing.Point(2, 199);
+            this.groupControl2.Location = new System.Drawing.Point(2, 196);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(352, 82);
             this.groupControl2.TabIndex = 51;
@@ -755,7 +757,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 51);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(352, 148);
+            this.groupControl3.Size = new System.Drawing.Size(352, 145);
             this.groupControl3.TabIndex = 52;
             this.groupControl3.Text = "Field";
             // 
@@ -766,7 +768,6 @@
             this.ClientSize = new System.Drawing.Size(844, 681);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.lbl_Page);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
