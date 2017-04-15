@@ -47,6 +47,7 @@ namespace KOMTSU.MyForm
             dateEdit_ngayketthuc.DateTime = DateTime.Now;
             lb_status.Text = "";
             flag_load = true;
+            rb_LoaiBatch.SelectedIndex = 0;
         }
 
         private void labelControl3_Click(object sender, EventArgs e)
@@ -248,6 +249,21 @@ namespace KOMTSU.MyForm
         private void UploadImage()
         {
             Global.db = new DataKomtsuDataContext();
+            if (string.IsNullOrEmpty(txt_BatchName.Text))
+            {
+                MessageBox.Show("No batch name");
+                return;
+            }
+            if (string.IsNullOrEmpty(txt_ImagePath.Text))
+            {
+                MessageBox.Show("No pdf file selected");
+                return;
+            }
+            if (string.IsNullOrEmpty(txt_FolderSaveImage.Text))
+            {
+                MessageBox.Show("No path to save the file");
+                return;
+            }
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
                 if (dataGridView1.RowCount < 2)
