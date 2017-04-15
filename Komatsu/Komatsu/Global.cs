@@ -26,8 +26,10 @@ namespace KOMTSU
         public static string StrIdProject = "KOMTSU";
         public static int FreeTime = 0;
         public static AutoCompleteStringCollection auto1;
-        public static string Truong06 = "";
-        public static string Truong08 = "";
+        public static string Truong06_A = "";
+        public static string Truong08_A = "";
+        public static string Truong06_B = "";
+        public static string Truong08_B = "";
         public static bool Flag=true;
         public static bool BatCoDeSo = false;
         public static int Tag_UcRow;

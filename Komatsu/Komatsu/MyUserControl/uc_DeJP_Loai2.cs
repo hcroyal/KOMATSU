@@ -198,24 +198,24 @@ namespace KOMTSU.MyUserControl
                 }
             }
         }
-        public void SaveData_Loai2_DeJP(string idImage, string truong06, string truong08)
+        public void SaveData_Loai2_DeJP(string idImage, string truong06A, string truong08A, string truong06B, string truong08B)
         {
             foreach (uc_DeJP_Row item in Controls)
             {
                 if (!item.IsEmpty())
                 {
-                    item.Save_Data(idImage, truong06, truong08);
+                    item.Save_Data(idImage, truong06A, truong08A, truong06B, truong08B);
                 }
             }
         }
 
-        public void SaveData_Loai2_DeSo(string idImage, string truong06, string truong08)
+        public void SaveData_Loai2_DeSo(string idImage, string truong06A, string truong08A, string truong06B, string truong08B)
         {
             foreach (uc_DeJP_Row item in Controls)
             {
                 if (!item.IsEmpty())
                 {
-                    item.Save_Data_DeSo(idImage,truong06,truong08);
+                    item.Save_Data_DeSo(idImage, truong06A, truong08A, truong06B, truong08B);
                     //item.Save_Data_DeSo(idImage, Global.Truong06, Global.Truong08);
                 }
             }

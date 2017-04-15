@@ -50,12 +50,16 @@ namespace KOMTSU.MyForm
 
         private void Load_Truong06_08()
         {
-            Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
-            Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
+            Global.Truong06_A = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
+            Global.Truong08_A = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
+            Global.Truong06_B = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo06).FirstOrDefault();
+            Global.Truong08_B = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch && w.idimage == lb_IdImage.Text select w.TruongSo08).FirstOrDefault();
             if (Global.LoaiPhieu == "Loai2")
             {
-                txt_Truong06.Text = Global.Truong06;
-                txt_Truong08.Text = Global.Truong08;
+                txt_Truong06_A.Text = Global.Truong06_A;
+                txt_Truong08_A.Text = Global.Truong08_A;
+                txt_Truong06_B.Text = Global.Truong06_B;
+                txt_Truong08_B.Text = Global.Truong08_B;
             }
         }
 
@@ -337,7 +341,7 @@ namespace KOMTSU.MyForm
                                 if (MessageBox.Show("You are empty one or more fields.Do you want to submit ? \r\nYes = Submit and next Image < Press Enter >\r\nNo = Enter the blank field for this image. < Press N > ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                                 {
                                     Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                    "", "", txt_Truong06.Text, txt_Truong08.Text,"","", "",Global.LoaiPhieu, "1");
+                                    "", "", "", "","","", "",Global.LoaiPhieu, "1");
                                 }
                                 else
                                 {
@@ -346,7 +350,7 @@ namespace KOMTSU.MyForm
                             }
                             else
                             {
-                                uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text,txt_Truong06.Text,txt_Truong08.Text);
+                                uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text, txt_Truong06_A.Text, txt_Truong08_A.Text, txt_Truong06_B.Text, txt_Truong08_B.Text);
                             }
                             //Xứ lý 2 user nhập số lượng dòng khác nhau
                             Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -399,7 +403,7 @@ namespace KOMTSU.MyForm
                                 if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                                 {
                                     Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                        "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                                        "", "", "","", "", "", "", Global.LoaiPhieu, "1");
                                 }
                                 else
                                 {
@@ -408,7 +412,7 @@ namespace KOMTSU.MyForm
                             }
                             else
                             {
-                                uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text, txt_Truong06.Text, txt_Truong08.Text);
+                                uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text, txt_Truong06_A.Text, txt_Truong08_A.Text, txt_Truong06_B.Text, txt_Truong08_B.Text);
                             }
                             //Xứ lý 2 user nhập số lượng dòng khác nhau
                             Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -498,7 +502,7 @@ namespace KOMTSU.MyForm
                             if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                             {
                                 Global.db.Insert_Loai2(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                    "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                                    "", "", "", "", "", "", "", Global.LoaiPhieu, "1");
                             }
                             else
                             {
@@ -507,7 +511,7 @@ namespace KOMTSU.MyForm
                         }
                         else
                         {
-                            uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text, txt_Truong06.Text, txt_Truong08.Text);
+                            uc_DeJP_Loai21.SaveData_Loai2_DeJP(lb_IdImage.Text, txt_Truong06_A.Text, txt_Truong08_A.Text, txt_Truong06_B.Text, txt_Truong08_B.Text);
                         }
                         //Xứ lý 2 user nhập số lượng dòng khác nhau
                         Global.db.CheckRowNumber(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -559,7 +563,7 @@ namespace KOMTSU.MyForm
                             if (MessageBox.Show("You are empty one or more fields. Do you want to submit? \r\nYes = Submit and next Image <Press Enter>\r\nNo = Enter the blank field for this image. <Press N>", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                             {
                                 Global.db.Insert_Loai2_DeS0(lb_IdImage.Text, Global.StrBatch, Global.StrUsername, "",
-                                    "", "", txt_Truong06.Text, txt_Truong08.Text, "", "", "", Global.LoaiPhieu, "1");
+                                    "", "", "", "", "", "", "", Global.LoaiPhieu, "1");
                             }
                             else
                             {return;
@@ -567,7 +571,7 @@ namespace KOMTSU.MyForm
                         }
                         else
                         {
-                            uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text, txt_Truong06.Text, txt_Truong08.Text);
+                            uc_DeJP_Loai21.SaveData_Loai2_DeSo(lb_IdImage.Text, txt_Truong06_A.Text, txt_Truong08_A.Text, txt_Truong06_B.Text, txt_Truong08_B.Text);
                         }
                         //Xứ lý 2 user nhập số lượng dòng khác nhau
                         Global.db.CheckRowNumber_DeSo(lb_IdImage.Text, Global.StrBatch, Global.StrUsername);
@@ -729,8 +733,8 @@ namespace KOMTSU.MyForm
             uc.CheckBatch_CoDeSo();
             tp_Loai1_JP_Main.Controls.Add(uc);
             
-            uc.txt_Truong06.Text = Global.Truong06;
-            uc.txt_Truong08.Text = Global.Truong08;
+            uc.txt_Truong06.Text = Global.Truong06_A;
+            uc.txt_Truong08.Text = Global.Truong08_A;
 
             ScrollToBottom(tp_Loai1_JP_Main);
         }
@@ -764,6 +768,7 @@ namespace KOMTSU.MyForm
 
         private void hideToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();}
+            this.Hide();
+        }
     }
 }
