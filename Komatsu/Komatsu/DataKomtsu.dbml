@@ -136,25 +136,6 @@
       <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_Image" Member="tbl_Images">
-    <Type Name="tbl_Image">
-      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="fbatchname" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UserNameDESo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="ReadImageDESo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserNameDEJP" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="ReadImageDEJP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CheckedDESo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CheckedDEJP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TienDoDESO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TienDoDEJP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NienHieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TruongSo06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TruongSo08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbl_LogFile" Member="tbl_LogFiles">
     <Type Name="tbl_LogFile">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -190,6 +171,27 @@
       <Column Name="UserName" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Submit" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DateInput" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Image" Member="tbl_Images">
+    <Type Name="tbl_Image">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fbatchname" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserNameDESo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ReadImageDESo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameDEJP" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ReadImageDEJP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CheckedDESo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckedDEJP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienDoDESO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TienDoDEJP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NienHieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TruongSo06_A" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TruongSo08_A" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TruongSo06_B" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TruongSo08_B" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CheckerFinish" Method="CheckerFinish">

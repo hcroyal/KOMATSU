@@ -24,8 +24,10 @@ namespace KOMTSU.MyForm
         private bool flag_load = false;
         private void frm_CreateBatch_Load(object sender, EventArgs e)
         {
-            txt_TruongSo06.Enabled = false;
-            txt_TruongSo08.Enabled = false;
+            txt_TruongSo06_A.Enabled = false;
+            txt_TruongSo08_A.Enabled = false;
+            txt_TruongSo06_B.Enabled = false;
+            txt_TruongSo08_B.Enabled = false;
             dataGridView1.Enabled = false;
             btn_BrowserPDF.Enabled = false;
             btn_BrowserFolder.Enabled = false;
@@ -275,9 +277,9 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                if (string.IsNullOrEmpty(txt_TruongSo06.Text)||string.IsNullOrEmpty(txt_TruongSo08.Text))
+                if (string.IsNullOrEmpty(txt_TruongSo06_A.Text)||string.IsNullOrEmpty(txt_TruongSo08_A.Text))
                 {
-                    MessageBox.Show(@"You haven't filled in the Field 06 or Field 08!");
+                    MessageBox.Show(@"You haven't filled in the Field 06_A or Field 08_A!");
                     return;
                 }
             }
@@ -345,8 +347,8 @@ namespace KOMTSU.MyForm
                             TienDoDESO = "Image remaining",
                             TienDoDEJP = "Image remaining",
                             Page = i,
-                            TruongSo06 = truongso6,
-                            TruongSo08 = truongso8
+                            TruongSo06_A = truongso6,
+                            TruongSo08_A = truongso8
                         };
                         Global.db.tbl_Images.InsertOnSubmit(tempImage);
                         Global.db.SubmitChanges();
@@ -364,8 +366,8 @@ namespace KOMTSU.MyForm
                             TienDoDESO = "Image remaining",
                             TienDoDEJP = "Image remaining",
                             Page = i,
-                            TruongSo06 = _truongSo06[i],
-                            TruongSo08 = _truongSo08[i]
+                            TruongSo06_A = _truongSo06[i],
+                            TruongSo08_A = _truongSo08[i]
                         };
                         Global.db.tbl_Images.InsertOnSubmit(tempImage);
                         Global.db.SubmitChanges();
@@ -397,8 +399,10 @@ namespace KOMTSU.MyForm
                         TienDoDESO = "Image remaining",
                         TienDoDEJP = "Image remaining",
                         Page = i,
-                        TruongSo06 = txt_TruongSo06.Text,
-                        TruongSo08 = txt_TruongSo08.Text
+                        TruongSo06_A = txt_TruongSo06_A.Text,
+                        TruongSo08_A = txt_TruongSo08_A.Text,
+                        TruongSo06_B = txt_TruongSo06_B.Text,
+                        TruongSo08_B = txt_TruongSo08_B.Text
                     };
                     Global.db.tbl_Images.InsertOnSubmit(tempImage);
                     Global.db.SubmitChanges();
@@ -416,8 +420,8 @@ namespace KOMTSU.MyForm
             txt_BatchName.Text = "";
             txt_ImagePath.Text = "";
             txt_FolderSaveImage.Text = "";
-            txt_TruongSo06.Text = "";
-            txt_TruongSo08.Text = "";
+            txt_TruongSo06_A.Text = "";
+            txt_TruongSo08_A.Text = "";
 ;           lbl_Page.Text = "";
             dataGridView1.Rows.Clear();
         }
@@ -610,6 +614,11 @@ namespace KOMTSU.MyForm
             _flag = false;
         }
 
+        private void panelControl3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void timeEdit_ngayketthuc_Click(object sender, EventArgs e)
         {
             _flag = false;
@@ -619,10 +628,15 @@ namespace KOMTSU.MyForm
         {
             if (rb_LoaiBatch.Properties.Items[rb_LoaiBatch.SelectedIndex].Value.ToString() == "Loai1")
             {
-                txt_TruongSo06.Text = "";
-                txt_TruongSo08.Text = "";
-                txt_TruongSo06.Enabled = false;
-                txt_TruongSo08.Enabled = false;
+                txt_TruongSo06_A.Text = "";
+                txt_TruongSo08_A.Text = "";
+                txt_TruongSo06_A.Enabled = false;
+                txt_TruongSo08_A.Enabled = false;
+
+                txt_TruongSo06_B.Text = "";
+                txt_TruongSo08_B.Text = "";
+                txt_TruongSo06_B.Enabled = false;
+                txt_TruongSo08_B.Enabled = false;
 
                 dataGridView1.Enabled = true;
 
@@ -635,8 +649,11 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                txt_TruongSo06.Enabled = true;
-                txt_TruongSo08.Enabled = true;
+                txt_TruongSo06_A.Enabled = true;
+                txt_TruongSo08_A.Enabled = true;
+
+                txt_TruongSo06_B.Enabled = true;
+                txt_TruongSo08_B.Enabled = true;
 
                 //labelControl3.Visible = true;
                 //labelControl4.Visible = true;

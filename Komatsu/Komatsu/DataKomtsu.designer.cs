@@ -48,9 +48,6 @@ namespace Komatsu
     partial void Inserttbl_DESO_Backup(tbl_DESO_Backup instance);
     partial void Updatetbl_DESO_Backup(tbl_DESO_Backup instance);
     partial void Deletetbl_DESO_Backup(tbl_DESO_Backup instance);
-    partial void Inserttbl_Image(tbl_Image instance);
-    partial void Updatetbl_Image(tbl_Image instance);
-    partial void Deletetbl_Image(tbl_Image instance);
     partial void Inserttbl_LogFile(tbl_LogFile instance);
     partial void Updatetbl_LogFile(tbl_LogFile instance);
     partial void Deletetbl_LogFile(tbl_LogFile instance);
@@ -63,6 +60,9 @@ namespace Komatsu
     partial void Inserttbl_MissImage_DEJP(tbl_MissImage_DEJP instance);
     partial void Updatetbl_MissImage_DEJP(tbl_MissImage_DEJP instance);
     partial void Deletetbl_MissImage_DEJP(tbl_MissImage_DEJP instance);
+    partial void Inserttbl_Image(tbl_Image instance);
+    partial void Updatetbl_Image(tbl_Image instance);
+    partial void Deletetbl_Image(tbl_Image instance);
     #endregion
 		
 		public DataKomtsuDataContext() : 
@@ -151,14 +151,6 @@ namespace Komatsu
 			}
 		}
 		
-		public System.Data.Linq.Table<tbl_Image> tbl_Images
-		{
-			get
-			{
-				return this.GetTable<tbl_Image>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tbl_LogFile> tbl_LogFiles
 		{
 			get
@@ -188,6 +180,14 @@ namespace Komatsu
 			get
 			{
 				return this.GetTable<tbl_MissImage_DEJP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_Image> tbl_Images
+		{
+			get
+			{
+				return this.GetTable<tbl_Image>();
 			}
 		}
 		
@@ -3416,404 +3416,6 @@ namespace Komatsu
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Image")]
-	public partial class tbl_Image : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _id;
-		
-		private string _idimage;
-		
-		private string _fbatchname;
-		
-		private string _UserNameDESo;
-		
-		private int _ReadImageDESo;
-		
-		private string _UserNameDEJP;
-		
-		private int _ReadImageDEJP;
-		
-		private System.Nullable<int> _CheckedDESo;
-		
-		private System.Nullable<int> _CheckedDEJP;
-		
-		private string _TienDoDESO;
-		
-		private string _TienDoDEJP;
-		
-		private string _NienHieu;
-		
-		private System.Nullable<int> _Page;
-		
-		private string _TruongSo06;
-		
-		private string _TruongSo08;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(long value);
-    partial void OnidChanged();
-    partial void OnidimageChanging(string value);
-    partial void OnidimageChanged();
-    partial void OnfbatchnameChanging(string value);
-    partial void OnfbatchnameChanged();
-    partial void OnUserNameDESoChanging(string value);
-    partial void OnUserNameDESoChanged();
-    partial void OnReadImageDESoChanging(int value);
-    partial void OnReadImageDESoChanged();
-    partial void OnUserNameDEJPChanging(string value);
-    partial void OnUserNameDEJPChanged();
-    partial void OnReadImageDEJPChanging(int value);
-    partial void OnReadImageDEJPChanged();
-    partial void OnCheckedDESoChanging(System.Nullable<int> value);
-    partial void OnCheckedDESoChanged();
-    partial void OnCheckedDEJPChanging(System.Nullable<int> value);
-    partial void OnCheckedDEJPChanged();
-    partial void OnTienDoDESOChanging(string value);
-    partial void OnTienDoDESOChanged();
-    partial void OnTienDoDEJPChanging(string value);
-    partial void OnTienDoDEJPChanged();
-    partial void OnNienHieuChanging(string value);
-    partial void OnNienHieuChanged();
-    partial void OnPageChanging(System.Nullable<int> value);
-    partial void OnPageChanged();
-    partial void OnTruongSo06Changing(string value);
-    partial void OnTruongSo06Changed();
-    partial void OnTruongSo08Changing(string value);
-    partial void OnTruongSo08Changed();
-    #endregion
-		
-		public tbl_Image()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public long id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idimage", DbType="NVarChar(200) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string idimage
-		{
-			get
-			{
-				return this._idimage;
-			}
-			set
-			{
-				if ((this._idimage != value))
-				{
-					this.OnidimageChanging(value);
-					this.SendPropertyChanging();
-					this._idimage = value;
-					this.SendPropertyChanged("idimage");
-					this.OnidimageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string fbatchname
-		{
-			get
-			{
-				return this._fbatchname;
-			}
-			set
-			{
-				if ((this._fbatchname != value))
-				{
-					this.OnfbatchnameChanging(value);
-					this.SendPropertyChanging();
-					this._fbatchname = value;
-					this.SendPropertyChanged("fbatchname");
-					this.OnfbatchnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserNameDESo", DbType="NVarChar(200)")]
-		public string UserNameDESo
-		{
-			get
-			{
-				return this._UserNameDESo;
-			}
-			set
-			{
-				if ((this._UserNameDESo != value))
-				{
-					this.OnUserNameDESoChanging(value);
-					this.SendPropertyChanging();
-					this._UserNameDESo = value;
-					this.SendPropertyChanged("UserNameDESo");
-					this.OnUserNameDESoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReadImageDESo", DbType="Int NOT NULL")]
-		public int ReadImageDESo
-		{
-			get
-			{
-				return this._ReadImageDESo;
-			}
-			set
-			{
-				if ((this._ReadImageDESo != value))
-				{
-					this.OnReadImageDESoChanging(value);
-					this.SendPropertyChanging();
-					this._ReadImageDESo = value;
-					this.SendPropertyChanged("ReadImageDESo");
-					this.OnReadImageDESoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserNameDEJP", DbType="NVarChar(200)")]
-		public string UserNameDEJP
-		{
-			get
-			{
-				return this._UserNameDEJP;
-			}
-			set
-			{
-				if ((this._UserNameDEJP != value))
-				{
-					this.OnUserNameDEJPChanging(value);
-					this.SendPropertyChanging();
-					this._UserNameDEJP = value;
-					this.SendPropertyChanged("UserNameDEJP");
-					this.OnUserNameDEJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReadImageDEJP", DbType="Int NOT NULL")]
-		public int ReadImageDEJP
-		{
-			get
-			{
-				return this._ReadImageDEJP;
-			}
-			set
-			{
-				if ((this._ReadImageDEJP != value))
-				{
-					this.OnReadImageDEJPChanging(value);
-					this.SendPropertyChanging();
-					this._ReadImageDEJP = value;
-					this.SendPropertyChanged("ReadImageDEJP");
-					this.OnReadImageDEJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedDESo", DbType="Int")]
-		public System.Nullable<int> CheckedDESo
-		{
-			get
-			{
-				return this._CheckedDESo;
-			}
-			set
-			{
-				if ((this._CheckedDESo != value))
-				{
-					this.OnCheckedDESoChanging(value);
-					this.SendPropertyChanging();
-					this._CheckedDESo = value;
-					this.SendPropertyChanged("CheckedDESo");
-					this.OnCheckedDESoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedDEJP", DbType="Int")]
-		public System.Nullable<int> CheckedDEJP
-		{
-			get
-			{
-				return this._CheckedDEJP;
-			}
-			set
-			{
-				if ((this._CheckedDEJP != value))
-				{
-					this.OnCheckedDEJPChanging(value);
-					this.SendPropertyChanging();
-					this._CheckedDEJP = value;
-					this.SendPropertyChanged("CheckedDEJP");
-					this.OnCheckedDEJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDESO", DbType="NVarChar(100)")]
-		public string TienDoDESO
-		{
-			get
-			{
-				return this._TienDoDESO;
-			}
-			set
-			{
-				if ((this._TienDoDESO != value))
-				{
-					this.OnTienDoDESOChanging(value);
-					this.SendPropertyChanging();
-					this._TienDoDESO = value;
-					this.SendPropertyChanged("TienDoDESO");
-					this.OnTienDoDESOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDEJP", DbType="NVarChar(100)")]
-		public string TienDoDEJP
-		{
-			get
-			{
-				return this._TienDoDEJP;
-			}
-			set
-			{
-				if ((this._TienDoDEJP != value))
-				{
-					this.OnTienDoDEJPChanging(value);
-					this.SendPropertyChanging();
-					this._TienDoDEJP = value;
-					this.SendPropertyChanged("TienDoDEJP");
-					this.OnTienDoDEJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NienHieu", DbType="NVarChar(255)")]
-		public string NienHieu
-		{
-			get
-			{
-				return this._NienHieu;
-			}
-			set
-			{
-				if ((this._NienHieu != value))
-				{
-					this.OnNienHieuChanging(value);
-					this.SendPropertyChanging();
-					this._NienHieu = value;
-					this.SendPropertyChanged("NienHieu");
-					this.OnNienHieuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Page", DbType="Int")]
-		public System.Nullable<int> Page
-		{
-			get
-			{
-				return this._Page;
-			}
-			set
-			{
-				if ((this._Page != value))
-				{
-					this.OnPageChanging(value);
-					this.SendPropertyChanging();
-					this._Page = value;
-					this.SendPropertyChanged("Page");
-					this.OnPageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo06", DbType="NVarChar(255)")]
-		public string TruongSo06
-		{
-			get
-			{
-				return this._TruongSo06;
-			}
-			set
-			{
-				if ((this._TruongSo06 != value))
-				{
-					this.OnTruongSo06Changing(value);
-					this.SendPropertyChanging();
-					this._TruongSo06 = value;
-					this.SendPropertyChanged("TruongSo06");
-					this.OnTruongSo06Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo08", DbType="NVarChar(255)")]
-		public string TruongSo08
-		{
-			get
-			{
-				return this._TruongSo08;
-			}
-			set
-			{
-				if ((this._TruongSo08 != value))
-				{
-					this.OnTruongSo08Changing(value);
-					this.SendPropertyChanging();
-					this._TruongSo08 = value;
-					this.SendPropertyChanged("TruongSo08");
-					this.OnTruongSo08Changed();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_LogFile")]
 	public partial class tbl_LogFile : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4445,6 +4047,452 @@ namespace Komatsu
 					this._DateInput = value;
 					this.SendPropertyChanged("DateInput");
 					this.OnDateInputChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Image")]
+	public partial class tbl_Image : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private string _idimage;
+		
+		private string _fbatchname;
+		
+		private string _UserNameDESo;
+		
+		private int _ReadImageDESo;
+		
+		private string _UserNameDEJP;
+		
+		private int _ReadImageDEJP;
+		
+		private System.Nullable<int> _CheckedDESo;
+		
+		private System.Nullable<int> _CheckedDEJP;
+		
+		private string _TienDoDESO;
+		
+		private string _TienDoDEJP;
+		
+		private string _NienHieu;
+		
+		private System.Nullable<int> _Page;
+		
+		private string _TruongSo06_A;
+		
+		private string _TruongSo08_A;
+		
+		private string _TruongSo06_B;
+		
+		private string _TruongSo08_B;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void OnidimageChanging(string value);
+    partial void OnidimageChanged();
+    partial void OnfbatchnameChanging(string value);
+    partial void OnfbatchnameChanged();
+    partial void OnUserNameDESoChanging(string value);
+    partial void OnUserNameDESoChanged();
+    partial void OnReadImageDESoChanging(int value);
+    partial void OnReadImageDESoChanged();
+    partial void OnUserNameDEJPChanging(string value);
+    partial void OnUserNameDEJPChanged();
+    partial void OnReadImageDEJPChanging(int value);
+    partial void OnReadImageDEJPChanged();
+    partial void OnCheckedDESoChanging(System.Nullable<int> value);
+    partial void OnCheckedDESoChanged();
+    partial void OnCheckedDEJPChanging(System.Nullable<int> value);
+    partial void OnCheckedDEJPChanged();
+    partial void OnTienDoDESOChanging(string value);
+    partial void OnTienDoDESOChanged();
+    partial void OnTienDoDEJPChanging(string value);
+    partial void OnTienDoDEJPChanged();
+    partial void OnNienHieuChanging(string value);
+    partial void OnNienHieuChanged();
+    partial void OnPageChanging(System.Nullable<int> value);
+    partial void OnPageChanged();
+    partial void OnTruongSo06_AChanging(string value);
+    partial void OnTruongSo06_AChanged();
+    partial void OnTruongSo08_AChanging(string value);
+    partial void OnTruongSo08_AChanged();
+    partial void OnTruongSo06_BChanging(string value);
+    partial void OnTruongSo06_BChanged();
+    partial void OnTruongSo08_BChanging(string value);
+    partial void OnTruongSo08_BChanged();
+    #endregion
+		
+		public tbl_Image()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idimage", DbType="NVarChar(200) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string idimage
+		{
+			get
+			{
+				return this._idimage;
+			}
+			set
+			{
+				if ((this._idimage != value))
+				{
+					this.OnidimageChanging(value);
+					this.SendPropertyChanging();
+					this._idimage = value;
+					this.SendPropertyChanged("idimage");
+					this.OnidimageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string fbatchname
+		{
+			get
+			{
+				return this._fbatchname;
+			}
+			set
+			{
+				if ((this._fbatchname != value))
+				{
+					this.OnfbatchnameChanging(value);
+					this.SendPropertyChanging();
+					this._fbatchname = value;
+					this.SendPropertyChanged("fbatchname");
+					this.OnfbatchnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserNameDESo", DbType="NVarChar(200)")]
+		public string UserNameDESo
+		{
+			get
+			{
+				return this._UserNameDESo;
+			}
+			set
+			{
+				if ((this._UserNameDESo != value))
+				{
+					this.OnUserNameDESoChanging(value);
+					this.SendPropertyChanging();
+					this._UserNameDESo = value;
+					this.SendPropertyChanged("UserNameDESo");
+					this.OnUserNameDESoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReadImageDESo", DbType="Int NOT NULL")]
+		public int ReadImageDESo
+		{
+			get
+			{
+				return this._ReadImageDESo;
+			}
+			set
+			{
+				if ((this._ReadImageDESo != value))
+				{
+					this.OnReadImageDESoChanging(value);
+					this.SendPropertyChanging();
+					this._ReadImageDESo = value;
+					this.SendPropertyChanged("ReadImageDESo");
+					this.OnReadImageDESoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserNameDEJP", DbType="NVarChar(200)")]
+		public string UserNameDEJP
+		{
+			get
+			{
+				return this._UserNameDEJP;
+			}
+			set
+			{
+				if ((this._UserNameDEJP != value))
+				{
+					this.OnUserNameDEJPChanging(value);
+					this.SendPropertyChanging();
+					this._UserNameDEJP = value;
+					this.SendPropertyChanged("UserNameDEJP");
+					this.OnUserNameDEJPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReadImageDEJP", DbType="Int NOT NULL")]
+		public int ReadImageDEJP
+		{
+			get
+			{
+				return this._ReadImageDEJP;
+			}
+			set
+			{
+				if ((this._ReadImageDEJP != value))
+				{
+					this.OnReadImageDEJPChanging(value);
+					this.SendPropertyChanging();
+					this._ReadImageDEJP = value;
+					this.SendPropertyChanged("ReadImageDEJP");
+					this.OnReadImageDEJPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedDESo", DbType="Int")]
+		public System.Nullable<int> CheckedDESo
+		{
+			get
+			{
+				return this._CheckedDESo;
+			}
+			set
+			{
+				if ((this._CheckedDESo != value))
+				{
+					this.OnCheckedDESoChanging(value);
+					this.SendPropertyChanging();
+					this._CheckedDESo = value;
+					this.SendPropertyChanged("CheckedDESo");
+					this.OnCheckedDESoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckedDEJP", DbType="Int")]
+		public System.Nullable<int> CheckedDEJP
+		{
+			get
+			{
+				return this._CheckedDEJP;
+			}
+			set
+			{
+				if ((this._CheckedDEJP != value))
+				{
+					this.OnCheckedDEJPChanging(value);
+					this.SendPropertyChanging();
+					this._CheckedDEJP = value;
+					this.SendPropertyChanged("CheckedDEJP");
+					this.OnCheckedDEJPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDESO", DbType="NVarChar(100)")]
+		public string TienDoDESO
+		{
+			get
+			{
+				return this._TienDoDESO;
+			}
+			set
+			{
+				if ((this._TienDoDESO != value))
+				{
+					this.OnTienDoDESOChanging(value);
+					this.SendPropertyChanging();
+					this._TienDoDESO = value;
+					this.SendPropertyChanged("TienDoDESO");
+					this.OnTienDoDESOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDEJP", DbType="NVarChar(100)")]
+		public string TienDoDEJP
+		{
+			get
+			{
+				return this._TienDoDEJP;
+			}
+			set
+			{
+				if ((this._TienDoDEJP != value))
+				{
+					this.OnTienDoDEJPChanging(value);
+					this.SendPropertyChanging();
+					this._TienDoDEJP = value;
+					this.SendPropertyChanged("TienDoDEJP");
+					this.OnTienDoDEJPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NienHieu", DbType="NVarChar(255)")]
+		public string NienHieu
+		{
+			get
+			{
+				return this._NienHieu;
+			}
+			set
+			{
+				if ((this._NienHieu != value))
+				{
+					this.OnNienHieuChanging(value);
+					this.SendPropertyChanging();
+					this._NienHieu = value;
+					this.SendPropertyChanged("NienHieu");
+					this.OnNienHieuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Page", DbType="Int")]
+		public System.Nullable<int> Page
+		{
+			get
+			{
+				return this._Page;
+			}
+			set
+			{
+				if ((this._Page != value))
+				{
+					this.OnPageChanging(value);
+					this.SendPropertyChanging();
+					this._Page = value;
+					this.SendPropertyChanged("Page");
+					this.OnPageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo06_A", DbType="NVarChar(255)")]
+		public string TruongSo06_A
+		{
+			get
+			{
+				return this._TruongSo06_A;
+			}
+			set
+			{
+				if ((this._TruongSo06_A != value))
+				{
+					this.OnTruongSo06_AChanging(value);
+					this.SendPropertyChanging();
+					this._TruongSo06_A = value;
+					this.SendPropertyChanged("TruongSo06_A");
+					this.OnTruongSo06_AChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo08_A", DbType="NVarChar(255)")]
+		public string TruongSo08_A
+		{
+			get
+			{
+				return this._TruongSo08_A;
+			}
+			set
+			{
+				if ((this._TruongSo08_A != value))
+				{
+					this.OnTruongSo08_AChanging(value);
+					this.SendPropertyChanging();
+					this._TruongSo08_A = value;
+					this.SendPropertyChanged("TruongSo08_A");
+					this.OnTruongSo08_AChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo06_B", DbType="NVarChar(255)")]
+		public string TruongSo06_B
+		{
+			get
+			{
+				return this._TruongSo06_B;
+			}
+			set
+			{
+				if ((this._TruongSo06_B != value))
+				{
+					this.OnTruongSo06_BChanging(value);
+					this.SendPropertyChanging();
+					this._TruongSo06_B = value;
+					this.SendPropertyChanged("TruongSo06_B");
+					this.OnTruongSo06_BChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TruongSo08_B", DbType="NVarChar(255)")]
+		public string TruongSo08_B
+		{
+			get
+			{
+				return this._TruongSo08_B;
+			}
+			set
+			{
+				if ((this._TruongSo08_B != value))
+				{
+					this.OnTruongSo08_BChanging(value);
+					this.SendPropertyChanging();
+					this._TruongSo08_B = value;
+					this.SendPropertyChanged("TruongSo08_B");
+					this.OnTruongSo08_BChanged();
 				}
 			}
 		}
