@@ -31,6 +31,14 @@ namespace KOMTSU.MyForm
         private void InitializeComponent()
         {
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_Truong08_B = new DevExpress.XtraEditors.TextEdit();
+            this.txt_Truong06_B = new DevExpress.XtraEditors.TextEdit();
+            this.txt_Truong08_A = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Truong06_A = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.cbb_Batch_Check = new System.Windows.Forms.ComboBox();
             this.lb_Loi = new DevExpress.XtraEditors.LabelControl();
             this.lb_Image = new DevExpress.XtraEditors.LabelControl();
@@ -88,16 +96,12 @@ namespace KOMTSU.MyForm
             this.btn_SuaVaLuu_User1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Luu_DeSo1 = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new KOMTSU.MyUserControl.uc_PictureBox();
-            this.txt_Truong08_B = new DevExpress.XtraEditors.TextEdit();
-            this.txt_Truong06_B = new DevExpress.XtraEditors.TextEdit();
-            this.txt_Truong08_A = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Truong06_A = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_B.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_B.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_A.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_A.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -122,10 +126,6 @@ namespace KOMTSU.MyForm
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_B.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_B.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_A.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_A.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -148,6 +148,102 @@ namespace KOMTSU.MyForm
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(823, 49);
             this.panelControl2.TabIndex = 29;
+            // 
+            // txt_Truong08_B
+            // 
+            this.txt_Truong08_B.Location = new System.Drawing.Point(649, 25);
+            this.txt_Truong08_B.Name = "txt_Truong08_B";
+            this.txt_Truong08_B.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong08_B.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong08_B.Properties.ReadOnly = true;
+            this.txt_Truong08_B.Size = new System.Drawing.Size(100, 20);
+            this.txt_Truong08_B.TabIndex = 26;
+            this.txt_Truong08_B.Visible = false;
+            // 
+            // txt_Truong06_B
+            // 
+            this.txt_Truong06_B.Location = new System.Drawing.Point(524, 25);
+            this.txt_Truong06_B.Name = "txt_Truong06_B";
+            this.txt_Truong06_B.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong06_B.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong06_B.Properties.ReadOnly = true;
+            this.txt_Truong06_B.Size = new System.Drawing.Size(100, 20);
+            this.txt_Truong06_B.TabIndex = 24;
+            this.txt_Truong06_B.Visible = false;
+            // 
+            // txt_Truong08_A
+            // 
+            this.txt_Truong08_A.Location = new System.Drawing.Point(649, 4);
+            this.txt_Truong08_A.Name = "txt_Truong08_A";
+            this.txt_Truong08_A.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong08_A.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong08_A.Properties.ReadOnly = true;
+            this.txt_Truong08_A.Size = new System.Drawing.Size(100, 20);
+            this.txt_Truong08_A.TabIndex = 27;
+            this.txt_Truong08_A.Visible = false;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl20.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Appearance.Options.UseForeColor = true;
+            this.labelControl20.Location = new System.Drawing.Point(628, 28);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(17, 13);
+            this.labelControl20.TabIndex = 20;
+            this.labelControl20.Text = "8B.";
+            this.labelControl20.Visible = false;
+            // 
+            // txt_Truong06_A
+            // 
+            this.txt_Truong06_A.Location = new System.Drawing.Point(524, 4);
+            this.txt_Truong06_A.Name = "txt_Truong06_A";
+            this.txt_Truong06_A.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Truong06_A.Properties.Appearance.Options.UseFont = true;
+            this.txt_Truong06_A.Properties.ReadOnly = true;
+            this.txt_Truong06_A.Size = new System.Drawing.Size(100, 20);
+            this.txt_Truong06_A.TabIndex = 25;
+            this.txt_Truong06_A.Visible = false;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl19.Appearance.Options.UseFont = true;
+            this.labelControl19.Appearance.Options.UseForeColor = true;
+            this.labelControl19.Location = new System.Drawing.Point(499, 28);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(17, 13);
+            this.labelControl19.TabIndex = 22;
+            this.labelControl19.Text = "6B.";
+            this.labelControl19.Visible = false;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseForeColor = true;
+            this.labelControl17.Location = new System.Drawing.Point(628, 7);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(18, 13);
+            this.labelControl17.TabIndex = 21;
+            this.labelControl17.Text = "8A.";
+            this.labelControl17.Visible = false;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseForeColor = true;
+            this.labelControl18.Location = new System.Drawing.Point(499, 7);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(18, 13);
+            this.labelControl18.TabIndex = 23;
+            this.labelControl18.Text = "6A.";
+            this.labelControl18.Visible = false;
             // 
             // cbb_Batch_Check
             // 
@@ -772,98 +868,6 @@ namespace KOMTSU.MyForm
             this.uc_PictureBox1.Size = new System.Drawing.Size(823, 655);
             this.uc_PictureBox1.TabIndex = 35;
             // 
-            // txt_Truong08_B
-            // 
-            this.txt_Truong08_B.Location = new System.Drawing.Point(649, 25);
-            this.txt_Truong08_B.Name = "txt_Truong08_B";
-            this.txt_Truong08_B.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Truong08_B.Properties.Appearance.Options.UseFont = true;
-            this.txt_Truong08_B.Properties.ReadOnly = true;
-            this.txt_Truong08_B.Size = new System.Drawing.Size(100, 20);
-            this.txt_Truong08_B.TabIndex = 26;
-            // 
-            // txt_Truong06_B
-            // 
-            this.txt_Truong06_B.Location = new System.Drawing.Point(524, 25);
-            this.txt_Truong06_B.Name = "txt_Truong06_B";
-            this.txt_Truong06_B.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Truong06_B.Properties.Appearance.Options.UseFont = true;
-            this.txt_Truong06_B.Properties.ReadOnly = true;
-            this.txt_Truong06_B.Size = new System.Drawing.Size(100, 20);
-            this.txt_Truong06_B.TabIndex = 24;
-            // 
-            // txt_Truong08_A
-            // 
-            this.txt_Truong08_A.Location = new System.Drawing.Point(649, 4);
-            this.txt_Truong08_A.Name = "txt_Truong08_A";
-            this.txt_Truong08_A.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Truong08_A.Properties.Appearance.Options.UseFont = true;
-            this.txt_Truong08_A.Properties.ReadOnly = true;
-            this.txt_Truong08_A.Size = new System.Drawing.Size(100, 20);
-            this.txt_Truong08_A.TabIndex = 27;
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl20.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Appearance.Options.UseForeColor = true;
-            this.labelControl20.Location = new System.Drawing.Point(628, 28);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(17, 13);
-            this.labelControl20.TabIndex = 20;
-            this.labelControl20.Text = "8B.";
-            this.labelControl20.Visible = false;
-            // 
-            // txt_Truong06_A
-            // 
-            this.txt_Truong06_A.Location = new System.Drawing.Point(524, 4);
-            this.txt_Truong06_A.Name = "txt_Truong06_A";
-            this.txt_Truong06_A.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Truong06_A.Properties.Appearance.Options.UseFont = true;
-            this.txt_Truong06_A.Properties.ReadOnly = true;
-            this.txt_Truong06_A.Size = new System.Drawing.Size(100, 20);
-            this.txt_Truong06_A.TabIndex = 25;
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(499, 28);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(17, 13);
-            this.labelControl19.TabIndex = 22;
-            this.labelControl19.Text = "6B.";
-            this.labelControl19.Visible = false;
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Appearance.Options.UseForeColor = true;
-            this.labelControl17.Location = new System.Drawing.Point(628, 7);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(18, 13);
-            this.labelControl17.TabIndex = 21;
-            this.labelControl17.Text = "8A.";
-            this.labelControl17.Visible = false;
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Green;
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Appearance.Options.UseForeColor = true;
-            this.labelControl18.Location = new System.Drawing.Point(499, 7);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(18, 13);
-            this.labelControl18.TabIndex = 23;
-            this.labelControl18.Text = "6A.";
-            this.labelControl18.Visible = false;
-            // 
             // frm_Check_DeSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -885,6 +889,10 @@ namespace KOMTSU.MyForm
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_B.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_B.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_A.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_A.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -917,10 +925,6 @@ namespace KOMTSU.MyForm
             this.panelControl6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_B.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_B.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08_A.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong06_A.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
