@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using Komatsu.Properties;
@@ -83,8 +79,8 @@ namespace KOMTSU.MyForm
         }
         private void Load_Truong06_08(uc_DeJP_Loai1 uc)
         {
-            Global.Truong06_A = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo06).FirstOrDefault();
-            Global.Truong08_A = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo08).FirstOrDefault();
+            Global.Truong06_A = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo06_A).FirstOrDefault();
+            Global.Truong08_A = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo08_A).FirstOrDefault();
             if (Global.LoaiPhieu == "Loai1")
             {
                 uc.txt_Truong06.Text = Global.Truong06_A;
@@ -372,18 +368,30 @@ namespace KOMTSU.MyForm
                     r2++;
                 }
 
-                txt_Truong06.Visible = false;
-                txt_Truong08.Visible = false;
+                txt_Truong06_A.Visible = false;
+                txt_Truong08_A.Visible = false;
                 labelControl17.Visible = false;
                 labelControl18.Visible = false;
+                txt_Truong06_B.Visible = false;
+                txt_Truong08_B.Visible = false;
+                labelControl19.Visible = false;
+                labelControl20.Visible = false;
 
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
-                txt_Truong06.Visible = true;
-                txt_Truong08.Visible = true;
-                txt_Truong06.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo06).FirstOrDefault();
-                txt_Truong08.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo08).FirstOrDefault();
+                txt_Truong06_A.Visible = true;
+                txt_Truong08_A.Visible = true;
+                labelControl17.Visible = true;
+                labelControl18.Visible = true;
+                txt_Truong06_B.Visible = true;
+                txt_Truong08_B.Visible = true;
+                labelControl19.Visible = true;
+                labelControl20.Visible = true;
+                txt_Truong06_A.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo06_A).FirstOrDefault();
+                txt_Truong08_A.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo08_A).FirstOrDefault();
+                txt_Truong06_B.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo06_B).FirstOrDefault();
+                txt_Truong08_B.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo08_B).FirstOrDefault();
 
                 int countRowUser1 =0, countRowUser2=0,r1=0,r2=0;
                 TabControl_User1.TabPages.Add(tp_Loai2_User1);
@@ -629,7 +637,7 @@ namespace KOMTSU.MyForm
                     MessageBox.Show("You entered the wrong data. Please check again!");
                     return;
                 }
-                uc_DeJP_Loai21.SuaVaLuu_DESO(row_user1,lb_username1.Text, lb_username2.Text,cbb_Batch_Check.Text, lb_Image.Text, txt_Truong06.Text, txt_Truong08.Text);
+                uc_DeJP_Loai21.SuaVaLuu_DESO(row_user1,lb_username1.Text, lb_username2.Text,cbb_Batch_Check.Text, lb_Image.Text, txt_Truong06_A.Text, txt_Truong08_A.Text, txt_Truong06_B.Text, txt_Truong08_B.Text);
             }
             ResetData();
             string temp = GetImage_DeSo();
@@ -704,7 +712,7 @@ namespace KOMTSU.MyForm
                     MessageBox.Show("You entered the wrong data. Please check again!");
                     return;
                 }
-                uc_DeJP_Loai22.SuaVaLuu_DESO(row_user2,lb_username2.Text, lb_username1.Text, cbb_Batch_Check.Text,lb_Image.Text, txt_Truong06.Text, txt_Truong08.Text);
+                uc_DeJP_Loai22.SuaVaLuu_DESO(row_user2,lb_username2.Text, lb_username1.Text, cbb_Batch_Check.Text,lb_Image.Text, txt_Truong06_A.Text, txt_Truong08_A.Text, txt_Truong06_B.Text, txt_Truong08_B.Text);
             }
             ResetData();
             string temp = GetImage_DeSo();
