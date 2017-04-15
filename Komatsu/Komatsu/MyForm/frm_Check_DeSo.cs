@@ -83,12 +83,12 @@ namespace KOMTSU.MyForm
         }
         private void Load_Truong06_08(uc_DeJP_Loai1 uc)
         {
-            Global.Truong06 = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo06).FirstOrDefault();
-            Global.Truong08 = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo08).FirstOrDefault();
+            Global.Truong06_A = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo06).FirstOrDefault();
+            Global.Truong08_A = (from w in Global.db.tbl_Images where w.fbatchname == cbb_Batch_Check.Text && w.idimage == lb_Image.Text select w.TruongSo08).FirstOrDefault();
             if (Global.LoaiPhieu == "Loai1")
             {
-                uc.txt_Truong06.Text = Global.Truong06;
-                uc.txt_Truong08.Text = Global.Truong08;
+                uc.txt_Truong06.Text = Global.Truong06_A;
+                uc.txt_Truong08.Text = Global.Truong08_A;
             }
         }
         private void frm_Check_Load(object sender, EventArgs e)

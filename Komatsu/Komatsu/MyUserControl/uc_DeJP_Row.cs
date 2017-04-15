@@ -281,36 +281,50 @@ namespace KOMTSU.MyUserControl
 
         }
 
-        public void Save_Data(string idimage ,string truong06,string truong08)
+        public void Save_Data(string idimage, string truong06A, string truong08A, string truong06B, string truong08B)
         {
-            if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+            if (!string.IsNullOrEmpty(txt_Truong11_1.Text))
             {
                 Global.db.Insert_Loai2(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
-                    txt_Truong04.Text, txt_Truong05.Text, truong08, truong06, txt_Truong10.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, truong06A, truong08A, txt_Truong10.Text,
+                    txt_Truong11_1.Text, txt_Truong11_2.Text,
+                    Global.LoaiPhieu, lb_stt.Text);
+            }
+            else if(!string.IsNullOrEmpty(txt_Truong11_2.Text))
+            {
+                Global.db.Insert_Loai2(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, truong06B, truong08B, txt_Truong10.Text,
                     txt_Truong11_1.Text, txt_Truong11_2.Text,
                     Global.LoaiPhieu, lb_stt.Text);
             }
             else
             {
                 Global.db.Insert_Loai2(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
-                    txt_Truong04.Text, txt_Truong05.Text, truong06, truong08, txt_Truong10.Text,
-                    txt_Truong11_1.Text, txt_Truong11_2.Text,
-                    Global.LoaiPhieu, lb_stt.Text);
+                   txt_Truong04.Text, txt_Truong05.Text,"", "", txt_Truong10.Text,
+                   txt_Truong11_1.Text, txt_Truong11_2.Text,
+                   Global.LoaiPhieu, lb_stt.Text);
             }
         }
-        public void Save_Data_DeSo(string idimage, string truong06, string truong08)
+        public void Save_Data_DeSo(string idimage, string truong06A, string truong08A, string truong06B, string truong08B)
         {
-            if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+            if (!string.IsNullOrEmpty(txt_Truong11_1.Text))
             {
                 Global.db.Insert_Loai2_DeS0(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
-                    txt_Truong04.Text, txt_Truong05.Text, truong08, truong06, txt_Truong10.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, truong06A, truong08A, txt_Truong10.Text,
+                    txt_Truong11_1.Text, txt_Truong11_2.Text,
+                    Global.LoaiPhieu, lb_stt.Text);
+            }
+            else if (!string.IsNullOrEmpty(txt_Truong11_2.Text))
+            {
+                Global.db.Insert_Loai2_DeS0(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, truong06B, truong08B, txt_Truong10.Text,
                     txt_Truong11_1.Text, txt_Truong11_2.Text,
                     Global.LoaiPhieu, lb_stt.Text);
             }
             else
             {
                 Global.db.Insert_Loai2_DeS0(idimage, Global.StrBatch, Global.StrUsername, txt_Truong03.Text,
-                    txt_Truong04.Text, txt_Truong05.Text, truong06, truong08, txt_Truong10.Text,
+                    txt_Truong04.Text, txt_Truong05.Text, "", "", txt_Truong10.Text,
                     txt_Truong11_1.Text, txt_Truong11_2.Text,
                     Global.LoaiPhieu, lb_stt.Text);
             }
