@@ -47,11 +47,12 @@ namespace KOMTSU.MyForm
             }
             else
             {
-                TabControl_User1.TabPages.Remove(tp_Loai1_User1);
-                TabControl_User1.TabPages.Remove(tp_Loai2_User1);
-                TabControl_User2.TabPages.Remove(tp_Loai1_User2);
-                TabControl_User2.TabPages.Remove(tp_Loai2_User2);
-                
+                tp_Loai1_User1.PageVisible = false;
+                tp_Loai1_User2.PageVisible = false;
+                tp_Loai2_User1.PageVisible = false;
+                tp_Loai2_User2.PageVisible = false;
+
+
                 btn_Luu_DeSo1.Visible = false;
                 btn_Luu_DeSo2.Visible = false;
                 btn_SuaVaLuu_User1.Visible = false;
@@ -67,14 +68,14 @@ namespace KOMTSU.MyForm
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
                 if (Global.LoaiPhieu == "Loai1")
                 {
-                    TabControl_User1.TabPages.Add(tp_Loai1_User1);
-                    TabControl_User2.TabPages.Add(tp_Loai1_User2);
+                    tp_Loai1_User1.PageVisible = true;
+                    tp_Loai1_User2.PageVisible = true;
                 }
                 else if (Global.LoaiPhieu == "Loai2")
                 {
-                    TabControl_User1.TabPages.Add(tp_Loai2_User1);
-                    TabControl_User2.TabPages.Add(tp_Loai2_User2);
-                }
+                    tp_Loai2_User1.PageVisible = true;
+                    tp_Loai2_User2.PageVisible = true;
+                }_Visible();
                 btn_Start_Click(null, null);
             }
         }
@@ -88,14 +89,40 @@ namespace KOMTSU.MyForm
                 uc.txt_Truong08.Text = Global.Truong08_A;
             }
         }
+
+        public void _Visible()
+        {
+            if (Global.LoaiPhieu == "Loai1")
+            {
+                txt_Truong06_A.Visible = false;
+                txt_Truong08_A.Visible = false;
+                labelControl17.Visible = false;
+                labelControl18.Visible = false;
+                txt_Truong06_B.Visible = false;
+                txt_Truong08_B.Visible = false;
+                labelControl19.Visible = false;
+                labelControl20.Visible = false;
+            }
+            else if (Global.LoaiPhieu == "Loai2")
+            {
+                txt_Truong06_A.Visible = true;
+                txt_Truong08_A.Visible = true;
+                labelControl17.Visible = true;
+                labelControl18.Visible = true;
+                txt_Truong06_B.Visible = true;
+                txt_Truong08_B.Visible = true;
+                labelControl19.Visible = true;
+                labelControl20.Visible = true;
+            }
+        }
         private void frm_Check_Load(object sender, EventArgs e)
         {
             try
             {
-                TabControl_User1.TabPages.Remove(tp_Loai1_User1);
-                TabControl_User1.TabPages.Remove(tp_Loai2_User1);
-                TabControl_User2.TabPages.Remove(tp_Loai1_User2);
-                TabControl_User2.TabPages.Remove(tp_Loai2_User2);
+                tp_Loai1_User1.PageVisible = false;
+                tp_Loai2_User1.PageVisible = false;
+                tp_Loai1_User2.PageVisible = false;
+                tp_Loai2_User2.PageVisible = false;
                 cbb_Batch_Check.DataSource = (from w in Global.db.GetBatNotFinishCheckerDeJP(Global.StrUsername) select w.fBatchName).ToList();
                 cbb_Batch_Check.DisplayMember = "fBatchName";
 
@@ -103,15 +130,16 @@ namespace KOMTSU.MyForm
                 lb_Loi.Text = soloi + " Error";
                 Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.CoDeSo).FirstOrDefault());
                 Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
+                _Visible();
                 if (Global.LoaiPhieu == "Loai1")
                 {
-                    TabControl_User1.TabPages.Add(tp_Loai1_User1);
-                    TabControl_User2.TabPages.Add(tp_Loai1_User2);
+                    tp_Loai1_User1.PageVisible = true;
+                    tp_Loai1_User2.PageVisible = true;
                 }
                 else if (Global.LoaiPhieu == "Loai2")
                 {
-                    TabControl_User1.TabPages.Add(tp_Loai2_User1);
-                    TabControl_User2.TabPages.Add(tp_Loai2_User2);
+                    tp_Loai2_User1.PageVisible = true;
+                    tp_Loai2_User2.PageVisible = true;
                 }
                 uc_DeJP_Loai21.CheckBatch_CoDeSo();
                 uc_DeJP_Loai22.CheckBatch_CoDeSo();
@@ -271,11 +299,15 @@ namespace KOMTSU.MyForm
                         }).ToList();
             lb_username1.Text = deso[0].UserName;
             lb_username2.Text = deso[deso.Count-1].UserName;
+            _Visible();
+            tp_Loai1_User1.Controls.Clear();
+            tp_Loai1_User2.Controls.Clear();
             if (Global.LoaiPhieu == "Loai1")
             {
                 btn_ThemPhieu1.Visible = true;
                 btn_ThemPhieu2.Visible = true;
-                btn_XoaPhieu1.Visible = true;btn_XoaPhieu2.Visible = true;
+                btn_XoaPhieu1.Visible = true;
+                btn_XoaPhieu2.Visible = true;
                 int countRowUser1 = 0, countRowUser2 = 0, r1 = 0, r2 = 0;
 
                 for (int i = 0; i < deso.Count - 1; i++)
@@ -291,8 +323,6 @@ namespace KOMTSU.MyForm
                 }
                 
                 //----------------------------------------
-                tp_Loai1_User1.Controls.Clear();
-                tp_Loai1_User2.Controls.Clear();
                 for (int i = 0; i < row_user1; i++)
                 {
                     uc_DeJP_Loai1 uc_1 = new uc_DeJP_Loai1();
@@ -366,26 +396,9 @@ namespace KOMTSU.MyForm
                     r2++;
                 }
 
-                txt_Truong06_A.Visible = false;
-                txt_Truong08_A.Visible = false;
-                txt_Truong06_B.Visible = false;
-                txt_Truong08_B.Visible = false;
-                labelControl17.Visible = false;
-                labelControl18.Visible = false;
-                labelControl19.Visible = false;
-                labelControl20.Visible = false;
-
             }
             else if (Global.LoaiPhieu == "Loai2")
             {
-                txt_Truong06_A.Visible = true;
-                txt_Truong08_A.Visible = true;
-                labelControl17.Visible = true;
-                labelControl18.Visible = true;
-                txt_Truong06_B.Visible = true;
-                txt_Truong08_B.Visible = true;
-                labelControl19.Visible = true;
-                labelControl20.Visible = true;
                 txt_Truong06_A.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo06_A).FirstOrDefault();
                 txt_Truong08_A.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo08_A).FirstOrDefault();
                 txt_Truong06_B.Text = (from w in Global.db.tbl_Images where w.fbatchname == strBatch && w.idimage == idimage select w.TruongSo06_B).FirstOrDefault();
@@ -873,8 +886,11 @@ namespace KOMTSU.MyForm
             Global.BatCoDeSo = Convert.ToBoolean((from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.CoDeSo).FirstOrDefault());
             Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == cbb_Batch_Check.Text select w.LoaiBatch).FirstOrDefault();
             ResetData();
+            _Visible();
             if (Global.LoaiPhieu == "Loai1")
             {
+                tp_Loai1_User1.Controls.Clear();
+                tp_Loai1_User2.Controls.Clear();
                 tp_Loai1_User1.PageVisible = true;
                 tp_Loai1_User2.PageVisible = true;
             }
@@ -883,8 +899,6 @@ namespace KOMTSU.MyForm
                 tp_Loai2_User1.PageVisible = true;
                 tp_Loai2_User2.PageVisible = true;
             }
-            tp_Loai1_User1.Controls.Clear();
-            tp_Loai1_User2.Controls.Clear();
 
             uc_DeJP_Loai21.CheckBatch_CoDeSo();
             uc_DeJP_Loai22.CheckBatch_CoDeSo();

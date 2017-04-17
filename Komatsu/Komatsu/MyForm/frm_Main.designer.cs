@@ -366,6 +366,7 @@
             this.txt_Truong08_B.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Truong08_B.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong08_B.TabIndex = 15;
+            this.txt_Truong08_B.Visible = false;
             // 
             // txt_Truong06_B
             // 
@@ -377,6 +378,7 @@
             this.txt_Truong06_B.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Truong06_B.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong06_B.TabIndex = 14;
+            this.txt_Truong06_B.Visible = false;
             // 
             // txt_Truong08_A
             // 
@@ -388,6 +390,7 @@
             this.txt_Truong08_A.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Truong08_A.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong08_A.TabIndex = 15;
+            this.txt_Truong08_A.Visible = false;
             // 
             // txt_Truong06_A
             // 
@@ -399,6 +402,7 @@
             this.txt_Truong06_A.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_Truong06_A.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong06_A.TabIndex = 14;
+            this.txt_Truong06_A.Visible = false;
             // 
             // labelControl17
             // 
@@ -411,6 +415,7 @@
             this.labelControl17.Size = new System.Drawing.Size(10, 13);
             this.labelControl17.TabIndex = 12;
             this.labelControl17.Text = "8.";
+            this.labelControl17.Visible = false;
             // 
             // lb_SoHinhLamDuoc
             // 
@@ -433,6 +438,7 @@
             this.labelControl9.Size = new System.Drawing.Size(10, 13);
             this.labelControl9.TabIndex = 12;
             this.labelControl9.Text = "8.";
+            this.labelControl9.Visible = false;
             // 
             // lb_SoHinhConLai
             // 
@@ -505,6 +511,7 @@
             this.labelControl16.Size = new System.Drawing.Size(10, 13);
             this.labelControl16.TabIndex = 13;
             this.labelControl16.Text = "6.";
+            this.labelControl16.Visible = false;
             // 
             // lb_fBatchName
             // 
@@ -525,6 +532,7 @@
             this.labelControl7.Size = new System.Drawing.Size(10, 13);
             this.labelControl7.TabIndex = 13;
             this.labelControl7.Text = "6.";
+            this.labelControl7.Visible = false;
             // 
             // labelControl3
             // 

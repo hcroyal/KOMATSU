@@ -19,7 +19,7 @@ namespace KOMTSU.MyUserControl
         public void ResetData()
         {
             lb_stt.Text = "";
-            txt_Truong03.Text = @"28";
+            txt_Truong03.Text = @"29";
             txt_Truong04.Text = "";
             txt_Truong05.Text = "";
             txt_Truong10.Text = "";
