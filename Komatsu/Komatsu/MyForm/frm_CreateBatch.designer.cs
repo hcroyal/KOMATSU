@@ -82,11 +82,11 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
@@ -117,16 +117,16 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbb_loaithoigian
@@ -630,7 +630,7 @@
             this.txt_TruongSo06_B.Location = new System.Drawing.Point(106, 93);
             this.txt_TruongSo06_B.Name = "txt_TruongSo06_B";
             this.txt_TruongSo06_B.Size = new System.Drawing.Size(226, 20);
-            this.txt_TruongSo06_B.TabIndex = 49;
+            this.txt_TruongSo06_B.TabIndex = 51;
             // 
             // txt_TruongSo08_B
             // 
@@ -640,7 +640,7 @@
             this.txt_TruongSo08_B.Location = new System.Drawing.Point(106, 119);
             this.txt_TruongSo08_B.Name = "txt_TruongSo08_B";
             this.txt_TruongSo08_B.Size = new System.Drawing.Size(226, 20);
-            this.txt_TruongSo08_B.TabIndex = 50;
+            this.txt_TruongSo08_B.TabIndex = 52;
             // 
             // panelControl1
             // 
@@ -685,25 +685,35 @@
             this.panelControl3.TabIndex = 0;
             this.panelControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl3_Paint);
             // 
-            // panelControl4
+            // groupControl3
             // 
-            this.panelControl4.Controls.Add(this.btn_CreateBatch);
-            this.panelControl4.Controls.Add(this.progressBarControl1);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl4.Location = new System.Drawing.Point(2, 430);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(840, 67);
-            this.panelControl4.TabIndex = 1;
+            this.groupControl3.Controls.Add(this.txt_TruongSo08_A);
+            this.groupControl3.Controls.Add(this.labelControl17);
+            this.groupControl3.Controls.Add(this.labelControl18);
+            this.groupControl3.Controls.Add(this.labelControl3);
+            this.groupControl3.Controls.Add(this.txt_TruongSo06_B);
+            this.groupControl3.Controls.Add(this.labelControl4);
+            this.groupControl3.Controls.Add(this.txt_TruongSo08_B);
+            this.groupControl3.Controls.Add(this.txt_TruongSo06_A);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(2, 51);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(352, 145);
+            this.groupControl3.TabIndex = 52;
+            this.groupControl3.Text = "Field";
             // 
-            // panelControl5
+            // groupControl2
             // 
-            this.panelControl5.Controls.Add(this.rb_LoaiBatch);
-            this.panelControl5.Controls.Add(this.labelControl8);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl5.Location = new System.Drawing.Point(2, 2);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(352, 49);
-            this.panelControl5.TabIndex = 49;
+            this.groupControl2.Controls.Add(this.labelControl5);
+            this.groupControl2.Controls.Add(this.labelControl6);
+            this.groupControl2.Controls.Add(this.txt_UserCreate);
+            this.groupControl2.Controls.Add(this.txt_DateCreate);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl2.Location = new System.Drawing.Point(2, 196);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(352, 82);
+            this.groupControl2.TabIndex = 51;
+            this.groupControl2.Text = "Infomation";
             // 
             // groupControl1
             // 
@@ -731,35 +741,25 @@
             this.groupControl1.Text = "Manager Deadline";
             this.groupControl1.Visible = false;
             // 
-            // groupControl2
+            // panelControl5
             // 
-            this.groupControl2.Controls.Add(this.labelControl5);
-            this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.txt_UserCreate);
-            this.groupControl2.Controls.Add(this.txt_DateCreate);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl2.Location = new System.Drawing.Point(2, 196);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(352, 82);
-            this.groupControl2.TabIndex = 51;
-            this.groupControl2.Text = "Infomation";
+            this.panelControl5.Controls.Add(this.rb_LoaiBatch);
+            this.panelControl5.Controls.Add(this.labelControl8);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl5.Location = new System.Drawing.Point(2, 2);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(352, 49);
+            this.panelControl5.TabIndex = 49;
             // 
-            // groupControl3
+            // panelControl4
             // 
-            this.groupControl3.Controls.Add(this.txt_TruongSo08_A);
-            this.groupControl3.Controls.Add(this.labelControl17);
-            this.groupControl3.Controls.Add(this.labelControl18);
-            this.groupControl3.Controls.Add(this.labelControl3);
-            this.groupControl3.Controls.Add(this.txt_TruongSo06_B);
-            this.groupControl3.Controls.Add(this.labelControl4);
-            this.groupControl3.Controls.Add(this.txt_TruongSo08_B);
-            this.groupControl3.Controls.Add(this.txt_TruongSo06_A);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(2, 51);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(352, 145);
-            this.groupControl3.TabIndex = 52;
-            this.groupControl3.Text = "Field";
+            this.panelControl4.Controls.Add(this.btn_CreateBatch);
+            this.panelControl4.Controls.Add(this.progressBarControl1);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl4.Location = new System.Drawing.Point(2, 430);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(840, 67);
+            this.panelControl4.TabIndex = 1;
             // 
             // frm_CreateBatch
             // 
@@ -808,20 +808,20 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
