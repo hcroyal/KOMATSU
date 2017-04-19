@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -182,26 +183,39 @@ namespace KOMTSU.MyForm
                 
             }
 
-            var f = new PdfFocus {Serial = "1234567890"};
+            var f = new PdfFocus();
+            f.Serial = "1234567890";
+
             string pdfFile = txt_ImagePath.Text;
             string imageDir = Path.GetDirectoryName(pdfFile);
-            List<PdfFocus.PdfImage> pdfImages = null;
+            List<Image> pdfImages = new List<Image>();
             f.OpenPdf(pdfFile);
             if (f.PageCount > 0)
             {
-                pdfImages = f.ExtractImages(1, f.PageCount);
 
+                f.ImageOptions.ImageFormat = System.Drawing.Imaging.ImageFormat.Jpeg;
+                f.ImageOptions.Dpi = 200;
+
+                // Set 95 as JPEG quality
+                f.ImageOptions.JpegQuality = 95;
+                //pdfImages = f.ExtractImages(1, f.PageCount);
+                
                 // Show all extracted images.
-                if (pdfImages != null && pdfImages.Count > 0)
+                
+                for (int i = 1; i <= f.PageCount; i++)
                 {
+                    string imageFile = Path.Combine(txt_FolderSaveImage.Text+"\\", "Page"+i+".jpg");
+                    int result = f.ToImage(imageFile, i);
 
-                    for (int i = 0; i < pdfImages.Count; i++)
+                    // Show only 1st page
+                    if (result == 0)
                     {
-                        string imageFile = Path.Combine(txt_FolderSaveImage.Text+"\\", "Page"+(i+1)+".jpg");
-                        pdfImages[i].Picture.Save(imageFile);
-                        
+                        pdfImages.Add(f.ToDrawingImage(i));
+                        //pdfImages[i].Save(imageFile);
                     }
+                        
                 }
+                
             }
         }
 
@@ -635,6 +649,7 @@ namespace KOMTSU.MyForm
 
         }
 
+        
         private void timeEdit_ngayketthuc_Click(object sender, EventArgs e)
         {
             _flag = false;
