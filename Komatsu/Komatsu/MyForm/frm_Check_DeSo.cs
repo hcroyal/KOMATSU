@@ -359,6 +359,7 @@ namespace KOMTSU.MyForm
 
                 foreach (uc_DeJP_Loai1 item in tp_Loai1_User1.Controls)
                 {
+                    item.lb_stt.Text = deso[r1].IdPhieu.ToString();
                     item.txt_Truong03.Text = deso[r1].Truong_03;
                     item.txt_Truong04.Text = deso[r1].Truong_04;
                     item.txt_Truong05.Text = deso[r1].Truong_05;
@@ -378,6 +379,7 @@ namespace KOMTSU.MyForm
                 }
                 foreach (uc_DeJP_Loai1 item in tp_Loai1_User2.Controls)
                 {
+                    item.lb_stt.Text = deso[r2].IdPhieu.ToString();
                     item.txt_Truong03.Text = deso[r2].Truong_03;
                     item.txt_Truong04.Text = deso[r2].Truong_04;
                     item.txt_Truong05.Text = deso[r2].Truong_05;
@@ -876,6 +878,14 @@ namespace KOMTSU.MyForm
                 tp_Loai1_User2.HorizontalScroll.Value = e.NewValue;
             else if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
                 tp_Loai1_User1.VerticalScroll.Value = e.NewValue;
+        }
+
+        private void frm_Check_DeSo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Left)
+                uc_PictureBox1.btn_Xoaytrai_Click(null, null);
+            if (e.Control && e.KeyCode == Keys.Right)
+                uc_PictureBox1.btn_xoayphai_Click(null, null);
         }
 
         private void cbb_Batch_Check_SelectedIndexChanged(object sender, EventArgs e)

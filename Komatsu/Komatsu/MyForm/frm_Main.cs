@@ -45,6 +45,7 @@ namespace KOMTSU.MyForm
                     select w.IdImage).Count().ToString();
             }
             tp_Loai1_JP_Main.Controls.Clear();
+            count = 1;
             btn_ThemPhieu_Click(null, null);
         }
 
@@ -716,7 +717,7 @@ namespace KOMTSU.MyForm
              new frm_NangSuat().ShowDialog();
         }
 
-        private int count;
+        private int count=1;
         private void btn_ThemPhieu_Click(object sender, EventArgs e)
         {
             uc_DeJP_Loai1 uc = new uc_DeJP_Loai1();
@@ -728,8 +729,8 @@ namespace KOMTSU.MyForm
 
             }
             uc.Location = p;
-            count++;
             uc.Tag = count.ToString();
+            uc.lb_stt.Text=count.ToString();
             uc.CheckBatch_CoDeSo();
             tp_Loai1_JP_Main.Controls.Add(uc);
             
@@ -737,6 +738,7 @@ namespace KOMTSU.MyForm
             uc.txt_Truong08.Text = Global.Truong08_A;
 
             ScrollToBottom(tp_Loai1_JP_Main);
+            count++;
         }
         public void ScrollToBottom(XtraTabPage p)
         {
@@ -750,8 +752,10 @@ namespace KOMTSU.MyForm
         private void btn_XoaPhieu_Click(object sender, EventArgs e)
         {
             if (tp_Loai1_JP_Main.Controls.Count > 1)
-            {tp_Loai1_JP_Main.Controls.RemoveAt(tp_Loai1_JP_Main.Controls.Count - 1);
+            {
+                tp_Loai1_JP_Main.Controls.RemoveAt(tp_Loai1_JP_Main.Controls.Count - 1);
                 ScrollToBottom(tp_Loai1_JP_Main);
+                count--;
             }
            
         }

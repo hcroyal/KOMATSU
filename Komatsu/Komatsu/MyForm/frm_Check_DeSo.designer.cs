@@ -881,11 +881,13 @@ namespace KOMTSU.MyForm
             this.Controls.Add(this.labela);
             this.Controls.Add(this.labelb);
             this.Controls.Add(this.panelControl1);
+            this.KeyPreview = true;
             this.Name = "frm_Check_DeSo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check DeSo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Check_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Check_DeSo_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();

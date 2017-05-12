@@ -75,7 +75,8 @@ namespace KOMTSU.MyForm
                 {
                     tp_Loai2_User1.PageVisible = true;
                     tp_Loai2_User2.PageVisible = true;
-                }_Visible();
+                }
+                _Visible();
                 btn_Start_Click(null, null);
             }
         }
@@ -301,7 +302,9 @@ namespace KOMTSU.MyForm
             lb_username2.Text = deso[deso.Count-1].UserName;
             _Visible();
             tp_Loai1_User1.Controls.Clear();
+            //tp_Loai1_User1.Dispose();
             tp_Loai1_User2.Controls.Clear();
+            //tp_Loai1_User2.Dispose();
             if (Global.LoaiPhieu == "Loai1")
             {
                 btn_ThemPhieu1.Visible = true;
@@ -340,26 +343,10 @@ namespace KOMTSU.MyForm
                     uc_1.CheckBatch_CoDeSo();
 
                 }
-                for (int i = 0; i < row_user2; i++)
-                {
-                    uc_DeJP_Loai1 uc_2 = new uc_DeJP_Loai1();
-                    Point p = new Point();
-                    foreach (uc_DeJP_Loai1 ct in tp_Loai1_User2.Controls)
-                    {
-                        p = ct.Location;
-                        p.Y += ct.Size.Height + 20;
-
-                    }
-                    uc_2.Location = p;
-                    uc_2.Tag = (i + 1).ToString();
-                    tp_Loai1_User2.Controls.Add(uc_2);
-                    uc_2.Changed += UC_Row_01_Changed1;
-                    uc_2.CheckBatch_CoDeSo();
-                }
-                //---------------------------------
 
                 foreach (uc_DeJP_Loai1 item in tp_Loai1_User1.Controls)
                 {
+                    item.lb_stt.Text = deso[r1].IdPhieu.ToString();
                     item.txt_Truong03.Text = deso[r1].Truong_03;
                     item.txt_Truong04.Text = deso[r1].Truong_04;
                     item.txt_Truong05.Text = deso[r1].Truong_05;
@@ -377,8 +364,27 @@ namespace KOMTSU.MyForm
                     }
                     r1++;
                 }
+
+                for (int i = 0; i < row_user2; i++)
+                {
+                    uc_DeJP_Loai1 uc_2 = new uc_DeJP_Loai1();
+                    Point p = new Point();
+                    foreach (uc_DeJP_Loai1 ct in tp_Loai1_User2.Controls)
+                    {
+                        p = ct.Location;
+                        p.Y += ct.Size.Height + 20;
+
+                    }
+                    uc_2.Location = p;
+                    uc_2.Tag = (i + 1).ToString();
+                    tp_Loai1_User2.Controls.Add(uc_2);
+                    uc_2.Changed += UC_Row_01_Changed1;
+                    uc_2.CheckBatch_CoDeSo();
+                }
+
                 foreach (uc_DeJP_Loai1 item in tp_Loai1_User2.Controls)
                 {
+                    item.lb_stt.Text = deso[r2].IdPhieu.ToString();
                     item.txt_Truong03.Text = deso[r2].Truong_03;
                     item.txt_Truong04.Text = deso[r2].Truong_04;
                     item.txt_Truong05.Text = deso[r2].Truong_05;
@@ -864,6 +870,14 @@ namespace KOMTSU.MyForm
                 tp_Loai1_User1.VerticalScroll.Value = e.NewValue;
         }
 
+        private void frm_Check_DeJP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Left)
+                uc_PictureBox1.btn_Xoaytrai_Click(null, null);
+            if (e.Control && e.KeyCode == Keys.Right)
+                uc_PictureBox1.btn_xoayphai_Click(null, null);
+        }
+
         private void cbb_Batch_Check_SelectedIndexChanged(object sender, EventArgs e)
         {
             tp_Loai1_User1.PageVisible = false;
@@ -890,7 +904,9 @@ namespace KOMTSU.MyForm
             if (Global.LoaiPhieu == "Loai1")
             {
                 tp_Loai1_User1.Controls.Clear();
+                //tp_Loai1_User1.Dispose();
                 tp_Loai1_User2.Controls.Clear();
+                //tp_Loai1_User2.Dispose();
                 tp_Loai1_User1.PageVisible = true;
                 tp_Loai1_User2.PageVisible = true;
             }

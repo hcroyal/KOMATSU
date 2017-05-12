@@ -48,6 +48,7 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Truong10 = new DevExpress.XtraEditors.TextEdit();
+            this.lb_stt = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong07.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong09.Properties)).BeginInit();
@@ -270,6 +271,18 @@
             this.txt_Truong10.TabIndex = 8;
             this.txt_Truong10.EditValueChanged += new System.EventHandler(this.txt_Truong10_EditValueChanged);
             // 
+            // lb_stt
+            // 
+            this.lb_stt.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_stt.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lb_stt.Appearance.Options.UseFont = true;
+            this.lb_stt.Appearance.Options.UseForeColor = true;
+            this.lb_stt.Location = new System.Drawing.Point(300, 9);
+            this.lb_stt.Name = "lb_stt";
+            this.lb_stt.Size = new System.Drawing.Size(7, 13);
+            this.lb_stt.TabIndex = 0;
+            this.lb_stt.Text = "1";
+            // 
             // uc_DeJP_Loai1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,9 +307,10 @@
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.lb_stt);
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_DeJP_Loai1";
-            this.Size = new System.Drawing.Size(298, 140);
+            this.Size = new System.Drawing.Size(328, 140);
             this.Load += new System.EventHandler(this.uc_DeJP_Loai1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong07.Properties)).EndInit();
@@ -335,5 +349,6 @@
         public DevExpress.XtraEditors.LabelControl labelControl10;
         public DevExpress.XtraEditors.LabelControl labelControl11;
         public DevExpress.XtraEditors.TextEdit txt_Truong10;
+        public DevExpress.XtraEditors.LabelControl lb_stt;
     }
 }

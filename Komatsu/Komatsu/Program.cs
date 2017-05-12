@@ -48,7 +48,7 @@ namespace Komatsu
                 a.btn_thoat.Text = "Exit";
                 a.chb_hienthi.Text = "Show";
                 a.chb_luu.Text = "Save";
-                a.lb_version.Text = @"1.0.2";
+                a.lb_version.Text = @"1.0.4";
                 a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\KOMATSU\Tool";
                 a.LoginEvent += a_LoginEvent;
                 a.ButtonLoginEven += a_ButtonLoginEven;
